@@ -1,0 +1,31 @@
+.azlist_container .browse {
+	float: left;
+	padding-top: 0.5em;
+	margin-right: 1em;
+}
+
+.contentzone li {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	margin-left: 28px;
+}
+
+.contentzone ul > li {
+	list-style-type: none;
+}
+
+.azlist_container > ul > li {
+	font-family: Montserrat, Avant Garde, Arial, sans-serif;
+	margin-left: 0;
+	margin-right: 1em;
+	display: inline-block;
+}
+.main-content a {
+	color: #2b7bba;
+}
+
+a {
+	color: #2ba6cb;
+	text-decoration: none;
+	line-height: inherit;
+}

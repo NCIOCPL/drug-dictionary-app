@@ -3,6 +3,7 @@ import { useStateValue } from '../store/store';
 // Paths for app
 const appPaths = {
 	HomePath: '/',
+	DefinitionPath: '/def/:drug',
 };
 
 /**

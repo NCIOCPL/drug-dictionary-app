@@ -4,3 +4,8 @@
 h1 {
 	margin-bottom: 0;
 }
+@media only screen and (min-width: 1025px) {
+	.content-container {
+		width: 100%;
+	}
+}
