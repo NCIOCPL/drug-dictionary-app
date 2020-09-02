@@ -1,0 +1,28 @@
+figure.table {
+	color: #606060;
+	text-align: left;
+	font-weight: 400;
+	font-size: 16px;
+	padding: 20px 0 0;
+}
+table.synonym {
+	background: #fff;
+	border: 1px solid #ddd;
+	margin-bottom: 20px;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+table.synonym tr:nth-of-type(2n) {
+	background: #f9f9f9;
+}
+table.synonym tbody tr td,
+table.synonym tr td {
+	display: table-cell;
+	line-height: inherit;
+}
+table.synonym tr td,
+table.synonym tr th {
+	color: #2e2e2e;
+	font-size: 14px;
+	padding: 7.875px 8.75px;
+}

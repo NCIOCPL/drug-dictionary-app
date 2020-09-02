@@ -6,5 +6,6 @@ export { default as Spinner } from './atomic/spinner';
 export { default as TextInput } from './atomic/TextInput';
 
 // molecules
+export { default as DefinitionItem } from './molecules/definitionitem';
 export { default as Search } from './molecules/search';
 export { default as SearchBox } from './molecules/search-box';

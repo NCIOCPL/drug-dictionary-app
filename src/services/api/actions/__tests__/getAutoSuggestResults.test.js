@@ -8,7 +8,7 @@ describe('getAutoSuggestResults action', () => {
 		const searchText = 'ace';
 		const retAction = {
 			method: 'GET',
-			endpoint: `/Autosuggest?searchText=${encodeURIComponent(searchText)}&matchType=Begins&size=10`,
+			endpoint: `/Autosuggest?searchText=${searchText}&matchType=Begins&size=10`,
 		};
 		expect(getAutoSuggestResults(searchText, beginsWith)).toEqual(retAction);
 	});
@@ -17,9 +17,8 @@ describe('getAutoSuggestResults action', () => {
 		const searchText = 'ace';
 		const retAction = {
 			method: 'GET',
-			endpoint: `/Autosuggest?searchText=${encodeURIComponent(searchText)}&matchType=Contains&includeResourceTypes=DrugTerm&size=10`,
+			endpoint: `/Autosuggest?searchText=${searchText}&matchType=Contains&includeResourceTypes=DrugTerm&size=10`,
 		};
 		expect(getAutoSuggestResults(searchText, contains)).toEqual(retAction);
 	});
-
 });

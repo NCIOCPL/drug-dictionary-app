@@ -4,9 +4,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#000000" />
-		<title>
-			NCI Search Results - National Cancer Institute
-		</title>
+		<title>NCI Search Results - National Cancer Institute</title>
 		<link rel="stylesheet" href="%PUBLIC_URL%/index.css" />
 		<link rel="stylesheet" href="%PUBLIC_URL%/__nci-dev__common.css" />
 		<script type="text/javascript">
@@ -69,11 +67,14 @@
 					baseHost: 'http://localhost:3000',
 					basePath: '/',
 					canonicalHost: 'https://www.cancer.gov',
-					dictionaryIntroText: '<p>The NCI Drug Dictionary contains technical definitions and synonyms for drugs/agents used to treat patients with cancer or conditions related to cancer. Each drug entry includes links to check for clinical trials listed in NCI\'s List of Cancer Clinical Trials.</p>',
+					dictionaryIntroText:
+						"<p>The NCI Drug Dictionary contains technical definitions and synonyms for drugs/agents used to treat patients with cancer or conditions related to cancer. Each drug entry includes links to check for clinical trials listed in NCI's List of Cancer Clinical Trials.</p>",
 					dictionaryTitle: 'NCI Drug Dictionary',
-					dynamicListingPageBase: 'https://www.cancer.gov/about-cancer/treatment/clinical-trials/intervention',
+					ctsDynamicListingPageBase:
+						'https://www.cancer.gov/about-cancer/treatment/clinical-trials/intervention',
 					language: 'en',
-					nciThesaurusConceptLinkPattern: 'https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI%20Thesaurus&code={{CCODE}}',
+					nciThesaurusConceptLink:
+						'https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI%20Thesaurus',
 					rootId: 'NCI-app-root',
 					siteName: 'National Cancer Institute',
 				},
