@@ -27,21 +27,23 @@ const initialize = ({
 	// this outside of the digital platform, and wants to hookup
 	// their own analytics. See index.html for an overly complicated
 	// configuration that handles logging to the console.
-	analyticsHandler = "EddlAnalyticsHandler",
+	analyticsHandler = 'EddlAnalyticsHandler',
 	analyticsContentGroup = 'NCI Drug Dictionary',
-	analyticsName= 'Drug',
-	analyticsPublishedDate = "unknown",
-	appId = "@@/DEFAULT_REACT_APP_ID",
-	baseHost = "http://localhost:3000",
-	basePath = "/",
-	apiEndpoint = "https://webapis-dev.cancer.gov/drugdictionary/v1/",
-	canonicalHost = "https://www.cancer.gov",
+	analyticsName = 'Drug',
+	analyticsPublishedDate = 'unknown',
+	appId = '@@/DEFAULT_REACT_APP_ID',
+	baseHost = 'http://localhost:3000',
+	basePath = '/',
+	apiEndpoint = 'https://webapis-dev.cancer.gov/drugdictionary/v1/',
+	canonicalHost = 'https://www.cancer.gov',
+	ctsDynamicListingPageBase = '/',
 	dictionaryIntroText,
-	dictionaryTitle = "NCI Drug Dictionary",
-	language = "en",
-	rootId = "NCI-app-root",
+	dictionaryTitle = 'NCI Drug Dictionary',
+	language = 'en',
+	nciThesaurusConceptLink = '/',
+	rootId = 'NCI-app-root',
 	searchBoxTitle = "Search NCI's Drug Dictionary",
-	siteName = "National Cancer Institute",
+	siteName = 'National Cancer Institute',
 } = {}) => {
 	const appRootDOMNode = document.getElementById(rootId);
 	const isRehydrating = appRootDOMNode.getAttribute('data-isRehydrating');
@@ -57,9 +59,11 @@ const initialize = ({
 		baseHost,
 		basePath,
 		canonicalHost,
+		ctsDynamicListingPageBase,
 		dictionaryIntroText,
 		dictionaryTitle,
 		language,
+		nciThesaurusConceptLink,
 		searchBoxTitle,
 		siteName,
 	};
@@ -68,27 +72,25 @@ const initialize = ({
 	// The following allows the app to be more portable, cgov will
 	// default to using EDDL Analytics. Other sites could supplier
 	// their own custom handler.
-	const AnalyticsHoC = ({children}) =>
-		analyticsHandler === 'EddlAnalyticsHandler'
-			? (
-				<EddlAnalyticsProvider
-					pageLanguage={language === 'es' ? 'spanish' : 'english'}
-					pageChannel={analyticsChannel}
-					pageContentGroup={analyticsContentGroup}
-					pageName={analyticsName}
-					publishedDate={analyticsPublishedDate}
-					analyticsName={analyticsName}>
-					{children}
-				</EddlAnalyticsProvider>
-			)
-			: (
-				<AnalyticsProvider analyticsHandler={analyticsHandler}>
-					{children}
-				</AnalyticsProvider>
-			);
+	const AnalyticsHoC = ({ children }) =>
+		analyticsHandler === 'EddlAnalyticsHandler' ? (
+			<EddlAnalyticsProvider
+				pageLanguage={language === 'es' ? 'spanish' : 'english'}
+				pageChannel={analyticsChannel}
+				pageContentGroup={analyticsContentGroup}
+				pageName={analyticsName}
+				publishedDate={analyticsPublishedDate}
+				analyticsName={analyticsName}>
+				{children}
+			</EddlAnalyticsProvider>
+		) : (
+			<AnalyticsProvider analyticsHandler={analyticsHandler}>
+				{children}
+			</AnalyticsProvider>
+		);
 
 	AnalyticsHoC.propTypes = {
-		children: PropTypes.node
+		children: PropTypes.node,
 	};
 
 	const AppBlock = () => {

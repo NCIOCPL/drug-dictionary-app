@@ -1,0 +1,29 @@
+{
+	"aliases": [
+		{
+			"type": "CodeName",
+			"name": "EOS100850"
+		},
+		{
+			"type": "CodeName",
+			"name": "EOS-100850"
+		},
+		{
+			"type": "CodeName",
+			"name": "EOS 100850"
+		}
+	],
+	"definition": {
+		"html": "An orally bioavailable immune checkpoint inhibitor and antagonist of the adenosine A2A receptor (A2AR; ADORA2A), with potential immunomodulating and antineoplastic activities. Upon administration, A2AR antagonist EOS100850 selectively binds to and inhibits A2AR expressed on T-lymphocytes. This prevents tumor-released adenosine from interacting with the A2A receptors, thereby blocking the adenosine/A2AR-mediated inhibition of T-lymphocytes. This results in the proliferation and activation of T-lymphocytes, and stimulates a T-cell-mediated immune response against tumor cells. A2AR, a G protein-coupled receptor, is highly expressed on the cell surfaces of T-cells and, upon activation by adenosine, inhibits their proliferation and activation. Adenosine is often overproduced by cancer cells and plays a key role in immunosuppression.",
+		"text": "An orally bioavailable immune checkpoint inhibitor and antagonist of the adenosine A2A receptor (A2AR; ADORA2A), with potential immunomodulating and antineoplastic activities. Upon administration, A2AR antagonist EOS100850 selectively binds to and inhibits A2AR expressed on T-lymphocytes. This prevents tumor-released adenosine from interacting with the A2A receptors, thereby blocking the adenosine/A2AR-mediated inhibition of T-lymphocytes. This results in the proliferation and activation of T-lymphocytes, and stimulates a T-cell-mediated immune response against tumor cells. A2AR, a G protein-coupled receptor, is highly expressed on the cell surfaces of T-cells and, upon activation by adenosine, inhibits their proliferation and activation. Adenosine is often overproduced by cancer cells and plays a key role in immunosuppression."
+	},
+	"drugInfoSummaryLink": null,
+	"nciConceptId": null,
+	"nciConceptName": null,
+	"termId": 801361,
+	"name": "A2A receptor antagonist EOS100850",
+	"firstLetter": "a",
+	"type": "DrugTerm",
+	"termNameType": "PreferredName",
+	"prettyUrlName": "a2a-receptor-antagonist-eos100850"
+}

@@ -182,5 +182,54 @@ When('user selects letter {string} from A-Z list', (letter) => {
 });
 
 And('the user clicks the search button', () => {
-	cy.get('input#btnSearch').click();
+	cy.get('input#btnSearch').click({ force: true });
 });
+
+And('there should be no {string} table in the document', (string) => {
+	cy.get(string).should('not.exist');
+});
+
+/*
+    -----------------------
+        Search box
+    -----------------------
+*/
+
+And(
+	'the Patient Information link to {string} appears on the page',
+	(patientInfoLink) => {
+		cy.get('a.definition-link').should('have.attr', 'href', patientInfoLink);
+	}
+);
+And('the link to Patient Information does not appear on the page', () => {
+	cy.get('a.definition-link').should('not.exist');
+});
+And('the definition text {string} appears on the page', (defText) => {
+	cy.get('div.definition').should('contain', defText);
+});
+
+And('an {string} link to {string}', (linkText, linkHref) => {
+	cy.get(`a[href="${linkHref}"]`).should('have.text', linkText);
+});
+
+And('a table of other names includes the following', (dataTable) => {
+	let allNames;
+	cy.document().then((document) => {
+		allNames = document.querySelectorAll('tbody tr th b');
+		//assert that there are no extra names displayed in the table
+		expect(allNames.length).to.eq(dataTable.hashes().length);
+		let i = 0;
+		for (const { nameType } of dataTable.hashes()) {
+			//assert that every expected name is displayed in order
+			expect(allNames[i].textContent).to.eq(nameType);
+			i++;
+		}
+	});
+});
+
+Then(
+	"there should be a {string} attribute on the definition's title element",
+	(cdrId) => {
+		cy.get('h1').should('have.attr', cdrId);
+	}
+);
