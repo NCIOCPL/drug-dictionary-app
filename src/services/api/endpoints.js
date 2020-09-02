@@ -35,6 +35,7 @@ export const getEndpoint = (serviceName) => {
 	// Define api endpoints here
 	const endpoints = {
 		autoSuggest: `/Autosuggest`,
+		drugGetByName: `/Drugs/GetByName`,
 		drugSearch: `/Drugs/Search`,
 		sampleCall: `/sampleendpoint`,
 	};
