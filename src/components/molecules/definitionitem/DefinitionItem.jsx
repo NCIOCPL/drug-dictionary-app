@@ -3,7 +3,11 @@ import React from 'react';
 
 import './DefinitionItem.scss';
 
-const DefinitionItem = () => {
+import { Synonym } from '../../atomic';
+
+const DefinitionItem = (payload) => {
+	const { aliases } = payload?.payload;
+
 	return (
 		<dl className="dictionary-list">
 			<dt>
@@ -35,6 +39,7 @@ const DefinitionItem = () => {
 					NCI Thesaurus
 				</a>
 				)
+				<Synonym aliases={aliases} />
 			</dd>
 		</dl>
 	);
@@ -42,7 +47,7 @@ const DefinitionItem = () => {
 
 DefinitionItem.propTypes = {
 	language: PropTypes.oneOf(['en', 'es']),
-	content: PropTypes.object,
+	payload: PropTypes.object,
 };
 
 export default DefinitionItem;

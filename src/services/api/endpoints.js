@@ -35,6 +35,7 @@ export const getEndpoint = (serviceName) => {
 	// Define api endpoints here
 	const endpoints = {
 		drugSearch: `${API_ENDPOINT}/Drugs/Search`,
+		prettyURL: `${API_ENDPOINT}/Drugs/GetByName`,
 		sampleCall: `${API_ENDPOINT}`,
 	};
 	return endpoints[serviceName];

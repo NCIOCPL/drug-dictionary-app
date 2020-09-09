@@ -1,5 +1,6 @@
 //atoms
 export { default as Spinner } from './atomic/spinner';
+export { default as Synonym } from './atomic/Synonym';
 
 // molecules
 export { default as AZList } from './molecules/azlist';

@@ -5,16 +5,22 @@ import { useTracking } from 'react-tracking';
 
 import { AZList, Searchbox, DefinitionItem } from '../../components';
 import { useAppPaths, useCustomQuery, useURLQuery } from '../../hooks';
-import { getDrugSearchResults } from '../../services/api/actions';
+import {
+	getDrugSearchResults,
+	getDrugByPrettyURLName,
+} from '../../services/api/actions';
 import { useStateValue } from '../../store/store.js';
 import { i18n } from '../../utils';
 
 const Definition = () => {
 	// Pull in the paths we are going to need on this view.
 	const { DefinitionPath } = useAppPaths();
-	const params = useParams();
-	const { drug } = params;
-	const queryResponse = useCustomQuery(getDrugSearchResults({ drug }));
+	const urlQuery = useURLQuery();
+	const prettyURLName =
+		urlQuery.get('prettyUrlName') || urlQuery.get('prettyurlname');
+	//const params = useParams();
+	//const { drug } = params;
+	const queryResponse = useCustomQuery(getDrugByPrettyURLName(prettyURLName));
 	const [drugSearchResults, setDrugSearchResults] = useState();
 	const [searchResultsLoaded, setSearchResultsLoaded] = useState(false);
 
@@ -52,11 +58,20 @@ const Definition = () => {
 	});
 
 	useEffect(() => {
-		if (queryResponse.payload && !searchResultsLoaded) {
+		if (
+			!searchResultsLoaded &&
+			!queryResponse.loading &&
+			queryResponse.payload
+		) {
 			setDrugSearchResults(queryResponse);
 			setSearchResultsLoaded(true);
 		}
-	}, [queryResponse, setDrugSearchResults]);
+	}, [
+		queryResponse.loading,
+		searchResultsLoaded,
+		setDrugSearchResults,
+		setSearchResultsLoaded,
+	]);
 
 	/**
 	 * Helper function to get href lang links IF there is an
@@ -103,9 +118,6 @@ const Definition = () => {
 			</Helmet>
 		);
 	};
-	if (searchResultsLoaded) {
-		console.dir(drugSearchResults);
-	}
 	return (
 		<>
 			{renderHelmet()}
@@ -119,7 +131,9 @@ const Definition = () => {
 				</p>
 				<Searchbox />
 				<AZList />
-				<DefinitionItem />
+				{searchResultsLoaded && (
+					<DefinitionItem payload={drugSearchResults.payload} />
+				)}
 			</div>
 		</>
 	);
