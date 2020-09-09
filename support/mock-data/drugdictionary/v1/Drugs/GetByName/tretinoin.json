@@ -1,0 +1,149 @@
+{
+  "aliases": [
+    {
+      "type": "Abbreviation",
+      "name": "ATRA"
+    },
+    {
+      "type": "Acronym",
+      "name": "ATRA"
+    },
+    {
+      "type": "USBrandName",
+      "name": "Retin-A"
+    },
+    {
+      "type": "Synonym",
+      "name": "TRA"
+    },
+    {
+      "type": "Acronym",
+      "name": "TRA"
+    },
+    {
+      "type": "USBrandName",
+      "name": "Vesanoid"
+    },
+    {
+      "type": "Synonym",
+      "name": "Vitamin A Acid"
+    },
+    {
+      "type": "ChemicalStructureName",
+      "name": "(All-E)-3,7-dimethyl-9-(2,6,6-trimethyl-1-cyclohexen-1-yl)-2,4,6,8-nonatetraenoic acid"
+    },
+    {
+      "type": "USBrandName",
+      "name": "Aberel"
+    },
+    {
+      "type": "ForeignBrandName",
+      "name": "Airol"
+    },
+    {
+      "type": "USBrandName",
+      "name": "Aknoten"
+    },
+    {
+      "type": "Synonym",
+      "name": "all-trans retinoic acid"
+    },
+    {
+      "type": "Synonym",
+      "name": "all-trans vitamin A acid"
+    },
+    {
+      "type": "USBrandName",
+      "name": "Avita"
+    },
+    {
+      "type": "ForeignBrandName",
+      "name": "Cordes Vas"
+    },
+    {
+      "type": "ForeignBrandName",
+      "name": "Dermairol"
+    },
+    {
+      "type": "ForeignBrandName",
+      "name": "Epi-Aberel"
+    },
+    {
+      "type": "ForeignBrandName",
+      "name": "Eudyna"
+    },
+    {
+      "type": "USBrandName",
+      "name": "Renova"
+    },
+    {
+      "type": "USBrandName",
+      "name": "Retin-A MICRO"
+    },
+    {
+      "type": "Synonym",
+      "name": "retinoic acid"
+    },
+    {
+      "type": "ForeignBrandName",
+      "name": "Retisol-A"
+    },
+    {
+      "type": "CodeName",
+      "name": "Ro 5488"
+    },
+    {
+      "type": "ForeignBrandName",
+      "name": "Stieva-A Forte"
+    },
+    {
+      "type": "ForeignBrandName",
+      "name": "Stieva-A"
+    },
+    {
+      "type": "Synonym",
+      "name": "trans retinoic acid"
+    },
+    {
+      "type": "Synonym",
+      "name": "trans vitamin A acid"
+    },
+    {
+      "type": "Synonym",
+      "name": "tretinoinum"
+    },
+    {
+      "type": "ForeignBrandName",
+      "name": "Vitinoin"
+    },
+    {
+      "type": "Synonym",
+      "name": "beta-retinoic acid"
+    },
+    {
+      "type": "INDCode",
+      "name": "34987"
+    },
+    {
+      "type": "NSCNumber",
+      "name": "122758"
+    },
+    {
+      "type": "CASRegistryName",
+      "name": "302-79-4"
+    }
+  ],
+  "definition": {
+    "html": "A naturally-occurring acid of retinol. Tretinoin binds to and activates retinoic acid receptors (RARs), thereby inducing changes in gene expression that lead to cell differentiation, decreased cell proliferation, and inhibition of tumorigenesis.  This agent also inhibits telomerase, resulting in telomere shortening and eventual apoptosis of some tumor cell types.  The oral form of tretinoin has teratogenic and embryotoxic properties. Check for <a ref=\"https://www.cancer.gov/about-cancer/treatment/clinical-trials/intervention/C900\">active clinical trials</a> using this agent. (<a ref=\"https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI%20Thesaurus&code=C900\">NCI Thesaurus</a>)",
+    "text": "A naturally-occurring acid of retinol. Tretinoin binds to and activates retinoic acid receptors (RARs), thereby inducing changes in gene expression that lead to cell differentiation, decreased cell proliferation, and inhibition of tumorigenesis.  This agent also inhibits telomerase, resulting in telomere shortening and eventual apoptosis of some tumor cell types.  The oral form of tretinoin has teratogenic and embryotoxic properties. Check for active clinical trials using this agent. (NCI Thesaurus)"
+  },
+  "drugInfoSummaryLink": null,
+  "nciConceptId": "C900",
+  "nciConceptName": "Tretinoin",
+  "termId": 41258,
+  "name": "tretinoin",
+  "firstLetter": "t",
+  "type": "DrugTerm",
+  "termNameType": "PreferredName",
+  "prettyUrlName": "tretinoin"
+}

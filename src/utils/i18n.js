@@ -21,4 +21,8 @@ export const i18n = {
 		en: 'Search',
 		es: 'Buscar',
 	},
+	definitionOf: {
+		en: 'Definition of',
+		es: 'Definición de',
+	},
 };

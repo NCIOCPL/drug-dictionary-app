@@ -5,7 +5,7 @@ import { useTracking } from 'react-tracking';
 
 import { AZList, Searchbox, DefinitionItem } from '../../components';
 import { useAppPaths, useCustomQuery, useURLQuery } from '../../hooks';
-import { getDrugSearchResults } from '../../services/api/actions';
+import { getDrugSearchResults, getDrugDefinition } from '../../services/api/actions';
 import { useStateValue } from '../../store/store.js';
 import { i18n } from '../../utils';
 
@@ -14,9 +14,9 @@ const Definition = () => {
 	const { DefinitionPath } = useAppPaths();
 	const params = useParams();
 	const { drug } = params;
-	const queryResponse = useCustomQuery(getDrugSearchResults({ drug }));
-	const [drugSearchResults, setDrugSearchResults] = useState();
-	const [searchResultsLoaded, setSearchResultsLoaded] = useState(false);
+	const queryResponse = useCustomQuery(getDrugDefinition({ drug }));
+	const [drugDefinition, setDrugDefinition] = useState();
+	const [drugDefinitionLoaded, setDrugDefinitionLoaded] = useState(false);
 
 	// Get items passed into index.js and stored in the context.
 	const [
@@ -38,25 +38,34 @@ const Definition = () => {
 
 	// Fire off a page load event. Usually this would be in
 	// some effect when something loaded.
-	tracking.trackEvent({
-		// These properties are required.
-		type: 'PageLoad',
-		event: 'DrugDictionaryApp:Load:Home',
-		analyticsName,
-		dictionaryTitle,
-		name: canonicalHost.replace('https://', '') + DefinitionPath(),
-		title: dictionaryTitle,
-		metaTitle: `${dictionaryTitle} - ${siteName}`,
-		// Any additional properties fall into the "page.additionalDetails" bucket
-		// for the event.
-	});
-
 	useEffect(() => {
-		if (queryResponse.payload && !searchResultsLoaded) {
-			setDrugSearchResults(queryResponse);
-			setSearchResultsLoaded(true);
+		if (drugDefinitionLoaded) {
+			tracking.trackEvent({
+				// These properties are required.
+				type: 'PageLoad',
+				event: 'DrugDictionaryApp:Load:Definition',
+				analyticsName,
+				dictionaryTitle,
+				name: canonicalHost.replace('https://', '') + DefinitionPath({
+					drug: drugDefinition.payload.prettyUrlName ?
+						drugDefinition.payload.prettyUrlName :
+						drugDefinition.payload.termId
+				}),
+				title: dictionaryTitle,
+				metaTitle: `${i18n.definitionOf[language]} ${drugDefinition.payload.name} - ${dictionaryTitle} - ${siteName}`,
+				term: drugDefinition.payload.name,
+				id: drugDefinition.payload.termId
+				// Any additional properties fall into the "page.additionalDetails" bucket
+				// for the event.
+			});
 		}
-	}, [queryResponse, setDrugSearchResults]);
+	});
+	useEffect(() => {
+		if (queryResponse.payload && !drugDefinitionLoaded) {
+			setDrugDefinition(queryResponse);
+			setDrugDefinitionLoaded(true);
+		}
+	}, [queryResponse, setDrugDefinition]);
 
 	/**
 	 * Helper function to get href lang links IF there is an
@@ -72,7 +81,12 @@ const Definition = () => {
 				key="1"
 				rel="alternate"
 				hrefLang={language}
-				href={canonicalHost + DefinitionPath()}
+				href={canonicalHost + DefinitionPath({
+					drug: drugDefinition.payload.prettyUrlName ?
+						drugDefinition.payload.prettyUrlName :
+						drugDefinition.payload.termId
+				}
+				)}
 			/>,
 			<link
 				key="2"
@@ -81,7 +95,11 @@ const Definition = () => {
 				// support multiple languages. (Well, the alternate
 				// language dictionary base path does not either... )
 				hrefLang={language === 'es' ? 'en' : 'es'}
-				href={canonicalHost + altLanguageBasePath + DefinitionPath()}
+				href={canonicalHost + altLanguageBasePath + DefinitionPath({
+					drug: drugDefinition.payload.prettyUrlName ?
+						drugDefinition.payload.prettyUrlName :
+						drugDefinition.payload.termId
+				})}
 			/>,
 		];
 	};
@@ -96,33 +114,46 @@ const Definition = () => {
 			<Helmet>
 				<title>{`${dictionaryTitle} - ${siteName}`}</title>
 				<meta property="og:title" content={`${dictionaryTitle}`} />
-				<meta property="og:url" content={baseHost + DefinitionPath()} />
-				<link rel="canonical" href={canonicalHost + DefinitionPath()} />
+				<meta property="og:url" content={baseHost + DefinitionPath({
+					drug: drugDefinition.payload.prettyUrlName ?
+						drugDefinition.payload.prettyUrlName :
+						drugDefinition.payload.termId
+				})} />
+				<link rel="canonical" href={canonicalHost + DefinitionPath({
+					drug: drugDefinition.payload.prettyUrlName ?
+						drugDefinition.payload.prettyUrlName :
+						drugDefinition.payload.termId
+				})} />
 				<meta name="robots" content="index" />
 				{getHrefLangs()}
 			</Helmet>
 		);
 	};
-	if (searchResultsLoaded) {
-		console.dir(drugSearchResults);
+	if (drugDefinitionLoaded) {
+		console.dir(drugDefinition);
 	}
 	return (
 		<>
-			{renderHelmet()}
-			<h1>{dictionaryTitle}</h1>
-			<div>
-				<p>
-					The NCI Drug Dictionary contains technical definitions and synonyms
-					for drugs/agents used to treat patients with cancer or conditions
-					related to cancer. Each drug entry includes links to check for
-					clinical trials listed in NCI&#39;s List of Cancer Clinical Trials.
+			{drugDefinitionLoaded && drugDefinition && (
+				<>
+					{renderHelmet()}
+					<h1>{dictionaryTitle}</h1>
+					<div>
+						<p>
+							The NCI Drug Dictionary contains technical definitions and synonyms
+							for drugs/agents used to treat patients with cancer or conditions
+							related to cancer. Each drug entry includes links to check for
+							clinical trials listed in NCI&#39;s List of Cancer Clinical Trials.
 				</p>
-				<Searchbox />
-				<AZList />
-				<DefinitionItem />
-			</div>
+						<Searchbox />
+						<AZList />
+						<DefinitionItem payload={drugDefinition.payload} />
+					</div>
+				</>
+			)}
 		</>
 	);
+
 };
 
 export default Definition;

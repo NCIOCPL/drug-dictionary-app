@@ -34,8 +34,9 @@ export function setLanguage(language) {
 export const getEndpoint = (serviceName) => {
 	// Define api endpoints here
 	const endpoints = {
+		drugGetByName: `${API_ENDPOINT}/Drugs/GetByName`,
 		drugSearch: `${API_ENDPOINT}/Drugs/Search`,
-		sampleCall: `${API_ENDPOINT}`,
+		sampleCall: `${API_ENDPOINT}`
 	};
 	return endpoints[serviceName];
 };
