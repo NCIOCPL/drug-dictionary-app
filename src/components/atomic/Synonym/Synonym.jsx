@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import './Synonym.scss';
+import './Synonyms.scss';
 
 // Map used to order and also exlude
 // items not needed for display"Synonym"
@@ -56,9 +56,9 @@ const Synonym = (aliases) => {
 		const mapVal = sortedAliases[aliasTypes[i]];
 		const row = (
 			<tr key={`row-${i}`}>
-				<td valign="top" width="28%">
+				<th valign="top" width="28%" scope="row">
 					<b>{sortMap[aliasTypes[i]].name}</b>
-				</td>
+				</th>
 				<td valign="top" width="68%">
 					{mapVal.map((item) => {
 						return (
@@ -76,13 +76,14 @@ const Synonym = (aliases) => {
 
 	return (
 		<figure className="table">
-			<div className="scrollable">
-				<div className="container">
-					<table width="100%" cellSpacing="0" cellPadding="0" border="0">
-						<tbody>{aliasDOM}</tbody>
-					</table>
-				</div>
-			</div>
+			<table
+				className="synonym"
+				width="100%"
+				cellSpacing="0"
+				cellPadding="0"
+				border="0">
+				<tbody>{aliasDOM}</tbody>
+			</table>
 		</figure>
 	);
 };
