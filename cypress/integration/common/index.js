@@ -1,3 +1,4 @@
+/// <reference types="Cypress" />
 import { And, Given, Then } from 'cypress-cucumber-preprocessor/steps';
 import { i18n } from '../../../src/utils';
 
@@ -29,7 +30,7 @@ Given('the user visits the home page', () => {
 	cy.visit('/');
 });
 
-Given('the user navigates to {string}',  (destURL) => {
+Given('the user navigates to {string}', (destURL) => {
 	cy.visit(destURL);
 });
 
@@ -93,11 +94,93 @@ And('the following links and texts exist on the page', (dataTable) => {
     -----------------------
 */
 And('the system returns the no results found page', () => {
-
 	cy.window().then((win) => {
 		if (win.INT_TEST_APP_PARAMS) {
-			const noResultsPageTitle =  i18n.nciSearchResults[win.INT_TEST_APP_PARAMS.language];
+			const noResultsPageTitle =
+				i18n.nciSearchResults[win.INT_TEST_APP_PARAMS.language];
 			cy.get('h1').should('contain', noResultsPageTitle);
 		}
 	});
+});
+
+/*
+    -----------------------
+        Search box
+    -----------------------
+*/
+
+Then('heading {string} appears', (searchBoxTitle) => {
+	cy.get('h6').should('have.text', searchBoxTitle);
+});
+Then(
+	'search options for {string} and {string} appears',
+	(startWith, contain) => {
+		cy.get('div.radio-selection label').first().should('have.text', startWith);
+		cy.get('div.radio-selection label').last().should('have.text', contain);
+	}
+);
+
+And('{string} radio is selected by default', (startWith) => {
+	cy.get(`input[value="Begins"]`).should('be.checked');
+});
+
+And('keywords search box appears', () => {
+	cy.get('div#keywords-autocomplete-wrapper').should('be.visible');
+});
+And('search button appears beside search box with {string}', (search) => {
+	cy.get('#btnSearch').should('be.visible').and('have.value', search);
+});
+And('{string} appears with A-Z List of Links beside it', (browseLabel) => {
+	// Browse label shows
+	cy.get(`nav[data-testid='tid-az-list']`).contains(browseLabel);
+	// A-Z nav list is rendered with 27 items
+	cy.get(`nav[data-testid='tid-az-list'] > ul > li`).should('have.length', 27);
+});
+
+And('each option appears as a link', () => {
+	cy.get(`nav[data-testid='tid-az-list'] > ul > li > a`).each(($link) => {
+		cy.wrap($link).should('have.attr', 'href').and('to.contain', '/expand');
+	});
+});
+
+And('search bar contains a placeholder text {string}', (placeholder) => {
+	cy.get('input#keywords').should('have.attr', 'placeholder', placeholder);
+});
+
+When('user clicks on the search bar', () => {
+	cy.get('input#keywords').click();
+});
+Then('helper text {string} appears', (helperText) => {
+	cy.get('.menu-anchor div div').should('have.text', helperText);
+});
+
+When('user types {string} in the search bar', (keyword) => {
+	cy.get('input#keywords').type(keyword);
+});
+
+When('user selects {string} option', (searchType) => {
+	const selectedOption = searchType === 'Contains' ? 'contains' : 'starts-with';
+	cy.get(`.ncids-radio__label[for="${selectedOption}"]`).click();
+});
+
+Then(
+	'autosuggest appears with highlighting of the text {string}',
+	(keyword) => {
+		cy.get(".menu-anchor div[class*='--terms']").should('be.visible');
+		const regex = new RegExp(
+			keyword.replace(/[-[\]{}()*+!<=:?.\\^$|#\s,]/g, '\\$&'),
+			'i'
+		);
+		cy.get(".menu-anchor div[class*='--terms'] span strong").each(($el) => {
+			cy.wrap($el).invoke('text').should('match', regex);
+		});
+	}
+);
+
+When('user selects letter {string} from A-Z list', (letter) => {
+	cy.get(`nav[data-testid='tid-az-list'] > ul > li a`).contains(letter).click();
+});
+
+And('the user clicks the search button', () => {
+	cy.get('input#btnSearch').click();
 });
