@@ -40,6 +40,7 @@ const initialize = ({
 	dictionaryTitle = "NCI Drug Dictionary",
 	language = "en",
 	rootId = "NCI-app-root",
+	searchBoxTitle = "Search NCI's Drug Dictionary",
 	siteName = "National Cancer Institute",
 } = {}) => {
 	const appRootDOMNode = document.getElementById(rootId);
@@ -59,6 +60,7 @@ const initialize = ({
 		dictionaryIntroText,
 		dictionaryTitle,
 		language,
+		searchBoxTitle,
 		siteName,
 	};
 
@@ -74,7 +76,8 @@ const initialize = ({
 					pageChannel={analyticsChannel}
 					pageContentGroup={analyticsContentGroup}
 					pageName={analyticsName}
-					publishedDate={analyticsPublishedDate}>
+					publishedDate={analyticsPublishedDate}
+					analyticsName={analyticsName}>
 					{children}
 				</EddlAnalyticsProvider>
 			)

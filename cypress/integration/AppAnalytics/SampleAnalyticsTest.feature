@@ -26,5 +26,4 @@ Feature: Analytics Page Load
 			| page.publishedDate                     | 02/02/2011                                      |
 			| page.additionalDetails.analyticsName   | Drug                                            |
 			| page.additionalDetails.dictionaryTitle | NCI Drug Dictionary                             |
-			| page.additionalDetails.page            | app_load                                        |
 
