@@ -5,7 +5,7 @@ Feature: Term page
     Scenario: As a user, I would like to see an option to search when I am viewing the definition for a term, term info and the patient information link for a term
         Given the user navigates to "def/bevacizumab"
         Then the page title is "bevacizumab"
-        And the Patient Information link to "https://www.cancer.gov/about-cancer/treatment/drugs/bevacizumab" appears on the page
+        And the "View Patient Information" link to "https://www.cancer.gov/about-cancer/treatment/drugs/bevacizumab" appears on the page
         And the definition text "A recombinant humanized monoclonal antibody directed against the vascular endothelial growth factor (VEGF), a pro-angiogenic cytokine.  Bevacizumab binds to VEGF and inhibits VEGF receptor binding, thereby preventing the growth and maintenance of tumor blood vessels." appears on the page
         #And an "active clinical trials" link to "https://www.cancer.gov/about-cancer/treatment/clinical-trials/intervention/C2039"
         #And an "NCI Thesaurus" link to "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI%20Thesaurus&code=C2039"

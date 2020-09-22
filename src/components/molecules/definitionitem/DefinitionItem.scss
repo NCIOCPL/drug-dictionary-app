@@ -7,10 +7,35 @@
 }
 
 .term-title {
-	display: inline-block;
 	margin-bottom: 10px;
 }
 .definition-link {
 	margin-left: 16px;
 	vertical-align: super;
+}
+
+a.patient-information-button {
+	background-color: #00708a;
+	border: 0;
+	border-radius: 2px;
+	color: #fff;
+	cursor: pointer;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	font-family: Montserrat, Avant Garde, Arial, sans-serif;
+	font-size: 16px;
+	line-height: normal;
+	min-height: 39px;
+	margin: 0 0 10px 0;
+	padding: 5px 12px;
+	text-decoration: none;
+	&:visited,
+	&:active {
+		color: #fff;
+	}
+	&:hover {
+		background: #00647c;
+		text-decoration: none;
+	}
 }
