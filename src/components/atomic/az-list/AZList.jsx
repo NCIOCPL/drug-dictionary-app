@@ -12,10 +12,6 @@ const AZList = ({ azListLabel = 'Browse' }) => {
 	const [{ analyticsName, dictionaryTitle }] = useStateValue();
 	const tracking = useTracking();
 
-	useEffect(() => {
-		AZListArray.push('All');
-	}, []);
-
 	const handleAZLinkClick = (letter) => {
 		tracking.trackEvent({
 			type: 'Other',
@@ -35,10 +31,9 @@ const AZList = ({ azListLabel = 'Browse' }) => {
 					const expandChar =
 						item === '#'
 							? '%23'
-							: item !== 'All'
-								? item.toUpperCase()
-								: item;
-					const label = item !== 'All' ? item.toUpperCase() : item;
+							: item.toUpperCase();
+	
+					const label = item.toUpperCase();
 					return (
 						<li key={i} value={i + 1}>
 							<Link
