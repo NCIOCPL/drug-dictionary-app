@@ -44,6 +44,12 @@ Given('{string} is set to {string}', (key, param) => {
 	});
 });
 
+Then('the system redirects user to {string}', (path) => {
+	cy.location('pathname').should('eq', path);
+});
+And('the system appends {string} to the URL', (queryParam) => {
+	cy.location('search').should('eq', queryParam);
+});
 /*
     ----------------------------------------
       API Error Page
