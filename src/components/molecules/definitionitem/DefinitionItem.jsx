@@ -14,19 +14,11 @@ const DefinitionItem = ({ payload }) => {
 			<h1 className="term-title" data-cdr-id={payload.termId}>
 				{payload.name}
 			</h1>
-
 			{drugInfoSummaryLink && (
-				<a className="definition-link" href={drugInfoSummaryLink.uri}>
-					<img
-						src="https://www.cancer.gov/images/btn-patient-info.gif"
-						alt="Patient Information"
-						title="Patient Information"
-						width="139"
-						height="20"
-						hspace="12"
-						border="0"
-						align="absmiddle"
-					/>
+				<a
+					className="patient-information-button"
+					href={drugInfoSummaryLink.uri}>
+					View Patient Information
 				</a>
 			)}
 			<div className="term-definition">
