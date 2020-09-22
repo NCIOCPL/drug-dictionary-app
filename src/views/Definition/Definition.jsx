@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useTracking } from 'react-tracking';
 
 import { DefinitionItem, SearchBox } from '../../components';
@@ -34,6 +34,7 @@ const Definition = () => {
 	// Get a reference to the tracking function for
 	// analytics.
 	const tracking = useTracking();
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		if (drugDefinitionLoaded) {
@@ -64,6 +65,15 @@ const Definition = () => {
 		if (queryResponse.payload && !drugDefinitionLoaded) {
 			setDrugDefinition(queryResponse);
 			setDrugDefinitionLoaded(true);
+			//redirect to PrettyUrlName when ID is provided in the url
+			if (
+				queryResponse.payload.prettyUrlName &&
+				idOrName.match(/^[0-9]+$/) != null
+			) {
+				const path = `${queryResponse.payload.prettyUrlName}?redirect=true`;
+				navigate(DefinitionPath({ idOrName: path }));
+				return;
+			}
 		}
 	}, [queryResponse, setDrugDefinition]);
 
