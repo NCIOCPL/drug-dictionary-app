@@ -1,0 +1,9 @@
+{
+  "urls": [
+    "http://localhost:3000",
+    "http://localhost:3000/def/bevacizumab",
+    "http://localhost:3000/def/tretinoin",
+    "http://localhost:3000/def/acenocoumarol",
+    "http://localhost:3000/def/xenogeneic-tyrosinase-dna-vaccine"
+  ]
+}
