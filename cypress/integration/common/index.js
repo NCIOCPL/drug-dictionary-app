@@ -201,22 +201,30 @@ And('there should be no {string} table in the document', (string) => {
     -----------------------
 */
 
+And('the {string} link does not appear on the page', (string) => {
+	cy.get(string).should('not.exist');
+});
 And(
 	'the {string} link to {string} appears on the page',
 	(title, patientInfoLink) => {
-		cy.get('a.patient-information-button').should(
+		cy.get('a.dictionary-definiton__patient-information-button').should(
 			'have.attr',
 			'href',
 			patientInfoLink
 		);
-		cy.get('a.patient-information-button').should('contain', title);
+		cy.get('a.dictionary-definiton__patient-information-button').should(
+			'contain',
+			title
+		);
 	}
 );
 And('the link to Patient Information does not appear on the page', () => {
-	cy.get('a.patient-information-button').should('not.exist');
+	cy.get('a.dictionary-definiton__patient-information-button').should(
+		'not.exist'
+	);
 });
 And('the definition text {string} appears on the page', (defText) => {
-	cy.get('div.definition').should('contain', defText);
+	cy.get('div.dictionary-definiton__definition').should('contain', defText);
 });
 
 And('an {string} link to {string}', (linkText, linkHref) => {

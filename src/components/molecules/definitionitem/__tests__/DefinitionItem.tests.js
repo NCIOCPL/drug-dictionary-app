@@ -178,15 +178,26 @@ describe('Definition Item component', () => {
 	const wrapper = render(
 		<MockAnalyticsProvider>
 			<MemoryRouter initialEntries={['/bevacizumab']}>
-				<DefinitionItem payload={payload} />
+				<DefinitionItem
+					drugInfoSummaryLink={payload.drugInfoSummaryLink}
+					definitionText={payload.definition.html}
+					nciConceptId={payload.nciConceptId}
+					aliases={payload.aliases}
+					termId={payload.termId}
+					name={payload.name}
+				/>
 			</MemoryRouter>
 		</MockAnalyticsProvider>
 	);
 	const { container } = wrapper;
 
 	test('Renders term title and definition container', () => {
-		const { getByText } = within(container.querySelector('.term-title'));
+		const { getByText } = within(
+			container.querySelector('.dictionary-definiton__term-title')
+		);
 		expect(getByText(payload.name)).toBeInTheDocument();
-		expect(container.querySelector('.definition')).toBeInTheDocument();
+		expect(
+			container.querySelector('.dictionary-definiton__definition')
+		).toBeInTheDocument();
 	});
 });
