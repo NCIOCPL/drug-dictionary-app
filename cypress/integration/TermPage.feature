@@ -7,8 +7,8 @@ Feature: Term page
         Then the page title is "bevacizumab"
         And the "View Patient Information" link to "https://www.cancer.gov/about-cancer/treatment/drugs/bevacizumab" appears on the page
         And the definition text "A recombinant humanized monoclonal antibody directed against the vascular endothelial growth factor (VEGF), a pro-angiogenic cytokine.  Bevacizumab binds to VEGF and inhibits VEGF receptor binding, thereby preventing the growth and maintenance of tumor blood vessels." appears on the page
-        #And an "active clinical trials" link to "https://www.cancer.gov/about-cancer/treatment/clinical-trials/intervention/C2039"
-        #And an "NCI Thesaurus" link to "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI%20Thesaurus&code=C2039"
+        And an "Check for active clinical trials using this agent" link to "https://www.cancer.gov/about-cancer/treatment/clinical-trials/intervention/C2039"
+        And an "View this agent in the NCI Thesaurus" link to "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI%20Thesaurus&code=C2039"
         And a table of other names includes the following
             | nameType       |
             | Synonym:       |
@@ -23,8 +23,8 @@ Feature: Term page
         Then the page title is "tretinoin"
         Then the link to Patient Information does not appear on the page
         And the definition text "A naturally-occurring acid of retinol. Tretinoin binds to and activates retinoic acid receptors (RARs), thereby inducing changes in gene expression that lead to cell differentiation, decreased cell proliferation, and inhibition of tumorigenesis.  This agent also inhibits telomerase, resulting in telomere shortening and eventual apoptosis of some tumor cell types.  The oral form of tretinoin has teratogenic and embryotoxic properties." appears on the page
-        #And an "active clinical trials" link to "https://www.cancer.gov/about-cancer/treatment/clinical-trials/intervention/C900"
-        #And an "NCI Thesaurus" link to "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI%20Thesaurus&code=C900"
+        And an "Check for active clinical trials using this agent" link to "https://www.cancer.gov/about-cancer/treatment/clinical-trials/intervention/C900"
+        And an "View this agent in the NCI Thesaurus" link to "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI%20Thesaurus&code=C900"
         And a table of other names includes the following
             | nameType            |
             | Synonym:            |
@@ -42,11 +42,15 @@ Feature: Term page
         Then the page title is "acenocoumarol"
         And the link to Patient Information does not appear on the page
         And the definition text "A 4-hydroxycoumarin derivative with anticoagulant activity. As a vitamin K antagonist, acenocoumarol inhibits vitamin K epoxide reductase, thereby inhibiting the reduction of vitamin K and the availability of vitamin KH2. This prevents gamma carboxylation of glutamic acid residues near the N-terminals of the vitamin K-dependent clotting factors, including factor II, VII, IX, and X and anticoagulant proteins C and S. This prevents their activity and thus thrombin formation. Compared to other coumarin derivatives, acenocoumarol has a short half-life." appears on the page
-        #And an "active clinical trials" link to "https://www.cancer.gov/about-cancer/treatment/clinical-trials/intervention/801361"
-        #And an "NCI Thesaurus" link to "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI%20Thesaurus&code=801361"
+        And an "Check for active clinical trials using this agent" link to "https://www.cancer.gov/about-cancer/treatment/clinical-trials/intervention/C75152"
+        And an "View this agent in the NCI Thesaurus" link to "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI%20Thesaurus&code=C75152"
         And there should be no "synonym" table in the document
 
-
+    Scenario: As a user, I do not see see a clinical trials or NCI Thesaurus link when it is not provided
+        Given the user navigates to "/def/801361"
+        Then the page title is "A2A receptor antagonist EOS100850"
+        And the "Check for active clinical trials using this agent" link does not appear on the page
+        And the "View this agent in the NCI Thesaurus" link does not appear on the page
 
     Scenario: As a user, I see the definition of term I am viewing and the search option, but do not see the Synonyms Table when it is not provided
         Given the user navigates to "def/xenogeneic-tyrosinase-dna-vaccine"

@@ -118,7 +118,14 @@ const Definition = () => {
 			{drugDefinitionLoaded && drugDefinition && (
 				<>
 					{renderHelmet()}
-					<DefinitionItem payload={drugDefinition.payload} />
+					<DefinitionItem
+						drugInfoSummaryLink={drugDefinition.payload?.drugInfoSummaryLink}
+						definitionText={drugDefinition.payload.definition?.html}
+						nciConceptId={drugDefinition.payload?.nciConceptId}
+						aliases={drugDefinition.payload?.aliases}
+						termId={drugDefinition.payload?.termId}
+						name={drugDefinition.payload?.name}
+					/>
 					<SearchBox showTitle />
 				</>
 			)}

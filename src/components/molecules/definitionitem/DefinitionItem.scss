@@ -1,20 +1,25 @@
 .results dd {
 	margin-bottom: 16px;
 }
-.dictionary-list h1 {
+.dictionary-definiton__dictionary-list h1 {
 	display: inline-block;
 	margin-bottom: 16px;
 }
 
-.term-title {
+.dictionary-definiton__term-title {
 	margin-bottom: 10px;
 }
-.definition-link {
+
+.dictionary-definiton__definition-link {
 	margin-left: 16px;
 	vertical-align: super;
 }
 
-a.patient-information-button {
+.dictionary-definiton__definition {
+	margin-bottom: 18px;
+}
+
+a.dictionary-definiton__patient-information-button {
 	background-color: #00708a;
 	border: 0;
 	border-radius: 2px;
@@ -38,4 +43,9 @@ a.patient-information-button {
 		background: #00647c;
 		text-decoration: none;
 	}
+}
+.dictionary-definiton__nci-thesaurus-link,
+.dictionary-definiton__active-trials-link {
+	color: #2b7bba;
+	display: block;
 }
