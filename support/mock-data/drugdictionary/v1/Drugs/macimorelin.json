@@ -1,0 +1,41 @@
+{
+	"aliases": [
+		{
+			"type": "CodeName",
+			"name": "AEZS-130"
+		},
+		{
+			"type": "CodeName",
+			"name": "EP 1572"
+		},
+		{
+			"type": "CodeName",
+			"name": "JMV 1843"
+		},
+		{
+			"type": "ChemicalStructureName",
+			"name": "N-(2-Amino-2-Methylpropanoyl-N1-((1R)-1-Formamido-2-(1H-Indol-3-yl)Ethyl)-D-Tryptophanamide"
+		},
+		{
+			"type": "ObsoleteName",
+			"name": "Solorel"
+		},
+		{
+			"type": "CASRegistryName",
+			"name": "381231-18-1"
+		}
+	],
+	"definition": {
+		"html": "An orally available synthetic mimetic of the growth hormone (GH) secretagogue ghrelin with potential anti-cachexia activity. Upon oral administration, macimorelin mimics endogenous ghrelin by stimulating appetite and binds to the growth hormone secretagogue receptor GHSR in the central nervous system, thereby mimicking the GH-releasing effects of ghrelin from the pituitary gland. Stimulation of GH secretion increases insulin-like growth factor-I (IGF-I) levels which may further stimulate protein synthesis. In addition, ghrelin reduces the production of pro-inflammatory cytokines, which may play a direct role in cancer-related loss of appetite.",
+		"text": "An orally available synthetic mimetic of the growth hormone (GH) secretagogue ghrelin with potential anti-cachexia activity. Upon oral administration, macimorelin mimics endogenous ghrelin by stimulating appetite and binds to the growth hormone secretagogue receptor GHSR in the central nervous system, thereby mimicking the GH-releasing effects of ghrelin from the pituitary gland. Stimulation of GH secretion increases insulin-like growth factor-I (IGF-I) levels which may further stimulate protein synthesis. In addition, ghrelin reduces the production of pro-inflammatory cytokines, which may play a direct role in cancer-related loss of appetite."
+	},
+	"drugInfoSummaryLink": null,
+	"nciConceptId": "C95123",
+	"nciConceptName": "Macimorelin",
+	"termId": 735530,
+	"name": "macimorelin",
+	"firstLetter": "m",
+	"type": "DrugTerm",
+	"termNameType": "PreferredName",
+	"prettyUrlName": "macimorelin"
+}

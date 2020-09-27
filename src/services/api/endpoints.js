@@ -37,6 +37,7 @@ export const getEndpoint = (serviceName) => {
 		autoSuggest: `/Autosuggest`,
 		drugGetByIdOrName: `/Drugs`,
 		drugSearch: `/Drugs/search`,
+		expandChar: '/Drugs/expand',
 	};
 	return endpoints[serviceName];
 };

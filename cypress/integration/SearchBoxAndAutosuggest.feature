@@ -49,9 +49,11 @@ Feature: As a user, I would like to have an option to search for a term while vi
         And "analyticsPublishedDate" is set to "02/02/2011"
         And "analyticsName" is set to "Drug"
         When the user navigates to "def/bevacizumab"
-        Then the NCIDataLayer is cleared
+				And the page title is "bevacizumab"
+				Then the NCIDataLayer is cleared
         When user selects letter "A" from A-Z list
-        Then there should be an analytics event with the following details
+				Then search results page displays results title "# results found for: A"
+				Then there should be an analytics event with the following details
             | key                  | value                           |
             | type                 | Other                           |
             | event                | DrugDictionaryApp:Other:AZClick |

@@ -9,3 +9,4 @@ export { default as TextInput } from './atomic/TextInput';
 export { default as DefinitionItem } from './molecules/definitionitem';
 export { default as Search } from './molecules/search';
 export { default as SearchBox } from './molecules/search-box';
+export { default as TermList } from './molecules/TermList';
