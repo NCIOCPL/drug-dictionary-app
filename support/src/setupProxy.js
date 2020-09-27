@@ -197,6 +197,69 @@ const getAutoSuggestResults = async (req, res, next) => {
 	}
 };
 
+/**
+ * getDrugsByExpandChar - Middleware for getting drugs by character
+ * @param {Express.Request} req
+ * @param {Express.Response} res
+ * @param {Function} next
+ */
+const getDrugsByExpandChar = async (req, res, next) => {
+	const { expandChar } = req.params;
+
+	// IMPLEMENTOR NOTE: Always good to integration test 500 errors with your app
+	if (expandChar === 'server-error') {
+		res.status(500).end();
+	}
+
+	// IMPLEMENTOR NOTE: Always good to integration test 404 errors with your app
+	if (expandChar === 'not-found') {
+		res.status(404).end();
+	}
+
+	// IMPLEMENTOR NOTE: Always good to integration test 400 errors with your app
+	if (expandChar === 'bad-request') {
+		res.status(400).end();
+	}
+
+	// IMPLEMENTOR NOTE: The mock data should match the API's folder structure.
+	const mockDir = path.join(
+		__dirname,
+		'..',
+		'mock-data',
+		'drugdictionary',
+		'v1',
+		'Drugs',
+		'expand'
+	);
+
+	try {
+		const mockFile = path.join(mockDir, `${expandChar}.json`);
+
+		try {
+			// Test if it exists.
+			await accessAsync(mockFile);
+			res.sendFile(mockFile);
+		} catch (err) {
+			// Return empty response for not found, and log to console should access be denied
+			console.error(err);
+			const payload = {
+				meta: {
+					totalResults: 0,
+					from: 0,
+				},
+				results: [],
+				links: null,
+			};
+			console.log('Sending empty response:', payload);
+			res.send(payload);
+		}
+	} catch (err) {
+		// This must be an error from sending the file, or joining
+		// the path.
+		console.error(err);
+		res.status(500).end();
+	}
+};
 
 /**
  * Middleware setup for "setupProxy"
@@ -204,8 +267,9 @@ const getAutoSuggestResults = async (req, res, next) => {
  */
 const middleware = (app) => {
 	app.use('/api/drugdictionary/v1/Autosuggest', getAutoSuggestResults);
-
 	app.use('/api/drugdictionary/v1/Drugs/search', getDrugSearch);
+	app.use('/api/drugdictionary/v1/Drugs/expand/:expandChar', getDrugsByExpandChar);
+	// Should be last route on /Drugs
 	app.use('/api/drugdictionary/v1/Drugs/:idOrName', getDrugByIdOrName);
 
 	app.use('/api/*', (req, res, next) => {

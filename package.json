@@ -49,7 +49,7 @@
 		"test:pa11y": "./node_modules/.bin/pa11y-ci",
 		"cy:ci": "start-server-and-test start http://localhost:3000 integration-tests",
 		"unit-tests": "jest",
-		"integration-tests": "cypress run",
+		"integration-tests": "NODE_ENV=test cypress run",
 		"pa11y-tests": "start-server-and-test start http://localhost:3000 pa11y",
 		"pa11y": "pa11y-ci",
 		"prepare-reports": "cp coverage/cypress/index.html coverage/from-cypress.html && cp coverage/jest/lcov-report/index.html coverage/from-jest.html",

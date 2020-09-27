@@ -1,5 +1,5 @@
 /// <reference types="Cypress" />
-import { And, Given, Then } from 'cypress-cucumber-preprocessor/steps';
+import { And, Given, Then, When } from 'cypress-cucumber-preprocessor/steps';
 import { i18n } from '../../../src/utils';
 
 const baseURL = Cypress.config('baseUrl');
@@ -30,12 +30,28 @@ Given('the user visits the home page', () => {
 	cy.visit('/');
 });
 
+Given('user is on the dictionary landing page or results page', () => {
+	// This destination will be changed to "baseURL" once the landing page is built
+	cy.visit('/expand/B');
+});
+
 Given('the user navigates to {string}', (destURL) => {
 	cy.visit(destURL);
 });
 
 Given('user is viewing the no results found page on any site', () => {
 	cy.visit('/?swKeyword=achoo');
+});
+
+Given(
+	'the user is viewing a results page based on clicking a letter like {string} in the dictionary',
+	(letter) => {
+		cy.visit(`/expand/${letter}`);
+	}
+);
+
+When('the user clicks on the result for {string}', (link) => {
+	cy.get(`dfn a`).contains(link).trigger('click', { followRedirect: false });
 });
 
 Given('{string} is set to {string}', (key, param) => {
@@ -47,9 +63,18 @@ Given('{string} is set to {string}', (key, param) => {
 Then('the system redirects user to {string}', (path) => {
 	cy.location('pathname').should('eq', path);
 });
+
 And('the system appends {string} to the URL', (queryParam) => {
 	cy.location('search').should('eq', queryParam);
 });
+
+Then(
+	'the system returns user to the search results page for the search term {string} URL has {string}',
+	(term, destURL) => {
+		cy.location('href').should('eq', `${baseURL}${destURL}/${term}`);
+	}
+);
+
 /*
     ----------------------------------------
       API Error Page
@@ -100,14 +125,21 @@ And('the following links and texts exist on the page', (dataTable) => {
     -----------------------
 */
 And('the system returns the no results found page', () => {
-	cy.window().then((win) => {
-		if (win.INT_TEST_APP_PARAMS) {
-			const noResultsPageTitle =
-				i18n.nciSearchResults[win.INT_TEST_APP_PARAMS.language];
-			cy.get('h1').should('contain', noResultsPageTitle);
-		}
-	});
+	cy.get('h1').should('contain', 'Page Not Found');
 });
+
+/*
+    -------------------------------
+        No Matching Results Page
+    -------------------------------
+*/
+And('the system returns the no matching results page', () => {
+	cy.get('p').should(
+		'contain',
+		'No matches were found for the word or phrase you entered. Please check your spelling, and try searching again. You can also type the first few letters of your word or phrase, or click a letter in the alphabet and browse through the list of terms that begin with that letter.'
+	);
+});
+//the system returns the no matching results page
 
 /*
     -----------------------
@@ -187,6 +219,15 @@ When('user selects letter {string} from A-Z list', (letter) => {
 	cy.get(`nav[data-testid='tid-az-list'] > ul > li a`).contains(letter).click();
 });
 
+Then(
+	'search results page displays results title {string}',
+	(searchResultsTitle) => {
+		// Strip # char from searchResultsTitle string
+		const titleWithoutResultsCount = searchResultsTitle.substring(1);
+		cy.get('h4').contains(titleWithoutResultsCount);
+	}
+);
+
 And('the user clicks the search button', () => {
 	cy.get('input#btnSearch').click({ force: true });
 });
@@ -250,5 +291,35 @@ Then(
 	"there should be a {string} attribute on the definition's title element",
 	(cdrId) => {
 		cy.get('h1').should('have.attr', cdrId);
+	}
+);
+
+/*
+    ------------------
+        Term List
+    ------------------
+*/
+
+And(
+	"each result in the results listing appears as a link to the term's page",
+	() => {
+		cy.get('dt:first > dfn > a')
+			.should('have.attr', 'href')
+			.and('to.contain', '/def');
+	}
+);
+
+And(
+	'each result displays its full definition below the link for the term',
+	() => {
+		expect(cy.get('dl > dd')).to.not.be.empty;
+	}
+);
+
+And(
+	'each other name result is displayed with {string}',
+	(alternateDisplayText) => {
+		const alternateDisplayTextOther = alternateDisplayText.substring(0, 15);
+		cy.get('dl > dd').should('to.contain', alternateDisplayTextOther);
 	}
 );
