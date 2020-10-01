@@ -99,3 +99,24 @@ Feature: Term page
             | page.additionalDetails.analyticsName   | Drug                                                                        |
             | page.additionalDetails.term            | bevacizumab                                                                 |
             | page.additionalDetails.id              | (int)43234                                                                  |
+
+
+    Scenario: Click event fires when a user clicks on Patient Info button
+        And "baseHost" is set to "http://localhost:3000"
+        And "canonicalHost" is set to "https://www.cancer.gov"
+        And "siteName" is set to "National Cancer Institute"
+        And "channel" is set to "Publications"
+        And "analyticsPublishedDate" is set to "02/02/2011"
+        And "analyticsName" is set to "Drug"
+        Given the user navigates to "def/bevacizumab"
+        And the page title is "bevacizumab"
+        When user clicks on "View Patient Information" button
+        Then there should be an analytics event with the following details
+            | key                  | value                                    |
+            | type                 | Other                                    |
+            | event                | DrugDictionaryApp:Other:PatientInfoClick |
+            | linkName             | PatientInfo_Button                       |
+            | data.dictionaryTitle | NCI Drug Dictionary                      |
+            | data.analyticsName   | Drug                                     |
+            | data.term            | bevacizumab                              |
+            | data.id              | (int)43234                               |

@@ -294,6 +294,9 @@ Then(
 	}
 );
 
+When('user clicks on {string} button', (PtInfoButton) => {
+	cy.get('a').contains(PtInfoButton).trigger('click', { followRedirect: false });
+});
 /*
     ------------------
         Term List

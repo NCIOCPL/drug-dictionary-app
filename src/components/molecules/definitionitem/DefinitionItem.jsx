@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { useTracking } from 'react-tracking';
 
 import './DefinitionItem.scss';
 
@@ -15,9 +16,22 @@ const DefinitionItem = ({
 	name,
 }) => {
 	const [
-		{ nciThesaurusConceptLink, ctsDynamicListingPageBase },
+		{ analyticsName, dictionaryTitle, nciThesaurusConceptLink, ctsDynamicListingPageBase },
 	] = useStateValue();
 
+	const tracking = useTracking();
+
+	const handlePatientInfoButtonClick = () => {
+		tracking.trackEvent({
+			type: 'Other',
+			event: 'DrugDictionaryApp:Other:PatientInfoClick',
+			linkName: 'PatientInfo_Button',
+			analyticsName,
+			dictionaryTitle,
+			term: name,
+			id: termId
+		});
+	};
 	const renderSupplementalLinks = () => {
 		return (
 			<div className="dictionary-definiton__supplemental-links">
@@ -43,7 +57,7 @@ const DefinitionItem = ({
 			{drugInfoSummaryLink && (
 				<a
 					className="dictionary-definiton__patient-information-button"
-					href={drugInfoSummaryLink.uri}>
+					href={drugInfoSummaryLink.uri} onClick={handlePatientInfoButtonClick} >
 					View Patient Information
 				</a>
 			)}
