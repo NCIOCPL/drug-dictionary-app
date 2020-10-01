@@ -1,4 +1,4 @@
-import { render, within } from '@testing-library/react';
+import { render, within, fireEvent } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter } from 'react-router';
 import { MockAnalyticsProvider } from '../../../../tracking';
@@ -7,6 +7,7 @@ import { DefinitionItem } from '../../../index';
 import { useStateValue } from '../../../../store/store';
 
 jest.mock('../../../../store/store.js');
+const analyticsHandler = jest.fn((data) => { });
 const payload = {
 	aliases: [
 		{
@@ -199,5 +200,26 @@ describe('Definition Item component', () => {
 		expect(
 			container.querySelector('.dictionary-definiton__definition')
 		).toBeInTheDocument();
+	});
+
+	test('Info button click analytics event', () => {
+		const wrapper = render(
+			<MockAnalyticsProvider analyticsHandler={analyticsHandler}>
+				<MemoryRouter initialEntries={['/bevacizumab']}>
+					<DefinitionItem
+						drugInfoSummaryLink={payload.drugInfoSummaryLink}
+						definitionText={payload.definition.html}
+						nciConceptId={payload.nciConceptId}
+						aliases={payload.aliases}
+						termId={payload.termId}
+						name={payload.name}
+					/>
+				</MemoryRouter>
+			</MockAnalyticsProvider>
+		);
+		const { container } = wrapper;
+		const ptInfoButton = container.querySelector('a.dictionary-definiton__patient-information-button');
+		fireEvent.click(ptInfoButton);
+		expect(analyticsHandler).toHaveBeenCalledTimes(1);
 	});
 });
