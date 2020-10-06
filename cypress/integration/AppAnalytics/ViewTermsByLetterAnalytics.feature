@@ -12,6 +12,7 @@ Feature: View Terms By Letter Analytics
 		And "analyticsName" is set to "Drug"
 		When the user is viewing a results page based on clicking a letter like "M" in the dictionary
 		Then search results page displays results title "# results found for: M"
+		And browser waits
 		Then there should be an analytics event with the following details
 			| key                                    | value                                           |
 			| type                                   | PageLoad                                        |
