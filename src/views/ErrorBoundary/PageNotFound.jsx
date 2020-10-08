@@ -7,7 +7,9 @@ import { useStateValue } from '../../store/store';
 import { i18n } from '../../utils';
 
 const PageNotFound = () => {
-	const [{ canonicalHost, language }] = useStateValue();
+	const [
+		{ canonicalHost, language, analyticsName, dictionaryTitle },
+	] = useStateValue();
 	const [searchText, updateSearchText] = useState('');
 	const tracking = useTracking();
 
@@ -21,6 +23,8 @@ const PageNotFound = () => {
 			}`,
 			title: pageTitle,
 			type: 'PageLoad',
+			dictionaryTitle,
+			analyticsName,
 		});
 	}, []);
 

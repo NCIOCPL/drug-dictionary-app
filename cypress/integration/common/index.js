@@ -295,7 +295,9 @@ Then(
 );
 
 When('user clicks on {string} button', (PtInfoButton) => {
-	cy.get('a').contains(PtInfoButton).trigger('click', { followRedirect: false });
+	cy.get('a')
+		.contains(PtInfoButton)
+		.trigger('click', { followRedirect: false });
 });
 /*
     ------------------
@@ -326,3 +328,41 @@ And(
 		cy.get('dl > dd').should('to.contain', alternateDisplayTextOther);
 	}
 );
+
+/*
+    ------------------
+        Page Not Found
+    ------------------
+*/
+When('the user navigates to non-existent definition {string}', (def) => {
+	Cypress.on('uncaught:exception', (err, runnable) => {
+		// returning false here to Cypress from
+		// failing the test
+		return false;
+	});
+	cy.visit(def);
+});
+
+Then('page title on error page is {string}', (title) => {
+	Cypress.on('uncaught:exception', (err, runnable) => {
+		// returning false here to Cypress from
+		// failing the test
+		return false;
+	});
+	cy.get('h1').should('contain', title);
+});
+
+And('the text {string} appears on the page', (text) => {
+	cy.get('div.error-container').should('contain', text);
+});
+
+And(
+	'the link {string} to {string} appears on the page',
+	(linkText, linkHref) => {
+		cy.get(`a[href="${linkHref}"]`).should('have.text', linkText);
+	});
+
+And('the search bar appear below', () => {
+	cy.get('input#keywords').should('be.visible');
+});
+
