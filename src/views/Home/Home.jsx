@@ -2,24 +2,28 @@ import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useTracking } from 'react-tracking';
 
-import { useAppPaths } from '../../hooks';
+import { SearchBox, Spinner, TermList } from '../../components';
+import { useAppPaths, useCustomQuery } from '../../hooks';
+import { getExpandCharResults } from '../../services/api/actions';
 import { useStateValue } from '../../store/store.js';
+import NoMatchingResults from '../Terms/no-matching-results';
 
 const Home = () => {
 	// Pull in the paths we are going to need on this view.
-	const { HomePath } = useAppPaths();
+	const { DefinitionPath, HomePath } = useAppPaths();
+	const expandChar = 'A';
+	const [doneFetchingTermResults, setDoneFetchingTermResults] = useState(false);
+	const [stateExpandCharResults, setStateExpandCharResults] = useState();
 
 	// Get items passed into index.js and stored in the context.
 	const [
 		{
 			analyticsName,
-			altLanguageBasePath,
-			basePath,
 			baseHost,
 			canonicalHost,
+			dictionaryIntroText,
 			dictionaryTitle,
 			siteName,
-			language,
 		},
 	] = useStateValue();
 
@@ -27,48 +31,37 @@ const Home = () => {
 	// analytics.
 	const tracking = useTracking();
 
-	// Fire off a page load event. Usually this would be in
-	// some effect when something loaded.
-	tracking.trackEvent({
-		// These properties are required.
-		type: 'PageLoad',
-		event: 'DrugDictionaryApp:Load:Home',
-		analyticsName,
-		dictionaryTitle,
-		name: canonicalHost.replace('https://', '') + HomePath(),
-		title: dictionaryTitle,
-		metaTitle: `${dictionaryTitle} - ${siteName}`,
-		// Any additional properties fall into the "page.additionalDetails" bucket
-		// for the event.
-	});
+	const expandCharResults = useCustomQuery(getExpandCharResults(expandChar));
 
-	/**
-	 * Helper function to get href lang links IF there is an
-	 * alternate language.
-	 */
-	const getHrefLangs = () => {
-		if (!altLanguageBasePath) {
-			return;
+	useEffect(() => {
+		if (!expandCharResults.loading && expandCharResults.payload) {
+			setStateExpandCharResults(expandCharResults.payload);
+			setDoneFetchingTermResults(true);
 		}
+	}, [expandCharResults.loading, expandCharResults.payload]);
 
-		return [
-			<link
-				key="1"
-				rel="alternate"
-				hrefLang={language}
-				href={canonicalHost + HomePath()}
-			/>,
-			<link
-				key="2"
-				rel="alternate"
-				// TODO: Fix this as it is dirty and does not
-				// support multiple languages. (Well, the alternate
-				// language dictionary base path does not either... )
-				hrefLang={language === 'es' ? 'en' : 'es'}
-				href={canonicalHost + altLanguageBasePath + HomePath()}
-			/>,
-		];
-	};
+
+	useEffect( () => {
+		if( doneFetchingTermResults ) {
+			// Fire off a page load event. Usually this would be in
+			// some effect when something loaded.
+			tracking.trackEvent({
+				// These properties are required.
+				type: 'PageLoad',
+				event: 'DrugDictionaryApp:Load:ExpandResults',
+				analyticsName,
+				dictionaryTitle,
+				name: canonicalHost.replace('https://', '') + HomePath(),
+				title: dictionaryTitle,
+				metaTitle: `${dictionaryTitle} - ${siteName}`,
+				letter: expandChar.toLowerCase(),
+				numberResults: stateExpandCharResults.meta?.totalResults,
+				// Any additional properties fall into the "page.additionalDetails" bucket
+				// for the event.
+			});
+		}
+	}, [doneFetchingTermResults])
+
 
 	/**
 	 * Helper function to render metadata.
@@ -83,23 +76,48 @@ const Home = () => {
 				<meta property="og:url" content={baseHost + HomePath()} />
 				<link rel="canonical" href={canonicalHost + HomePath()} />
 				<meta name="robots" content="index" />
-				{getHrefLangs()}
 			</Helmet>
 		);
+	};
+
+	const termLinkEventTrackingHandler = ({ idOrName, itemIndex, term }) => {
+		tracking.trackEvent({
+			// These properties are required.
+			type: 'Other',
+			event: 'DrugDictionaryApp:Other:ResultClick',
+			linkName: 'DrugDictionaryResults',
+			dictionaryTitle,
+			analyticsName,
+			resultIdOrName: idOrName,
+			resultIndex: itemIndex,
+			resultName: term,
+			// Any additional properties fall into the "page.additionalDetails" bucket
+			// for the event.
+		});
 	};
 
 	return (
 		<>
 			{renderHelmet()}
 			<h1>{dictionaryTitle}</h1>
-			<div>
-				<p>This is the home view.</p>
-				<p>
-					It can be whatever you like, you don&apos;t even actually need a home
-					view, but most of our apps have something. Please do not overload the
-					home view with a bunch of other views.
-				</p>
-			</div>
+			<p dangerouslySetInnerHTML={{ __html: dictionaryIntroText }}></p>
+			<SearchBox />
+			{doneFetchingTermResults ? (
+				<div className="results">
+					{stateExpandCharResults.results.length > 0 && (
+						<TermList
+							searchTerm={expandChar}
+							termLinkPath={DefinitionPath}
+							termLinkTrackingHandler={termLinkEventTrackingHandler}
+							terms={stateExpandCharResults.results}
+							totalTermCount={stateExpandCharResults.meta.totalResults}
+						/>
+					)}
+					{stateExpandCharResults.results.length < 1 && <NoMatchingResults />}
+				</div>
+			) : (
+				<Spinner />
+			)}
 		</>
 	);
 };

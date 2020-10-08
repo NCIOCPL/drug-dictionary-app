@@ -50,7 +50,7 @@ const getDrugByIdOrName = async (req, res, next) => {
 		'mock-data',
 		'drugdictionary',
 		'v1',
-		'Drugs',
+		'Drugs'
 	);
 
 	try {
@@ -171,13 +171,16 @@ const getAutoSuggestResults = async (req, res, next) => {
 		'drugdictionary',
 		'v1',
 		'Autosuggest',
-		matchType,
+		matchType
 	);
 	try {
 		// IMPLEMENTOR NOTE: The mock data file name should be the end part of the path
 		// if it is dynamic and any other query params to make it distinct.
 		// This example is basic...
-		const mockFile = path.join(mockDir, `${encodeURIComponent(searchText)}.json`);
+		const mockFile = path.join(
+			mockDir,
+			`${encodeURIComponent(searchText)}.json`
+		);
 
 		try {
 			// Test if it exists.
@@ -205,22 +208,19 @@ const getAutoSuggestResults = async (req, res, next) => {
  */
 const getDrugsByExpandChar = async (req, res, next) => {
 	const { expandChar } = req.params;
-
+	const expandLetter = expandChar.toUpperCase();
 	// IMPLEMENTOR NOTE: Always good to integration test 500 errors with your app
-	if (expandChar === 'server-error') {
+	if (expandLetter === 'server-error') {
 		res.status(500).end();
 	}
-
 	// IMPLEMENTOR NOTE: Always good to integration test 404 errors with your app
-	if (expandChar === 'not-found') {
+	if (expandLetter === 'not-found') {
 		res.status(404).end();
 	}
-
 	// IMPLEMENTOR NOTE: Always good to integration test 400 errors with your app
-	if (expandChar === 'bad-request') {
+	if (expandLetter === 'bad-request') {
 		res.status(400).end();
 	}
-
 	// IMPLEMENTOR NOTE: The mock data should match the API's folder structure.
 	const mockDir = path.join(
 		__dirname,
@@ -231,10 +231,8 @@ const getDrugsByExpandChar = async (req, res, next) => {
 		'Drugs',
 		'expand'
 	);
-
 	try {
-		const mockFile = path.join(mockDir, `${expandChar}.json`);
-
+		const mockFile = path.join(mockDir, `${expandLetter}.json`);
 		try {
 			// Test if it exists.
 			await accessAsync(mockFile);
@@ -268,7 +266,10 @@ const getDrugsByExpandChar = async (req, res, next) => {
 const middleware = (app) => {
 	app.use('/api/drugdictionary/v1/Autosuggest', getAutoSuggestResults);
 	app.use('/api/drugdictionary/v1/Drugs/search', getDrugSearch);
-	app.use('/api/drugdictionary/v1/Drugs/expand/:expandChar', getDrugsByExpandChar);
+	app.use(
+		'/api/drugdictionary/v1/Drugs/expand/:expandChar',
+		getDrugsByExpandChar
+	);
 	// Should be last route on /Drugs
 	app.use('/api/drugdictionary/v1/Drugs/:idOrName', getDrugByIdOrName);
 

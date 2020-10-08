@@ -21,6 +21,10 @@ Then('page title on error page is {string}', (title) => {
 	cy.get('h1').should('contain', title);
 });
 
+And('introductory text appears below the page title', () => {
+	cy.get('h1').siblings('p').should('be.visible');
+});
+
 /*
     --------------------
         Page Visits
@@ -74,6 +78,10 @@ Then(
 		cy.location('href').should('eq', `${baseURL}${destURL}/${term}`);
 	}
 );
+
+And('the URL does not include {string}', (parameter) => {
+	cy.url().should('not.contain', parameter);
+});
 
 /*
     ----------------------------------------
@@ -299,6 +307,7 @@ When('user clicks on {string} button', (PtInfoButton) => {
 		.contains(PtInfoButton)
 		.trigger('click', { followRedirect: false });
 });
+
 /*
     ------------------
         Term List
@@ -360,9 +369,9 @@ And(
 	'the link {string} to {string} appears on the page',
 	(linkText, linkHref) => {
 		cy.get(`a[href="${linkHref}"]`).should('have.text', linkText);
-	});
+	}
+);
 
 And('the search bar appear below', () => {
 	cy.get('input#keywords').should('be.visible');
 });
-
