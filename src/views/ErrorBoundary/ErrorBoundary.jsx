@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import ErrorPage from './ErrorPage';
+import PageNotFound from './PageNotFound';
+
 
 class ErrorBoundary extends Component {
 	constructor(props) {
@@ -23,8 +25,12 @@ class ErrorBoundary extends Component {
 	render() {
 		const { error, hasError } = this.state;
 
-		if (error && hasError) {
-			return <ErrorPage />;
+		if (hasError) {
+			// Display 404 page only when current route matches a definition route
+			// and a 404 response is returned from the api
+			const showPageNotFound = window.location.pathname.includes('/def') && error.includes('404');
+
+			return showPageNotFound ? <PageNotFound /> : <ErrorPage />;
 		}
 		return this.props.children;
 	}

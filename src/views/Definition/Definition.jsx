@@ -10,7 +10,7 @@ import { useStateValue } from '../../store/store.js';
 
 const Definition = () => {
 	// Pull in the paths we are going to need on this view.
-	const { DefinitionPath } = useAppPaths();
+	const { DefinitionPath, PageNotFound } = useAppPaths();
 	const params = useParams();
 	const { idOrName } = params;
 	const queryResponse = useCustomQuery(getDrugDefinition({ idOrName }));
@@ -63,6 +63,7 @@ const Definition = () => {
 
 	useEffect(() => {
 		if (queryResponse.payload && !drugDefinitionLoaded) {
+
 			setDrugDefinition(queryResponse);
 			setDrugDefinitionLoaded(true);
 			//redirect to PrettyUrlName when ID is provided in the url
