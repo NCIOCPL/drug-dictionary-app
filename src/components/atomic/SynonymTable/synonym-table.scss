@@ -19,10 +19,12 @@ table.synonym tbody tr td,
 table.synonym tr td {
 	display: table-cell;
 	line-height: inherit;
+	text-align: left;
 }
 table.synonym tr td,
 table.synonym tr th {
 	color: #2e2e2e;
 	font-size: 14px;
 	padding: 7.875px 8.75px;
+	text-align: left;
 }
