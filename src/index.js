@@ -46,7 +46,7 @@ const initialize = ({
 	siteName = 'National Cancer Institute',
 } = {}) => {
 	const appRootDOMNode = document.getElementById(rootId);
-	const isRehydrating = appRootDOMNode.getAttribute('data-isRehydrating');
+  const isRehydrating = appRootDOMNode.getAttribute('data-isRehydrating') || false;
 
 	//populate global state with init params
 	const initialState = {
