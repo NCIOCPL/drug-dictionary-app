@@ -1,7 +1,17 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
+import { MemoryRouter } from 'react-router';
 
 import TermList from '../term-list';
+import { useStateValue } from '../../../../store/store';
+
+jest.mock('../../../../store/store.js');
+
+useStateValue.mockReturnValue([
+	{
+		basePath: '/',
+	},
+]);
 
 describe('<TermList />', () => {
 	const props = {
@@ -97,7 +107,9 @@ describe('<TermList />', () => {
 	};
 	test.only('should show term list page title with result count', () => {
 		render(
-			<TermList {...props} />
+      <MemoryRouter initialEntries={['/']}>
+        <TermList {...props} />
+      </MemoryRouter>
 		);
 
 		expect(screen.getByText('3 results found for: A')).toBeInTheDocument();
