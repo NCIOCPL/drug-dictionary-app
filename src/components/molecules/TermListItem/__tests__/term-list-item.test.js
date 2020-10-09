@@ -1,5 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
+import { MemoryRouter } from 'react-router';
 
 import TermListItem from '../term-list-item';
 
@@ -11,17 +12,19 @@ describe('<TermListItem />', () => {
 		const termDefinition =
 			'An orally bioavailable protein tyrosine kinase inhibitor of mutated forms of the tumor-associated antigen mast/stem cell factor receptor c-Kit (SCFR), with potential antineoplastic activity. Upon oral administration, c-Kit inhibitor PLX9486 binds to and inhibits specific c-Kit mutants. This may result in an inhibition of tumor cell proliferation in cancer cell types that overexpress these c-Kit mutations. c-Kit, a transmembrane protein and receptor tyrosine kinase, is overexpressed in solid tumors and hematological malignancies; it plays a key role in the regulation of cell differentiation and proliferation.';
 		const termId = 770823;
-		const termLinkPath = jest.fn(({ idOrName }) => `/def/${idOrName}`);
+		const termLinkPath = '/def/c-kit-inhibitor-plx9486';
 
 		const { container } = render(
-			<TermListItem
-				itemIndex={itemIndex}
-				prettyUrlName={prettyUrlName}
-				term={term}
-				termDefinition={termDefinition}
-				termId={termId}
-				termLinkPath={termLinkPath}
-			/>
+			<MemoryRouter initialEntries={['/']}>
+				<TermListItem
+					itemIndex={itemIndex}
+					prettyUrlName={prettyUrlName}
+					term={term}
+					termDefinition={termDefinition}
+					termId={termId}
+					termLinkPath={termLinkPath}
+				/>
+			</MemoryRouter>
 		);
 
 		expect(screen.getByText('c-Kit inhibitor PLX9486')).toBeInTheDocument();
@@ -42,16 +45,18 @@ describe('<TermListItem />', () => {
 		const termDefinition =
 			'An orally bioavailable protein tyrosine kinase inhibitor of mutated forms of the tumor-associated antigen mast/stem cell factor receptor c-Kit (SCFR), with potential antineoplastic activity. Upon oral administration, c-Kit inhibitor PLX9486 binds to and inhibits specific c-Kit mutants. This may result in an inhibition of tumor cell proliferation in cancer cell types that overexpress these c-Kit mutations. c-Kit, a transmembrane protein and receptor tyrosine kinase, is overexpressed in solid tumors and hematological malignancies; it plays a key role in the regulation of cell differentiation and proliferation.';
 		const termId = 770823;
-		const termLinkPath = jest.fn(({ idOrName }) => `/def/${idOrName}`);
+		const termLinkPath = '/def/770823';
 		console.error = jest.fn();
 		const { container } = render(
-			<TermListItem
-				itemIndex={itemIndex}
-				term={term}
-				termDefinition={termDefinition}
-				termId={termId}
-				termLinkPath={termLinkPath}
-			/>
+			<MemoryRouter initialEntries={['/']}>
+				<TermListItem
+					itemIndex={itemIndex}
+					term={term}
+					termDefinition={termDefinition}
+					termId={termId}
+					termLinkPath={termLinkPath}
+				/>
+			</MemoryRouter>
 		);
 		fireEvent.click(screen.getByRole('link'));
 		expect(container.querySelector('a')).toHaveAttribute('href', '/def/770823');
@@ -63,11 +68,15 @@ describe('<TermListItem />', () => {
 			preferredName: 'etaracizumab',
 			term: 'Abegrin',
 			termId: 38491,
-			termLinkPath: jest.fn(({ idOrName }) => `/def/${idOrName}`),
+			termLinkPath: '/def/etaracizumab',
 			prettyUrlName: 'etaracizumab',
 		};
 
-		render(<TermListItem {...props} />);
+		render(
+			<MemoryRouter initialEntries={['/']}>
+				<TermListItem {...props} />
+			</MemoryRouter>
+		);
 		expect(
 			screen.getByText('(Other name for: etaracizumab)')
 		).toBeInTheDocument();
@@ -80,19 +89,21 @@ describe('<TermListItem />', () => {
 		const termDefinition =
 			'An orally bioavailable protein tyrosine kinase inhibitor of mutated forms of the tumor-associated antigen mast/stem cell factor receptor c-Kit (SCFR), with potential antineoplastic activity. Upon oral administration, c-Kit inhibitor PLX9486 binds to and inhibits specific c-Kit mutants. This may result in an inhibition of tumor cell proliferation in cancer cell types that overexpress these c-Kit mutations. c-Kit, a transmembrane protein and receptor tyrosine kinase, is overexpressed in solid tumors and hematological malignancies; it plays a key role in the regulation of cell differentiation and proliferation.';
 		const termId = 770823;
-		const termLinkPath = jest.fn(({ idOrName }) => `/def/${idOrName}`);
+		const termLinkPath = '/def/c-kit-inhibitor-plx9486';
 		const termLinkTrackingHandler = jest.fn();
 		console.error = jest.fn();
 		render(
-			<TermListItem
-				itemIndex={itemIndex}
-				prettyUrlName={prettyUrlName}
-				term={term}
-				termDefinition={termDefinition}
-				termId={termId}
-				termLinkTrackingHandler={termLinkTrackingHandler}
-				termLinkPath={termLinkPath}
-			/>
+			<MemoryRouter initialEntries={['/']}>
+				<TermListItem
+					itemIndex={itemIndex}
+					prettyUrlName={prettyUrlName}
+					term={term}
+					termDefinition={termDefinition}
+					termId={termId}
+					termLinkTrackingHandler={termLinkTrackingHandler}
+					termLinkPath={termLinkPath}
+				/>
+			</MemoryRouter>
 		);
 		const termLink = screen.getByRole('link');
 		expect(termLink.textContent).toBe('c-Kit inhibitor PLX9486');

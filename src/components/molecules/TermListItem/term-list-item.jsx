@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 import './term-list-item.scss';
 
 const TermListItem = ({
@@ -28,9 +30,11 @@ const TermListItem = ({
 		<>
 			<dt>
 				<dfn data-cdr-id={termId}>
-					<a href={termLinkPath({ idOrName })} onClick={termLinkClickHandler}>
+					<Link
+						to={termLinkPath}
+						onClick={termLinkClickHandler}>
 						{term}
-					</a>
+					</Link>
 				</dfn>
 			</dt>
 			<dd dangerouslySetInnerHTML={{ __html: definitionText }}></dd>
@@ -45,7 +49,7 @@ TermListItem.propTypes = {
 	term: PropTypes.string.isRequired,
 	termDefinition: PropTypes.string,
 	termId: PropTypes.number.isRequired,
-	termLinkPath: PropTypes.any.isRequired,
+	termLinkPath: PropTypes.string.isRequired,
 	termLinkTrackingHandler: PropTypes.func,
 };
 

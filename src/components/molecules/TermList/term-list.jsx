@@ -2,22 +2,25 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import TermListItem from '../TermListItem';
+import { useAppPaths } from '../../../hooks';
 
 const TermList = ({
 	searchTerm,
-	termLinkPath,
 	termLinkTrackingHandler,
 	terms,
 	totalTermCount,
 }) => {
+  const { DefinitionPath } = useAppPaths();
+
 	return (
 		<>
 			<h4> {`${totalTermCount} results found for: ${searchTerm}`} </h4>
 			<dl>
 				{terms.map((term, index) => {
+          const idOrName = term.prettyUrlName ? term.prettyUrlName : term.termId;
 					return (
 						<TermListItem
-							itemIndex={index+1}
+							itemIndex={index + 1}
 							key={index}
 							preferredName={term.preferredName}
 							prettyUrlName={term.prettyUrlName}
@@ -25,7 +28,7 @@ const TermList = ({
 							termDefinition={term?.definition?.html}
 							termId={term.termId}
 							termLinkTrackingHandler={termLinkTrackingHandler}
-							termLinkPath={termLinkPath}
+							termLinkPath={DefinitionPath({ idOrName })}
 						/>
 					);
 				})}
@@ -36,7 +39,6 @@ const TermList = ({
 
 TermList.propTypes = {
 	searchTerm: PropTypes.string.isRequired,
-	termLinkPath: PropTypes.any.isRequired,
 	termLinkTrackingHandler: PropTypes.func,
 	terms: PropTypes.arrayOf(PropTypes.shape({
 		aliases: PropTypes.arrayOf(PropTypes.object),
