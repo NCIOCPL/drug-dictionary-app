@@ -121,7 +121,7 @@ const getDrugSearch = async (req, res, next) => {
 		// IMPLEMENTOR NOTE: The mock data file name should be the end part of the path
 		// if it is dynamic and any other query params to make it distinct.
 		// This example is basic...
-		const mockFile = path.join(mockDir, `${query}.json`);
+		const mockFile = path.join(mockDir, `${encodeURIComponent(query)}.json`);
 
 		try {
 			// Test if it exists.

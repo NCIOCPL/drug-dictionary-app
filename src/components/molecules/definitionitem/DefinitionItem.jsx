@@ -2,8 +2,6 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { useTracking } from 'react-tracking';
 
-import './DefinitionItem.scss';
-
 import { SynonymTable } from '../../atomic';
 import { useStateValue } from '../../../store/store.js';
 
@@ -16,7 +14,12 @@ const DefinitionItem = ({
 	name,
 }) => {
 	const [
-		{ analyticsName, dictionaryTitle, nciThesaurusConceptLink, ctsDynamicListingPageBase },
+		{
+			analyticsName,
+			dictionaryTitle,
+			nciThesaurusConceptLink,
+			ctsDynamicListingPageBase,
+		},
 	] = useStateValue();
 
 	const tracking = useTracking();
@@ -29,7 +32,7 @@ const DefinitionItem = ({
 			analyticsName,
 			dictionaryTitle,
 			term: name,
-			id: termId
+			id: termId,
 		});
 	};
 	const renderSupplementalLinks = () => {
@@ -57,7 +60,8 @@ const DefinitionItem = ({
 			{drugInfoSummaryLink && (
 				<a
 					className="dictionary-definiton__patient-information-button"
-					href={drugInfoSummaryLink.uri} onClick={handlePatientInfoButtonClick} >
+					href={drugInfoSummaryLink.uri}
+					onClick={handlePatientInfoButtonClick}>
 					View Patient Information
 				</a>
 			)}

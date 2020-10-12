@@ -1,0 +1,42 @@
+ul.search-results-alias-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		display: inline-block;
+		font-weight: 400;
+		margin: 0 16px 0 0;
+		padding: 0;
+	}
+
+	li:before {
+		content: '';
+	}
+
+	li:after {
+		content: '\003B';
+		display: inline;
+		position: relative;
+		float: right;
+		right: -0.16em;
+		top: 0.25em;
+		margin: 0 -0.2em;
+		font-size: 1.1em;
+		line-height: 0.90909em;
+	}
+
+	li:last-child {
+		margin: 0;
+	}
+	li:first-child {
+		font-weight: 700;
+	}
+
+	li:first-child:after {
+		content: '\003A';
+	}
+	li:last-child:after {
+		content: '';
+	}
+}

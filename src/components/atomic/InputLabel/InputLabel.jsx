@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import './InputLabel.scss';
-
 const InputLabel = ({ label, labelHint, htmlFor, required, hasError }) => {
 	let classes = 'ncids-label';
 	classes += required ? ' ncids-label--required' : '';

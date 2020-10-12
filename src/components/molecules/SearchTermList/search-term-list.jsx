@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import TermListItem from '../TermListItem';
+import SearchTermListItem from '../SearchTermListItem';
 import { useAppPaths } from '../../../hooks';
 
-const TermList = ({
+const SearchTermList = ({
 	searchTerm,
 	termLinkTrackingHandler,
 	terms,
@@ -21,11 +21,13 @@ const TermList = ({
 						? term.prettyUrlName
 						: term.termId;
 					return (
-						<TermListItem
+						<SearchTermListItem
+							aliases={term.aliases}
 							itemIndex={index + 1}
 							key={index}
 							preferredName={term.preferredName}
 							prettyUrlName={term.prettyUrlName}
+							searchTerm={searchTerm}
 							term={term.name}
 							termDefinition={term?.definition?.html}
 							termId={term.termId}
@@ -39,8 +41,9 @@ const TermList = ({
 	);
 };
 
-TermList.propTypes = {
+SearchTermList.propTypes = {
 	searchTerm: PropTypes.string.isRequired,
+	showSynonymTitle: PropTypes.bool,
 	termLinkTrackingHandler: PropTypes.func,
 	terms: PropTypes.arrayOf(
 		PropTypes.shape({
@@ -60,4 +63,4 @@ TermList.propTypes = {
 	totalTermCount: PropTypes.number.isRequired,
 };
 
-export default TermList;
+export default SearchTermList;

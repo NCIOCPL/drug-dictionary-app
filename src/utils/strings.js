@@ -1,5 +1,10 @@
+// Need to escape user inputs which may include " \ ^ $ * + ? . ( ) | { } [ ] "
+// which would break regular expressions here
+function escapeRegExp(string) {
+	return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+}
+
 export const emboldenSubstring = (str, subStr) => {
-	// Escape special character first before building expression
-	const regex = new RegExp(subStr.replace(/[-[\]{}()*+!<=:?.\\^$|#\s,]/g, '\\$&'), 'i');
+	const regex = new RegExp(escapeRegExp(subStr), 'i');
 	return str.replace(regex, '<strong>$&</strong>');
 };

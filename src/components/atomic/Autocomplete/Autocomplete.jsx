@@ -2,8 +2,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import './Autocomplete.scss';
-
 import { InputLabel, RemovableTag } from '../../atomic';
 
 const IMPERATIVE_API = [

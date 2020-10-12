@@ -1,0 +1,280 @@
+{
+  "meta": {
+    "totalResults": 5,
+    "from": 0
+  },
+  "results": [
+    {
+      "aliases": [
+        {
+          "type": "Synonym",
+          "name": "glecaprevir and pibrentasvir"
+        },
+        {
+          "type": "Synonym",
+          "name": "glecaprevir-pibrentasvir"
+        },
+        {
+          "type": "USBrandName",
+          "name": "Mavyret"
+        },
+        {
+          "type": "Abbreviation",
+          "name": "GLE/PIB"
+        },
+        {
+          "type": "CodeName",
+          "name": "ABT-493/ABT-530"
+        }
+      ],
+      "definition": {
+        "html": "A fixed dose combination of glecaprevir, an inhibitor of the hepatitis C virus (HCV) NS3/4A serine protease, and pibrentasvir, an inhibitor of the HCV non-structural protein 5A (NS5A), with activity against HCV genotypes 1-6. Upon oral administration of glecaprevir/pibrentasvir, glecaprevir inhibits the HCV NS3/4A serine protease enzyme, thereby disrupting the cleavage of the virally encoded polyprotein into mature proteins and preventing the formation of the viral replication complex. Pibrentasvir inhibits the activity of the NS5A protein, leading to disruption of the viral RNA replication complex, blockage of HCV RNA production, and inhibition of viral replication. HCV is a small, enveloped, single-stranded RNA virus belonging to the Flaviviridae family; HCV infection is associated with the development of certain cancers.",
+        "text": "A fixed dose combination of glecaprevir, an inhibitor of the hepatitis C virus (HCV) NS3/4A serine protease, and pibrentasvir, an inhibitor of the HCV non-structural protein 5A (NS5A), with activity against HCV genotypes 1-6. Upon oral administration of glecaprevir/pibrentasvir, glecaprevir inhibits the HCV NS3/4A serine protease enzyme, thereby disrupting the cleavage of the virally encoded polyprotein into mature proteins and preventing the formation of the viral replication complex. Pibrentasvir inhibits the activity of the NS5A protein, leading to disruption of the viral RNA replication complex, blockage of HCV RNA production, and inhibition of viral replication. HCV is a small, enveloped, single-stranded RNA virus belonging to the Flaviviridae family; HCV infection is associated with the development of certain cancers."
+      },
+      "drugInfoSummaryLink": null,
+      "nciConceptId": "C160484",
+      "nciConceptName": "Glecaprevir/Pibrentasvir",
+      "termId": 798328,
+      "name": "glecaprevir/pibrentasvir",
+      "firstLetter": "g",
+      "type": "DrugTerm",
+      "termNameType": "PreferredName",
+      "prettyUrlName": "glecaprevir-pibrentasvir"
+    },
+    {
+      "aliases": [
+        {
+          "type": "Synonym",
+          "name": "antibody-drug conjugate CR011-vcMMAE"
+        },
+        {
+          "type": "Synonym",
+          "name": "anti-glycoprotein NMB monoclonal antibody-monomethyl auristatin E conjugate CR011-vcMMAE"
+        },
+        {
+          "type": "CodeName",
+          "name": "CDX-011"
+        }
+      ],
+      "definition": {
+        "html": "An antibody-drug conjugate, consisting of the fully human monoclonal antibody CR011 directed against glycoprotein NMB (GPNMB) and conjugated via a cathepsin B-sensitive valine-citrulline (vc) linkage to the cytotoxic agent monomethyl auristatin E (MMAE), with potential antineoplastic activity. Upon administration, the monoclonal antibody CR011 moiety binds to glycoprotein nmb (GPNMB), expressed on the surfaces of a variety of cancer cell types; upon endocytosis, the synthetic  dolastin analogue MMAE is released via enzymatic cleavage into the tumor cell cytosol, where it binds to tubulin and inhibits tubulin polymerization, which may result in G2/M phase arrest and apoptosis. The vc linkage system is highly stable in serum, rendering the cytotoxicity of glembatumumab vedotin specific for GPNMB-positive cells. GPNMB is a transmembrane protein overexpressed on the surfaces of various cancer cell types, including melanoma, breast, and prostate cancer cells.",
+        "text": "An antibody-drug conjugate, consisting of the fully human monoclonal antibody CR011 directed against glycoprotein NMB (GPNMB) and conjugated via a cathepsin B-sensitive valine-citrulline (vc) linkage to the cytotoxic agent monomethyl auristatin E (MMAE), with potential antineoplastic activity. Upon administration, the monoclonal antibody CR011 moiety binds to glycoprotein nmb (GPNMB), expressed on the surfaces of a variety of cancer cell types; upon endocytosis, the synthetic  dolastin analogue MMAE is released via enzymatic cleavage into the tumor cell cytosol, where it binds to tubulin and inhibits tubulin polymerization, which may result in G2/M phase arrest and apoptosis. The vc linkage system is highly stable in serum, rendering the cytotoxicity of glembatumumab vedotin specific for GPNMB-positive cells. GPNMB is a transmembrane protein overexpressed on the surfaces of various cancer cell types, including melanoma, breast, and prostate cancer cells."
+      },
+      "drugInfoSummaryLink": null,
+      "nciConceptId": "C78449",
+      "nciConceptName": "Glembatumumab Vedotin",
+      "termId": 599456,
+      "name": "glembatumumab vedotin",
+      "firstLetter": "g",
+      "type": "DrugTerm",
+      "termNameType": "PreferredName",
+      "prettyUrlName": "glembatumumab-vedotin"
+    },
+    {
+      "aliases": [
+        {
+          "type": "CodeName",
+          "name": "MGCD265"
+        },
+        {
+          "type": "Synonym",
+          "name": "multitargeted tyrosine kinase inhibitor MGCD265"
+        }
+      ],
+      "definition": {
+        "html": "An orally bioavailable, small-molecule, multitargeted tyrosine kinase inhibitor with potential antineoplastic activity. Glesatinib binds to and inhibits the phosphorylation of several receptor tyrosine kinases (RTKs), including the c-Met receptor (hepatocyte growth factor receptor); the Tek/Tie-2 receptor; vascular endothelial growth factor receptor (VEGFR) types 1, 2, and 3; and the macrophage-stimulating 1 receptor (MST1R or RON). Inhibition of these RTKs and their downstream signaling pathways may result in the inhibition of tumor angiogenesis and tumor cell proliferation in tumors overexpressing these RTKs.",
+        "text": "An orally bioavailable, small-molecule, multitargeted tyrosine kinase inhibitor with potential antineoplastic activity. Glesatinib binds to and inhibits the phosphorylation of several receptor tyrosine kinases (RTKs), including the c-Met receptor (hepatocyte growth factor receptor); the Tek/Tie-2 receptor; vascular endothelial growth factor receptor (VEGFR) types 1, 2, and 3; and the macrophage-stimulating 1 receptor (MST1R or RON). Inhibition of these RTKs and their downstream signaling pathways may result in the inhibition of tumor angiogenesis and tumor cell proliferation in tumors overexpressing these RTKs."
+      },
+      "drugInfoSummaryLink": null,
+      "nciConceptId": "C77876",
+      "nciConceptName": "Glesatinib",
+      "termId": 597305,
+      "name": "glesatinib",
+      "firstLetter": "g",
+      "type": "DrugTerm",
+      "termNameType": "PreferredName",
+      "prettyUrlName": "glesatinib"
+    },
+    {
+      "aliases": [
+        {
+          "type": "CodeName",
+          "name": "CGP 57148"
+        },
+        {
+          "type": "LexicalVariant",
+          "name": "CGP-57148"
+        },
+        {
+          "type": "LexicalVariant",
+          "name": "CGP57148"
+        },
+        {
+          "type": "USBrandName",
+          "name": "Gleevec"
+        },
+        {
+          "type": "ForeignBrandName",
+          "name": "Glivec"
+        },
+        {
+          "type": "LexicalVariant",
+          "name": "STI571"
+        },
+        {
+          "type": "ChemicalStructureName",
+          "name": "4-[(4-methyl-1-piperazinyl)methyl]-N-[4-methyl-3-[[4-(3-pyridinyl)-2-pyrimidinyl]amino]-phenyl]benzamide methanesulfonate"
+        },
+        {
+          "type": "CodeName",
+          "name": "CGP57148B"
+        },
+        {
+          "type": "CodeName",
+          "name": "STI-571"
+        },
+        {
+          "type": "INDCode",
+          "name": "61135"
+        },
+        {
+          "type": "NSCNumber",
+          "name": "716051"
+        },
+        {
+          "type": "CASRegistryName",
+          "name": "152459-95-5"
+        }
+      ],
+      "definition": {
+        "html": "The mesylate salt of imatinib, a tyrosine kinase inhibitor with antineoplastic activity. Imatinib binds to an intracellular pocket located within tyrosine kinases (TK), thereby inhibiting ATP binding and preventing phosphorylation and the subsequent activation of growth receptors and their downstream signal transduction pathways. This agent inhibits TK encoded by the bcr-abl oncogene as well as receptor TKs encoded by the c-kit and platelet-derived growth factor receptor (PDGFR) oncogenes. Inhibition of the bcr-abl TK results in decreased proliferation and enhanced apoptosis in malignant cells of Philadelphia-positive (Ph+) hematological malignancies such as CML and ALL; effects on c-kit TK activity inhibit mast-cell and cellular proliferation in those diseases overexpressing c-kit, such as mastocytosis and gastrointestinal stromal tumor (GIST).",
+        "text": "The mesylate salt of imatinib, a tyrosine kinase inhibitor with antineoplastic activity. Imatinib binds to an intracellular pocket located within tyrosine kinases (TK), thereby inhibiting ATP binding and preventing phosphorylation and the subsequent activation of growth receptors and their downstream signal transduction pathways. This agent inhibits TK encoded by the bcr-abl oncogene as well as receptor TKs encoded by the c-kit and platelet-derived growth factor receptor (PDGFR) oncogenes. Inhibition of the bcr-abl TK results in decreased proliferation and enhanced apoptosis in malignant cells of Philadelphia-positive (Ph+) hematological malignancies such as CML and ALL; effects on c-kit TK activity inhibit mast-cell and cellular proliferation in those diseases overexpressing c-kit, such as mastocytosis and gastrointestinal stromal tumor (GIST)."
+      },
+      "drugInfoSummaryLink": {
+        "uri": "https://www.cancer.gov/about-cancer/treatment/drugs/imatinibmesylate",
+        "text": "Imatinib Mesylate"
+      },
+      "nciConceptId": "C1687",
+      "nciConceptName": "Imatinib Mesylate",
+      "termId": 37862,
+      "name": "imatinib mesylate",
+      "firstLetter": "i",
+      "type": "DrugTerm",
+      "termNameType": "PreferredName",
+      "prettyUrlName": "imatinib-mesylate"
+    },
+    {
+      "aliases": [
+        {
+          "type": "ForeignBrandName",
+          "name": "Belustine"
+        },
+        {
+          "type": "Abbreviation",
+          "name": "CCNU"
+        },
+        {
+          "type": "Acronym",
+          "name": "CCNU"
+        },
+        {
+          "type": "ObsoleteName",
+          "name": "CeeNU"
+        },
+        {
+          "type": "USBrandName",
+          "name": "Gleostine"
+        },
+        {
+          "type": "LexicalVariant",
+          "name": "chloroethylcyclohexylnitrosourea"
+        },
+        {
+          "type": "ChemicalStructureName",
+          "name": "1-(2-chloroethyl)-3-cyclohexyl-1-nitrosourea"
+        },
+        {
+          "type": "ForeignBrandName",
+          "name": "Belustin"
+        },
+        {
+          "type": "ForeignBrandName",
+          "name": "Cecenu"
+        },
+        {
+          "type": "ChemicalStructureName",
+          "name": "chloroethylcyclo-hexylnitrosourea"
+        },
+        {
+          "type": "ForeignBrandName",
+          "name": "Citostal"
+        },
+        {
+          "type": "ForeignBrandName",
+          "name": "Lomeblastin"
+        },
+        {
+          "type": "Synonym",
+          "name": "Lomustinum"
+        },
+        {
+          "type": "ForeignBrandName",
+          "name": "Lucostin"
+        },
+        {
+          "type": "ForeignBrandName",
+          "name": "Lucostine"
+        },
+        {
+          "type": "ChemicalStructureName",
+          "name": "N-(2-chloroethyl)-N'-cyclohexyl-N-nitrosourea"
+        },
+        {
+          "type": "ForeignBrandName",
+          "name": "Prava"
+        },
+        {
+          "type": "CodeName",
+          "name": "RB-1509"
+        },
+        {
+          "type": "CodeName",
+          "name": "WR-139017"
+        },
+        {
+          "type": "ChemicalStructureName",
+          "name": "1-nitrosourea, 1-(2-chloroethyl)-3-cyclohexyl-"
+        },
+        {
+          "type": "INDCode",
+          "name": "4595"
+        },
+        {
+          "type": "NSCNumber",
+          "name": "79037"
+        },
+        {
+          "type": "CASRegistryName",
+          "name": "13010-47-4"
+        }
+      ],
+      "definition": {
+        "html": "A nitrosourea with antineoplastic activity. Lomustine alkylates and crosslinks DNA, thereby inhibiting DNA and RNA synthesis.  This agent also carbamoylates DNA and proteins, resulting in inhibition of DNA and RNA synthesis and disruption of RNA processing.  Lomustine is lipophilic and crosses the blood-brain barrier.",
+        "text": "A nitrosourea with antineoplastic activity. Lomustine alkylates and crosslinks DNA, thereby inhibiting DNA and RNA synthesis.  This agent also carbamoylates DNA and proteins, resulting in inhibition of DNA and RNA synthesis and disruption of RNA processing.  Lomustine is lipophilic and crosses the blood-brain barrier."
+      },
+      "drugInfoSummaryLink": {
+        "uri": "https://www.cancer.gov/about-cancer/treatment/drugs/lomustine",
+        "text": "Lomustine"
+      },
+      "nciConceptId": "C617",
+      "nciConceptName": "Lomustine",
+      "termId": 43065,
+      "name": "lomustine",
+      "firstLetter": "l",
+      "type": "DrugTerm",
+      "termNameType": "PreferredName",
+      "prettyUrlName": "lomustine"
+    }
+  ],
+  "links": null
+}
