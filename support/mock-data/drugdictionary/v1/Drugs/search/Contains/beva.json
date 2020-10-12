@@ -1,0 +1,280 @@
+{
+"meta": {
+    "totalResults": 6,
+    "from": 0
+  },
+  "results": [
+    {
+      "aliases": [
+        {
+          "type": "USBrandName",
+          "name": "Avastin"
+        },
+        {
+          "type": "USBrandName",
+          "name": "Mvasi"
+        },
+        {
+          "type": "Synonym",
+          "name": "anti-VEGF monoclonal antibody"
+        },
+        {
+          "type": "Synonym",
+          "name": "rhuMAb VEGF"
+        },
+        {
+          "type": "Abbreviation",
+          "name": "rhuMAb VEGF"
+        },
+        {
+          "type": "Synonym",
+          "name": "anti-VEGF humanized monoclonal antibody"
+        },
+        {
+          "type": "Synonym",
+          "name": "anti-VEGF rhuMAb"
+        },
+        {
+          "type": "Synonym",
+          "name": "recombinant humanized anti-VEGF monoclonal antibody"
+        },
+        {
+          "type": "INDCode",
+          "name": "9877"
+        },
+        {
+          "type": "INDCode",
+          "name": "11460"
+        },
+        {
+          "type": "INDCode",
+          "name": "7921"
+        },
+        {
+          "type": "NSCNumber",
+          "name": "704865"
+        },
+        {
+          "type": "Abbreviation",
+          "name": "rhuMab-VEGF"
+        },
+        {
+          "type": "Synonym",
+          "name": "bevacizumab biosimilar BEVZ92"
+        },
+        {
+          "type": "Synonym",
+          "name": "bevacizumab biosimilar BI 695502"
+        },
+        {
+          "type": "Synonym",
+          "name": "bevacizumab biosimilar FKB238"
+        },
+        {
+          "type": "Synonym",
+          "name": "bevacizumab biosimilar GB-222"
+        },
+        {
+          "type": "Synonym",
+          "name": "bevacizumab biosimilar PF-06439535"
+        },
+        {
+          "type": "Synonym",
+          "name": "bevacizumab biosimilar QL 1101"
+        },
+        {
+          "type": "Synonym",
+          "name": "bevacizumab biosimilar CBT 124"
+        },
+        {
+          "type": "Synonym",
+          "name": "bevacizumab biosimilar MIL60"
+        },
+        {
+          "type": "Synonym",
+          "name": "bevacizumab biosimilar MB02"
+        },
+        {
+          "type": "Synonym",
+          "name": "bevacizumab biosimilar HD204"
+        },
+        {
+          "type": "Synonym",
+          "name": "bevacizumab biosimilar BAT1706"
+        },
+        {
+          "type": "Synonym",
+          "name": "bevacizumab biosimilar HLX04"
+        },
+        {
+          "type": "Synonym",
+          "name": "bevacizumab biosimilar IBI305"
+        },
+        {
+          "type": "Synonym",
+          "name": "bevacizumab biosimilar SCT510"
+        },
+        {
+          "type": "Synonym",
+          "name": "bevacizumab biosimilar LY01008"
+        },
+        {
+          "type": "Synonym",
+          "name": "bevacizumab biosimilar CT-P16"
+        },
+        {
+          "type": "Synonym",
+          "name": "bevacizumab biosimilar RPH-001"
+        },
+        {
+          "type": "Synonym",
+          "name": "bevacizumab biosimilar TRS003"
+        },
+        {
+          "type": "CodeName",
+          "name": "HD204"
+        },
+        {
+          "type": "Synonym",
+          "name": "immunoglobulin G1 (human-mouse monoclonal rhuMab-VEGF gamma-chain anti-human vascular endothelial growth factor), disulfide with human-mouse monoclonal rhuMab-VEGF light chain, dimer"
+        }
+      ],
+      "definition": {
+        "html": "A recombinant humanized monoclonal antibody directed against the vascular endothelial growth factor (VEGF), a pro-angiogenic cytokine.  Bevacizumab binds to VEGF and inhibits VEGF receptor binding, thereby preventing the growth and maintenance of tumor blood vessels.",
+        "text": "A recombinant humanized monoclonal antibody directed against the vascular endothelial growth factor (VEGF), a pro-angiogenic cytokine.  Bevacizumab binds to VEGF and inhibits VEGF receptor binding, thereby preventing the growth and maintenance of tumor blood vessels."
+      },
+      "drugInfoSummaryLink": {
+        "uri": "https://www.cancer.gov/about-cancer/treatment/drugs/bevacizumab",
+        "text": "Bevacizumab"
+      },
+      "nciConceptId": "C2039",
+      "nciConceptName": "Bevacizumab",
+      "termId": 43234,
+      "name": "bevacizumab",
+      "firstLetter": "b",
+      "type": "DrugTerm",
+      "termNameType": "PreferredName",
+      "prettyUrlName": "bevacizumab"
+    },
+    {
+      "aliases": null,
+      "definition": {
+        "html": "An immunoconjugate and a fluorescent tracer consisting of the recombinant humanized anti-vascular endothelial growth factor (VEGF) monoclonal antibody bevacizumab conjugated to the N-hydroxysuccinamide (NHS) ester form of the near-infrared (NIR) fluorescent dye IRDye 800CW, that may be used for VEGF-specific tumor imaging. Upon administration, the bevacizumab moiety of bevacizumab-IRDye 800CW binds to VEGF and the fluorescent signal can be visualized using NIR fluorescence imaging (700–1,000 nm).",
+        "text": "An immunoconjugate and a fluorescent tracer consisting of the recombinant humanized anti-vascular endothelial growth factor (VEGF) monoclonal antibody bevacizumab conjugated to the N-hydroxysuccinamide (NHS) ester form of the near-infrared (NIR) fluorescent dye IRDye 800CW, that may be used for VEGF-specific tumor imaging. Upon administration, the bevacizumab moiety of bevacizumab-IRDye 800CW binds to VEGF and the fluorescent signal can be visualized using NIR fluorescence imaging (700–1,000 nm)."
+      },
+      "drugInfoSummaryLink": null,
+      "nciConceptId": "C101261",
+      "nciConceptName": "Bevacizumab-IRDye 800CW",
+      "termId": 729590,
+      "name": "bevacizumab-IRDye 800CW",
+      "firstLetter": "b",
+      "type": "DrugTerm",
+      "termNameType": "PreferredName",
+      "prettyUrlName": "bevacizumab-irdye-800cw"
+    },
+    {
+      "aliases": [
+        {
+          "type": "Synonym",
+          "name": "carboplatin-paclitaxel-bevacizumab regimen"
+        }
+      ],
+      "definition": {
+        "html": " A chemoimmunotherapy regimen consisting of carboplatin, paclitaxel (Taxol) and bevacizumab used for the treatment of advanced-stage, nonsquamous non-small cell lung cancer.",
+        "text": " A chemoimmunotherapy regimen consisting of carboplatin, paclitaxel (Taxol) and bevacizumab used for the treatment of advanced-stage, nonsquamous non-small cell lung cancer."
+      },
+      "drugInfoSummaryLink": null,
+      "nciConceptId": "C63413",
+      "nciConceptName": "Bevacizumab/Carboplatin/Paclitaxel Regimen",
+      "termId": 657275,
+      "name": "carboplatin-Taxol-bevacizumab regimen",
+      "firstLetter": "c",
+      "type": "DrugTerm",
+      "termNameType": "PreferredName",
+      "prettyUrlName": "bevacizumab-carboplatin-paclitaxel-regimen"
+    },
+    {
+      "aliases": [
+        {
+          "type": "Synonym",
+          "name": "folinic acid-fluorouracil-irinotecan-bevacizumab regimen"
+        },
+        {
+          "type": "Synonym",
+          "name": "FOLFIRI-Avastin regimen"
+        }
+      ],
+      "definition": {
+        "html": "A first-line chemotherapy regimen consisting of folinic acid (leucovorin), fluorouracil, irinotecan and bevacizumab used for the treatment of advanced-stage colorectal cancer.",
+        "text": "A first-line chemotherapy regimen consisting of folinic acid (leucovorin), fluorouracil, irinotecan and bevacizumab used for the treatment of advanced-stage colorectal cancer."
+      },
+      "drugInfoSummaryLink": {
+        "uri": "https://www.cancer.gov/about-cancer/treatment/drugs/FOLFIRI-BEVACIZUMAB",
+        "text": "FOLFIRI-BEVACIZUMAB"
+      },
+      "nciConceptId": "C63608",
+      "nciConceptName": "FOLFIRI-Bevacizumab Regimen",
+      "termId": 657060,
+      "name": "FOLFIRI-bevacizumab regimen",
+      "firstLetter": "f",
+      "type": "DrugTerm",
+      "termNameType": "PreferredName",
+      "prettyUrlName": "folfiri-bevacizumab-regimen"
+    },
+    {
+      "aliases": [
+        {
+          "type": "Synonym",
+          "name": "111-indium labeled bevacizumab"
+        },
+        {
+          "type": "LexicalVariant",
+          "name": "Indium I 111 Bevacizumab"
+        }
+      ],
+      "definition": {
+        "html": "A radioimmunoconjugate comprised of the recombinant humanized monoclonal antibody bevacizumab conjugated with the gamma-emitting radioisotope indium In 111. Indium I 111 bevacizumab binds to vascular endothelial growth factor (VEGF),  allowing the detection of VEGF distribution using gamma scintigraphy.\n",
+        "text": "A radioimmunoconjugate comprised of the recombinant humanized monoclonal antibody bevacizumab conjugated with the gamma-emitting radioisotope indium In 111. Indium I 111 bevacizumab binds to vascular endothelial growth factor (VEGF),  allowing the detection of VEGF distribution using gamma scintigraphy.\n"
+      },
+      "drugInfoSummaryLink": null,
+      "nciConceptId": "C74046",
+      "nciConceptName": "Indium In 111 Bevacizumab",
+      "termId": 588356,
+      "name": "indium In 111 bevacizumab",
+      "firstLetter": "i",
+      "type": "DrugTerm",
+      "termNameType": "PreferredName",
+      "prettyUrlName": "indium-in-111-bevacizumab"
+    },
+    {
+      "aliases": [
+        {
+          "type": "Synonym",
+          "name": "zirconium Zr 89 bevacizumab"
+        },
+        {
+          "type": "Abbreviation",
+          "name": "89Zr-bevacizumab"
+        },
+        {
+          "type": "LexicalVariant",
+          "name": "Zirconium Zr 89 Bevacizumab"
+        }
+      ],
+      "definition": {
+        "html": "A radioimmunoconjugate comprised of the recombinant humanized monoclonal antibody bevacizumab labeled with the radioisotope zirconium Zr 89 (Zr 89) with radioisotopic activity and potential imaging use. The antibody moiety of zirconium Zr 89-bevacizumab targets and binds to the extracellular domain of the vascular endothelial growth factor receptor (VEGFR). Upon binding, the radioisotope moiety may be detected using positron emission tomography (PET), allowing the imaging and quantification of VEGFR-expressing tumor cells. VEGFR, a tyrosine kinase, is overexpressed on the cell surfaces of various tumor cell types.\n",
+        "text": "A radioimmunoconjugate comprised of the recombinant humanized monoclonal antibody bevacizumab labeled with the radioisotope zirconium Zr 89 (Zr 89) with radioisotopic activity and potential imaging use. The antibody moiety of zirconium Zr 89-bevacizumab targets and binds to the extracellular domain of the vascular endothelial growth factor receptor (VEGFR). Upon binding, the radioisotope moiety may be detected using positron emission tomography (PET), allowing the imaging and quantification of VEGFR-expressing tumor cells. VEGFR, a tyrosine kinase, is overexpressed on the cell surfaces of various tumor cell types.\n"
+      },
+      "drugInfoSummaryLink": null,
+      "nciConceptId": "C82656",
+      "nciConceptName": "Zirconium Zr 89 Bevacizumab",
+      "termId": 636152,
+      "name": "zirconium Zr 89-bevacizumab",
+      "firstLetter": "z",
+      "type": "DrugTerm",
+      "termNameType": "PreferredName",
+      "prettyUrlName": "zirconium-zr-89-bevacizumab"
+    }
+  ],
+  "links": null
+}

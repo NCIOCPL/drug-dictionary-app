@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import './Radio.scss';
-
 const Radio = ({ id, label, className, disabled, value, ...otherProps }) => {
 	return (
 		<div className={`ncids-radio ${className}`}>

@@ -4,11 +4,17 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './styles/app.scss';
 
 import { useAppPaths } from './hooks';
-import { Definition, Home, PageNotFound, Terms } from './views';
+import { Definition, Home, PageNotFound, Terms, SearchResults } from './views';
 
 const App = () => {
 	// this should be a DUMB component that just displays our display(group) components
-	const { DefinitionPath, ExpandPath, HomePath } = useAppPaths();
+	const {
+		DefinitionPath,
+		ExpandPath,
+		HomePath,
+		SearchPath,
+		SearchNoParamPath,
+	} = useAppPaths();
 
 	return (
 		<Router>
@@ -16,6 +22,8 @@ const App = () => {
 				<Route path={HomePath()} element={<Home />} />
 				<Route path={DefinitionPath()} element={<Definition />} />
 				<Route path={ExpandPath()} element={<Terms />} />
+				<Route path={SearchPath()} element={<SearchResults />} />
+				<Route path={SearchNoParamPath()} element={<SearchResults />} />
 				<Route path="/*" element={<PageNotFound />} />
 			</Routes>
 		</Router>

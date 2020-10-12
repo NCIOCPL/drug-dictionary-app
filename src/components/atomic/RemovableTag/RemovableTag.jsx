@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import './RemovableTag.scss';
-
 const RemovableTag = ({ label, onRemove }) => {
 	const handleClick = () => {
 		onRemove({ label });

@@ -25,6 +25,12 @@ And('introductory text appears below the page title', () => {
 	cy.get('h1').siblings('p').should('be.visible');
 });
 
+Given('screen breakpoint is set to {string}', (screenSize) => {
+	if (screenSize === 'desktop') cy.viewport(1025, 600);
+	else if (screenSize === 'mobile') cy.viewport(600, 800);
+	else if (screenSize === 'tablet') cy.viewport(800, 900);
+});
+
 /*
     --------------------
         Page Visits
@@ -337,7 +343,16 @@ And(
 		cy.get('dl > dd').should('to.contain', alternateDisplayTextOther);
 	}
 );
-
+/*
+    ------------------
+        Results List
+    ------------------
+*/
+And('page displays {int} results found for {string}', (number, drug) => {
+	const alternateDisplayTextOther = drug.substring(0, 15);
+	cy.get('h4').should('to.contain', alternateDisplayTextOther);
+	cy.get('h4').should('to.contain', number);
+});
 /*
     ------------------
         Page Not Found
@@ -374,4 +389,66 @@ And(
 
 And('the search bar appear below', () => {
 	cy.get('input#keywords').should('be.visible');
+});
+
+/*
+    ------------------
+        Search Results
+    ------------------
+*/
+
+When('user types {string} in the search box', (keyword) => {
+	cy.get('#keywords').type(keyword);
+});
+
+And('user clicks search button', () => {
+	cy.get('#btnSearch').click({ force: true });
+});
+
+And(
+	"each result in the results listing displays the folowing preferred names as a link to the term's page",
+	(dataTable) => {
+		cy.document().then((document) => {
+			const titleLinks = document.querySelectorAll('.results dfn a');
+			let i = 0;
+			for (const { preferredName } of dataTable.hashes()) {
+				expect(titleLinks[i]).has.attr('href');
+				expect(titleLinks[i]).to.have.text(preferredName);
+				i++;
+			}
+		});
+	}
+);
+
+And('the preferred name is followed by the alternate names', (dataTable) => {
+	for (const {
+		resultIndex,
+		altNameIndex,
+		alternateName,
+	} of dataTable.hashes()) {
+		cy.get('.results dfn')
+			.eq(resultIndex - 1)
+			.find('ul li')
+			.eq(altNameIndex)
+			.should('have.text', alternateName);
+	}
+});
+
+Then('the system returns search results page for the search term', () => {
+	cy.location('pathname').should('include', '/search');
+});
+
+Given('the user navigates to bad search url {string}', (path) => {
+	Cypress.on('uncaught:exception', (err, runnable) => {
+		// returning false here to Cypress from
+		// failing the test
+		return false;
+	});
+	cy.visit(path);
+});
+
+When('the user clicks on the result for {string}', (result) => {
+	cy.get('.results dfn a')
+		.contains(result)
+		.trigger('click', { followRedirect: false });
 });

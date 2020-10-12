@@ -6,6 +6,7 @@ const appPaths = {
 	DefinitionPath: '/def/:idOrName',
 	ExpandPath: '/expand/:expandChar',
 	SearchPath: '/search/:searchText',
+	SearchNoParamPath: '/search/',
 };
 
 /**

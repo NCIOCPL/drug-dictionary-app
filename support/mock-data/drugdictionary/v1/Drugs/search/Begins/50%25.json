@@ -1,0 +1,34 @@
+{
+    "meta": {
+      "totalResults": 1,
+      "from": 0
+    },
+    "results": [
+      {
+        "aliases": [
+          {
+            "type": "ForeignBrandName",
+            "name": "Entonox"
+          },
+          {
+            "type": "ForeignBrandName",
+            "name": "Kalinox 170 bar"
+          }
+        ],
+        "definition": {
+          "html": "An equimolar gas mixture of oxygen (O2) and nitrous oxide (N2O) with potential analgesic activity. Upon inhalation, 50% oxygen/50% nitrous oxide premix produces rapidly reversible analgesia. The exact mechanism through which nitrous oxide exerts its analgesic effect has yet to be fully elucidated, but it appears to be associated with the neuronal release of endogenous opioid peptides.",
+          "text": "An equimolar gas mixture of oxygen (O2) and nitrous oxide (N2O) with potential analgesic activity. Upon inhalation, 50% oxygen/50% nitrous oxide premix produces rapidly reversible analgesia. The exact mechanism through which nitrous oxide exerts its analgesic effect has yet to be fully elucidated, but it appears to be associated with the neuronal release of endogenous opioid peptides."
+        },
+        "drugInfoSummaryLink": null,
+        "nciConceptId": "C77890",
+        "nciConceptName": "50% Oxygen/50% Nitrous Oxide Premix",
+        "termId": 593687,
+        "name": "50% oxygen/50% nitrous oxide premix",
+        "firstLetter": "#",
+        "type": "DrugTerm",
+        "termNameType": "PreferredName",
+        "prettyUrlName": "50pct-oxygen-50pct-nitrous-oxide-premix"
+      }
+    ],
+    "links": null
+  }
