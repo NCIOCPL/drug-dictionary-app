@@ -65,7 +65,7 @@ const Search = ({ autoSuggestLimit = 10 }) => {
 			searchTerm: searchText,
 			searchType: searchType,
 			analyticsName,
-			dictionaryTitle
+			dictionaryTitle,
 		});
 	};
 
@@ -142,26 +142,30 @@ const Search = ({ autoSuggestLimit = 10 }) => {
 				shouldItemRender={matchItemToTerm}
 				onChange={(event) => onChangeHandler(event)}
 				onSelect={(value, item) => onSelectHandler(value)}
-				renderMenu={(children) => (
-					<div
-						className="ncids-autocomplete__menu --terms"
-						role="listbox"
-						data-testid="tid-auto-suggest-options">
-						{searchText.length >= 3 && autoSuggest.payload ? (
-							autoSuggest.payload.length ? (
-								children
-							) : (
-								<div className="ncids-autocomplete__menu-item">
-									No results found
-								</div>
-							)
+				renderMenu={(children) =>
+          (searchText.length >= 3 && autoSuggest.payload )
+          ? (
+						autoSuggest.payload.length > 0 ? (
+							<div
+								className="ncids-autocomplete__menu --terms"
+								role="listbox"
+								data-testid="tid-auto-suggest-options">
+								{children}
+							</div>
 						) : (
+							<></>
+						)
+					) : (
+						<div
+							className="ncids-autocomplete__menu --terms"
+							role="listbox"
+							data-testid="tid-auto-suggest-options">
 							<div className="ncids-autocomplete__menu-item">
 								Please enter 3 or more characters
 							</div>
-						)}
-					</div>
-				)}
+						</div>
+					)
+				}
 				renderItem={(item, isHighlighted) => (
 					<div
 						className={`ncids-autocomplete__menu-item ${
