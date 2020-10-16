@@ -54,6 +54,7 @@ const SynonymTable = (aliases) => {
 	for (let i = 0; i < aliasTypes.length; i++) {
 		// get list of names from type object
 		const mapVal = sortedAliases[aliasTypes[i]];
+        mapVal.sort((a, b) => a.localeCompare(b));
 		const row = (
 			<tr key={`row-${i}`}>
 				<th valign="top" width="28%" scope="row">
