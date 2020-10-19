@@ -12,6 +12,8 @@ jest.mock('react-router-dom');
 
 describe('<Terms />', () => {
 	test('should display dictionary title, <SearchBox />, and <TermList /> components', async () => {
+		jest.spyOn(window, 'scrollTo');
+
 		const expandChar = 'A';
 		useParams.mockReturnValue({
 			expandChar,
@@ -150,6 +152,9 @@ describe('<Terms />', () => {
 			screen.getByPlaceholderText('Enter keywords or phrases')
 		).toBeInTheDocument();
 		expect(screen.getByText('3 results found for: A')).toBeInTheDocument();
+        //test the scroll position
+		expect(window.scrollTo).toHaveBeenCalledTimes(1);
+		expect(window.scrollTo).toHaveBeenLastCalledWith(0, 0);
 	});
 
 	test('should display no matching results when no results are returned', async () => {

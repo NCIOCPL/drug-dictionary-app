@@ -24,6 +24,10 @@ const Terms = () => {
 	const tracking = useTracking();
 
 	const expandCharResults = useCustomQuery(getExpandCharResults(expandChar));
+	
+	useEffect( () => {
+		window.scrollTo(0,0);
+	  }, []);
 
 	// Set doneFetchingTermResults to false when query parameter changes
 	useEffect(() => {
