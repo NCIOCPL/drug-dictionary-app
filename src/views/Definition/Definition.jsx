@@ -31,6 +31,10 @@ const Definition = () => {
 		},
 	] = useStateValue();
 
+	useEffect( () => {
+		window.scrollTo(0,0);
+	  }, []);
+
 	// Get a reference to the tracking function for
 	// analytics.
 	const tracking = useTracking();
