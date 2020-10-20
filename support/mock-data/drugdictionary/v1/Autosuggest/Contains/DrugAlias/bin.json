@@ -1,0 +1,42 @@
+[
+	{
+		"termId": 505287,
+		"termName": "1,1',6,6',7,7'-Hexahydroxy-3,3'-dimethyl-5,5'-bis(1-methylethyl)[2,2'-binaphthalene]-8,8'-dicarboxaldehyde"
+	},
+	{
+		"termId": 505287,
+		"termName": "1,1',6,6',7,7'-Hexahydroxy-5,5'-diisopropyl-3-3'-dimethyl[2,2'-binaphthalene]-8,8'-dicarboxaldehyde"
+	},
+	{
+		"termId": 792748,
+		"termName": "autologous anti-CD19 CAR TCR-zeta/4-1BB-transduced T cells BinD19"
+	},
+	{
+		"termId": 797148,
+		"termName": "CBC 80/20 binder ABX-464"
+	},
+	{
+		"termId": 780300,
+		"termName": "Cu 64-labeled B-Fab DS6 antibody-like binding protein"
+	},
+	{
+		"termId": 641468,
+		"termName": "DNA minor groove-binding agent PM01183"
+	},
+	{
+		"termId": 641468,
+		"termName": "DNA Minor Groove-Binding Agent PM01183"
+	},
+	{
+		"termId": 788166,
+		"termName": "fluorescent PARPi binding imaging agent PARPi-FL"
+	},
+	{
+		"termId": 486303,
+		"termName": "mannan-binding lectin"
+	},
+	{
+		"termId": 486303,
+		"termName": "mannose-binding lectin"
+	}
+]

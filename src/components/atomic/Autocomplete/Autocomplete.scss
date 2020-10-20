@@ -14,6 +14,7 @@
 		&-item {
 			line-height: 1.4;
 			padding: 0.5em 0.5em;
+			overflow-wrap: break-word;
 
 			&.highlighted {
 				background: #286ea7;

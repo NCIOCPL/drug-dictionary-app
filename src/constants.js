@@ -8,6 +8,10 @@ export const AZListArray = 'abcdefghijklmnopqrstuvwxyz#'.split('');
 // paging are not going to be implemented for now ( 10,000 )
 export const DEFAULT_RESULT_SIZE = 10000;
 
+export const resourceType = {
+	drugAlias: 'DrugAlias',
+	drugTerm: 'DrugTerm'
+};
 
 export const searchMatchType = {
 	beginsWith: 'Begins',
