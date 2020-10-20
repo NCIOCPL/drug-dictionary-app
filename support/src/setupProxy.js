@@ -142,7 +142,7 @@ const getDrugSearch = async (req, res, next) => {
 };
 
 const getAutoSuggestResults = async (req, res, next) => {
-	const { searchText, matchType } = req.query;
+	const { includeResourceTypes, matchType, searchText } = req.query;
 
 	// IMPLEMENTOR NOTE: You are mocking the API, so if the API returns an object
 	// when something is not found like search results, you need to handle that.
@@ -171,7 +171,8 @@ const getAutoSuggestResults = async (req, res, next) => {
 		'drugdictionary',
 		'v1',
 		'Autosuggest',
-		matchType
+		matchType,
+		includeResourceTypes || ''
 	);
 	try {
 		// IMPLEMENTOR NOTE: The mock data file name should be the end part of the path

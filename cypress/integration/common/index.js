@@ -250,6 +250,20 @@ And('there should be no {string} table in the document', (string) => {
 	cy.get(string).should('not.exist');
 });
 
+Then(
+	'autosuggest appears with correct options',	(dataTable) => {
+		let allOptions;
+		cy.document().then((document) => {
+			allOptions = document.querySelectorAll('.menu-anchor div[class*="-item"]');
+			let i = 0;
+			for (const { options } of dataTable.hashes()) {
+				expect(allOptions[i]).to.have.text(options);
+				i++;
+			}
+		});
+	}
+);
+
 /*
     -----------------------
         Search box

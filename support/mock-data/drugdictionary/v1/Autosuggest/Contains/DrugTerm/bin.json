@@ -1,0 +1,42 @@
+[
+	{
+		"termId": 786268,
+		"termName": "albumin-binding cisplatin prodrug BTP-114"
+	},
+	{
+		"termId": 771098,
+		"termName": "androgen receptor ligand-binding domain-encoding plasmid DNA vaccine MVI-118"
+	},
+	{
+		"termId": 659158,
+		"termName": "Ang2/VEGF-binding peptides-antibody fusion protein CVX-241"
+	},
+	{
+		"termId": 792748,
+		"termName": "autologous anti-CD19 CAR TCR-zeta/4-1BB-transduced T lymphocytes BinD19"
+	},
+	{
+		"termId": 797148,
+		"termName": "Cap binding complex 80/20 binder ABX-464"
+	},
+	{
+		"termId": 696184,
+		"termName": "DNA minor groove binding agent PM060184"
+	},
+	{
+		"termId": 415963,
+		"termName": "DNA minor groove binding agent SG2000"
+	},
+	{
+		"termId": 792848,
+		"termName": "fluorine F 18 integrin alpha v beta 6-targeted binding peptide"
+	},
+	{
+		"termId": 732482,
+		"termName": "folate binding protein E39 peptide vaccine"
+	},
+	{
+		"termId": 757120,
+		"termName": "folate binding protein J65 peptide vaccine"
+	}
+]
