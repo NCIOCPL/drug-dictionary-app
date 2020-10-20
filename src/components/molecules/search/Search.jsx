@@ -10,9 +10,8 @@ import {
 	searchMatchType,
 	searchMatchTypeAnalyticsMap,
 } from '../../../constants';
-import { useAppPaths, useCustomQuery } from '../../../hooks';
+import { useAppPaths, useAutoSuggestResultsQuery } from '../../../hooks';
 import { useStateValue } from '../../../store/store';
-import { getAutoSuggestResults } from '../../../services/api/actions';
 import {
 	emboldenSubstring,
 	getKeyValueFromObject,
@@ -34,22 +33,24 @@ const Search = ({ autoSuggestLimit = 10 }) => {
 			? getKeyValueFromQueryString('searchMode', search)
 			: searchMatchType.beginsWith;
 	// Set default selected option for search match type
-	const [selectedOption, updateSelectedOption] = useState(matchType);
+	const [selectedOption, setSelectedOption] = useState(matchType);
 	// Set default search text to value retrieved from url or set to empty string if not
-	const [searchText, updateSearchText] = useState(
+	const [searchText, setSearchText] = useState(
 		urlParamSearchText ? decodeURIComponent(urlParamSearchText) : ''
 	);
 	const [shouldFetchAutoSuggest, setFetchAutoSuggest] = useState(false);
 	const navigate = useNavigate();
 	const { SearchPath } = useAppPaths();
-	const autoSuggest = useCustomQuery(
-		getAutoSuggestResults(searchText, selectedOption, autoSuggestLimit),
-		shouldFetchAutoSuggest
-	);
+	const autoSuggest = useAutoSuggestResultsQuery({
+		query: searchText,
+		resultLimit: autoSuggestLimit,
+		selectedOption,
+		shouldFetch: shouldFetchAutoSuggest,
+	});
 
 	useEffect(() => {
 		// Set selected option value if url parameters change
-		updateSelectedOption(matchType);
+		setSelectedOption(matchType);
 	}, [matchType]);
 
 	const trackSubmit = () => {
@@ -65,7 +66,7 @@ const Search = ({ autoSuggestLimit = 10 }) => {
 			searchTerm: searchText,
 			searchType: searchType,
 			analyticsName,
-			dictionaryTitle
+			dictionaryTitle,
 		});
 	};
 
@@ -76,8 +77,12 @@ const Search = ({ autoSuggestLimit = 10 }) => {
 		const hasSearchText = searchText.length > 0;
 		const queryString = hasSearchText
 			? isContainsSearch
-				? `${searchText}/?searchMode=${searchMatchType.contains}`
-				: `${searchText}/?searchMode=${searchMatchType.beginsWith}`
+				? `${encodeURIComponent(searchText)}/?searchMode=${
+						searchMatchType.contains
+				  }`
+				: `${encodeURIComponent(searchText)}/?searchMode=${
+						searchMatchType.beginsWith
+				  }`
 			: `/`;
 		trackSubmit();
 		navigate(SearchPath({ searchText: queryString }));
@@ -85,12 +90,12 @@ const Search = ({ autoSuggestLimit = 10 }) => {
 
 	const toggleRadioSelection = (event) => {
 		const { value } = event.target;
-		updateSelectedOption(value);
+		setSelectedOption(value);
 	};
 
 	const onChangeHandler = (event) => {
 		const { value } = event.target;
-		updateSearchText(value);
+		setSearchText(value);
 		// Make auto suggest API call if search text length >= 3
 		if (value.length >= 3) {
 			setFetchAutoSuggest(true);
@@ -100,7 +105,7 @@ const Search = ({ autoSuggestLimit = 10 }) => {
 	};
 
 	const onSelectHandler = (value) => {
-		updateSearchText(value);
+		setSearchText(value);
 	};
 
 	return (
@@ -137,22 +142,25 @@ const Search = ({ autoSuggestLimit = 10 }) => {
 				inputProps={{
 					placeholder: 'Enter keywords or phrases',
 				}}
-				items={autoSuggest.payload || []}
+				items={(!autoSuggest.loading && autoSuggest.payload) || []}
 				getItemValue={(item) => item.termName}
 				shouldItemRender={matchItemToTerm}
 				onChange={(event) => onChangeHandler(event)}
 				onSelect={(value, item) => onSelectHandler(value)}
-				renderMenu={(children) => (
+				renderMenu={(children, index) => (
 					<div
+						key={index}
 						className="ncids-autocomplete__menu --terms"
 						role="listbox"
 						data-testid="tid-auto-suggest-options">
-						{searchText.length >= 3 && autoSuggest.payload ? (
-							autoSuggest.payload.length ? (
+						{searchText.length >= 3 ? (
+							!autoSuggest.loading && autoSuggest.payload?.length ? (
 								children
 							) : (
 								<div className="ncids-autocomplete__menu-item">
-									No results found
+									{autoSuggest.loading
+										? 'Loading results...'
+										: 'No results found'}
 								</div>
 							)
 						) : (

@@ -171,7 +171,7 @@ describe('<Search /> English', () => {
 		});
 
 		test('should take search input, select highlighted option, execute search, and confirm expected location', async () => {
-			const searchText = 'meta';
+			const searchText = 'met';
 
 			client = {
 				query: async () => ({
@@ -213,7 +213,7 @@ describe('<Search /> English', () => {
 			fireEvent.focus(input);
 			const menuOptions = screen.getAllByRole('option');
 			// Expect menu options count displayed in autosuggest to match data count
-			expect(menuOptions.length).toEqual(6);
+			expect(menuOptions.length).toEqual(10);
 			// Enter key to select first item highlighted in options list (meta-analysis)
 			fireEvent(
 				input,
@@ -229,7 +229,7 @@ describe('<Search /> English', () => {
 				fireEvent.click(searchButton);
 			});
 			const expectedLocationObject = {
-				pathname: `/search/meta-analysis/`,
+				pathname: `/search/MET%20kinase%20inhibitor%20OMO-1/`,
 				search: `?searchMode=${beginsWith}`,
 				hash: '',
 				state: null,
