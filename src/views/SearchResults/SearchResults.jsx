@@ -30,6 +30,10 @@ const SearchResults = () => {
 		getDrugSearchResults({ drug: searchText, matchType: searchMode })
 	);
 
+	useEffect( () => {
+		window.scrollTo(0,0);
+	  }, []);
+
 	// Set doneFetchingTermResults to false when query parameter changes
 	useEffect(() => {
 		setSearchResultsLoaded(false);
