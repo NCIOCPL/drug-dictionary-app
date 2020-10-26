@@ -63,7 +63,6 @@ Feature: As a user, I would like to be able to enter keywords and have the optio
 
     Examples:
       | matchType   | keyword | screen |
-      | Starts With | 50%     | mobile |
       | Starts With | bin     | tablet |
 
   Scenario: Negative: User enters a keyword or phrase that does not generate any matches
@@ -81,3 +80,17 @@ Feature: As a user, I would like to be able to enter keywords and have the optio
       | og:url   | http://localhost:3000/search/bevacizumab |
       | robots   | noindex                                  |
     And there is a canonical link with the href "https://www.cancer.gov/search/bevacizumab"
+
+  Scenario: As a user, if my search term only returns one result, I would like to be redirected to the term’s page instead of the results page.
+    Given the user navigates to "/"
+    And user types "50%" in the search box
+    And user clicks search button
+    Then user is redirected to "/def/50pct-oxygen-50pct-nitrous-oxide-premix"
+    And the search bar on the page does not maintain the user’s term
+    And "Starts with" radio is selected by default
+
+      Scenario: As a user, if my search term only returns one result, I would like to be redirected to the term’s page instead of the results page.
+    Given the user navigates to "/search/avastin/?searchMode=Begins"
+    Then user is redirected to "/def/bevacizumab"
+    And the search bar on the page does not maintain the user’s term
+    And "Starts with" radio is selected by default

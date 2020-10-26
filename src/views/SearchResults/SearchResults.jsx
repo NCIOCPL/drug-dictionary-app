@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useTracking } from 'react-tracking';
 import { useURLQuery } from '../../hooks';
 
@@ -11,7 +11,7 @@ import { getDrugSearchResults } from '../../services/api/actions';
 import { useStateValue } from '../../store/store.js';
 
 const SearchResults = () => {
-	const { SearchPath } = useAppPaths();
+	const { DefinitionPath, SearchPath } = useAppPaths();
 	const params = useParams();
 	const { searchText } = params;
 	const [searchResultsLoaded, setSearchResultsLoaded] = useState(false);
@@ -23,23 +23,39 @@ const SearchResults = () => {
 	// Get a reference to the tracking function for
 	// analytics.
 	const tracking = useTracking();
-
+	const navigate = useNavigate();
 	const urlQuery = useURLQuery();
 	const searchMode = urlQuery.get('searchMode') || 'Begins';
 	const queryResponse = useCustomQuery(
 		getDrugSearchResults({ drug: searchText, matchType: searchMode })
 	);
 
-	useEffect( () => {
-		window.scrollTo(0,0);
-	  }, []);
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
 	// Set doneFetchingTermResults to false when query parameter changes
 	useEffect(() => {
 		setSearchResultsLoaded(false);
 	}, [searchText]);
 
-	// Set doneFetchingTermResults to false when query parameter changes
+	//navigate to a definition page when single result is returned from search
+	useEffect(() => {
+		if (!queryResponse.loading && queryResponse.payload) {
+			if (queryResponse.payload.meta?.totalResults === 1) {
+				const idOrName = queryResponse.payload.results[0].prettyUrlName
+					? queryResponse.payload.results[0].prettyUrlName
+					: queryResponse.payload.results[0].termId;
+
+				navigate(DefinitionPath({ idOrName }), { replace: true });
+
+			}
+
+			setSearchResults(queryResponse);
+			setSearchResultsLoaded(true);
+		}
+	}, [queryResponse.loading, queryResponse.payload]);
+
 	useEffect(() => {
 		// Fire off a page load event. Usually this would be in
 		// some effect when something loaded.
@@ -62,13 +78,6 @@ const SearchResults = () => {
 			});
 		}
 	}, [searchResultsLoaded]);
-
-	useEffect(() => {
-		if (queryResponse.payload && !queryResponse.loading) {
-			setSearchResults(queryResponse);
-			setSearchResultsLoaded(true);
-		}
-	}, [queryResponse.payload, queryResponse.loading]);
 
 	/**
 	 * Helper function to render metadata.
@@ -114,7 +123,7 @@ const SearchResults = () => {
 			{renderHelmet()}
 			{searchResultsLoaded && searchResults ? (
 				<div className="results">
-					{searchResults.payload.results.length > 0 && (
+					{searchResults.payload.results.length > 1 && (
 						<SearchTermList
 							searchTerm={searchText}
 							termLinkPath={SearchPath}
@@ -126,8 +135,8 @@ const SearchResults = () => {
 					{searchResults.payload.results.length < 1 && <NoMatchingResults />}
 				</div>
 			) : (
-				<Spinner />
-			)}
+					<Spinner />
+				)}
 		</>
 	);
 };
