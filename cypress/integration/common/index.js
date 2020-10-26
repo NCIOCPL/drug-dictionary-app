@@ -452,3 +452,11 @@ When('the user clicks on the result for {string}', (result) => {
 		.contains(result)
 		.trigger('click', { followRedirect: false });
 });
+
+Then('user is redirected to {string}', (path) => {
+	cy.location('pathname').should('be.eq', path);
+});
+
+Then('the search bar on the page does not maintain the user’s term', () => {
+	cy.get('#keywords').should('have.attr', 'value', '');
+});
