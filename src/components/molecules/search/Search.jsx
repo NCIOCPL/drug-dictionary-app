@@ -144,7 +144,6 @@ const Search = ({ autoSuggestLimit = 10 }) => {
 				}}
 				items={(!autoSuggest.loading && autoSuggest.payload) || []}
 				getItemValue={(item) => item.termName}
-				shouldItemRender={matchItemToTerm}
 				onChange={(event) => onChangeHandler(event)}
 				onSelect={(value, item) => onSelectHandler(value)}
 				renderMenu={(children, index) => (
