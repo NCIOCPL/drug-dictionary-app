@@ -9,11 +9,12 @@
 		z-index: 10;
 		overflow: auto;
 		max-height: 280px;
-
+		overflow-wrap: break-word;
+		-ms-word-wrap: break-word;
+		
 		&-item {
 			line-height: 1.4;
 			padding: 0.5em 0.5em;
-			overflow-wrap: break-word;
 
 			&.highlighted {
 				background: #286ea7;
