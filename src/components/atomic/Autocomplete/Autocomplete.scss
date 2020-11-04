@@ -2,7 +2,6 @@
 	position: relative;
 
 	&__menu {
-		position: absolute;
 		background: white;
 		border: 1px solid #ccc;
 		top: 0;
@@ -26,6 +25,16 @@
 
 	.menu-anchor {
 		position: relative;
+	}
+
+	.menu-wrapper {
+		position: absolute;
+		width: 100%;
+		z-index: 10;
+
+		&.showAbove {
+			bottom: 38px;
+		}
 	}
 
 	+ .ncids-autocomplete {

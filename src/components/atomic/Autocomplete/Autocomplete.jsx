@@ -1,6 +1,6 @@
 /* eslint-disable react/no-string-refs */
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { createRef } from 'react';
 
 import { InputLabel, RemovableTag } from '../../atomic';
 
@@ -224,6 +224,7 @@ class Autocomplete extends React.Component {
 			highlightedIndex: null,
 		};
 		this._debugStates = [];
+		this.checkDropdownPosition = this.checkDropdownPosition.bind(this);
 		this.ensureHighlightedIndex = this.ensureHighlightedIndex.bind(this);
 		this.exposeAPI = this.exposeAPI.bind(this);
 		this.handleInputFocus = this.handleInputFocus.bind(this);
@@ -234,6 +235,8 @@ class Autocomplete extends React.Component {
 		this.maybeAutoCompleteText = this.maybeAutoCompleteText.bind(this);
 
 		this.id = this.props.id;
+
+		this.dropdown = createRef();
 	}
 
 	UNSAFE_componentWillMount() {
@@ -266,10 +269,12 @@ class Autocomplete extends React.Component {
 	componentDidMount() {
 		if (this.isOpen()) {
 			this.setMenuPositions();
+			this.checkDropdownPosition();
 		}
 	}
 
 	componentDidUpdate(prevProps, prevState) {
+		if (this.props !== prevProps) this.checkDropdownPosition();
 		if (
 			(this.state.isOpen && !prevState.isOpen) ||
 			('open' in this.props && this.props.open && !prevProps.open)
@@ -278,6 +283,7 @@ class Autocomplete extends React.Component {
 		}
 
 		if (prevState.isOpen !== this.state.isOpen) {
+			this.checkDropdownPosition();
 			this.props.onMenuVisibilityChange(this.state.isOpen);
 		}
 	}
@@ -400,6 +406,19 @@ class Autocomplete extends React.Component {
 		},
 	};
 
+	checkDropdownPosition() {
+		const node = this.dropdown.current;
+		const rect = node?.getBoundingClientRect() || 0;
+		const windowHeight = window.innerHeight || 0;
+		// 16(px) is the average height of a scrollbar
+		// value can be adjusted to make the dropdown
+		// flip up if its less than the value.
+		const flipUp = windowHeight - rect.bottom < 16;
+		this.setState({
+			flipUp,
+		});
+	}
+
 	getFilteredItems(props) {
 		let items = props.items.slice(0, props.itemsDisplayLimit);
 
@@ -456,6 +475,7 @@ class Autocomplete extends React.Component {
 			menuLeft: rect.left + marginLeft,
 			menuWidth: rect.width + marginLeft + marginRight,
 		});
+		this.checkDropdownPosition();
 	}
 
 	highlightItemFromMouse(index) {
@@ -678,7 +698,15 @@ class Autocomplete extends React.Component {
 							value: this.props.value,
 						})}
 					</div>
-					<div className="menu-anchor">{open && this.renderMenu()}</div>
+					<div className="menu-anchor">
+						<div
+							ref={this.dropdown}
+							className={`menu-wrapper ${
+								this.state.flipUp ? 'showAbove' : null
+							}`}>
+							{open && this.renderMenu()}
+						</div>
+					</div>
 
 					{this.props.debug && (
 						<pre style={{ marginLeft: 300 }}>

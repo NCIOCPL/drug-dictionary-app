@@ -1,0 +1,21 @@
+{
+	"aliases": [
+		{
+			"type": "CASRegistryName",
+			"name": "152-72-7"
+		}
+	],
+	"definition": {
+		"html": "A 4-hydroxycoumarin derivative with anticoagulant activity. As a vitamin K antagonist, acenocoumarol inhibits vitamin K epoxide reductase, thereby inhibiting the reduction of vitamin K and the availability of vitamin KH2. This prevents gamma carboxylation of glutamic acid residues near the N-terminals of the vitamin K-dependent clotting factors, including factor II, VII, IX, and X and anticoagulant proteins C and S. This prevents their activity and thus thrombin formation. Compared to other coumarin derivatives, acenocoumarol has a short half-life.",
+		"text": "A 4-hydroxycoumarin derivative with anticoagulant activity. As a vitamin K antagonist, acenocoumarol inhibits vitamin K epoxide reductase, thereby inhibiting the reduction of vitamin K and the availability of vitamin KH2. This prevents gamma carboxylation of glutamic acid residues near the N-terminals of the vitamin K-dependent clotting factors, including factor II, VII, IX, and X and anticoagulant proteins C and S. This prevents their activity and thus thrombin formation. Compared to other coumarin derivatives, acenocoumarol has a short half-life."
+	},
+	"drugInfoSummaryLink": null,
+	"nciConceptId": "C75152",
+	"nciConceptName": "Acenocoumarol",
+	"termId": 750633,
+	"name": "acenocoumarol",
+	"firstLetter": "a",
+	"type": "DrugTerm",
+	"termNameType": "PreferredName",
+	"prettyUrlName": "acenocoumarol"
+}
