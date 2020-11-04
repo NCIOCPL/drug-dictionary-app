@@ -203,7 +203,7 @@ When('user clicks on the search bar', () => {
 	cy.get('input#keywords').click();
 });
 Then('helper text {string} appears', (helperText) => {
-	cy.get('.menu-anchor div div').should('have.text', helperText);
+	cy.get('.menu-wrapper div div').should('have.text', helperText);
 });
 
 When('user types {string} in the search bar', (keyword) => {
@@ -218,12 +218,12 @@ When('user selects {string} option', (searchType) => {
 Then(
 	'autosuggest appears with highlighting of the text {string}',
 	(keyword) => {
-		cy.get(".menu-anchor div[class*='--terms']").should('be.visible');
+		cy.get(".menu-wrapper div[class*='--terms']").should('be.visible');
 		const regex = new RegExp(
 			keyword.replace(/[-[\]{}()*+!<=:?.\\^$|#\s,]/g, '\\$&'),
 			'i'
 		);
-		cy.get(".menu-anchor div[class*='--terms'] span strong").each(($el) => {
+		cy.get(".menu-wrapper div[class*='--terms'] span strong").each(($el) => {
 			cy.wrap($el).invoke('text').should('match', regex);
 		});
 	}
@@ -250,19 +250,17 @@ And('there should be no {string} table in the document', (string) => {
 	cy.get(string).should('not.exist');
 });
 
-Then(
-	'autosuggest appears with correct options',	(dataTable) => {
-		let allOptions;
-		cy.document().then((document) => {
-			allOptions = document.querySelectorAll('.menu-anchor div[class*="-item"]');
-			let i = 0;
-			for (const { options } of dataTable.hashes()) {
-				expect(allOptions[i]).to.have.text(options);
-				i++;
-			}
-		});
-	}
-);
+Then('autosuggest appears with correct options', (dataTable) => {
+	let allOptions;
+	cy.document().then((document) => {
+		allOptions = document.querySelectorAll('.menu-wrapper div[class*="-item"]');
+		let i = 0;
+		for (const { options } of dataTable.hashes()) {
+			expect(allOptions[i]).to.have.text(options);
+			i++;
+		}
+	});
+});
 
 /*
     -----------------------
