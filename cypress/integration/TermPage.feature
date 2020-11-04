@@ -63,7 +63,7 @@ Feature: Term page
 
     Scenario: Term page metadata
         Given the user navigates to "def/bevacizumab"
-        Then the title tag should be "NCI Drug Dictionary - National Cancer Institute"
+        Then the title tag should be "Definition of bevacizumab - NCI Drug Dictionary - National Cancer Institute"
         And the page contains meta tags with the following properties
             | property | content                               |
             | og:title | NCI Drug Dictionary                   |
