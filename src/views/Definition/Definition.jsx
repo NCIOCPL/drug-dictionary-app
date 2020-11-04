@@ -90,7 +90,7 @@ const Definition = () => {
 
 		return (
 			<Helmet>
-				<title>{`${dictionaryTitle} - ${siteName}`}</title>
+				<title>{`Definition of ${drugDefinition.payload.name} - ${dictionaryTitle} - ${siteName}`}</title>
 				<meta property="og:title" content={dictionaryTitle} />
 				<meta
 					property="og:url"
