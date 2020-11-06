@@ -229,7 +229,7 @@ describe('<Search /> English', () => {
 				fireEvent.click(searchButton);
 			});
 			const expectedLocationObject = {
-				pathname: `/search/MET%20kinase%20inhibitor%20OMO-1/`,
+				pathname: `/search/met/`,
 				search: `?searchMode=${beginsWith}`,
 				hash: '',
 				state: null,

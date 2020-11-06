@@ -400,7 +400,7 @@ describe('<Autocomplete />', () => {
 		// Expect 1st filtered option item to match 2nd item in option "metabolic"
 		expect(onRenderItemHandler.mock.calls[0][0].name).toEqual(options[1].name);
 		// Expect "metabolic" option to be highlighted
-		expect(onRenderItemHandler.mock.calls[0][1]).toEqual(true);
+		expect(onRenderItemHandler.mock.calls[0][1]).toEqual(false);
 		fireEvent(
 			input,
 			new KeyboardEvent('keydown', {
@@ -411,7 +411,7 @@ describe('<Autocomplete />', () => {
 			})
 		);
 		// Expect "metabolic" to still be highlighted
-		expect(onRenderItemHandler.mock.calls[0][1]).toEqual(true);
+		expect(onRenderItemHandler.mock.calls[0][1]).toEqual(false);
 		fireEvent(
 			input,
 			new KeyboardEvent('keyup', {
@@ -422,7 +422,7 @@ describe('<Autocomplete />', () => {
 			})
 		);
 		// Expect "metabolic" to still be highlighted
-		expect(onRenderItemHandler.mock.calls[0][1]).toEqual(true);
+		expect(onRenderItemHandler.mock.calls[0][1]).toEqual(false);
 		fireEvent(
 			input,
 			new KeyboardEvent('keydown', {
@@ -433,7 +433,7 @@ describe('<Autocomplete />', () => {
 			})
 		);
 		// Expect "metabolic" to still be highlighted
-		expect(onRenderItemHandler.mock.calls[0][1]).toEqual(true);
+		expect(onRenderItemHandler.mock.calls[0][1]).toEqual(false);
 		fireEvent(
 			input,
 			new KeyboardEvent('keyup', {
@@ -444,7 +444,7 @@ describe('<Autocomplete />', () => {
 			})
 		);
 		// Expect "metabolic" to still be highlighted
-		expect(onRenderItemHandler.mock.calls[0][1]).toEqual(true);
+		expect(onRenderItemHandler.mock.calls[0][1]).toEqual(false);
 		fireEvent(
 			input,
 			new KeyboardEvent('keydown', {
@@ -456,7 +456,7 @@ describe('<Autocomplete />', () => {
 			})
 		);
 		// Expect "metabolic" to still be highlighted
-		expect(onRenderItemHandler.mock.calls[0][1]).toEqual(true);
+		expect(onRenderItemHandler.mock.calls[0][1]).toEqual(false);
 		fireEvent(
 			input,
 			new KeyboardEvent('keyup', {
@@ -468,7 +468,7 @@ describe('<Autocomplete />', () => {
 			})
 		);
 		// Expect "metabolic" to still be highlighted
-		expect(onRenderItemHandler.mock.calls[0][1]).toEqual(true);
+		expect(onRenderItemHandler.mock.calls[0][1]).toEqual(false);
 		fireEvent(
 			input,
 			new KeyboardEvent('keydown', {
@@ -480,7 +480,7 @@ describe('<Autocomplete />', () => {
 			})
 		);
 		// Expect "metabolic" to still be highlighted
-		expect(onRenderItemHandler.mock.calls[0][1]).toEqual(true);
+		expect(onRenderItemHandler.mock.calls[0][1]).toEqual(false);
 		fireEvent(
 			input,
 			new KeyboardEvent('keyup', {
@@ -492,7 +492,7 @@ describe('<Autocomplete />', () => {
 			})
 		);
 		// Expect "metabolic" to still be highlighted
-		expect(onRenderItemHandler.mock.calls[0][1]).toEqual(true);
+		expect(onRenderItemHandler.mock.calls[0][1]).toEqual(false);
 	});
 
 	test('should not highlight top match when `autoHighlight=false`', () => {

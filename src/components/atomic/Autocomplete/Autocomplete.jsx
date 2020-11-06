@@ -207,7 +207,7 @@ class Autocomplete extends React.Component {
 				<div className={`ncids-autocomplete__menu ${classes}`}>{items}</div>
 			);
 		},
-		autoHighlight: true,
+		autoHighlight: false,
 		selectOnBlur: false,
 		onMenuVisibilityChange() {},
 		labelHint: '',
