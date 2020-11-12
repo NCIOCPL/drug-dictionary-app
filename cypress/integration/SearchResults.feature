@@ -89,8 +89,15 @@ Feature: As a user, I would like to be able to enter keywords and have the optio
     And the search bar on the page does not maintain the user’s term
     And "Starts with" radio is selected by default
 
-      Scenario: As a user, if my search term only returns one result, I would like to be redirected to the term’s page instead of the results page.
+  Scenario: As a user, if my search term only returns one result, I would like to be redirected to the term’s page instead of the results page.
     Given the user navigates to "/search/avastin/?searchMode=Begins"
     Then user is redirected to "/def/bevacizumab"
     And the search bar on the page does not maintain the user’s term
     And "Starts with" radio is selected by default
+
+  Scenario: User is able to search for a term from PageNotFound page
+    Given the user navigates to "/def/chicken"
+    When user types "beva" in the search box
+    And user clicks search button
+    Then user is redirected to "/search/beva/"
+    And the system appends "?searchMode=Begins" to the URL

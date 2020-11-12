@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { useTracking } from 'react-tracking';
-
-import TextInput from '../../components/atomic/TextInput';
 import { useStateValue } from '../../store/store';
 import { i18n } from '../../utils';
+import { useAppPaths } from '../../hooks';
+import { searchMatchType } from '../../constants';
 
 const PageNotFound = () => {
 	const [
 		{ canonicalHost, language, analyticsName, dictionaryTitle },
 	] = useStateValue();
-	const [searchText, updateSearchText] = useState('');
 	const tracking = useTracking();
+	const { SearchPath } = useAppPaths();
+	const [searchText, setSearchText] = useState('');
 
 	useEffect(() => {
 		const pageTitle = i18n.pageNotFoundTitle[language];
@@ -20,7 +21,7 @@ const PageNotFound = () => {
 			metaTitle: pageTitle,
 			name: `${canonicalHost.replace('https://', '')}${
 				window.location.pathname
-			}`,
+				}`,
 			title: pageTitle,
 			type: 'PageLoad',
 			dictionaryTitle,
@@ -31,35 +32,40 @@ const PageNotFound = () => {
 	const contentPar =
 		language === 'es'
 			? [
-					<>No podemos encontrar la página que busca.</>,
-					<>
-						Visite la{' '}
-						<a href="https://www.cancer.gov/espanol">página principal</a>,
+				<>No podemos encontrar la página que busca.</>,
+				<>
+					Visite la{' '}
+					<a href="https://www.cancer.gov/espanol">página principal</a>,
 						busque por{' '}
-						<a href="https://www.cancer.gov/espanol/tipos">tipo de cáncer</a>, o
+					<a href="https://www.cancer.gov/espanol/tipos">tipo de cáncer</a>, o
 						use la casilla de búsqueda en la parte de abajo de esta página.
-					</>,
-					<>
-						¿Tiene una pregunta?{' '}
-						<a href="https://www.cancer.gov/espanol/contactenos">Contáctenos</a>
+				</>,
+				<>
+					¿Tiene una pregunta?{' '}
+					<a href="https://www.cancer.gov/espanol/contactenos">Contáctenos</a>
 						.
-					</>,
-			  ]
+				</>,
+			]
 			: [
-					<>We can&apos;t find the page you&apos;re looking for.</>,
-					<>
-						Visit the <a href="https://www.cancer.gov">homepage</a>, browse by{' '}
-						<a href="https://www.cancer.gov/types">cancer type</a>, or use the
+				<>We can&apos;t find the page you&apos;re looking for.</>,
+				<>
+					Visit the <a href="https://www.cancer.gov">homepage</a>, browse by{' '}
+					<a href="https://www.cancer.gov/types">cancer type</a>, or use the
 						search below.
-					</>,
-					<>
-						Have a question?{' '}
-						<a href="https://www.cancer.gov/contact">Get in touch</a>.
-					</>,
-			  ];
+				</>,
+				<>
+					Have a question?{' '}
+					<a href="https://www.cancer.gov/contact">Get in touch</a>.
+				</>,
+			];
 
 	const executeSearch = (event) => {
-		event.preventDefault();
+    event.preventDefault();
+		const queryString =
+			searchText.length > 1
+				? `${searchText}/?searchMode=${searchMatchType.beginsWith}`
+				: `/`;
+		window.location = `${SearchPath({ searchText: queryString })}`;
 	};
 
 	const renderHelmet = () => {
@@ -72,11 +78,6 @@ const PageNotFound = () => {
 		);
 	};
 
-	const updateTextInput = (event) => {
-		const { value } = event.target;
-		updateSearchText(value);
-	};
-
 	return (
 		<>
 			{renderHelmet()}
@@ -87,13 +88,15 @@ const PageNotFound = () => {
 						<p key={index}>{content}</p>
 					))}
 				</>
-				<div className="error-searchbar">
-					<TextInput
+				<form name="kwSearch" className="error-searchbar">
+					<input
 						id="keywords"
-						action={updateTextInput}
-						classes="searchString"
-						label={i18n.search[language]}
-						labelHidden
+						type="text"
+						className="ncids-input searchString"
+						aria-required="false"
+						aria-label={i18n.search[language]}
+						autoComplete="off"
+						onChange={event => setSearchText(event.target.value)}
 					/>
 					<input
 						type="submit"
@@ -103,7 +106,7 @@ const PageNotFound = () => {
 						value={i18n.search[language]}
 						onClick={executeSearch}
 					/>
-				</div>
+				</form>
 			</div>
 		</>
 	);
