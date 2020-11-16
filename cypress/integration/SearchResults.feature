@@ -101,3 +101,8 @@ Feature: As a user, I would like to be able to enter keywords and have the optio
     And user clicks search button
     Then user is redirected to "/search/beva/"
     And the system appends "?searchMode=Begins" to the URL
+
+  Scenario: User is able to search for a term longer than 30 characters
+    Given the user navigates to "/search/allogeneic%20GM-CSF-secreting%20breast%20cancer%20vaccine%20/?searchMode=Contains"
+    Then the system returns search results page for the search term
+    And the message "Queries are limited to 30 characters. Any characters after the 30th will not be included in the search." appears

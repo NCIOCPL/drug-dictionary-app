@@ -472,3 +472,7 @@ Then('user is redirected to {string}', (path) => {
 Then('the search bar on the page does not maintain the user’s term', () => {
 	cy.get('#keywords').should('have.attr', 'value', '');
 });
+
+Then('the message {string} appears',(text)=>{
+cy.get('.limited-query-message').should('have.text',text);
+});

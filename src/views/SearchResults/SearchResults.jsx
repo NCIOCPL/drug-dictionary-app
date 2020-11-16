@@ -14,6 +14,7 @@ const SearchResults = () => {
 	const { DefinitionPath, SearchPath } = useAppPaths();
 	const params = useParams();
 	const { searchText } = params;
+	const showMessage = searchText?.length > 30;
 	const [searchResultsLoaded, setSearchResultsLoaded] = useState(false);
 	const [searchResults, setSearchResults] = useState();
 	// Get items passed into index.js and stored in the context.
@@ -26,8 +27,9 @@ const SearchResults = () => {
 	const navigate = useNavigate();
 	const urlQuery = useURLQuery();
 	const searchMode = urlQuery.get('searchMode') || 'Begins';
+	const textToSearch = searchMode === 'Begins' ? searchText : searchText.length > 30 ? searchText.substr(0, 30) : searchText;
 	const queryResponse = useCustomQuery(
-		getDrugSearchResults({ drug: searchText, matchType: searchMode })
+		getDrugSearchResults({ drug: textToSearch, matchType: searchMode })
 	);
 
 	useEffect(() => {
@@ -123,9 +125,14 @@ const SearchResults = () => {
 			{renderHelmet()}
 			{searchResultsLoaded && searchResults ? (
 				<div className="results">
+					{showMessage && searchMode === 'Contains' && searchResults.payload.results.length > 1 && (
+						<span className="limited-query-message">
+							Queries are limited to 30 characters. Any characters after the 30th will not be included in the search.
+						</span>
+					)}
 					{searchResults.payload.results.length > 1 && (
 						<SearchTermList
-							searchTerm={searchText}
+							searchTerm={textToSearch}
 							termLinkPath={SearchPath}
 							termLinkTrackingHandler={termLinkEventTrackingHandler}
 							terms={searchResults.payload.results}
