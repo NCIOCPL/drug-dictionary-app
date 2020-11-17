@@ -96,7 +96,7 @@ const Search = ({ autoSuggestLimit = 10 }) => {
 		const { value } = event.target;
 		setSearchText(value);
 		// Make auto suggest API call if search text length >= 3
-		if (value.length >= 3) {
+		if (value.length >= 3 && value.length <= 30) {
 			setFetchAutoSuggest(true);
 			return;
 		}
@@ -133,10 +133,11 @@ const Search = ({ autoSuggestLimit = 10 }) => {
 
 			<Autocomplete
 				id="keywords"
-				label="Enter keywords or phrases"
 				labelHidden
 				wrapperClasses="drug-search__input"
 				inputClasses="drug-search__input"
+				inputHelpText="Please enter up to 30 characters for your search"
+				inputMaxLength={30}
 				value={searchText}
 				inputProps={{
 					placeholder: 'Enter keywords or phrases',
@@ -151,21 +152,26 @@ const Search = ({ autoSuggestLimit = 10 }) => {
 						className="ncids-autocomplete__menu --terms"
 						role="listbox"
 						data-testid="tid-auto-suggest-options">
-						{searchText.length >= 3 ? (
-							!autoSuggest.loading && autoSuggest.payload?.length ? (
-								children
-							) : autoSuggest.loading ? (
-								<div className="ncids-autocomplete__menu-item">
-									Loading results...
-								</div>
-							) : (
-								<></>
+						{searchText.length >= 3 && searchText.length <= 30
+							? (
+								!autoSuggest.loading && autoSuggest.payload?.length
+									? children
+									: autoSuggest.loading
+									? (
+										<div className="ncids-autocomplete__menu-item">
+											Loading results...
+										</div>
+										)
+									: (
+										<></>
+									)
 							)
-						) : (
-							<div className="ncids-autocomplete__menu-item">
-								Please enter 3 or more characters
-							</div>
-						)}
+							: searchText.length >= 30 ? <div className="ncids-autocomplete__menu-item">Enter 30 characters or less</div> : (
+								<div className="ncids-autocomplete__menu-item">
+									Please enter 3 or more characters
+								</div>
+							)
+						}
 					</div>
 				)}
 				renderItem={(item, isHighlighted) => (
