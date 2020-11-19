@@ -125,11 +125,11 @@ const SearchResults = () => {
 			{renderHelmet()}
 			{searchResultsLoaded && searchResults ? (
 				<div className="results">
-					{showMessage && searchMode === 'Contains' && searchResults.payload.results.length > 1 && (
+					{/*{showMessage && searchMode === 'Contains' && searchResults.payload.results.length > 1 && (
 						<span className="limited-query-message">
 							Queries are limited to 30 characters. Any characters after the 30th will not be included in the search.
 						</span>
-					)}
+					)}*/}
 					{searchResults.payload.results.length > 1 && (
 						<SearchTermList
 							searchTerm={textToSearch}

@@ -32,6 +32,7 @@ const Search = ({ autoSuggestLimit = 10 }) => {
 			? getKeyValueFromQueryString('searchMode', search)
 			: searchMatchType.beginsWith;
 	// Set default selected option for search match type
+	const [errorMessage, setErrorMessage] = useState(null);
 	const [selectedOption, setSelectedOption] = useState(matchType);
 	// Set default search text to value retrieved from url or set to empty string if not
 	const [searchText, setSearchText] = useState(
@@ -46,6 +47,12 @@ const Search = ({ autoSuggestLimit = 10 }) => {
 		selectedOption,
 		shouldFetch: shouldFetchAutoSuggest,
 	});
+
+	useEffect( () => {
+		if (searchText.length > 30) {
+			setErrorMessage('Please enter up to 30 characters for suggested search options');
+		}
+	}, []);
 
 	useEffect(() => {
 		// Set selected option value if url parameters change
@@ -97,9 +104,15 @@ const Search = ({ autoSuggestLimit = 10 }) => {
 		setSearchText(value);
 		// Make auto suggest API call if search text length >= 3
 		if (value.length >= 3 && value.length <= 30) {
+			setErrorMessage(null);
 			setFetchAutoSuggest(true);
 			return;
 		}
+		if (value.length > 30) {
+			setErrorMessage('Please enter up to 30 characters for suggested search options');
+			return;
+		}
+		setErrorMessage(null)
 		setFetchAutoSuggest(false);
 	};
 
@@ -130,7 +143,7 @@ const Search = ({ autoSuggestLimit = 10 }) => {
 					onChange={toggleRadioSelection}
 				/>
 			</div>
-
+			<div className="drug-search__error-message">{errorMessage}</div>
 			<Autocomplete
 				id="keywords"
 				label="Enter keywords or phrases"
@@ -151,26 +164,21 @@ const Search = ({ autoSuggestLimit = 10 }) => {
 						className="ncids-autocomplete__menu --terms"
 						role="listbox"
 						data-testid="tid-auto-suggest-options">
-						{searchText.length >= 3 && searchText.length <= 30
-							? (
-								!autoSuggest.loading && autoSuggest.payload?.length
-									? children
-									: autoSuggest.loading
-									? (
-										<div className="ncids-autocomplete__menu-item">
-											Loading results...
-										</div>
-										)
-									: (
-										<></>
-									)
-							)
-							: searchText.length >= 30 ? <div className="ncids-autocomplete__menu-item">Enter 30 characters or less</div> : (
+						{searchText.length >= 3 ? (
+							!autoSuggest.loading && autoSuggest.payload?.length ? (
+								children
+							) : autoSuggest.loading  && searchText.length <= 30 ? (
 								<div className="ncids-autocomplete__menu-item">
-									Please enter 3 or more characters
+									Loading results...
 								</div>
+							) : (
+								<></>
 							)
-						}
+						) : (
+							<div className="ncids-autocomplete__menu-item">
+								Please enter 3 or more characters
+							</div>
+						)}
 					</div>
 				)}
 				renderItem={(item, isHighlighted) => (

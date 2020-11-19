@@ -3,14 +3,22 @@
 .drug-search {
 	margin-top: 20px;
 
-	.radio-selection {
-		margin-bottom: 1em;
-	}
-
 	.radio {
 		margin-top: 1em;
 		display: inline-block;
 		margin-right: 15px;
+	}
+
+	&__error-message {
+		margin-top: 5px;
+		padding-bottom: 5px;
+		color: #b50909;
+		display: block;
+		content: " ";
+		height: 24px;
+		font-weight: 700;
+		line-height: 1.4;
+		font-size: 14px;
 	}
 
 	&__input {
@@ -24,6 +32,7 @@
 	}
 
 	.button {
+		/*margin: 23px 0 16px 0;*/
 		margin-right: 0;
 		margin-left: 0;
 		display: block;
