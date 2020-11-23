@@ -186,6 +186,7 @@ class Autocomplete extends React.Component {
 		label: PropTypes.string,
 		modified: PropTypes.bool,
 		inputHelpText: PropTypes.string,
+		inputMaxLength: PropTypes.number,
 	};
 
 	static defaultProps = {
@@ -696,6 +697,7 @@ class Autocomplete extends React.Component {
 							),
 							type: 'text',
 							value: this.props.value,
+							maxLength: this.props.inputMaxLength
 						})}
 					</div>
 					<div className="menu-anchor">

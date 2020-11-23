@@ -472,3 +472,17 @@ Then('user is redirected to {string}', (path) => {
 Then('the search bar on the page does not maintain the user’s term', () => {
 	cy.get('#keywords').should('have.attr', 'value', '');
 });
+
+Then('the message {string} appears',(text)=>{
+cy.get('.ncids-input__help-text').should('have.text',text);
+});
+
+Then('search box truncates the keyword to {string}',(value)=>{
+	cy.get('#keywords').should('have.attr', 'maxlength', 30);
+	cy.get('#keywords').should('have.attr', 'value', value);
+
+});
+
+Then('user tries to add {string} in the search box',(longKeyword)=>{
+	cy.get('#keywords').type(longKeyword)
+});

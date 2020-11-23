@@ -96,7 +96,7 @@ const Search = ({ autoSuggestLimit = 10 }) => {
 		const { value } = event.target;
 		setSearchText(value);
 		// Make auto suggest API call if search text length >= 3
-		if (value.length >= 3) {
+		if (value.length >= 3 && value.length <= 30) {
 			setFetchAutoSuggest(true);
 			return;
 		}
@@ -137,6 +137,8 @@ const Search = ({ autoSuggestLimit = 10 }) => {
 				labelHidden
 				wrapperClasses="drug-search__input"
 				inputClasses="drug-search__input"
+				inputHelpText="Please enter up to 30 characters for your search"
+				inputMaxLength={30}
 				value={searchText}
 				inputProps={{
 					placeholder: 'Enter keywords or phrases',
