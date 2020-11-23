@@ -83,6 +83,7 @@ Feature: As a user, I would like to be able to enter keywords and have the optio
 
   Scenario: As a user, if my search term only returns one result, I would like to be redirected to the term’s page instead of the results page.
     Given the user navigates to "/"
+    Then the message "Please enter up to 30 characters for your search" appears
     And user types "50%" in the search box
     And user clicks search button
     Then user is redirected to "/def/50pct-oxygen-50pct-nitrous-oxide-premix"
@@ -101,3 +102,11 @@ Feature: As a user, I would like to be able to enter keywords and have the optio
     And user clicks search button
     Then user is redirected to "/search/beva/"
     And the system appends "?searchMode=Begins" to the URL
+
+  Scenario: When user tries to enter more than 30 characters keyword is truncated and search is executed for less than 30 chars
+    Given the user navigates to "/search/allogeneic%20GM-CSF-secreting%20br/?searchMode=Contains"
+    Then the message "Please enter up to 30 characters for your search" appears
+    When user tries to add "east" in the search box
+    Then search box truncates the keyword to "allogeneic GM-CSF-secreting br"
+    And user clicks search button
+    Then the system returns search results page for the search term

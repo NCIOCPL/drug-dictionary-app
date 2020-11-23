@@ -26,8 +26,9 @@ const SearchResults = () => {
 	const navigate = useNavigate();
 	const urlQuery = useURLQuery();
 	const searchMode = urlQuery.get('searchMode') || 'Begins';
+	const textToSearch = searchMode === 'Begins' ? searchText : searchText.length > 30 ? searchText.substr(0, 30) : searchText;
 	const queryResponse = useCustomQuery(
-		getDrugSearchResults({ drug: searchText, matchType: searchMode })
+		getDrugSearchResults({ drug: textToSearch, matchType: searchMode })
 	);
 
 	useEffect(() => {
@@ -125,7 +126,7 @@ const SearchResults = () => {
 				<div className="results">
 					{searchResults.payload.results.length > 1 && (
 						<SearchTermList
-							searchTerm={searchText}
+							searchTerm={textToSearch}
 							termLinkPath={SearchPath}
 							termLinkTrackingHandler={termLinkEventTrackingHandler}
 							terms={searchResults.payload.results}
