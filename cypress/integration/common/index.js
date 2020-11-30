@@ -207,7 +207,11 @@ Then('helper text {string} appears', (helperText) => {
 });
 
 When('user types {string} in the search bar', (keyword) => {
-	cy.get('input#keywords').type(keyword);
+	cy.get('input#keywords[type="text"]').clear().type(keyword);
+});
+
+When('the user edits the selected text to be {string}', (keyword) => {
+	cy.get('input#keywords[type="text"]').clear().type(keyword);
 });
 
 When('user selects {string} option', (searchType) => {
@@ -260,6 +264,11 @@ Then('autosuggest appears with correct options', (dataTable) => {
 			i++;
 		}
 	});
+});
+
+And('selects the {string} entry', (autoSuggestOption) => {
+	cy.get(".menu-wrapper div[class*='--terms']").should('be.visible');
+	cy.get(".menu-wrapper div[class*='--terms']").contains(autoSuggestOption).click();
 });
 
 /*

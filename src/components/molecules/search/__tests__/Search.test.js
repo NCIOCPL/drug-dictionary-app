@@ -162,6 +162,37 @@ describe('<Search /> English', () => {
 		expect(analyticsHandler).toHaveBeenCalled();
 	});
 
+	test('Selecting term from autosuggest triggers provided analytics event', async () => {
+		const { getByPlaceholderText, getByText } = wrapper;
+		const searchText = 'metastatic';
+		const textInput = getByPlaceholderText('Enter keywords or phrases');
+		await act(async () => {
+			fireEvent.change(textInput, { target: { value: searchText } });
+			const input = screen.getByRole('combobox');
+			// Use arrow down once to navigate to first item in options list
+			fireEvent(
+				textInput,
+				new KeyboardEvent('keydown', {
+					key: 'ArrowDown',
+					keyCode: 40,
+					which: 40,
+					bubbles: true,
+				})
+			);
+			// Enter key to select first item in options list
+			fireEvent(
+				textInput,
+				new KeyboardEvent('keydown', {
+					key: 'Enter',
+					keyCode: 13,
+					which: 13,
+					bubbles: true,
+				})
+			);
+		});
+		expect(analyticsHandler).toHaveBeenCalled();
+	});
+
 	describe('Autocomplete', () => {
 		beforeEach(() => {
 			cleanup();

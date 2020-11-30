@@ -59,17 +59,12 @@ Feature: As a user, I would like to have an option to search for a term while vi
 		When user clicks on the search bar
 		When user types "bev" in the search bar
 		Then autosuggest appears with correct options
-			| options                                                         |
-			| carboplatin-Taxol-bevacizumab regimen                           |
-			| carrot/Ji-Lin ginseng/licorice root/tangerine peel soy beverage |
-			| fermented soybean protein beverage                              |
-			| FOLFIRI-bevacizumab regimen                                     |
-			| indium In 111 bevacizumab                                       |
-			| 111-indium labeled bevacizumab                                  |
-			| carboplatin-paclitaxel-bevacizumab regimen                      |
-			| carrot/Jilin ginseng/licorice root/tangerine peel soy beverage  |
-			| electro-kinetically altered beverage                            |
-			| folinic acid-fluorouracil-irinotecan-bevacizumab regimen        |
+			| options                        |
+			| FOLFIRI-bevacizumab regimen    |
+			| indium In 111 bevacizumab      |
+			| 111-indium labeled bevacizumab |
+			| Indium I 111 Bevacizumab       |
+			| zirconium Zr 89 bevacizumab    |
 
   ##########Analytics############
 
@@ -94,49 +89,3 @@ Feature: As a user, I would like to have an option to search for a term while vi
 			| data.dictionaryTitle | NCI Drug Dictionary             |
 			| data.analyticsName   | Drug                            |
 			| data.letter          | A                               |
-
-	Scenario: When a user clicks on the search button for a starts with search, an analytics click event will be fired.
-		Given "dictionaryTitle" is set to "NCI Drug Dictionary"
-		And "baseHost" is set to "http://localhost:3000"
-		And "canonicalHost" is set to "https://www.cancer.gov"
-		And "siteName" is set to "National Cancer Institute"
-		And "channel" is set to "Publications"
-		And "analyticsPublishedDate" is set to "02/02/2011"
-		And "analyticsName" is set to "Drug"
-		When the user navigates to "def/bevacizumab"
-		And search bar contains a placeholder text "Enter keywords or phrases"
-		When user types "bev" in the search bar
-		And the user clicks the search button
-		Then there should be an analytics event with the following details
-			| key                  | value                                 |
-			| type                 | Other                                 |
-			| event                | DrugDictionaryApp:Other:KeywordSearch |
-			| linkName             | DrugDictionarySearch                  |
-			| data.dictionaryTitle | NCI Drug Dictionary                   |
-			| data.analyticsName   | Drug                                  |
-			| data.searchTerm      | bev                                   |
-			| data.searchType      | starts with                           |
-
-	Scenario: When a user clicks on the search button for a contains search, an analytics click event will be fired.
-		Given "dictionaryTitle" is set to "NCI Drug Dictionary"
-		And "baseHost" is set to "http://localhost:3000"
-		And "canonicalHost" is set to "https://www.cancer.gov"
-		And "siteName" is set to "National Cancer Institute"
-		And "channel" is set to "Publications"
-		And "analyticsPublishedDate" is set to "02/02/2011"
-		And "analyticsName" is set to "Drug"
-		When the user navigates to "def/bevacizumab"
-		And user selects "Contains" option
-		And search bar contains a placeholder text "Enter keywords or phrases"
-		When user types "beva" in the search bar
-		And the user clicks the search button
-		Then there should be an analytics event with the following details
-			| key                  | value                                 |
-			| type                 | Other                                 |
-			| event                | DrugDictionaryApp:Other:KeywordSearch |
-			| linkName             | DrugDictionarySearch                  |
-			| data.dictionaryTitle | NCI Drug Dictionary                   |
-			| data.analyticsName   | Drug                                  |
-			| data.searchTerm      | beva                                  |
-			| data.searchType      | contains                              |
-

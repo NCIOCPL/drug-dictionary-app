@@ -7,6 +7,8 @@ import './Search.scss';
 
 import { Autocomplete, Radio } from '../../atomic';
 import {
+	AUTO_SUGGEST_ANALYTICS_CONSTANTS,
+	AUTO_SUGGEST_ANALYTICS_USAGE,
 	searchMatchType,
 	searchMatchTypeAnalyticsMap,
 } from '../../../constants';
@@ -19,12 +21,30 @@ import {
 } from '../../../utils';
 
 const Search = ({ autoSuggestLimit = 10 }) => {
+	const {
+		CHARACTERS_TYPED,
+		IS_TERM_SELECTED,
+		ITEMS_COUNT,
+		NUM_OF_TERMS_SELECTED,
+		TERM_SELECTED,
+		USAGE,
+	} = AUTO_SUGGEST_ANALYTICS_CONSTANTS;
+
 	const params = useParams();
 	const location = useLocation();
 	const { searchText: urlParamSearchText } = params;
 	const { search } = location;
 	const tracking = useTracking();
 	const [{ analyticsName, dictionaryTitle }] = useStateValue();
+	// Autosuggest analytics default
+	const [autoSuggestAnalytics, setAutoSuggestAnalytics] = useState({
+		[CHARACTERS_TYPED]: '',
+		[IS_TERM_SELECTED]: false,
+		[ITEMS_COUNT]: 0,
+		[NUM_OF_TERMS_SELECTED]: 0,
+		[TERM_SELECTED]: '',
+		[USAGE]: AUTO_SUGGEST_ANALYTICS_USAGE.NONE_OFFERED,
+	});
 
 	// Set matchType to value retrieved from url if it exits and default to "Begins" if not
 	const matchType =
@@ -46,6 +66,11 @@ const Search = ({ autoSuggestLimit = 10 }) => {
 		selectedOption,
 		shouldFetch: shouldFetchAutoSuggest,
 	});
+	const searchType =
+		selectedOption &&
+		getKeyValueFromObject(selectedOption, searchMatchTypeAnalyticsMap)
+			? getKeyValueFromObject(selectedOption, searchMatchTypeAnalyticsMap)
+			: searchMatchTypeAnalyticsMap[searchMatchType.beginsWith];
 
 	useEffect(() => {
 		// Set selected option value if url parameters change
@@ -53,19 +78,35 @@ const Search = ({ autoSuggestLimit = 10 }) => {
 	}, [matchType]);
 
 	const trackSubmit = () => {
-		const searchType =
-			selectedOption &&
-			getKeyValueFromObject(selectedOption, searchMatchTypeAnalyticsMap)
-				? getKeyValueFromObject(selectedOption, searchMatchTypeAnalyticsMap)
-				: searchMatchTypeAnalyticsMap[searchMatchType.beginsWith];
+		const charactersTyped = autoSuggestAnalytics[IS_TERM_SELECTED]
+			? autoSuggestAnalytics[CHARACTERS_TYPED]
+			: {};
+		const numCharacters = autoSuggestAnalytics[IS_TERM_SELECTED]
+			? autoSuggestAnalytics[CHARACTERS_TYPED].length
+			: {};
+		const termSelected = autoSuggestAnalytics[IS_TERM_SELECTED]
+			? autoSuggestAnalytics[TERM_SELECTED]
+			: {};
 		tracking.trackEvent({
 			type: 'Other',
 			event: 'DrugDictionaryApp:Other:KeywordSearch',
 			linkName: 'DrugDictionarySearch',
 			searchTerm: searchText,
-			searchType: searchType,
+			searchType,
 			analyticsName,
+			autosuggestUsage: autoSuggestAnalytics[IS_TERM_SELECTED]
+				? autoSuggestAnalytics[USAGE]
+				: autoSuggestAnalytics[ITEMS_COUNT] > 0 || autoSuggest.payload?.length > 0
+				? AUTO_SUGGEST_ANALYTICS_USAGE.OFFERED
+				: AUTO_SUGGEST_ANALYTICS_USAGE.NONE_OFFERED,
+			...(autoSuggestAnalytics[IS_TERM_SELECTED] && { charactersTyped }),
 			dictionaryTitle,
+			numSuggestsSelected: autoSuggestAnalytics[NUM_OF_TERMS_SELECTED],
+			...(autoSuggestAnalytics[IS_TERM_SELECTED] && { numCharacters }),
+			suggestItems: autoSuggestAnalytics[IS_TERM_SELECTED]
+				? autoSuggestAnalytics[ITEMS_COUNT]
+				: autoSuggest.payload?.length || 0,
+			...(autoSuggestAnalytics[IS_TERM_SELECTED] && { termSelected }),
 		});
 	};
 
@@ -83,6 +124,7 @@ const Search = ({ autoSuggestLimit = 10 }) => {
 						searchMatchType.beginsWith
 				  }`
 			: `/`;
+
 		trackSubmit();
 		navigate(SearchPath({ searchText: queryString }));
 	};
@@ -94,16 +136,55 @@ const Search = ({ autoSuggestLimit = 10 }) => {
 
 	const onChangeHandler = (event) => {
 		const { value } = event.target;
+
+		// If IS_TERM_SELECTED is true
+		// and CHARACTERS_TYPED is contained in TERM_SELECTED
+		// set usage to modified
+		if (
+			autoSuggestAnalytics[IS_TERM_SELECTED] &&
+			autoSuggestAnalytics[TERM_SELECTED].includes(autoSuggestAnalytics[CHARACTERS_TYPED])
+		) {
+			setAutoSuggestAnalytics({
+				...autoSuggestAnalytics,
+				[USAGE]: AUTO_SUGGEST_ANALYTICS_USAGE.MODIFIED
+			});
+		}
+
 		setSearchText(value);
+
 		// Make auto suggest API call if search text length >= 3
 		if (value.length >= 3 && value.length <= 30) {
 			setFetchAutoSuggest(true);
 			return;
 		}
+
 		setFetchAutoSuggest(false);
 	};
 
 	const onSelectHandler = (value) => {
+		tracking.trackEvent({
+			type: 'Other',
+			event: 'DrugDictionaryApp:Other:AutosuggestSelect',
+			linkName: 'DrugDictionaryResults',
+			searchType,
+			analyticsName,
+			charactersTyped: searchText,
+			dictionaryTitle,
+			termSelected: value,
+			numCharacters: searchText.length,
+			suggestItems: autoSuggest.payload?.length || 0,
+		});
+
+		setAutoSuggestAnalytics({
+			...autoSuggestAnalytics,
+			[CHARACTERS_TYPED]: searchText,
+			[IS_TERM_SELECTED]: true,
+			[ITEMS_COUNT]: autoSuggest.payload?.length || 0,
+			[NUM_OF_TERMS_SELECTED]: autoSuggestAnalytics[NUM_OF_TERMS_SELECTED] + 1,
+			[TERM_SELECTED]: value,
+			[USAGE]: AUTO_SUGGEST_ANALYTICS_USAGE.SELECTED
+		});
+
 		setSearchText(value);
 	};
 
@@ -177,7 +258,7 @@ const Search = ({ autoSuggestLimit = 10 }) => {
 						}`}
 						role="option"
 						aria-selected={isHighlighted}
-						key={item.termId}>
+						key={`${item.termName}`}>
 						<span
 							dangerouslySetInnerHTML={{
 								__html: emboldenSubstring(item.termName, searchText),

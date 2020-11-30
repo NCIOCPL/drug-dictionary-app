@@ -45,7 +45,7 @@
 		"build": "node scripts/build.js",
 		"test": "NODE_ENV=test npm run pa11y-tests && NODE_ENV=test npm run unit-tests && NODE_ENV=test npm run cy:ci",
 		"posttest": "npm run prepare-reports",
-		"test:it": "cypress open",
+		"test:it": "NODE_ENV=test cypress open",
 		"test:pa11y": "./node_modules/.bin/pa11y-ci",
 		"cy:ci": "start-server-and-test start http://localhost:3000 integration-tests",
 		"unit-tests": "jest",
