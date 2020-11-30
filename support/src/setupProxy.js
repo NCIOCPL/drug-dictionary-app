@@ -180,7 +180,7 @@ const getAutoSuggestResults = async (req, res, next) => {
 		// This example is basic...
 		const mockFile = path.join(
 			mockDir,
-			`${encodeURIComponent(searchText)}.json`
+			`${encodeURIComponent(searchText.toLowerCase())}.json`
 		);
 
 		try {

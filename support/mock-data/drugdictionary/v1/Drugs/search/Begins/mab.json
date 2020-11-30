@@ -1,0 +1,525 @@
+{
+	"meta": {
+		"totalResults": 10,
+		"from": 0
+	},
+	"results": [
+		{
+			"aliases": [
+				{
+					"type": "Synonym",
+					"name": "anti-CD52 monoclonal antibody"
+				},
+				{
+					"type": "Abbreviation",
+					"name": "MoAb CD52"
+				},
+				{
+					"type": "Synonym",
+					"name": "Monoclonal Antibody Campath-1H"
+				},
+				{
+					"type": "Synonym",
+					"name": "Campath-1H"
+				},
+				{
+					"type": "Synonym",
+					"name": "Monoclonal Antibody CD52"
+				},
+				{
+					"type": "Synonym",
+					"name": "Lemtrada"
+				},
+				{
+					"type": "USBrandName",
+					"name": "Campath"
+				},
+				{
+					"type": "ForeignBrandName",
+					"name": "MabCampath"
+				},
+				{
+					"type": "INDCode",
+					"name": "10864"
+				},
+				{
+					"type": "NSCNumber",
+					"name": "715969"
+				}
+			],
+			"definition": {
+				"html": "A recombinant DNA-derived humanized monoclonal antibody directed against the cell surface glycoprotein CD52. Alemtuzumab is an IgG1 kappa with human variable framework and constant regions, and complementarity-determining regions derived from a rat monoclonal antibody. This agent selectively binds to CD52, thereby triggering a host immune response that results in lysis of CD52 + cells. CD52 is a glycoprotein expressed on the surface of essentially all normal and malignant B and T cells, a majority of monocytes, macrophages and natural killer (NK) cells, a subpopulation of granulocytes, and tissues of the male reproductive system.",
+				"text": "A recombinant DNA-derived humanized monoclonal antibody directed against the cell surface glycoprotein CD52. Alemtuzumab is an IgG1 kappa with human variable framework and constant regions, and complementarity-determining regions derived from a rat monoclonal antibody. This agent selectively binds to CD52, thereby triggering a host immune response that results in lysis of CD52 + cells. CD52 is a glycoprotein expressed on the surface of essentially all normal and malignant B and T cells, a majority of monocytes, macrophages and natural killer (NK) cells, a subpopulation of granulocytes, and tissues of the male reproductive system."
+			},
+			"drugInfoSummaryLink": {
+				"uri": "https://www.cancer.gov/about-cancer/treatment/drugs/alemtuzumab",
+				"text": "Alemtuzumab"
+			},
+			"nciConceptId": "C1681",
+			"nciConceptName": "Alemtuzumab",
+			"termId": 37783,
+			"name": "alemtuzumab",
+			"firstLetter": "a",
+			"type": "DrugTerm",
+			"termNameType": "PreferredName",
+			"prettyUrlName": "alemtuzumab"
+		},
+		{
+			"aliases": [
+				{
+					"type": "CodeName",
+					"name": "BI 836826"
+				},
+				{
+					"type": "CodeName",
+					"name": "mAb 37.1"
+				}
+			],
+			"definition": {
+				"html": "An Fc-engineered, chimeric immunoglobulin (Ig) G1 monoclonal antibody against the tumor-associated antigen (TAA) CD37, with potential antineoplastic activity. Upon administration, the anti-CD37 monoclonal antibody BI 836826 both activates the immune system to induce an antibody-dependent cell-mediated cytotoxicity  (ADCC) against CD37-overexpressing tumor cells and induces apoptosis in these tumor cells. BI 836826 is Fc-engineered to improve ADCC activity and enhance affinity for the receptor Fc-gamma-RIIIa, which is expressed on human natural killer (NK) cells. CD37, a member of the tetraspanin superfamily of cell surface antigens, is overexpressed on a variety of cancer cell types and plays a key role in tumor cell proliferation.",
+				"text": "An Fc-engineered, chimeric immunoglobulin (Ig) G1 monoclonal antibody against the tumor-associated antigen (TAA) CD37, with potential antineoplastic activity. Upon administration, the anti-CD37 monoclonal antibody BI 836826 both activates the immune system to induce an antibody-dependent cell-mediated cytotoxicity  (ADCC) against CD37-overexpressing tumor cells and induces apoptosis in these tumor cells. BI 836826 is Fc-engineered to improve ADCC activity and enhance affinity for the receptor Fc-gamma-RIIIa, which is expressed on human natural killer (NK) cells. CD37, a member of the tetraspanin superfamily of cell surface antigens, is overexpressed on a variety of cancer cell types and plays a key role in tumor cell proliferation."
+			},
+			"drugInfoSummaryLink": null,
+			"nciConceptId": "C122833",
+			"nciConceptName": "Anti-CD37 Monoclonal Antibody BI 836826",
+			"termId": 695895,
+			"name": "anti-CD37 monoclonal antibody BI 836826",
+			"firstLetter": "a",
+			"type": "DrugTerm",
+			"termNameType": "PreferredName",
+			"prettyUrlName": "anti-cd37-monoclonal-antibody-bi-836826"
+		},
+		{
+			"aliases": [
+				{
+					"type": "CodeName",
+					"name": "ABT-806"
+				},
+				{
+					"type": "Abbreviation",
+					"name": "anti-EGFR MoAb ABT-806"
+				},
+				{
+					"type": "Abbreviation",
+					"name": "anti-EGFR mAb ABT-806"
+				},
+				{
+					"type": "CodeName",
+					"name": "mAb-806"
+				}
+			],
+			"definition": {
+				"html": "A humanized monoclonal antibody (MoAb) against human epidermal growth factor receptor (EGFR) with antineoplastic activity. MoAb ABT-806 targets the EGFR deletion variant, de2-7 EGFR as well as wild-type EGFR expressed in cells overexpressing the receptor, thereby preventing the activation and subsequent dimerization of the receptor; the decrease in receptor activation and dimerization result in an inhibition in signal transduction and anti-proliferative effects. This MoAb targets cells expressing aberrant EGFR, hence making it an ideal candidate for generation of radioisotope or toxin conjugates.",
+				"text": "A humanized monoclonal antibody (MoAb) against human epidermal growth factor receptor (EGFR) with antineoplastic activity. MoAb ABT-806 targets the EGFR deletion variant, de2-7 EGFR as well as wild-type EGFR expressed in cells overexpressing the receptor, thereby preventing the activation and subsequent dimerization of the receptor; the decrease in receptor activation and dimerization result in an inhibition in signal transduction and anti-proliferative effects. This MoAb targets cells expressing aberrant EGFR, hence making it an ideal candidate for generation of radioisotope or toxin conjugates."
+			},
+			"drugInfoSummaryLink": null,
+			"nciConceptId": "C95206",
+			"nciConceptName": "Depatuxizumab",
+			"termId": 691187,
+			"name": "anti-EGFR monoclonal antibody ABT-806",
+			"firstLetter": "a",
+			"type": "DrugTerm",
+			"termNameType": "PreferredName",
+			"prettyUrlName": "depatuxizumab"
+		},
+		{
+			"aliases": [
+				{
+					"type": "CodeName",
+					"name": "MABp1"
+				},
+				{
+					"type": "Synonym",
+					"name": "Anti-IL-1 alpha monoclonal antibody MABp1"
+				},
+				{
+					"type": "USBrandName",
+					"name": "Xilonix"
+				},
+				{
+					"type": "Synonym",
+					"name": "Anti-IL-1amonoclonal antibody"
+				}
+			],
+			"definition": {
+				"html": "A human IgG1 monoclonal antibody targeting the inflammatory cytokine interleukin-1 alpha (IL1a) with potential antineoplastic, anti-cachectic and anti-angiogenic activities. Anti-IL1a monoclonal antibody MABp1 targets and binds to IL1a and prevents IL1a activity. This prevents IL1a-mediated tumorigenesis and angiogenesis. In addition, MABp1 abrogates IL1a-mediated cachexia. IL1a, an inflammatory mediator expressed on monocytes, platelets and overexpressed by certain tumors, plays a key role in the promotion of tumor cell growth, metastasis and invasion. In addition, IL1a stimulates metabolic activity in the central nervous system.",
+				"text": "A human IgG1 monoclonal antibody targeting the inflammatory cytokine interleukin-1 alpha (IL1a) with potential antineoplastic, anti-cachectic and anti-angiogenic activities. Anti-IL1a monoclonal antibody MABp1 targets and binds to IL1a and prevents IL1a activity. This prevents IL1a-mediated tumorigenesis and angiogenesis. In addition, MABp1 abrogates IL1a-mediated cachexia. IL1a, an inflammatory mediator expressed on monocytes, platelets and overexpressed by certain tumors, plays a key role in the promotion of tumor cell growth, metastasis and invasion. In addition, IL1a stimulates metabolic activity in the central nervous system."
+			},
+			"drugInfoSummaryLink": null,
+			"nciConceptId": "C88325",
+			"nciConceptName": "Anti-IL-1 alpha Monoclonal Antibody MABp1",
+			"termId": 661044,
+			"name": "anti-interleukin-1 alpha monoclonal antibody MABp1",
+			"firstLetter": "a",
+			"type": "DrugTerm",
+			"termNameType": "PreferredName",
+			"prettyUrlName": "anti-il-1-alpha-monoclonal-antibody-mabp1"
+		},
+		{
+			"aliases": [
+				{
+					"type": "Synonym",
+					"name": "LAG-3/PD-L1 bispecific antibody FS118"
+				},
+				{
+					"type": "CodeName",
+					"name": "FS118"
+				},
+				{
+					"type": "Synonym",
+					"name": "Mab2 FS118"
+				},
+				{
+					"type": "Synonym",
+					"name": "LAG-3/PD-L1 Mab2 FS118"
+				}
+			],
+			"definition": {
+				"html": "A bispecific antibody directed against two immune checkpoint proteins, the inhibitory receptor lymphocyte activation gene 3 protein (LAG3; LAG-3) and the immunosuppressive ligand programmed cell death-1 ligand 1 (PD-L1; cluster of differentiation 274; CD274), with potential immune checkpoint inhibitory and antineoplastic activities. FS118 is generated by incorporating an anti-LAG-3 Fc-region with antigen binding (Fcab) into a PD-L1-specific antibody. Upon administration, FS118 simultaneously targets and binds to LAG3 expressed on T-cells in the tumor microenvironment (TME) and PD-L1 expressed on tumor cells. This prevents LAG3- and PD-L1-mediated signaling, reverses T-cell inactivation, activates the immune system and enhances cytotoxic T-lymphocyte (CTL)-mediated anti-tumor immune responses against PD-L1-expressing tumor cells, which together lead to a reduction in tumor growth. LAG3, a member of the immunoglobulin superfamily (IgSF) negatively regulates both proliferation and activation of T-cells. Its expression is associated with tumor-mediated immune suppression. PD-L1 is overexpressed by many human cancer cell types. PD-L1 binding to its receptor programmed death 1 (PD-1; PDCD1; CD279) on activated T-cells inhibits the expansion and survival of CD8-positive T-cells, suppresses the immune system and results in immune evasion.",
+				"text": "A bispecific antibody directed against two immune checkpoint proteins, the inhibitory receptor lymphocyte activation gene 3 protein (LAG3; LAG-3) and the immunosuppressive ligand programmed cell death-1 ligand 1 (PD-L1; cluster of differentiation 274; CD274), with potential immune checkpoint inhibitory and antineoplastic activities. FS118 is generated by incorporating an anti-LAG-3 Fc-region with antigen binding (Fcab) into a PD-L1-specific antibody. Upon administration, FS118 simultaneously targets and binds to LAG3 expressed on T-cells in the tumor microenvironment (TME) and PD-L1 expressed on tumor cells. This prevents LAG3- and PD-L1-mediated signaling, reverses T-cell inactivation, activates the immune system and enhances cytotoxic T-lymphocyte (CTL)-mediated anti-tumor immune responses against PD-L1-expressing tumor cells, which together lead to a reduction in tumor growth. LAG3, a member of the immunoglobulin superfamily (IgSF) negatively regulates both proliferation and activation of T-cells. Its expression is associated with tumor-mediated immune suppression. PD-L1 is overexpressed by many human cancer cell types. PD-L1 binding to its receptor programmed death 1 (PD-1; PDCD1; CD279) on activated T-cells inhibits the expansion and survival of CD8-positive T-cells, suppresses the immune system and results in immune evasion."
+			},
+			"drugInfoSummaryLink": null,
+			"nciConceptId": "C150734",
+			"nciConceptName": "Anti-LAG-3/PD-L1 Bispecific Antibody FS118",
+			"termId": 793522,
+			"name": "anti-LAG-3/PD-L1 bispecific antibody FS118",
+			"firstLetter": "a",
+			"type": "DrugTerm",
+			"termNameType": "PreferredName",
+			"prettyUrlName": "anti-lag-3-pd-l1-bispecific-antibody-fs118"
+		},
+		{
+			"aliases": [
+				{
+					"type": "CodeName",
+					"name": "hPV19"
+				},
+				{
+					"type": "CodeName",
+					"name": "hPV-19"
+				},
+				{
+					"type": "CodeName",
+					"name": "hPV 19"
+				},
+				{
+					"type": "Synonym",
+					"name": "anti-VEGF MAb hPV19"
+				},
+				{
+					"type": "Synonym",
+					"name": "MAb hPV19"
+				}
+			],
+			"definition": {
+				"html": "A humanized monoclonal antibody directed against human vascular endothelial growth factor (VEGF), with potential anti-angiogenic and antineoplastic activities. Upon administration, anti-VEGF monoclonal antibody hPV19 targets and binds to VEGFR at a unique binding site and inhibits VEGF binding to its receptors, VEGFR1 and VEGFR2, thereby preventing VEGF/VEGFR-mediated signaling. This prevents the growth and maintenance of tumor blood vessels. This decreases nutrient supply to tumor cells, resulting in tumor cell death. Increased VEGF/VEGFR signaling is associated with increased invasiveness and decreased survival.",
+				"text": "A humanized monoclonal antibody directed against human vascular endothelial growth factor (VEGF), with potential anti-angiogenic and antineoplastic activities. Upon administration, anti-VEGF monoclonal antibody hPV19 targets and binds to VEGFR at a unique binding site and inhibits VEGF binding to its receptors, VEGFR1 and VEGFR2, thereby preventing VEGF/VEGFR-mediated signaling. This prevents the growth and maintenance of tumor blood vessels. This decreases nutrient supply to tumor cells, resulting in tumor cell death. Increased VEGF/VEGFR signaling is associated with increased invasiveness and decreased survival."
+			},
+			"drugInfoSummaryLink": null,
+			"nciConceptId": "C156139",
+			"nciConceptName": "Anti-VEGF Monoclonal Antibody hPV19",
+			"termId": 795278,
+			"name": "anti-VEGF monoclonal antibody hPV19",
+			"firstLetter": "a",
+			"type": "DrugTerm",
+			"termNameType": "PreferredName",
+			"prettyUrlName": "anti-vegf-monoclonal-antibody-hpv19"
+		},
+		{
+			"aliases": [
+				{
+					"type": "Synonym",
+					"name": "mAb-11-1F4"
+				},
+				{
+					"type": "CodeName",
+					"name": "11-1F4"
+				},
+				{
+					"type": "CodeName",
+					"name": "111F4"
+				},
+				{
+					"type": "Synonym",
+					"name": "c11-1F4 mAb"
+				},
+				{
+					"type": "Synonym",
+					"name": "chimeric amyloid-reactive monoclonal antibody 111F4"
+				}
+			],
+			"definition": {
+				"html": "A chimeric monoclonal antibody specifically targeting human immunoglobulin light chain (LC)-related fibrils, which may potentially be used in the treatment of light chain-associated (AL) amyloidosis. Upon administration, chimeric fibril-reactive monoclonal antibody 111F4 targets and binds to the amyloid-related, conformational epitope on LC-related fibrils. This inhibits fibrillogenesis, induces an Fc-mediated cellular inflammatory response, increases degradation and elimination of AL amyloidomas, and prevents systemic LC-associated amyloid deposits. In AL amyloidosis the amyloid fibrils are composed of immunoglobulin light chain fragments.\n",
+				"text": "A chimeric monoclonal antibody specifically targeting human immunoglobulin light chain (LC)-related fibrils, which may potentially be used in the treatment of light chain-associated (AL) amyloidosis. Upon administration, chimeric fibril-reactive monoclonal antibody 111F4 targets and binds to the amyloid-related, conformational epitope on LC-related fibrils. This inhibits fibrillogenesis, induces an Fc-mediated cellular inflammatory response, increases degradation and elimination of AL amyloidomas, and prevents systemic LC-associated amyloid deposits. In AL amyloidosis the amyloid fibrils are composed of immunoglobulin light chain fragments.\n"
+			},
+			"drugInfoSummaryLink": null,
+			"nciConceptId": "C117241",
+			"nciConceptName": "Chimeric Fibril-reactive Monoclonal Antibody CAEL-101",
+			"termId": 763221,
+			"name": "chimeric fibril-reactive monoclonal antibody 111F4",
+			"firstLetter": "c",
+			"type": "DrugTerm",
+			"termNameType": "PreferredName",
+			"prettyUrlName": "chimeric-fibril-reactive-monoclonal-antibody-cael-101"
+		},
+		{
+			"aliases": [
+				{
+					"type": "Synonym",
+					"name": "monoclonal antibody MGA271"
+				},
+				{
+					"type": "CodeName",
+					"name": "MGA271"
+				},
+				{
+					"type": "LexicalVariant",
+					"name": "mAb MGA271"
+				},
+				{
+					"type": "CASRegistryName",
+					"name": "1353485-38-7"
+				}
+			],
+			"definition": {
+				"html": "An Fc-domain optimized, humanized monoclonal antibody directed against cancer stem cells (CSCs), with potential immunomodulating and antineoplastic activities. After binding of enoblituzumab to an as of yet not elucidated target expressed on CSCs and differentiated tumor cells, this agent may induce an antibody-dependent cell-mediated cytotoxicity (ADCC) against CSCs. CSCs are tumor initiating cells that are able to self-renew and are responsible for tumor cell growth and resistance.",
+				"text": "An Fc-domain optimized, humanized monoclonal antibody directed against cancer stem cells (CSCs), with potential immunomodulating and antineoplastic activities. After binding of enoblituzumab to an as of yet not elucidated target expressed on CSCs and differentiated tumor cells, this agent may induce an antibody-dependent cell-mediated cytotoxicity (ADCC) against CSCs. CSCs are tumor initiating cells that are able to self-renew and are responsible for tumor cell growth and resistance."
+			},
+			"drugInfoSummaryLink": null,
+			"nciConceptId": "C97510",
+			"nciConceptName": "Enoblituzumab",
+			"termId": 703720,
+			"name": "enoblituzumab",
+			"firstLetter": "e",
+			"type": "DrugTerm",
+			"termNameType": "PreferredName",
+			"prettyUrlName": "enoblituzumab"
+		},
+		{
+			"aliases": [
+				{
+					"type": "Synonym",
+					"name": "CC49"
+				},
+				{
+					"type": "LexicalVariant",
+					"name": "CC49 monoclonal antibody"
+				},
+				{
+					"type": "Abbreviation",
+					"name": "MOAB CC49"
+				},
+				{
+					"type": "Synonym",
+					"name": "antibody CC49, monoclonal"
+				},
+				{
+					"type": "Synonym",
+					"name": "monoclonal antibody CC-49"
+				},
+				{
+					"type": "Synonym",
+					"name": "CC-49 Monoclonal Antibody"
+				},
+				{
+					"type": "Abbreviation",
+					"name": "MAb CC49"
+				},
+				{
+					"type": "Synonym",
+					"name": "MOAB CC-49/TAG72 (DW)"
+				},
+				{
+					"type": "INDCode",
+					"name": "3006"
+				},
+				{
+					"type": "INDCode",
+					"name": "6218"
+				},
+				{
+					"type": "INDCode",
+					"name": "4427"
+				},
+				{
+					"type": "INDCode",
+					"name": "3088"
+				},
+				{
+					"type": "INDCode",
+					"name": "3496"
+				},
+				{
+					"type": "NSCNumber",
+					"name": "620537"
+				}
+			],
+			"definition": {
+				"html": "A second-generation murine monoclonal antibody based on the antibody B72.3 that is directed against tumor-associated glycoprotein 72 (TAG72).  TAG72 is expressed by gastric, breast, pancreatic, colorectal, and ovarian carcinoma cells.",
+				"text": "A second-generation murine monoclonal antibody based on the antibody B72.3 that is directed against tumor-associated glycoprotein 72 (TAG72).  TAG72 is expressed by gastric, breast, pancreatic, colorectal, and ovarian carcinoma cells."
+			},
+			"drugInfoSummaryLink": null,
+			"nciConceptId": "C2567",
+			"nciConceptName": "Minretumomab",
+			"termId": 41760,
+			"name": "monoclonal antibody CC49",
+			"firstLetter": "m",
+			"type": "DrugTerm",
+			"termNameType": "PreferredName",
+			"prettyUrlName": "minretumomab"
+		},
+		{
+			"aliases": [
+				{
+					"type": "Synonym",
+					"name": "rituximab-pvvr"
+				},
+				{
+					"type": "USBrandName",
+					"name": "Ruxience"
+				},
+				{
+					"type": "USBrandName",
+					"name": "Truxima"
+				},
+				{
+					"type": "Synonym",
+					"name": "rituximab biosimilar DRL_RI"
+				},
+				{
+					"type": "Synonym",
+					"name": "rituximab biosimilar GB241"
+				},
+				{
+					"type": "CodeName",
+					"name": "IDEC-C2B8"
+				},
+				{
+					"type": "Synonym",
+					"name": "IDEC-C2B8 monoclonal antibody"
+				},
+				{
+					"type": "Abbreviation",
+					"name": "MOAB IDEC-C2B8"
+				},
+				{
+					"type": "ForeignBrandName",
+					"name": "Mabthera"
+				},
+				{
+					"type": "USBrandName",
+					"name": "Rituxan"
+				},
+				{
+					"type": "LexicalVariant",
+					"name": "monoclonal antibody IDEC-C2B8"
+				},
+				{
+					"type": "Synonym",
+					"name": "C2B8 Monoclonal Antibody"
+				},
+				{
+					"type": "CodeName",
+					"name": "IDEC-102"
+				},
+				{
+					"type": "CodeName",
+					"name": "PF-05280586"
+				},
+				{
+					"type": "INDCode",
+					"name": "10624"
+				},
+				{
+					"type": "INDCode",
+					"name": "9968"
+				},
+				{
+					"type": "INDCode",
+					"name": "7028"
+				},
+				{
+					"type": "NSCNumber",
+					"name": "687451"
+				},
+				{
+					"type": "Synonym",
+					"name": "CT-P10"
+				},
+				{
+					"type": "Synonym",
+					"name": "BI 695500"
+				},
+				{
+					"type": "Synonym",
+					"name": "rituximab biosimilar BI 695500"
+				},
+				{
+					"type": "Synonym",
+					"name": "rituximab biosimilar PF-05280586"
+				},
+				{
+					"type": "CodeName",
+					"name": "RTXM83"
+				},
+				{
+					"type": "Synonym",
+					"name": "rituximab biosimilar RTXM83"
+				},
+				{
+					"type": "Synonym",
+					"name": "rituximab biosimilar HLX01"
+				},
+				{
+					"type": "ForeignBrandName",
+					"name": "Reditux"
+				},
+				{
+					"type": "Synonym",
+					"name": "rituximab biosimilar Reditux"
+				},
+				{
+					"type": "Synonym",
+					"name": "rituximab biosimilar ABP 798"
+				},
+				{
+					"type": "Synonym",
+					"name": "rituximab biosimilar SAIT101"
+				},
+				{
+					"type": "Synonym",
+					"name": "rituximab biosimilar IBI301"
+				},
+				{
+					"type": "Synonym",
+					"name": "rituximab biosimilar HS006"
+				},
+				{
+					"type": "Synonym",
+					"name": "rituximab biosimilar TQB2303"
+				},
+				{
+					"type": "Synonym",
+					"name": "rituximab biosimilar JHL1101"
+				}
+			],
+			"definition": {
+				"html": "A recombinant chimeric murine/human antibody directed against the CD20 antigen, a hydrophobic transmembrane protein located on normal pre-B and mature B lymphocytes. Following binding, rituximab triggers a host cytotoxic immune response against CD20-positive cells.",
+				"text": "A recombinant chimeric murine/human antibody directed against the CD20 antigen, a hydrophobic transmembrane protein located on normal pre-B and mature B lymphocytes. Following binding, rituximab triggers a host cytotoxic immune response against CD20-positive cells."
+			},
+			"drugInfoSummaryLink": {
+				"uri": "https://www.cancer.gov/about-cancer/treatment/drugs/rituximab",
+				"text": "Rituximab"
+			},
+			"nciConceptId": "C1702",
+			"nciConceptName": "Rituximab",
+			"termId": 42613,
+			"name": "rituximab",
+			"firstLetter": "r",
+			"type": "DrugTerm",
+			"termNameType": "PreferredName",
+			"prettyUrlName": "rituximab"
+		}
+	],
+	"links": null
+}

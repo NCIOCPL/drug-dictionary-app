@@ -1,5 +1,22 @@
 // Add any constants here
 
+// Autosuggest Analytics
+export const AUTO_SUGGEST_ANALYTICS_CONSTANTS = {
+	CHARACTERS_TYPED: 'charactersTyped',
+	IS_TERM_SELECTED: 'isTermSelected',
+	ITEMS_COUNT: 'itemsCount',
+	NUM_OF_TERMS_SELECTED: 'numOfTermsSelected',
+	TERM_SELECTED: 'termSelected',
+	USAGE: 'usage'
+};
+
+export const AUTO_SUGGEST_ANALYTICS_USAGE = {
+	MODIFIED: 'Modified',
+	NONE_OFFERED: 'NoneOffered',
+	OFFERED: 'Offered',
+	SELECTED: 'Selected'
+};
+
 // Array for AZ list
 export const AZListArray = 'abcdefghijklmnopqrstuvwxyz#'.split('');
 
