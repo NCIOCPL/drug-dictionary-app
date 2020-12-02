@@ -1,0 +1,178 @@
+{
+    "meta": {
+      "totalResults": 5,
+      "from": 0
+    },
+    "results": [
+      {
+        "aliases": [
+          {
+            "type": "Synonym",
+            "name": "anti-HER2/3 dendritic cell vaccine"
+          },
+          {
+            "type": "Synonym",
+            "name": "anti-HER2/3 DC vaccine"
+          },
+          {
+            "type": "Synonym",
+            "name": "anti-HER2/3 DC vaccine"
+          }
+        ],
+        "definition": {
+          "html": "A dendritic cell (DC)-based cancer vaccine against the tumor-associated antigens (TAAs) human epidermal growth factor receptor 2 (HER2; EGFR2, ERBB2) and 3 (HER3; ErbB3), with potential immunomodulatory and antineoplastic activities. Upon administration of the anti-HER2/HER3 DC vaccine, the immune system gets exposed to HER2 and HER3, which may stimulate a potent cytotoxic T-lymphocyte (CTL) response against HER-2/3-positive tumor cells. This may result in tumor cell death and decreased tumor growth. HER-2/3, members of the epidermal growth factor receptor (EGFR) family of receptor tyrosine kinases, are overexpressed by a variety of cancers.\n",
+          "text": "A dendritic cell (DC)-based cancer vaccine against the tumor-associated antigens (TAAs) human epidermal growth factor receptor 2 (HER2; EGFR2, ERBB2) and 3 (HER3; ErbB3), with potential immunomodulatory and antineoplastic activities. Upon administration of the anti-HER2/HER3 DC vaccine, the immune system gets exposed to HER2 and HER3, which may stimulate a potent cytotoxic T-lymphocyte (CTL) response against HER-2/3-positive tumor cells. This may result in tumor cell death and decreased tumor growth. HER-2/3, members of the epidermal growth factor receptor (EGFR) family of receptor tyrosine kinases, are overexpressed by a variety of cancers.\n"
+        },
+        "drugInfoSummaryLink": null,
+        "nciConceptId": "C170932",
+        "nciConceptName": "Anti-HER2/HER3 Dendritic Cell Vaccine",
+        "termId": 801200,
+        "name": "anti-HER2/HER3 dendritic cell vaccine",
+        "firstLetter": "a",
+        "type": "DrugTerm",
+        "termNameType": "PreferredName",
+        "prettyUrlName": "anti-her2-her3-dendritic-cell-vaccine"
+      },
+      {
+        "aliases": [
+          {
+            "type": "Synonym",
+            "name": "BRD 2/3/4 inhibitor MK-8628"
+          },
+          {
+            "type": "Synonym",
+            "name": "BET bromodomain proteins 2, 3, and 4 inhibitor MK-8628"
+          },
+          {
+            "type": "CodeName",
+            "name": "OTX015"
+          },
+          {
+            "type": "CodeName",
+            "name": "MK-8628"
+          }
+        ],
+        "definition": {
+          "html": " A synthetic, small molecule inhibitor of the BET (Bromodomain and Extra-Terminal) family of bromodomain-containing proteins 2, 3 and 4 with potential antineoplastic activity. Upon administration, the BET bromodomains 2, 3 and 4 inhibitor MK-8628 binds to the acetylated lysine recognition motifs on the bromodomain of BET proteins, thereby preventing the interaction between the BET proteins and acetylated histone peptides. This disrupts chromatin remodeling and gene expression. Prevention of the expression of certain growth-promoting genes, including c-Myc-dependent target genes, may lead to an inhibition of tumor cell growth. Characterized by a tandem repeat of bromodomain at the N-terminus, the BET proteins BRD2, BRD3, BRD4 are transcriptional regulators that play an important role in cellular growth.",
+          "text": " A synthetic, small molecule inhibitor of the BET (Bromodomain and Extra-Terminal) family of bromodomain-containing proteins 2, 3 and 4 with potential antineoplastic activity. Upon administration, the BET bromodomains 2, 3 and 4 inhibitor MK-8628 binds to the acetylated lysine recognition motifs on the bromodomain of BET proteins, thereby preventing the interaction between the BET proteins and acetylated histone peptides. This disrupts chromatin remodeling and gene expression. Prevention of the expression of certain growth-promoting genes, including c-Myc-dependent target genes, may lead to an inhibition of tumor cell growth. Characterized by a tandem repeat of bromodomain at the N-terminus, the BET proteins BRD2, BRD3, BRD4 are transcriptional regulators that play an important role in cellular growth."
+        },
+        "drugInfoSummaryLink": null,
+        "nciConceptId": "C103298",
+        "nciConceptName": "Birabresib",
+        "termId": 742152,
+        "name": "BET bromodomains 2/3/4 inhibitor MK-8628",
+        "firstLetter": "b",
+        "type": "DrugTerm",
+        "termNameType": "PreferredName",
+        "prettyUrlName": "birabresib"
+      },
+      {
+        "aliases": [
+          {
+            "type": "CodeName",
+            "name": "HMPL-453"
+          },
+          {
+            "type": "CodeName",
+            "name": "HMPL 453"
+          },
+          {
+            "type": "Synonym",
+            "name": "FGFR inhibitor HMPL-453"
+          }
+        ],
+        "definition": {
+          "html": "An orally bioavailable inhibitor of the fibroblast growth factor receptor (FGFR) types 1, 2, and 3 (FGFR1/2/3), with potential antineoplastic activity. Upon administration, FGFR inhibitor HMPL-453 binds to and inhibits FGFR1/2/3, which may result in the inhibition of FGFR1/2/3-related signal transduction pathways. This inhibits proliferation in FGFR1/2/3-overexpressing tumor cells. FGFR, a family of receptor tyrosine kinases (RTKs) upregulated in many tumor cell types, plays a key role in cellular proliferation, migration and survival.",
+          "text": "An orally bioavailable inhibitor of the fibroblast growth factor receptor (FGFR) types 1, 2, and 3 (FGFR1/2/3), with potential antineoplastic activity. Upon administration, FGFR inhibitor HMPL-453 binds to and inhibits FGFR1/2/3, which may result in the inhibition of FGFR1/2/3-related signal transduction pathways. This inhibits proliferation in FGFR1/2/3-overexpressing tumor cells. FGFR, a family of receptor tyrosine kinases (RTKs) upregulated in many tumor cell types, plays a key role in cellular proliferation, migration and survival."
+        },
+        "drugInfoSummaryLink": null,
+        "nciConceptId": "C150383",
+        "nciConceptName": "FGFR1/2/3 Inhibitor HMPL-453",
+        "termId": 792789,
+        "name": "FGFR inhibitor1/2/3 HMPL-453",
+        "firstLetter": "f",
+        "type": "DrugTerm",
+        "termNameType": "PreferredName",
+        "prettyUrlName": "fgfr1-2-3-inhibitor-hmpl-453"
+      },
+      {
+        "aliases": [
+          {
+            "type": "Synonym",
+            "name": "VEGFR-1/2/3 inhibitor HMPL-013"
+          },
+          {
+            "type": "CodeName",
+            "name": "HMPL-013"
+          },
+          {
+            "type": "USBrandName",
+            "name": "Elunate"
+          }
+        ],
+        "definition": {
+          "html": "An orally available, small molecule inhibitor of vascular endothelial growth factor receptors (VEGFRs), with potential anti-angiogenic and antineoplastic activities. Upon oral administration, fruquintinib inhibits VEGF-induced phosphorylation of VEGFRs 1, 2, and 3 which may result in the inhibition of migration, proliferation and survival of endothelial cells, microvessel formation, the inhibition of tumor cell proliferation, and tumor cell death. Expression of VEGFRs may be upregulated in a variety of tumor cell types.",
+          "text": "An orally available, small molecule inhibitor of vascular endothelial growth factor receptors (VEGFRs), with potential anti-angiogenic and antineoplastic activities. Upon oral administration, fruquintinib inhibits VEGF-induced phosphorylation of VEGFRs 1, 2, and 3 which may result in the inhibition of migration, proliferation and survival of endothelial cells, microvessel formation, the inhibition of tumor cell proliferation, and tumor cell death. Expression of VEGFRs may be upregulated in a variety of tumor cell types."
+        },
+        "drugInfoSummaryLink": null,
+        "nciConceptId": "C102852",
+        "nciConceptName": "Fruquintinib",
+        "termId": 737616,
+        "name": "fruquintinib",
+        "firstLetter": "f",
+        "type": "DrugTerm",
+        "termNameType": "PreferredName",
+        "prettyUrlName": "fruquintinib"
+      },
+      {
+        "aliases": [
+          {
+            "type": "Synonym",
+            "name": "bacteriophage cancer vaccine SNS-301"
+          },
+          {
+            "type": "CodeName",
+            "name": "SNS-301"
+          },
+          {
+            "type": "CodeName",
+            "name": "SNS301"
+          },
+          {
+            "type": "CodeName",
+            "name": "SNS 301"
+          },
+          {
+            "type": "CodeName",
+            "name": "PAN 301-1"
+          },
+          {
+            "type": "CodeName",
+            "name": "PAN-301-1"
+          },
+          {
+            "type": "Synonym",
+            "name": "HAAH-1/2/3 lambda phage vaccine SNS-301"
+          },
+          {
+            "type": "Synonym",
+            "name": "nanoparticle HAAH vaccine SNS-301"
+          }
+        ],
+        "definition": {
+          "html": "A nanoparticle-based cancer vaccine composed of a neutralized bacteriophage Lambda construct that is genetically engineered to contain peptide fragments of human aspartyl/asparaginyl beta-hydroxylase (HAAH; ASPH) on its surface and are fused to the C-terminus of the head protein of phage lambda gpD, with potential immunostimulating and antineoplastic activities. HAAH lambda phage vaccine SNS-301 also contains DNA fragments representing the phage CpG motif that activate the MHC class II pathway. Upon intradermal administration of the HAAH lambda phage vaccine SNS-301, the bacteriophage exposes the immune system to HAAH, producing a HAAH-specific antibody response, and may activate the immune system to induce a cytotoxic T-lymphocyte (CTL)-mediated immune response against HAAH-expressing tumor cells. HAAH is a transmembrane protein and highly conserved enzyme that catalyzes the hydroxylation of aspartyl and asparaginyl residues in epidermal growth factor-like domains of substrate proteins. HAAH is normally expressed in fetal development and is upregulated in a variety of cancer cell types, while its expression is nearly absent in healthy, normal cells. HAAH plays a key role in cancer cell growth, cell motility and invasiveness. Its expression is associated with a poor prognosis.\n",
+          "text": "A nanoparticle-based cancer vaccine composed of a neutralized bacteriophage Lambda construct that is genetically engineered to contain peptide fragments of human aspartyl/asparaginyl beta-hydroxylase (HAAH; ASPH) on its surface and are fused to the C-terminus of the head protein of phage lambda gpD, with potential immunostimulating and antineoplastic activities. HAAH lambda phage vaccine SNS-301 also contains DNA fragments representing the phage CpG motif that activate the MHC class II pathway. Upon intradermal administration of the HAAH lambda phage vaccine SNS-301, the bacteriophage exposes the immune system to HAAH, producing a HAAH-specific antibody response, and may activate the immune system to induce a cytotoxic T-lymphocyte (CTL)-mediated immune response against HAAH-expressing tumor cells. HAAH is a transmembrane protein and highly conserved enzyme that catalyzes the hydroxylation of aspartyl and asparaginyl residues in epidermal growth factor-like domains of substrate proteins. HAAH is normally expressed in fetal development and is upregulated in a variety of cancer cell types, while its expression is nearly absent in healthy, normal cells. HAAH plays a key role in cancer cell growth, cell motility and invasiveness. Its expression is associated with a poor prognosis.\n"
+        },
+        "drugInfoSummaryLink": null,
+        "nciConceptId": "C148522",
+        "nciConceptName": "HAAH Lambda phage Vaccine SNS-301",
+        "termId": 792681,
+        "name": "HAAH lambda phage vaccine SNS-301",
+        "firstLetter": "h",
+        "type": "DrugTerm",
+        "termNameType": "PreferredName",
+        "prettyUrlName": "haah-lambda-phage-vaccine-sns-301"
+      }
+    ],
+    "links": null
+  }

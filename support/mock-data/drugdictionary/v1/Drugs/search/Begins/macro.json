@@ -1,0 +1,108 @@
+{
+    "meta": {
+      "totalResults": 3,
+      "from": 0
+    },
+    "results": [
+      {
+        "aliases": [
+          {
+            "type": "Synonym",
+            "name": "Sting agonist E7766"
+          },
+          {
+            "type": "CodeName",
+            "name": "E7766"
+          },
+          {
+            "type": "CodeName",
+            "name": "E-7766"
+          },
+          {
+            "type": "CodeName",
+            "name": "E 7766"
+          },
+          {
+            "type": "CodeName",
+            "name": "MBSA E7766"
+          },
+          {
+            "type": "Synonym",
+            "name": "stimulator of interferon genes agonist E7766"
+          }
+        ],
+        "definition": {
+          "html": "An agonist of macrocycle-bridged stimulator of interferon genes (STING) protein, with potential immunoactivating and antineoplastic activities. Upon intravenous administration, macrocycle-bridged STING agonist (MBSA) E7766 targets and binds to STING and activates the STING pathway, which promotes IKK-related kinase TANK-binding kinase 1 (TBK1) signaling and activates nuclear factor-kappa B (NF-kB) and interferon regulatory factor 3 (IRF3) in immune cells in the tumor microenvironment (TME). This leads to the production of pro-inflammatory cytokines, including interferons (IFNs). Specifically, expression of IFN-beta (IFNb) enhances the cross-presentation of tumor-associated antigens (TAAs) by CD8alpha-positive and CD103-positive dendritic cells (DCs) to cytotoxic T lymphocytes (CTLs). This results in a CTL-mediated immune response against tumor cells and causes tumor cell lysis. Compared to conventional STING agonists, MBSA E7766 allows for conformational rigidity of the unique macrocycle bridge which enhances its stability and STING affinity, thereby increasing its efficacy.\n",
+          "text": "An agonist of macrocycle-bridged stimulator of interferon genes (STING) protein, with potential immunoactivating and antineoplastic activities. Upon intravenous administration, macrocycle-bridged STING agonist (MBSA) E7766 targets and binds to STING and activates the STING pathway, which promotes IKK-related kinase TANK-binding kinase 1 (TBK1) signaling and activates nuclear factor-kappa B (NF-kB) and interferon regulatory factor 3 (IRF3) in immune cells in the tumor microenvironment (TME). This leads to the production of pro-inflammatory cytokines, including interferons (IFNs). Specifically, expression of IFN-beta (IFNb) enhances the cross-presentation of tumor-associated antigens (TAAs) by CD8alpha-positive and CD103-positive dendritic cells (DCs) to cytotoxic T lymphocytes (CTLs). This results in a CTL-mediated immune response against tumor cells and causes tumor cell lysis. Compared to conventional STING agonists, MBSA E7766 allows for conformational rigidity of the unique macrocycle bridge which enhances its stability and STING affinity, thereby increasing its efficacy.\n"
+        },
+        "drugInfoSummaryLink": null,
+        "nciConceptId": "C166141",
+        "nciConceptName": "Macrocycle-bridged STING Agonist E7766",
+        "termId": 799924,
+        "name": "macrocycle-bridged STING agonist E7766",
+        "firstLetter": "m",
+        "type": "DrugTerm",
+        "termNameType": "PreferredName",
+        "prettyUrlName": "macrocycle-bridged-sting-agonist-e7766"
+      },
+      {
+        "aliases": [
+          {
+            "type": "ForeignBrandName",
+            "name": "Colonlytely"
+          },
+          {
+            "type": "LexicalVariant",
+            "name": "Macrogol 3350-Based Iso-Osmotic Laxative"
+          }
+        ],
+        "definition": {
+          "html": "An  isotonic solution containing macrogol 3350 and electrolytes with laxative activity. Macrogol 3350-based oral osmotic laxative promotes the retention of water in the bowel, thereby increasing the water content of stool, which results in increased gastrointestinal motility and stool transit time and evacuation of colonic contents. Macrogol 3350 is also known as polyethylene glycol (PEG) 3350.",
+          "text": "An  isotonic solution containing macrogol 3350 and electrolytes with laxative activity. Macrogol 3350-based oral osmotic laxative promotes the retention of water in the bowel, thereby increasing the water content of stool, which results in increased gastrointestinal motility and stool transit time and evacuation of colonic contents. Macrogol 3350 is also known as polyethylene glycol (PEG) 3350."
+        },
+        "drugInfoSummaryLink": null,
+        "nciConceptId": "C29080",
+        "nciConceptName": "Macrogol 3350-Based Iso-Osmotic Laxative",
+        "termId": 615423,
+        "name": "macrogol 3350-based oral osmotic laxative",
+        "firstLetter": "m",
+        "type": "DrugTerm",
+        "termNameType": "PreferredName",
+        "prettyUrlName": "macrogol-3350-based-iso-osmotic-laxative"
+      },
+      {
+        "aliases": [
+          {
+            "type": "ForeignBrandName",
+            "name": "SELG-ESSE"
+          },
+          {
+            "type": "Synonym",
+            "name": "powder-for-oral-solution containing PEG4000/simethicone/sodium sulphate/sodium bicarbonate/electrolytes"
+          },
+          {
+            "type": "Synonym",
+            "name": "PEG4000/simethicone/sodium sulphate/sodium bicarbonate/electrolytes"
+          },
+          {
+            "type": "Synonym",
+            "name": "macrogol 4000-based oral osmotic laxative"
+          }
+        ],
+        "definition": {
+          "html": "A powder for orF3:J23tion containing polyethylene glycol (PEG) 4000 (macrogol 4000), simethicone, sodium sulphate, sodium bicarbonate, and electrolytes, with laxative and bowel cleansing activities. Upon oral administration, macrogol 4000-based oral osmotic laxative promotes the retention of water in the bowel, thereby increasing the water content of stool, which results in increased gastrointestinal (GI) motility, accelerated stool transit time and evacuation of colonic contents.",
+          "text": "A powder for orF3:J23tion containing polyethylene glycol (PEG) 4000 (macrogol 4000), simethicone, sodium sulphate, sodium bicarbonate, and electrolytes, with laxative and bowel cleansing activities. Upon oral administration, macrogol 4000-based oral osmotic laxative promotes the retention of water in the bowel, thereby increasing the water content of stool, which results in increased gastrointestinal (GI) motility, accelerated stool transit time and evacuation of colonic contents."
+        },
+        "drugInfoSummaryLink": null,
+        "nciConceptId": "C158841",
+        "nciConceptName": "PEG4000/Simethicone/Sodium Sulphate/Sodium Bicarbonate/Electrolytes Oral Solution",
+        "termId": 797373,
+        "name": "PEG4000/simethicone/sodium sulphate/sodium bicarbonate/electrolytes oral solution",
+        "firstLetter": "p",
+        "type": "DrugTerm",
+        "termNameType": "PreferredName",
+        "prettyUrlName": ""
+      }
+    ],
+    "links": null
+  }

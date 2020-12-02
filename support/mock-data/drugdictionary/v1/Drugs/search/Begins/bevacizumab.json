@@ -1,0 +1,202 @@
+{
+	"meta": {
+		"totalResults": 3,
+		"from": 0
+	},
+	"results": [
+		{
+			"aliases": [
+				{
+					"type": "USBrandName",
+					"name": "Avastin"
+				},
+				{
+					"type": "USBrandName",
+					"name": "Mvasi"
+				},
+				{
+					"type": "Synonym",
+					"name": "anti-VEGF monoclonal antibody"
+				},
+				{
+					"type": "Synonym",
+					"name": "rhuMAb VEGF"
+				},
+				{
+					"type": "Abbreviation",
+					"name": "rhuMAb VEGF"
+				},
+				{
+					"type": "Synonym",
+					"name": "anti-VEGF humanized monoclonal antibody"
+				},
+				{
+					"type": "Synonym",
+					"name": "anti-VEGF rhuMAb"
+				},
+				{
+					"type": "Synonym",
+					"name": "recombinant humanized anti-VEGF monoclonal antibody"
+				},
+				{
+					"type": "INDCode",
+					"name": "9877"
+				},
+				{
+					"type": "INDCode",
+					"name": "11460"
+				},
+				{
+					"type": "INDCode",
+					"name": "7921"
+				},
+				{
+					"type": "NSCNumber",
+					"name": "704865"
+				},
+				{
+					"type": "Abbreviation",
+					"name": "rhuMab-VEGF"
+				},
+				{
+					"type": "Synonym",
+					"name": "bevacizumab biosimilar BEVZ92"
+				},
+				{
+					"type": "Synonym",
+					"name": "bevacizumab biosimilar BI 695502"
+				},
+				{
+					"type": "Synonym",
+					"name": "bevacizumab biosimilar FKB238"
+				},
+				{
+					"type": "Synonym",
+					"name": "bevacizumab biosimilar PF-06439535"
+				},
+				{
+					"type": "Synonym",
+					"name": "bevacizumab biosimilar QL 1101"
+				},
+				{
+					"type": "Synonym",
+					"name": "bevacizumab biosimilar CBT 124"
+				},
+				{
+					"type": "Synonym",
+					"name": "bevacizumab biosimilar MIL60"
+				},
+				{
+					"type": "Synonym",
+					"name": "bevacizumab biosimilar MB02"
+				},
+				{
+					"type": "Synonym",
+					"name": "bevacizumab biosimilar HD204"
+				},
+				{
+					"type": "Synonym",
+					"name": "bevacizumab biosimilar BAT1706"
+				},
+				{
+					"type": "Synonym",
+					"name": "bevacizumab biosimilar HLX04"
+				},
+				{
+					"type": "Synonym",
+					"name": "bevacizumab biosimilar IBI305"
+				},
+				{
+					"type": "Synonym",
+					"name": "bevacizumab biosimilar SCT510"
+				},
+				{
+					"type": "Synonym",
+					"name": "bevacizumab biosimilar LY01008"
+				},
+				{
+					"type": "Synonym",
+					"name": "bevacizumab biosimilar CT-P16"
+				},
+				{
+					"type": "Synonym",
+					"name": "bevacizumab biosimilar RPH-001"
+				},
+				{
+					"type": "CodeName",
+					"name": "HD204"
+				},
+				{
+					"type": "Synonym",
+					"name": "immunoglobulin G1 (human-mouse monoclonal rhuMab-VEGF gamma-chain anti-human vascular endothelial growth factor), disulfide with human-mouse monoclonal rhuMab-VEGF light chain, dimer"
+				}
+			],
+			"definition": {
+				"html": "A recombinant FAFA  humanized monoclonal antibody directed against the vascular endothelial growth factor (VEGF), a pro-angiogenic cytokine.  Bevacizumab binds to VEGF and inhibits VEGF receptor binding, thereby preventing the growth and maintenance of tumor blood vessels.",
+				"text": "A recombinant FAFA  humanized monoclonal antibody directed against the vascular endothelial growth factor (VEGF), a pro-angiogenic cytokine.  Bevacizumab binds to VEGF and inhibits VEGF receptor binding, thereby preventing the growth and maintenance of tumor blood vessels."
+			},
+			"drugInfoSummaryLink": {
+				"uri": "https://www.cancer.gov/about-cancer/treatment/drugs/bevacizumab",
+				"text": "Bevacizumab DADA (TESTING-MOD-20200626123941)"
+			},
+			"nciConceptId": "C2039",
+			"nciConceptName": "Bevacizumab",
+			"termId": 43234,
+			"name": "bevacizumab",
+			"firstLetter": "b",
+			"type": "DrugTerm",
+			"termNameType": "PreferredName",
+			"prettyUrlName": "bevacizumab"
+		},
+		{
+			"aliases": null,
+			"definition": {
+				"html": "An immunoconjugate and a fluorescent tracer consisting of the recombinant humanized anti-vascular endothelial growth factor (VEGF) monoclonal antibody bevacizumab conjugated to the N-hydroxysuccinamide (NHS) ester form of the near-infrared (NIR) fluorescent dye IRDye 800CW, that may be used for VEGF-specific tumor imaging. Upon administration, the bevacizumab moiety of bevacizumab-IRDye 800CW binds to VEGF and the fluorescent signal can be visualized using NIR fluorescence imaging (700–1,000 nm). Check for <a ref=\"https://www.cancer.gov/about-cancer/treatment/clinical-trials/intervention/C101261\">active clinical trials</a> using this agent. (<a ref=\"https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI%20Thesaurus&code=C101261\">NCI Thesaurus</a>)",
+				"text": "An immunoconjugate and a fluorescent tracer consisting of the recombinant humanized anti-vascular endothelial growth factor (VEGF) monoclonal antibody bevacizumab conjugated to the N-hydroxysuccinamide (NHS) ester form of the near-infrared (NIR) fluorescent dye IRDye 800CW, that may be used for VEGF-specific tumor imaging. Upon administration, the bevacizumab moiety of bevacizumab-IRDye 800CW binds to VEGF and the fluorescent signal can be visualized using NIR fluorescence imaging (700–1,000 nm). Check for active clinical trials using this agent. (NCI Thesaurus)"
+			},
+			"drugInfoSummaryLink": null,
+			"nciConceptId": "C101261",
+			"nciConceptName": "Bevacizumab-IRDye 800CW",
+			"termId": 729590,
+			"name": "bevacizumab-IRDye 800CW",
+			"firstLetter": "b",
+			"type": "DrugTerm",
+			"termNameType": "PreferredName",
+			"prettyUrlName": "bevacizumab-irdye-800cw"
+		},
+		{
+			"aliases": [
+				{
+					"type": "USBrandName",
+					"name": "Avastin"
+				},
+				{
+					"type": "LexicalVariant",
+					"name": "Bevacizumab"
+				},
+				{
+					"type": "Synonym",
+					"name": "bevacizumab biosimilar PF-06439535"
+				},
+				{
+					"type": "CodeName",
+					"name": "HD204"
+				}
+			],
+			"definition": {
+				"html": "NEW NEW NEW A recombinant FAFA  humanized monoclonal antibody directed against the vascular endothelial growth factor (VEGF), a pro-angiogenic cytokine.  Bevacizumab binds to VEGF and inhibits VEGF receptor binding, thereby preventing the growth and maintenance of tumor blood vessels. Check for <a ref=\"https://www.cancer.gov/about-cancer/treatment/clinical-trials/intervention/C2039\">active clinical trials</a> using this agent. (<a ref=\"https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI%20Thesaurus&code=C2039\">NCI Thesaurus</a>)",
+				"text": "NEW NEW NEW A recombinant FAFA  humanized monoclonal antibody directed against the vascular endothelial growth factor (VEGF), a pro-angiogenic cytokine.  Bevacizumab binds to VEGF and inhibits VEGF receptor binding, thereby preventing the growth and maintenance of tumor blood vessels. Check for active clinical trials using this agent. (NCI Thesaurus)"
+			},
+			"drugInfoSummaryLink": null,
+			"nciConceptId": "C2039",
+			"nciConceptName": "Bevacizumab",
+			"termId": 801718,
+			"name": "VE-bevacizumab-XX",
+			"firstLetter": "v",
+			"type": "DrugTerm",
+			"termNameType": "PreferredName",
+			"prettyUrlName": "bevacizumab"
+		}
+	],
+	"links": null
+}

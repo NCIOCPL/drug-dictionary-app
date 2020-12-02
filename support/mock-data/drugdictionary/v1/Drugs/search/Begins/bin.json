@@ -1,0 +1,197 @@
+{
+    "meta": {
+      "totalResults": 5,
+      "from": 0
+    },
+    "results": [
+      {
+        "aliases": [
+          {
+            "type": "LexicalVariant",
+            "name": "MK 217"
+          },
+          {
+            "type": "CodeName",
+            "name": "MK-217"
+          },
+          {
+            "type": "USBrandName",
+            "name": "Fosamax"
+          },
+          {
+            "type": "ForeignBrandName",
+            "name": "Adronat"
+          },
+          {
+            "type": "Synonym",
+            "name": "Alendronate"
+          },
+          {
+            "type": "Synonym",
+            "name": "Alendronic Acid Monosodium Salt Trihydrate"
+          },
+          {
+            "type": "ForeignBrandName",
+            "name": "Alendros"
+          },
+          {
+            "type": "USBrandName",
+            "name": "Binosto"
+          },
+          {
+            "type": "CodeName",
+            "name": "G-704650"
+          },
+          {
+            "type": "ForeignBrandName",
+            "name": "Onclast"
+          },
+          {
+            "type": "CASRegistryName",
+            "name": "129318-43-0"
+          }
+        ],
+        "definition": {
+          "html": "The sodium salt of alendronate, a second generation bisphosphonate and synthetic analog of pyrophosphate with bone anti-resorption activity. Alendronate sodium binds to and inhibits the activity of geranyltranstransferase (farnesyl pyrophosphate synthetase), an enzyme involved in terpenoid biosynthesis. Inhibition of this enzyme prevents the biosynthesis of isoprenoid lipids (FPP and GGPP) that are donor substrates of farnesylation and geranylgeranylation during the post-translational modification of small GTPase signalling proteins, which is important in the process of osteoclast turnover. As a result, osteoclast activity is inhibited and bone resorption and turnover are reduced.",
+          "text": "The sodium salt of alendronate, a second generation bisphosphonate and synthetic analog of pyrophosphate with bone anti-resorption activity. Alendronate sodium binds to and inhibits the activity of geranyltranstransferase (farnesyl pyrophosphate synthetase), an enzyme involved in terpenoid biosynthesis. Inhibition of this enzyme prevents the biosynthesis of isoprenoid lipids (FPP and GGPP) that are donor substrates of farnesylation and geranylgeranylation during the post-translational modification of small GTPase signalling proteins, which is important in the process of osteoclast turnover. As a result, osteoclast activity is inhibited and bone resorption and turnover are reduced."
+        },
+        "drugInfoSummaryLink": null,
+        "nciConceptId": "C973",
+        "nciConceptName": "Alendronate Sodium",
+        "termId": 41299,
+        "name": "alendronate sodium",
+        "firstLetter": "a",
+        "type": "DrugTerm",
+        "termNameType": "PreferredName",
+        "prettyUrlName": "alendronate-sodium"
+      },
+      {
+        "aliases": [
+          {
+            "type": "CodeName",
+            "name": "BinD19"
+          },
+          {
+            "type": "CodeName",
+            "name": "BinD 19"
+          },
+          {
+            "type": "Synonym",
+            "name": "autologous anti-CD19 CAR TCR-zeta/4-1BB-transduced T cells BinD19"
+          }
+        ],
+        "definition": {
+          "html": "Autologous T lymphocytes that have been transduced with a lentiviral vector to express a T-cell receptor (TCR) consisting of a single chain variable fragment (scFv) of anti-CD19 coupled to the co-stimulatory molecule 4-1BB (CD137) and to the cytoplasmic portion of the zeta chain of the human T-cell receptor (CD3zeta), with potential immunostimulating and antineoplastic activities. Upon transfusion, the autologous anti-CD19 CAR TCR-zeta/4-1BB-transduced T lymphocytes BinD19 target and bind to CD19-expressing neoplastic B cells. This results in a cytotoxic T-lymphocyte (CTL) response against CD19-expressing tumor cells, the release of cytotoxic molecules and tumor cell lysis. CD19, cluster of differentiation 19, is a B-cell-specific cell surface antigen overexpressed in B-cell lineage tumors. Incorporation of the costimulatory signaling domains increases human T-cell function, expansion, and survival.",
+          "text": "Autologous T lymphocytes that have been transduced with a lentiviral vector to express a T-cell receptor (TCR) consisting of a single chain variable fragment (scFv) of anti-CD19 coupled to the co-stimulatory molecule 4-1BB (CD137) and to the cytoplasmic portion of the zeta chain of the human T-cell receptor (CD3zeta), with potential immunostimulating and antineoplastic activities. Upon transfusion, the autologous anti-CD19 CAR TCR-zeta/4-1BB-transduced T lymphocytes BinD19 target and bind to CD19-expressing neoplastic B cells. This results in a cytotoxic T-lymphocyte (CTL) response against CD19-expressing tumor cells, the release of cytotoxic molecules and tumor cell lysis. CD19, cluster of differentiation 19, is a B-cell-specific cell surface antigen overexpressed in B-cell lineage tumors. Incorporation of the costimulatory signaling domains increases human T-cell function, expansion, and survival."
+        },
+        "drugInfoSummaryLink": null,
+        "nciConceptId": "C150378",
+        "nciConceptName": "Autologous Anti-CD19 CAR TCR-zeta/4-1BB-transduced T Lymphocytes BinD19",
+        "termId": 792748,
+        "name": "autologous anti-CD19 CAR TCR-zeta/4-1BB-transduced T lymphocytes BinD19",
+        "firstLetter": "a",
+        "type": "DrugTerm",
+        "termNameType": "PreferredName",
+        "prettyUrlName": "autologous-anti-cd19-car-tcr-zeta-4-1bb-transduced-t-lymphocytes-bind19"
+      },
+      {
+        "aliases": [
+          {
+            "type": "CodeName",
+            "name": "ARRY-438162"
+          },
+          {
+            "type": "USBrandName",
+            "name": "Mektovi"
+          },
+          {
+            "type": "CodeName",
+            "name": "MEK162"
+          },
+          {
+            "type": "CodeName",
+            "name": "ARRY-162"
+          },
+          {
+            "type": "CASRegistryName",
+            "name": "606143-89-9"
+          }
+        ],
+        "definition": {
+          "html": "An orally available inhibitor of mitogen-activated protein kinase kinase 1 and 2 (MEK1/2) with potential antineoplastic activity. Binimetinib, noncompetitive with ATP, binds to and inhibits the activity of MEK1/2. Inhibition of MEK1/2 prevents the activation of MEK1/2-dependent effector proteins and transcription factors, which may result in the inhibition of growth factor-mediated cell signaling. This may eventually lead to an inhibition of tumor cell proliferation and an inhibition in production of various inflammatory cytokines including interleukin-1, -6 and tumor necrosis factor. MEK1/2 are dual-specificity threonine/tyrosine kinases that play key roles in the activation of the RAS/RAF/MEK/ERK pathway and are often upregulated in a variety of tumor cell types.",
+          "text": "An orally available inhibitor of mitogen-activated protein kinase kinase 1 and 2 (MEK1/2) with potential antineoplastic activity. Binimetinib, noncompetitive with ATP, binds to and inhibits the activity of MEK1/2. Inhibition of MEK1/2 prevents the activation of MEK1/2-dependent effector proteins and transcription factors, which may result in the inhibition of growth factor-mediated cell signaling. This may eventually lead to an inhibition of tumor cell proliferation and an inhibition in production of various inflammatory cytokines including interleukin-1, -6 and tumor necrosis factor. MEK1/2 are dual-specificity threonine/tyrosine kinases that play key roles in the activation of the RAS/RAF/MEK/ERK pathway and are often upregulated in a variety of tumor cell types."
+        },
+        "drugInfoSummaryLink": {
+          "uri": "https://www.cancer.gov/about-cancer/treatment/drugs/binimetinib",
+          "text": "Binimetinib"
+        },
+        "nciConceptId": "C84865",
+        "nciConceptName": "Binimetinib",
+        "termId": 653635,
+        "name": "binimetinib",
+        "firstLetter": "b",
+        "type": "DrugTerm",
+        "termNameType": "PreferredName",
+        "prettyUrlName": "binimetinib"
+      },
+      {
+        "aliases": [
+          {
+            "type": "Synonym",
+            "name": "anti-PD-L1/TGFbetaRII fusion protein M7824"
+          },
+          {
+            "type": "Synonym",
+            "name": "anti-PDL1/TGFb Trap MSB0011359C"
+          },
+          {
+            "type": "CodeName",
+            "name": "MSB0011359C"
+          },
+          {
+            "type": "LexicalVariant",
+            "name": "Anti-PD-L1/TGFbetaRII Fusion Protein M7824"
+          },
+          {
+            "type": "Synonym",
+            "name": "M7824"
+          }
+        ],
+        "definition": {
+          "html": "A bifunctional fusion protein composed of avelumab, an anti-programmed death ligand 1 (PD-L1) human monoclonal antibody, bound to the soluble extracellular domain of human transforming growth factor beta (TGFbeta) receptor type II (TGFbetaRII), with potential antineoplastic and immune checkpoint modulating activities. Upon administration, the TGFbetaRII moiety of bintrafusp alfa binds to and neutralizes TGFbeta while the avelumab moiety simultaneously binds to PD-L1. This prevents TGFbeta- and PD-L1-mediated signaling, and increases natural killer (NK) cell and cytotoxic T-lymphocyte (CTL) activities. This inhibits tumor cell proliferation in susceptible tumor cells. TGFbeta and PD-L1 are both upregulated in certain types of cancers; their overexpression is associated with increased evasion of immune surveillance and contributes to poor prognosis. ",
+          "text": "A bifunctional fusion protein composed of avelumab, an anti-programmed death ligand 1 (PD-L1) human monoclonal antibody, bound to the soluble extracellular domain of human transforming growth factor beta (TGFbeta) receptor type II (TGFbetaRII), with potential antineoplastic and immune checkpoint modulating activities. Upon administration, the TGFbetaRII moiety of bintrafusp alfa binds to and neutralizes TGFbeta while the avelumab moiety simultaneously binds to PD-L1. This prevents TGFbeta- and PD-L1-mediated signaling, and increases natural killer (NK) cell and cytotoxic T-lymphocyte (CTL) activities. This inhibits tumor cell proliferation in susceptible tumor cells. TGFbeta and PD-L1 are both upregulated in certain types of cancers; their overexpression is associated with increased evasion of immune surveillance and contributes to poor prognosis. "
+        },
+        "drugInfoSummaryLink": null,
+        "nciConceptId": "C124229",
+        "nciConceptName": "Bintrafusp Alfa",
+        "termId": 795582,
+        "name": "bintrafusp alfa",
+        "firstLetter": "b",
+        "type": "DrugTerm",
+        "termNameType": "PreferredName",
+        "prettyUrlName": "bintrafusp-alfa"
+      },
+      {
+        "aliases": [
+          {
+            "type": "CodeName",
+            "name": "BIND-014"
+          }
+        ],
+        "definition": {
+          "html": "A proprietary preparation of polymeric nanoparticles containing the second-generation taxane docetaxel, targeted to prostate-specific membrane antigen (PSMA), with antineoplastic activity. PSMA-targeted docetaxel nanoparticles BIND-014 carry docetaxel within a matrix of polylactic acid covered with a coating of polyethylene glycol; embedded on the surface of the polyethylene glycol coating are ligands targeted to PSMA. BIND-014 allows gradual release of docetaxel upon degradation of the polylactic acid, and the PEG encapsulation escapes the host immune response while PSMA ligands on the surface restrict the cytotoxic effect to PSMA-expressing cells. Docetaxel binds to and stabilizes the beta-tubulin subunit, thereby inhibiting microtubule disassembly which results in cell-cycle arrest at the G2/M phase and cell death. PSMA is a cell-surface antigen that is abundantly present on the surface of cancer cells and on the neovasculature that feeds a wide variety of tumor types.",
+          "text": "A proprietary preparation of polymeric nanoparticles containing the second-generation taxane docetaxel, targeted to prostate-specific membrane antigen (PSMA), with antineoplastic activity. PSMA-targeted docetaxel nanoparticles BIND-014 carry docetaxel within a matrix of polylactic acid covered with a coating of polyethylene glycol; embedded on the surface of the polyethylene glycol coating are ligands targeted to PSMA. BIND-014 allows gradual release of docetaxel upon degradation of the polylactic acid, and the PEG encapsulation escapes the host immune response while PSMA ligands on the surface restrict the cytotoxic effect to PSMA-expressing cells. Docetaxel binds to and stabilizes the beta-tubulin subunit, thereby inhibiting microtubule disassembly which results in cell-cycle arrest at the G2/M phase and cell death. PSMA is a cell-surface antigen that is abundantly present on the surface of cancer cells and on the neovasculature that feeds a wide variety of tumor types."
+        },
+        "drugInfoSummaryLink": null,
+        "nciConceptId": "C95892",
+        "nciConceptName": "PSMA-targeted Docetaxel Nanoparticles BIND-014",
+        "termId": 696293,
+        "name": "PSMA-targeted docetaxel nanoparticles BIND-014",
+        "firstLetter": "p",
+        "type": "DrugTerm",
+        "termNameType": "PreferredName",
+        "prettyUrlName": "psma-targeted-docetaxel-nanoparticles-bind-014"
+      }
+    ],
+    "links": null
+  }

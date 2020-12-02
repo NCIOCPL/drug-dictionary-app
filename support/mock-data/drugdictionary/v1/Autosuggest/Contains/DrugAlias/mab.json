@@ -1,0 +1,42 @@
+[
+	{
+		"termId": 42286,
+		"termName": "2B1 Bispecific MAb"
+	},
+	{
+		"termId": 42286,
+		"termName": "2B1 Bispecific Murine MAb"
+	},
+	{
+		"termId": 688830,
+		"termName": "90Y anti-CD45 MAb BC8"
+	},
+	{
+		"termId": 744892,
+		"termName": "[131I] mAb HAb18G/CD147"
+	},
+	{
+		"termId": 690474,
+		"termName": "anti-ANG2 MAb MEDI-3617"
+	},
+	{
+		"termId": 747738,
+		"termName": "anti-CD19 MAb DI-B4"
+	},
+	{
+		"termId": 795705,
+		"termName": "anti-CD38 MAb TAK-079"
+	},
+	{
+		"termId": 769566,
+		"termName": "anti-CD47 Mab CC-90002"
+	},
+	{
+		"termId": 691187,
+		"termName": "anti-EGFR mAb ABT-806"
+	},
+	{
+		"termId": 686621,
+		"termName": "anti-EphA3 mAb KB004"
+	}
+]

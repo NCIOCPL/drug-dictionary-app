@@ -1,0 +1,55 @@
+.results dd {
+	margin-bottom: 16px;
+}
+.dictionary-definiton__dictionary-list h1 {
+	display: inline-block;
+	margin-bottom: 16px;
+}
+
+.dictionary-definiton__term-title {
+	margin-bottom: 10px;
+}
+
+.dictionary-definiton__term-definition {
+	font-family: Noto Sans, Century Gothic, Arial, sans-serif;
+}
+
+.dictionary-definiton__definition-link {
+	margin-left: 16px;
+	vertical-align: super;
+}
+
+.dictionary-definiton__definition {
+	margin-bottom: 18px;
+}
+
+a.dictionary-definiton__patient-information-button {
+	background-color: #00708a;
+	border: 0;
+	border-radius: 2px;
+	color: #fff;
+	cursor: pointer;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	font-family: Montserrat, Avant Garde, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.7;
+	min-height: 39px;
+	margin: 0 0 10px 0;
+	padding: 5px 12px;
+	text-decoration: none;
+	&:visited,
+	&:active {
+		color: #fff;
+	}
+	&:hover {
+		background: #00647c;
+		text-decoration: none;
+	}
+}
+.dictionary-definiton__nci-thesaurus-link,
+.dictionary-definiton__active-trials-link {
+	color: #2b7bba;
+	display: block;
+}

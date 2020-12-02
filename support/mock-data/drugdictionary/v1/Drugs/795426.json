@@ -1,0 +1,45 @@
+{
+	"aliases": [
+		{
+			"type": "Synonym",
+			"name": "AB-110 cell product"
+		},
+		{
+			"type": "Synonym",
+			"name": "Cord Blood-derived HPCs Co-cultured and Expanded with E-CEL UVEC Cells AB-110"
+		},
+		{
+			"type": "Synonym",
+			"name": "CD34+ Cord-Blood Derived Hematopoietic Stem Cells Co-Cultured and Co-Infused with Genetically Modified Endothelial Cells AB-110"
+		},
+		{
+			"type": "Synonym",
+			"name": "CD34-positive Enriched HPCs Mixed with Engineered Human ECs AB-110"
+		},
+		{
+			"type": "CodeName",
+			"name": "AB 110"
+		},
+		{
+			"type": "CodeName",
+			"name": "AB-110"
+		},
+		{
+			"type": "Synonym",
+			"name": "Genetically-modified Endothelial Cells Plus Expanded Cord Blood Hematopoietic Stem Cells AB-110"
+		}
+	],
+	"definition": {
+		"html": "A population of ex vivo expanded, CD34-positive-enriched hematopoietic progenitor cells (HPCs), which are derived from allogeneic human umbilical cord blood (UCB), and are co-cultured and expanded with a proprietary preparation of human endothelial cells (ECs), which are genetically modified with an adenovirus (Ad) vector that includes the Ad E4 region that encodes the ORF1 (E4ORF1) gene, that can be used for transplantation. Upon transplantation of the expanded cord blood stem cells mixed with engineered human ECs AB-110, the UCB-derived cells can differentiate into a variety of cell types and promote blood cell recovery. Compared to bone marrow transplants, these HPCs demonstrate a decreased risk of causing graft-versus-host disease (GvHD), increase survival and enhance the potential for transplant and engraftment in any given patient as there is no need for a matched donor. Compared to HPCs alone, inclusion of the ECs increases blood stem cell count, enhances engraftment potential and increases the chances for blood cell recovery, thereby further increasing the potential for a successful cord blood transplantation. Insertion of the Ad E4ORF1 gene enhances survival and replication of the ECs ex vivo, preserves the ECs' vascular functions and improves the ability of the ECs to secrete angiocrines, which promotes stem cell proliferation and increases engraftment.",
+		"text": "A population of ex vivo expanded, CD34-positive-enriched hematopoietic progenitor cells (HPCs), which are derived from allogeneic human umbilical cord blood (UCB), and are co-cultured and expanded with a proprietary preparation of human endothelial cells (ECs), which are genetically modified with an adenovirus (Ad) vector that includes the Ad E4 region that encodes the ORF1 (E4ORF1) gene, that can be used for transplantation. Upon transplantation of the expanded cord blood stem cells mixed with engineered human ECs AB-110, the UCB-derived cells can differentiate into a variety of cell types and promote blood cell recovery. Compared to bone marrow transplants, these HPCs demonstrate a decreased risk of causing graft-versus-host disease (GvHD), increase survival and enhance the potential for transplant and engraftment in any given patient as there is no need for a matched donor. Compared to HPCs alone, inclusion of the ECs increases blood stem cell count, enhances engraftment potential and increases the chances for blood cell recovery, thereby further increasing the potential for a successful cord blood transplantation. Insertion of the Ad E4ORF1 gene enhances survival and replication of the ECs ex vivo, preserves the ECs' vascular functions and improves the ability of the ECs to secrete angiocrines, which promotes stem cell proliferation and increases engraftment."
+	},
+	"drugInfoSummaryLink": null,
+	"nciConceptId": "C150135",
+	"nciConceptName": "Expanded Cord Blood Stem Cells Mixed with Engineered Human Endothelial Cells AB-110",
+	"termId": 795426,
+	"name": "expanded cord blood stem cells mixed with engineered human endothelial cells AB-110",
+	"firstLetter": "e",
+	"type": "DrugTerm",
+	"termNameType": "PreferredName",
+	"prettyUrlName": ""
+}
