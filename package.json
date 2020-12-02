@@ -1,6 +1,6 @@
 {
 	"name": "@nciocpl/drug-dictionary-app",
-	"version": "1.0.0-beta.1",
+	"version": "1.0.0",
 	"description": "Drug Dictionary App",
 	"repository": {
 		"type": "git",
