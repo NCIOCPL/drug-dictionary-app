@@ -40,9 +40,8 @@ const Home = () => {
 		}
 	}, [expandCharResults.loading, expandCharResults.payload]);
 
-
-	useEffect( () => {
-		if( doneFetchingTermResults ) {
+	useEffect(() => {
+		if (doneFetchingTermResults) {
 			// Fire off a page load event. Usually this would be in
 			// some effect when something loaded.
 			tracking.trackEvent({
@@ -60,8 +59,7 @@ const Home = () => {
 				// for the event.
 			});
 		}
-	}, [doneFetchingTermResults])
-
+	}, [doneFetchingTermResults]);
 
 	/**
 	 * Helper function to render metadata.

@@ -697,7 +697,7 @@ class Autocomplete extends React.Component {
 							),
 							type: 'text',
 							value: this.props.value,
-							maxLength: this.props.inputMaxLength
+							maxLength: this.props.inputMaxLength,
 						})}
 					</div>
 					<div className="menu-anchor">

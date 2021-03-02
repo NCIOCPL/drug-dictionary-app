@@ -26,7 +26,12 @@ const SearchResults = () => {
 	const navigate = useNavigate();
 	const urlQuery = useURLQuery();
 	const searchMode = urlQuery.get('searchMode') || 'Begins';
-	const textToSearch = searchMode === 'Begins' ? searchText : searchText.length > 30 ? searchText.substr(0, 30) : searchText;
+	const textToSearch =
+		searchMode === 'Begins'
+			? searchText
+			: searchText.length > 30
+			? searchText.substr(0, 30)
+			: searchText;
 	const queryResponse = useCustomQuery(
 		getDrugSearchResults({ drug: textToSearch, matchType: searchMode })
 	);
@@ -49,7 +54,6 @@ const SearchResults = () => {
 					: queryResponse.payload.results[0].termId;
 
 				navigate(DefinitionPath({ idOrName }), { replace: true });
-
 			}
 
 			setSearchResults(queryResponse);
@@ -136,8 +140,8 @@ const SearchResults = () => {
 					{searchResults.payload.results.length < 1 && <NoMatchingResults />}
 				</div>
 			) : (
-					<Spinner />
-				)}
+				<Spinner />
+			)}
 		</>
 	);
 };

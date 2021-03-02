@@ -7,7 +7,7 @@ import { DefinitionItem } from '../../../index';
 import { useStateValue } from '../../../../store/store';
 
 jest.mock('../../../../store/store.js');
-const analyticsHandler = jest.fn((data) => { });
+const analyticsHandler = jest.fn(() => {});
 const payload = {
 	aliases: [
 		{
@@ -218,7 +218,9 @@ describe('Definition Item component', () => {
 			</MockAnalyticsProvider>
 		);
 		const { container } = wrapper;
-		const ptInfoButton = container.querySelector('a.dictionary-definiton__patient-information-button');
+		const ptInfoButton = container.querySelector(
+			'a.dictionary-definiton__patient-information-button'
+		);
 		fireEvent.click(ptInfoButton);
 		expect(analyticsHandler).toHaveBeenCalledTimes(1);
 	});

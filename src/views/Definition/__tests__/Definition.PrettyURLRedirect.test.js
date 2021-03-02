@@ -1,4 +1,4 @@
-import { act, render, screen } from '@testing-library/react';
+import { act, render } from '@testing-library/react';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { MemoryRouter, useLocation } from 'react-router-dom';

@@ -96,7 +96,8 @@ const Search = ({ autoSuggestLimit = 10 }) => {
 			analyticsName,
 			autosuggestUsage: autoSuggestAnalytics[IS_TERM_SELECTED]
 				? autoSuggestAnalytics[USAGE]
-				: autoSuggestAnalytics[ITEMS_COUNT] > 0 || autoSuggest.payload?.length > 0
+				: autoSuggestAnalytics[ITEMS_COUNT] > 0 ||
+				  autoSuggest.payload?.length > 0
 				? AUTO_SUGGEST_ANALYTICS_USAGE.OFFERED
 				: AUTO_SUGGEST_ANALYTICS_USAGE.NONE_OFFERED,
 			...(autoSuggestAnalytics[IS_TERM_SELECTED] && { charactersTyped }),
@@ -142,11 +143,13 @@ const Search = ({ autoSuggestLimit = 10 }) => {
 		// set usage to modified
 		if (
 			autoSuggestAnalytics[IS_TERM_SELECTED] &&
-			autoSuggestAnalytics[TERM_SELECTED].includes(autoSuggestAnalytics[CHARACTERS_TYPED])
+			autoSuggestAnalytics[TERM_SELECTED].includes(
+				autoSuggestAnalytics[CHARACTERS_TYPED]
+			)
 		) {
 			setAutoSuggestAnalytics({
 				...autoSuggestAnalytics,
-				[USAGE]: AUTO_SUGGEST_ANALYTICS_USAGE.MODIFIED
+				[USAGE]: AUTO_SUGGEST_ANALYTICS_USAGE.MODIFIED,
 			});
 		}
 
@@ -182,7 +185,7 @@ const Search = ({ autoSuggestLimit = 10 }) => {
 			[ITEMS_COUNT]: autoSuggest.payload?.length || 0,
 			[NUM_OF_TERMS_SELECTED]: autoSuggestAnalytics[NUM_OF_TERMS_SELECTED] + 1,
 			[TERM_SELECTED]: value,
-			[USAGE]: AUTO_SUGGEST_ANALYTICS_USAGE.SELECTED
+			[USAGE]: AUTO_SUGGEST_ANALYTICS_USAGE.SELECTED,
 		});
 
 		setSearchText(value);
@@ -227,7 +230,7 @@ const Search = ({ autoSuggestLimit = 10 }) => {
 				items={(!autoSuggest.loading && autoSuggest.payload) || []}
 				getItemValue={(item) => item.termName}
 				onChange={(event) => onChangeHandler(event)}
-				onSelect={(value, item) => onSelectHandler(value)}
+				onSelect={(value) => onSelectHandler(value)}
 				renderMenu={(children, index) => (
 					<div
 						key={index}

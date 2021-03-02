@@ -37,7 +37,6 @@ const SynonymTable = (aliases) => {
 	var sortKeys = [];
 	for (var key in sortMap) sortKeys.push(key);
 	const filteredAliases = aliases.aliases.filter(function (e) {
-		const myType = e.type;
 		return this.indexOf(e.type) > -1;
 	}, sortKeys);
 	// group items together by Alias type
@@ -54,7 +53,7 @@ const SynonymTable = (aliases) => {
 	for (let i = 0; i < aliasTypes.length; i++) {
 		// get list of names from type object
 		const mapVal = sortedAliases[aliasTypes[i]];
-        mapVal.sort((a, b) => a.localeCompare(b));
+		mapVal.sort((a, b) => a.localeCompare(b));
 		const row = (
 			<tr key={`row-${i}`}>
 				<th valign="top" width="28%" scope="row">
