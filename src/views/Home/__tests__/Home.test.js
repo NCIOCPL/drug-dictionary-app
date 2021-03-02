@@ -26,7 +26,8 @@ describe('Home component(English)', () => {
 				baseHost: 'http://localhost:3000',
 				canonicalHost: 'https://example.org',
 				basePath: '/',
-				dictionaryIntroText: 'The NCI Drug Dictionary contains technical definitions and synonyms for drugs/agents used to treat patients with cancer or conditions related to cancer. Each drug entry includes links to check for clinical trials listed in NCI\'s List of Cancer Clinical Trials.',
+				dictionaryIntroText:
+					"The NCI Drug Dictionary contains technical definitions and synonyms for drugs/agents used to treat patients with cancer or conditions related to cancer. Each drug entry includes links to check for clinical trials listed in NCI's List of Cancer Clinical Trials.",
 				dictionaryTitle: 'NCI Drug Dictionary',
 				language: 'en',
 				siteName: 'National Cancer Institute',
@@ -149,7 +150,7 @@ describe('Home component(English)', () => {
 		expect(screen.getByText('NCI Drug Dictionary')).toBeInTheDocument();
 		expect(
 			screen.getByText(
-				'The NCI Drug Dictionary contains technical definitions and synonyms for drugs/agents used to treat patients with cancer or conditions related to cancer. Each drug entry includes links to check for clinical trials listed in NCI\'s List of Cancer Clinical Trials.'
+				"The NCI Drug Dictionary contains technical definitions and synonyms for drugs/agents used to treat patients with cancer or conditions related to cancer. Each drug entry includes links to check for clinical trials listed in NCI's List of Cancer Clinical Trials."
 			)
 		).toBeInTheDocument();
 		expect(

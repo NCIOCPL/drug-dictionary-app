@@ -152,7 +152,7 @@ describe('<Terms />', () => {
 			screen.getByPlaceholderText('Enter keywords or phrases')
 		).toBeInTheDocument();
 		expect(screen.getByText('3 results found for: A')).toBeInTheDocument();
-        //test the scroll position
+		//test the scroll position
 		expect(window.scrollTo).toHaveBeenCalledTimes(1);
 		expect(window.scrollTo).toHaveBeenLastCalledWith(0, 0);
 	});

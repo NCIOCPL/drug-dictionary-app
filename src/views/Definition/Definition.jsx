@@ -10,7 +10,7 @@ import { useStateValue } from '../../store/store.js';
 
 const Definition = () => {
 	// Pull in the paths we are going to need on this view.
-	const { DefinitionPath, PageNotFound } = useAppPaths();
+	const { DefinitionPath } = useAppPaths();
 	const params = useParams();
 	const { idOrName } = params;
 	const queryResponse = useCustomQuery(getDrugDefinition({ idOrName }));
@@ -19,21 +19,12 @@ const Definition = () => {
 
 	// Get items passed into index.js and stored in the context.
 	const [
-		{
-			analyticsName,
-			altLanguageBasePath,
-			basePath,
-			baseHost,
-			canonicalHost,
-			dictionaryTitle,
-			siteName,
-			language,
-		},
+		{ analyticsName, baseHost, canonicalHost, dictionaryTitle, siteName },
 	] = useStateValue();
 
-	useEffect( () => {
-		window.scrollTo(0,0);
-	  }, []);
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
 	// Get a reference to the tracking function for
 	// analytics.
@@ -67,7 +58,6 @@ const Definition = () => {
 
 	useEffect(() => {
 		if (queryResponse.payload && !drugDefinitionLoaded) {
-
 			setDrugDefinition(queryResponse);
 			setDrugDefinitionLoaded(true);
 			//redirect to PrettyUrlName when ID is provided in the url

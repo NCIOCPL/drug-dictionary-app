@@ -2,8 +2,6 @@ import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 
 import { useAutoSuggestResultsQuery } from '../autoSuggestQuery';
-import { Autocomplete } from '../../components/atomic';
-import { emboldenSubstring, matchItemToTerm } from '../../utils';
 
 const UseAutoSuggestQuerySample = ({
 	autoSuggestLimit = 10,
@@ -36,13 +34,11 @@ const UseAutoSuggestQuerySample = ({
 				</ul>
 			)}
 
-			{!autoSuggest.loading & (autoSuggestState.length < 1) &&
+			{!autoSuggest.loading & (autoSuggestState.length < 1) && (
 				<div>No Results</div>
-			}
+			)}
 
-			{autoSuggest.loading &&
-				<div>Loading results...</div>
-			}
+			{autoSuggest.loading && <div>Loading results...</div>}
 		</>
 	);
 };

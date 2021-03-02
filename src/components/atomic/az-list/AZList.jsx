@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTracking } from 'react-tracking';
 
@@ -19,7 +19,7 @@ const AZList = ({ azListLabel = 'Browse' }) => {
 			linkName: 'DrugDictionarySearchAlphaList',
 			analyticsName,
 			letter,
-			dictionaryTitle
+			dictionaryTitle,
 		});
 	};
 
@@ -28,11 +28,8 @@ const AZList = ({ azListLabel = 'Browse' }) => {
 			<span className="browse">{azListLabel}:</span>
 			<ul>
 				{AZListArray.map((item, i) => {
-					const expandChar =
-						item === '#'
-							? '%23'
-							: item.toUpperCase();
-	
+					const expandChar = item === '#' ? '%23' : item.toUpperCase();
+
 					const label = item.toUpperCase();
 					return (
 						<li key={i} value={i + 1}>
