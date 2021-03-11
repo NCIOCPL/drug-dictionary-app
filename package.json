@@ -1,6 +1,6 @@
 {
 	"name": "@nciocpl/drug-dictionary-app",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Drug Dictionary App",
 	"repository": {
 		"type": "git",
@@ -31,7 +31,7 @@
 		"prop-types": "^15.7.2",
 		"react": "^16.13.1",
 		"react-app-polyfill": "^1.0.6",
-		"react-dev-utils": "^10.2.1",
+		"react-dev-utils": "^11.0.4",
 		"react-dom": "^16.13.1",
 		"react-fetching-library": "^1.5.14",
 		"react-helmet": "^6.0.0-beta.2",
