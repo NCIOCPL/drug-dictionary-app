@@ -2,7 +2,6 @@ import axios from 'axios';
 import { createClient } from 'react-fetching-library';
 
 import { buildAxiosRequest } from './buildAxiosRequest';
-import { setAPIEndpoint, setLanguage } from './endpoints';
 import { requestHostInterceptor } from './requestInterceptors/requestHostInterceptor';
 
 const axiosInstance = axios.create({
@@ -10,10 +9,7 @@ const axiosInstance = axios.create({
 });
 
 export const getAxiosClient = (initialize) => {
-	const { apiEndpoint, language } = initialize;
-
-	setAPIEndpoint(apiEndpoint);
-	setLanguage(language);
+	const { apiEndpoint } = initialize;
 
 	const HOST =
 		apiEndpoint && apiEndpoint.length > 1

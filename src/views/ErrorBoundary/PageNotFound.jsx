@@ -21,7 +21,7 @@ const PageNotFound = () => {
 			metaTitle: pageTitle,
 			name: `${canonicalHost.replace('https://', '')}${
 				window.location.pathname
-				}`,
+			}`,
 			title: pageTitle,
 			type: 'PageLoad',
 			dictionaryTitle,
@@ -32,35 +32,35 @@ const PageNotFound = () => {
 	const contentPar =
 		language === 'es'
 			? [
-				<>No podemos encontrar la página que busca.</>,
-				<>
-					Visite la{' '}
-					<a href="https://www.cancer.gov/espanol">página principal</a>,
+					<>No podemos encontrar la página que busca.</>,
+					<>
+						Visite la{' '}
+						<a href="https://www.cancer.gov/espanol">página principal</a>,
 						busque por{' '}
-					<a href="https://www.cancer.gov/espanol/tipos">tipo de cáncer</a>, o
+						<a href="https://www.cancer.gov/espanol/tipos">tipo de cáncer</a>, o
 						use la casilla de búsqueda en la parte de abajo de esta página.
-				</>,
-				<>
-					¿Tiene una pregunta?{' '}
-					<a href="https://www.cancer.gov/espanol/contactenos">Contáctenos</a>
+					</>,
+					<>
+						¿Tiene una pregunta?{' '}
+						<a href="https://www.cancer.gov/espanol/contactenos">Contáctenos</a>
 						.
-				</>,
-			]
+					</>,
+			  ]
 			: [
-				<>We can&apos;t find the page you&apos;re looking for.</>,
-				<>
-					Visit the <a href="https://www.cancer.gov">homepage</a>, browse by{' '}
-					<a href="https://www.cancer.gov/types">cancer type</a>, or use the
+					<>We can&apos;t find the page you&apos;re looking for.</>,
+					<>
+						Visit the <a href="https://www.cancer.gov">homepage</a>, browse by{' '}
+						<a href="https://www.cancer.gov/types">cancer type</a>, or use the
 						search below.
-				</>,
-				<>
-					Have a question?{' '}
-					<a href="https://www.cancer.gov/contact">Get in touch</a>.
-				</>,
-			];
+					</>,
+					<>
+						Have a question?{' '}
+						<a href="https://www.cancer.gov/contact">Get in touch</a>.
+					</>,
+			  ];
 
 	const executeSearch = (event) => {
-    event.preventDefault();
+		event.preventDefault();
 		const queryString =
 			searchText.length > 1
 				? `${searchText}/?searchMode=${searchMatchType.beginsWith}`
@@ -96,7 +96,7 @@ const PageNotFound = () => {
 						aria-required="false"
 						aria-label={i18n.search[language]}
 						autoComplete="off"
-						onChange={event => setSearchText(event.target.value)}
+						onChange={(event) => setSearchText(event.target.value)}
 					/>
 					<input
 						type="submit"

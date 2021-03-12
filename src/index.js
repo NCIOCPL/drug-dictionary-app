@@ -120,7 +120,6 @@ export default initialize;
 // expose initialize to window for AppModule integration
 window.DrugDictionaryApp = initialize;
 
-
 // The following lets us run the app in dev not in situ as would normally be the case.
 const appParams = window.APP_PARAMS || {};
 const integrationTestOverrides = window.INT_TEST_APP_PARAMS || {};

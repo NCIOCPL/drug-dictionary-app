@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { resourceType, searchMatchType } from '../constants';
 import { useCustomQuery } from './index';
@@ -147,7 +147,6 @@ export const useAutoSuggestResultsQuery = ({
 				).slice(0, resultLimit)
 			);
 			setIsStateResponseSet(true);
-
 		}
 	}, [
 		containsQueryWithAlias.loading,
