@@ -68,7 +68,6 @@ Feature: Term page
             | property | content                               |
             | og:title | NCI Drug Dictionary                   |
             | og:url   | http://localhost:3000/def/bevacizumab |
-            | robots   | noindex                               |
         And there is a canonical link with the href "https://www.cancer.gov/def/bevacizumab"
 
     Scenario: Page Load Analytics fires when a user visits a term page.

@@ -104,7 +104,6 @@ const Definition = () => {
 						})
 					}
 				/>
-				<meta name="robots" content="noindex" />
 			</Helmet>
 		);
 	};
