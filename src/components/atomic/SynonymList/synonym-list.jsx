@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { useURLQuery } from '../../../hooks';
 
-const SynonymList = ({ aliases, term, language = 'en' }) => {
+const SynonymList = ({ aliases, term }) => {
 	const urlQuery = useURLQuery();
 	const searchMode = urlQuery.get('searchMode') || 'Contains';
 	// make list of aliases that match serach term

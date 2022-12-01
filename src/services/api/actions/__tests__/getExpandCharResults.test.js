@@ -1,7 +1,6 @@
 import { getExpandCharResults } from '../index';
 
 describe('getExpandCharResults action', () => {
-
 	test('should match return result for getExpandCharResults action', () => {
 		const chr = 'A';
 		const retAction = {

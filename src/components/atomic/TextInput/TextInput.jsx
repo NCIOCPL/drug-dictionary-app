@@ -12,7 +12,6 @@ const TextInput = ({
 	errorMessage,
 	id,
 	inputHelpText,
-	isValid, // Todo: might no longer be valid
 	label,
 	labelHidden,
 	labelHint,

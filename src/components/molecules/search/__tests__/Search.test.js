@@ -16,7 +16,7 @@ import Search from '../Search';
 import { useStateValue } from '../../../../store/store';
 
 import { MockAnalyticsProvider } from '../../../../tracking';
-const analyticsHandler = jest.fn((data) => {});
+const analyticsHandler = jest.fn(() => {});
 
 jest.mock('../../../../store/store.js');
 let client;
@@ -163,12 +163,12 @@ describe('<Search /> English', () => {
 	});
 
 	test('Selecting term from autosuggest triggers provided analytics event', async () => {
-		const { getByPlaceholderText, getByText } = wrapper;
+		const { getByPlaceholderText } = wrapper;
 		const searchText = 'metastatic';
 		const textInput = getByPlaceholderText('Enter keywords or phrases');
 		await act(async () => {
 			fireEvent.change(textInput, { target: { value: searchText } });
-			const input = screen.getByRole('combobox');
+			screen.getByRole('combobox');
 			// Use arrow down once to navigate to first item in options list
 			fireEvent(
 				textInput,
@@ -232,9 +232,8 @@ describe('<Search /> English', () => {
 				fireEvent.change(document.activeElement, { target: { value: 'ap' } });
 			});
 			expect(
-				container.querySelector(
-					`div[data-testid='tid-auto-suggest-options']`
-				).textContent
+				container.querySelector(`div[data-testid='tid-auto-suggest-options']`)
+					.textContent
 			).toBe('Please enter 3 or more characters');
 			await act(async () => {
 				fireEvent.change(document.activeElement, {

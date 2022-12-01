@@ -7,14 +7,14 @@ export const AUTO_SUGGEST_ANALYTICS_CONSTANTS = {
 	ITEMS_COUNT: 'itemsCount',
 	NUM_OF_TERMS_SELECTED: 'numOfTermsSelected',
 	TERM_SELECTED: 'termSelected',
-	USAGE: 'usage'
+	USAGE: 'usage',
 };
 
 export const AUTO_SUGGEST_ANALYTICS_USAGE = {
 	MODIFIED: 'Modified',
 	NONE_OFFERED: 'NoneOffered',
 	OFFERED: 'Offered',
-	SELECTED: 'Selected'
+	SELECTED: 'Selected',
 };
 
 // Array for AZ list
@@ -27,7 +27,7 @@ export const DEFAULT_RESULT_SIZE = 10000;
 
 export const resourceType = {
 	drugAlias: 'DrugAlias',
-	drugTerm: 'DrugTerm'
+	drugTerm: 'DrugTerm',
 };
 
 export const searchMatchType = {

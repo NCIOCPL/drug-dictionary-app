@@ -1,8 +1,7 @@
 import { act, render, screen } from '@testing-library/react';
 import React from 'react';
-import PropTypes from 'prop-types';
 import { ClientContextProvider } from 'react-fetching-library';
-import { useLocation,MemoryRouter, useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 
 import { useStateValue } from '../../../store/store';
 import SearchResults from '../SearchResults';
@@ -12,7 +11,6 @@ jest.mock('../../../store/store');
 jest.mock('react-router-dom');
 
 describe('<SearchResults />', () => {
-
 	test('should display dictionary title, <SearchBox />, and <TermList /> components', async () => {
 		jest.spyOn(window, 'scrollTo');
 		const searchText = 'Bez';
@@ -210,6 +208,4 @@ describe('<SearchResults />', () => {
 			)
 		).toBeInTheDocument();
 	});
-
-	
 });

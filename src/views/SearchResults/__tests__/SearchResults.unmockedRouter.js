@@ -1,4 +1,4 @@
-import { act, render, screen } from '@testing-library/react';
+import { act, render } from '@testing-library/react';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { ClientContextProvider } from 'react-fetching-library';
@@ -11,7 +11,6 @@ import MockAnalyticsProvider from '../../../tracking/mock-analytics-provider';
 jest.mock('../../../store/store');
 
 let location;
-let wrapper;
 
 function ComponentWithLocation({ RenderComponent }) {
 	location = useLocation();
@@ -101,7 +100,7 @@ describe('<SearchResults />', () => {
 		};
 
 		await act(async () => {
-			wrapper = await render(
+			await render(
 				<MockAnalyticsProvider>
 					<ClientContextProvider client={client}>
 						<MemoryRouter
