@@ -1,6 +1,6 @@
 {
 	"name": "@nciocpl/drug-dictionary-app",
-	"version": "1.0.2",
+	"version": "1.1.0",
 	"description": "Drug Dictionary App",
 	"repository": {
 		"type": "git",
@@ -17,10 +17,9 @@
 		"registry": "https://npm.pkg.github.com/"
 	},
 	"dependencies": {
-		"axios": "^0.21.1",
+		"axios": "^0.21.4",
 		"camelcase": "^5.3.1",
 		"core-js": "^3.6.4",
-		"css-loader": "3.4.2",
 		"dom-scroll-into-view": "^2.0.1",
 		"dotenv": "8.2.0",
 		"dotenv-expand": "5.1.0",
@@ -40,9 +39,15 @@
 		"react-tracking": "^7.3.0",
 		"resolve": "1.15.0"
 	},
+	"engines": {
+		"node": ">=16.0.0 <17.0.0",
+		"npm": ">=8.0.0 <9.0.0"
+	},
 	"scripts": {
 		"start": "node scripts/start.js",
-		"build": "node scripts/build.js",
+		"build:cgdp-legacy": "node scripts/generate-cgdp-legacy.js",
+		"build:cra": "node scripts/build.js",
+		"build": "npm run build:cra && npm run build:cgdp-legacy",
 		"test": "NODE_ENV=test npm run lint && NODE_ENV=test npm run pa11y-tests && NODE_ENV=test npm run unit-tests && NODE_ENV=test npm run cy:ci",
 		"posttest": "npm run prepare-reports",
 		"test:it": "NODE_ENV=test cypress open",
@@ -133,7 +138,9 @@
 		]
 	},
 	"cypress-cucumber-preprocessor": {
-		"nonGlobalStepDefinitions": true
+		"nonGlobalStepDefinitions": true,
+		"stepDefinitions": "cypress/e2e",
+		"commonPath": "cypress/e2e/common"
 	},
 	"nyc": {
 		"report-dir": "coverage/cypress",
@@ -143,7 +150,7 @@
 	},
 	"devDependencies": {
 		"@babel/core": "7.9.0",
-		"@cypress/code-coverage": "^3.8.1",
+		"@cypress/code-coverage": "^3.10.0",
 		"@svgr/webpack": "4.3.3",
 		"@testing-library/jest-dom": "^4.2.4",
 		"@testing-library/react": "^9.5.0",
@@ -158,8 +165,9 @@
 		"babel-plugin-named-asset-import": "^0.3.6",
 		"babel-preset-react-app": "^9.1.2",
 		"case-sensitive-paths-webpack-plugin": "2.3.0",
-		"cypress": "^5.0.0",
-		"cypress-cucumber-preprocessor": "^2.5.0",
+		"css-loader": "^5.2.7",
+		"cypress": "^10.9.0",
+		"cypress-cucumber-preprocessor": "^4.3.1",
 		"eslint": "^7.20.0",
 		"eslint-config-airbnb": "^18.2.1",
 		"eslint-config-prettier": "^8.1.0",
@@ -179,20 +187,21 @@
 		"jest-environment-jsdom-fourteen": "1.0.1",
 		"jest-resolve": "24.9.0",
 		"jest-watch-typeahead": "0.4.2",
-		"mini-css-extract-plugin": "0.9.0",
+		"mini-css-extract-plugin": "^1.6.2",
 		"nock": "^11.7.2",
-		"node-sass": "^4.14.1",
 		"optimize-css-assets-webpack-plugin": "5.0.3",
-		"pa11y-ci": "^2.4.0",
+		"pa11y-ci": "^3.0.1",
 		"pnp-webpack-plugin": "1.6.4",
 		"postcss-flexbugs-fixes": "4.1.0",
 		"postcss-loader": "3.0.0",
 		"postcss-normalize": "8.0.1",
+		"postcss-prefix-selector": "^1.16.0",
 		"postcss-preset-env": "6.7.0",
 		"postcss-safe-parser": "4.0.1",
 		"prettier": "^2.2.1",
 		"resolve-url-loader": "^3.1.2",
-		"sass-loader": "8.0.2",
+		"sass": "^1.55.0",
+		"sass-loader": "^10.3.1",
 		"semver": "6.3.0",
 		"start-server-and-test": "^1.11.7",
 		"style-loader": "0.23.1",
