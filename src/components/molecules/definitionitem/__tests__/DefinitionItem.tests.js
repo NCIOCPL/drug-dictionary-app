@@ -140,15 +140,12 @@ const payload = {
 		},
 		{
 			type: 'Synonym',
-			name:
-				'immunoglobulin G1 (human-mouse monoclonal rhuMab-VEGF gamma-chain anti-human vascular endothelial growth factor), disulfide with human-mouse monoclonal rhuMab-VEGF light chain, dimer',
+			name: 'immunoglobulin G1 (human-mouse monoclonal rhuMab-VEGF gamma-chain anti-human vascular endothelial growth factor), disulfide with human-mouse monoclonal rhuMab-VEGF light chain, dimer',
 		},
 	],
 	definition: {
-		html:
-			'A recombinant humanized monoclonal antibody directed against the vascular endothelial growth factor (VEGF), a pro-angiogenic cytokine.  Bevacizumab binds to VEGF and inhibits VEGF receptor binding, thereby preventing the growth and maintenance of tumor blood vessels.',
-		text:
-			'A recombinant humanized monoclonal antibody directed against the vascular endothelial growth factor (VEGF), a pro-angiogenic cytokine.  Bevacizumab binds to VEGF and inhibits VEGF receptor binding, thereby preventing the growth and maintenance of tumor blood vessels.',
+		html: 'A recombinant humanized monoclonal antibody directed against the vascular endothelial growth factor (VEGF), a pro-angiogenic cytokine.  Bevacizumab binds to VEGF and inhibits VEGF receptor binding, thereby preventing the growth and maintenance of tumor blood vessels.',
+		text: 'A recombinant humanized monoclonal antibody directed against the vascular endothelial growth factor (VEGF), a pro-angiogenic cytokine.  Bevacizumab binds to VEGF and inhibits VEGF receptor binding, thereby preventing the growth and maintenance of tumor blood vessels.',
 	},
 	drugInfoSummaryLink: {
 		uri: 'https://www.cancer.gov/about-cancer/treatment/drugs/bevacizumab',
