@@ -108,7 +108,11 @@ describe('TextInput component', function () {
 
 			setErrorMessage(mockEvent);
 			wrapper = render(
-				<TextInput errorMessage={errorMessage} {...mockTextInput} />
+				<TextInput
+					errorMessage={errorMessage}
+					{...mockTextInput}
+					allowedChars={{ isValid: () => false }}
+				/>
 			);
 			const { getByTestId, getByPlaceholderText, getByText } = wrapper;
 			const textInput = getByPlaceholderText(placeholderText);

@@ -372,19 +372,35 @@ module.exports = function (webpackEnv) {
 									'babel-preset-react-app/webpack-overrides'
 								),
 
-								plugins: [
-									[
-										require.resolve('babel-plugin-named-asset-import'),
-										{
-											loaderMap: {
-												svg: {
-													ReactComponent:
-														'@svgr/webpack?-svgo,+titleProp,+ref![path]',
+								// If this is development, then additionally add in the istanbul plugin
+								plugins: isEnvProduction
+									? [
+											[
+												require.resolve('babel-plugin-named-asset-import'),
+												{
+													loaderMap: {
+														svg: {
+															ReactComponent:
+																'@svgr/webpack?-svgo,+ref![path]',
+														},
+													},
+												},
+											],
+									]
+									: [
+											[
+												require.resolve('babel-plugin-named-asset-import'),
+												{
+												loaderMap: {
+													svg: {
+														ReactComponent:
+															'@svgr/webpack?-svgo,+ref![path]',
+													},
 												},
 											},
-										},
+										],
+										require.resolve('babel-plugin-istanbul'),
 									],
-								],
 								// This is a feature of `babel-loader` for webpack (not Babel itself).
 								// It enables caching results in ./node_modules/.cache/babel-loader/
 								// directory for faster rebuilds.
