@@ -42,7 +42,6 @@ describe('<TermList />', () => {
 				firstLetter: 'a',
 				type: 'DrugTerm',
 				termNameType: 'PreferredName',
-				prettyUrlName: 'a-101-topical-solution',
 			},
 			{
 				aliases: [

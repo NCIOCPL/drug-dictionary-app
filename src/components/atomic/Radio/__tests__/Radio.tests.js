@@ -5,12 +5,14 @@ import Radio from '../Radio';
 
 const label1 = 'Radio Mock Label1';
 const label2 = 'Radio Mock Label2';
+const label3 = 'Radio Mock Label3';
 
 describe('Check Radio Button', function () {
 	render(
 		<>
 			<Radio label={label1} id="mock-test" value="1" />
 			<Radio label={label2} id="mock-test" value="2" />
+			<Radio label={label3} id="mock-test" value="" />
 		</>
 	);
 
