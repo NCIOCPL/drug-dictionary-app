@@ -620,6 +620,20 @@ describe('<Autocomplete />', () => {
 		expect(ref.current.state.highlightedIndex).toEqual(0);
 	});
 
+	test('should set `state.highlightedIndex` to null when it is equal to `props.value`', () => {
+		const ref = React.createRef();
+		const { rerender } = render(
+			<Autocomplete {...defaultProps} ref={ref} value="m" />
+		);
+
+		ref.current.setState({ highlightedIndex: 0 });
+		rerender(<Autocomplete {...defaultProps} ref={ref} value="0" debug />);
+		jest.spyOn(ref.current, 'ensureHighlightedIndex');
+		fireEvent.click(screen.getByRole('combobox'));
+		expect(ref.current.ensureHighlightedIndex).toHaveBeenCalledTimes(0);
+		expect(ref.current.state.highlightedIndex).toBeNull;
+	});
+
 	test('should set `highlightedIndex` when hovering over items in the menu and ignoreBlur should be false when leave the element ', () => {
 		const ref = React.createRef();
 		const { rerender } = render(
