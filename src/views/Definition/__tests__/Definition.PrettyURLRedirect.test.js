@@ -39,10 +39,8 @@ test('Page is redirected to the definition page with a pretty URL name and searc
 			payload: {
 				aliases: null,
 				definition: {
-					html:
-						'\nA plasmid DNA vaccine, encoding an epitope of mouse tyrosinase, with potential antineoplastic activity. Administered via intramuscular electroporation, vaccination with xenogeneic tyrosinase DNA vaccine may induce both humoral and cytotoxic lymphocyte (CTL) immune responses against melanoma cells that express  tyrosinase, resulting in decreased tumor growth.',
-					text:
-						'\nA plasmid DNA vaccine, encoding an epitope of mouse tyrosinase, with potential antineoplastic activity. Administered via intramuscular electroporation, vaccination with xenogeneic tyrosinase DNA vaccine may induce both humoral and cytotoxic lymphocyte (CTL) immune responses against melanoma cells that express  tyrosinase, resulting in decreased tumor growth.',
+					html: '\nA plasmid DNA vaccine, encoding an epitope of mouse tyrosinase, with potential antineoplastic activity. Administered via intramuscular electroporation, vaccination with xenogeneic tyrosinase DNA vaccine may induce both humoral and cytotoxic lymphocyte (CTL) immune responses against melanoma cells that express  tyrosinase, resulting in decreased tumor growth.',
+					text: '\nA plasmid DNA vaccine, encoding an epitope of mouse tyrosinase, with potential antineoplastic activity. Administered via intramuscular electroporation, vaccination with xenogeneic tyrosinase DNA vaccine may induce both humoral and cytotoxic lymphocyte (CTL) immune responses against melanoma cells that express  tyrosinase, resulting in decreased tumor growth.',
 				},
 				drugInfoSummaryLink: null,
 				nciConceptId: 'C68839',

@@ -233,7 +233,6 @@ class Autocomplete extends React.Component {
 		this.handleChange = this.handleChange.bind(this);
 		this.handleKeyDown = this.handleKeyDown.bind(this);
 		this.handleInputClick = this.handleInputClick.bind(this);
-		this.maybeAutoCompleteText = this.maybeAutoCompleteText.bind(this);
 
 		this.id = this.props.id;
 
@@ -254,16 +253,9 @@ class Autocomplete extends React.Component {
 		this._scrollTimer = null;
 	}
 
-	UNSAFE_componentWillReceiveProps(nextProps) {
+	UNSAFE_componentWillReceiveProps() {
 		if (this.state.highlightedIndex !== null) {
 			this.setState(this.ensureHighlightedIndex);
-		}
-		if (
-			nextProps.autoHighlight &&
-			(this.props.value !== nextProps.value ||
-				this.state.highlightedIndex === null)
-		) {
-			this.setState(this.maybeAutoCompleteText);
 		}
 	}
 
@@ -299,7 +291,7 @@ class Autocomplete extends React.Component {
 	handleKeyDown(event) {
 		if (Autocomplete.keyDownHandlers[event.key])
 			Autocomplete.keyDownHandlers[event.key].call(this, event);
-		else if (!this.isOpen()) {
+		if (!this.isOpen()) {
 			this.setState({
 				isOpen: true,
 			});
@@ -432,30 +424,6 @@ class Autocomplete extends React.Component {
 		}
 
 		return items;
-	}
-
-	maybeAutoCompleteText(state, props) {
-		const { highlightedIndex } = state;
-		const { value, getItemValue } = props;
-		let index = highlightedIndex === null ? 0 : highlightedIndex;
-		let items = this.getFilteredItems(props);
-		for (let i = 0; i < items.length; i++) {
-			if (props.isItemSelectable(items[index])) break;
-			index = (index + 1) % items.length;
-		}
-		const matchedItem =
-			items[index] && props.isItemSelectable(items[index])
-				? items[index]
-				: null;
-		if (value !== '' && matchedItem) {
-			const itemValue = getItemValue(matchedItem);
-			const itemValueDoesMatch =
-				itemValue.toLowerCase().indexOf(value.toLowerCase()) === 0;
-			if (itemValueDoesMatch) {
-				return { highlightedIndex: index };
-			}
-		}
-		return { highlightedIndex: null };
 	}
 
 	ensureHighlightedIndex(state, props) {

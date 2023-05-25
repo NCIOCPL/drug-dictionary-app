@@ -62,10 +62,8 @@ describe('<SearchResults />', () => {
 						},
 					],
 					definition: {
-						html:
-							'A human monoclonal antibody directed against Clostridium difficile Toxin B (TcdB), with anti-toxin activity. Upon intravenous infusion, the two Fab regions of bezlotoxumab bind to two distinct epitopes within the N-terminal half of the TcdB combined repetitive oligopeptide (CROP) domain, blocking the carbohydrate binding pockets of the toxin and preventing binding of the toxin to target host cells. TcdB is one of two exotoxins responsible for the symptoms of Clostridium difficile infections.',
-						text:
-							'A human monoclonal antibody directed against Clostridium difficile Toxin B (TcdB), with anti-toxin activity. Upon intravenous infusion, the two Fab regions of bezlotoxumab bind to two distinct epitopes within the N-terminal half of the TcdB combined repetitive oligopeptide (CROP) domain, blocking the carbohydrate binding pockets of the toxin and preventing binding of the toxin to target host cells. TcdB is one of two exotoxins responsible for the symptoms of Clostridium difficile infections.',
+						html: 'A human monoclonal antibody directed against Clostridium difficile Toxin B (TcdB), with anti-toxin activity. Upon intravenous infusion, the two Fab regions of bezlotoxumab bind to two distinct epitopes within the N-terminal half of the TcdB combined repetitive oligopeptide (CROP) domain, blocking the carbohydrate binding pockets of the toxin and preventing binding of the toxin to target host cells. TcdB is one of two exotoxins responsible for the symptoms of Clostridium difficile infections.',
+						text: 'A human monoclonal antibody directed against Clostridium difficile Toxin B (TcdB), with anti-toxin activity. Upon intravenous infusion, the two Fab regions of bezlotoxumab bind to two distinct epitopes within the N-terminal half of the TcdB combined repetitive oligopeptide (CROP) domain, blocking the carbohydrate binding pockets of the toxin and preventing binding of the toxin to target host cells. TcdB is one of two exotoxins responsible for the symptoms of Clostridium difficile infections.',
 					},
 					drugInfoSummaryLink: null,
 					nciConceptId: 'C153084',
@@ -81,15 +79,12 @@ describe('<SearchResults />', () => {
 					aliases: [
 						{
 							type: 'Synonym',
-							name:
-								'Zedoary rhizome/Pseudobulbus cremastrae seu pleiones/Yatantzu/Strychni pulveratum/beehive/artificial bezoar/Bombyx mori/Danshen root/Radix astragali/Angelica/camphol alcohol capsule',
+							name: 'Zedoary rhizome/Pseudobulbus cremastrae seu pleiones/Yatantzu/Strychni pulveratum/beehive/artificial bezoar/Bombyx mori/Danshen root/Radix astragali/Angelica/camphol alcohol capsule',
 						},
 					],
 					definition: {
-						html:
-							'A capsule-based formulation containing artificial bezoar, Strychni pulveratum (strychnos powder), camphol alcohol (borneol or borneo camphor) and extracts from Zedoary rhizome (Rhizoma curcumae), Pseudobulbus cremastrae seu pleiones (dried pseudobulb of Cremastra appendiculata), Yatantzu (seed of Brucca javanica), beehive, Bombyx mori (Bombyx batryticatus or silkworm), Danshen (dried root of Salvia miltiorrhiza or red sage root), Radix astragali, and Angelica, with potential antineoplastic activity. Upon oral administration of the cidan herbal capsule, the active ingredients in the plant extracts may induce tumor cell apoptosis and reduce tumor cell proliferation.',
-						text:
-							'A capsule-based formulation containing artificial bezoar, Strychni pulveratum (strychnos powder), camphol alcohol (borneol or borneo camphor) and extracts from Zedoary rhizome (Rhizoma curcumae), Pseudobulbus cremastrae seu pleiones (dried pseudobulb of Cremastra appendiculata), Yatantzu (seed of Brucca javanica), beehive, Bombyx mori (Bombyx batryticatus or silkworm), Danshen (dried root of Salvia miltiorrhiza or red sage root), Radix astragali, and Angelica, with potential antineoplastic activity. Upon oral administration of the cidan herbal capsule, the active ingredients in the plant extracts may induce tumor cell apoptosis and reduce tumor cell proliferation.',
+						html: 'A capsule-based formulation containing artificial bezoar, Strychni pulveratum (strychnos powder), camphol alcohol (borneol or borneo camphor) and extracts from Zedoary rhizome (Rhizoma curcumae), Pseudobulbus cremastrae seu pleiones (dried pseudobulb of Cremastra appendiculata), Yatantzu (seed of Brucca javanica), beehive, Bombyx mori (Bombyx batryticatus or silkworm), Danshen (dried root of Salvia miltiorrhiza or red sage root), Radix astragali, and Angelica, with potential antineoplastic activity. Upon oral administration of the cidan herbal capsule, the active ingredients in the plant extracts may induce tumor cell apoptosis and reduce tumor cell proliferation.',
+						text: 'A capsule-based formulation containing artificial bezoar, Strychni pulveratum (strychnos powder), camphol alcohol (borneol or borneo camphor) and extracts from Zedoary rhizome (Rhizoma curcumae), Pseudobulbus cremastrae seu pleiones (dried pseudobulb of Cremastra appendiculata), Yatantzu (seed of Brucca javanica), beehive, Bombyx mori (Bombyx batryticatus or silkworm), Danshen (dried root of Salvia miltiorrhiza or red sage root), Radix astragali, and Angelica, with potential antineoplastic activity. Upon oral administration of the cidan herbal capsule, the active ingredients in the plant extracts may induce tumor cell apoptosis and reduce tumor cell proliferation.',
 					},
 					drugInfoSummaryLink: null,
 					nciConceptId: 'C118451',
@@ -117,10 +112,8 @@ describe('<SearchResults />', () => {
 						},
 					],
 					definition: {
-						html:
-							'An orally bioavailable imidazoquinoline targeting the phosphatidylinositol 3 kinase (PI3K) and the mammalian target of rapamycin (mTOR), with potential antineoplastic activity. PI3K/mTOR inhibitor BEZ235 inhibits PI3K kinase and mTOR kinase in the PI3K/AKT/mTOR kinase signaling pathway, which may result in tumor cell apoptosis and growth inhibition in PI3K/mTOR-overexpressing tumor cells. Activation of the PI3K/mTOR pathway promotes cell growth, survival, and resistance to chemotherapy and radiotherapy; mTOR, a serine/threonine kinase downstream of PI3K, may also be activated independent of PI3K.',
-						text:
-							'An orally bioavailable imidazoquinoline targeting the phosphatidylinositol 3 kinase (PI3K) and the mammalian target of rapamycin (mTOR), with potential antineoplastic activity. PI3K/mTOR inhibitor BEZ235 inhibits PI3K kinase and mTOR kinase in the PI3K/AKT/mTOR kinase signaling pathway, which may result in tumor cell apoptosis and growth inhibition in PI3K/mTOR-overexpressing tumor cells. Activation of the PI3K/mTOR pathway promotes cell growth, survival, and resistance to chemotherapy and radiotherapy; mTOR, a serine/threonine kinase downstream of PI3K, may also be activated independent of PI3K.',
+						html: 'An orally bioavailable imidazoquinoline targeting the phosphatidylinositol 3 kinase (PI3K) and the mammalian target of rapamycin (mTOR), with potential antineoplastic activity. PI3K/mTOR inhibitor BEZ235 inhibits PI3K kinase and mTOR kinase in the PI3K/AKT/mTOR kinase signaling pathway, which may result in tumor cell apoptosis and growth inhibition in PI3K/mTOR-overexpressing tumor cells. Activation of the PI3K/mTOR pathway promotes cell growth, survival, and resistance to chemotherapy and radiotherapy; mTOR, a serine/threonine kinase downstream of PI3K, may also be activated independent of PI3K.',
+						text: 'An orally bioavailable imidazoquinoline targeting the phosphatidylinositol 3 kinase (PI3K) and the mammalian target of rapamycin (mTOR), with potential antineoplastic activity. PI3K/mTOR inhibitor BEZ235 inhibits PI3K kinase and mTOR kinase in the PI3K/AKT/mTOR kinase signaling pathway, which may result in tumor cell apoptosis and growth inhibition in PI3K/mTOR-overexpressing tumor cells. Activation of the PI3K/mTOR pathway promotes cell growth, survival, and resistance to chemotherapy and radiotherapy; mTOR, a serine/threonine kinase downstream of PI3K, may also be activated independent of PI3K.',
 					},
 					drugInfoSummaryLink: null,
 					nciConceptId: 'C74072',

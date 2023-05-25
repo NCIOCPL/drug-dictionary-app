@@ -8,7 +8,7 @@ beforeEach(() => {
 		// to development defaults does not break a bunch of texts.
 		win.INT_TEST_APP_PARAMS = {
 			analyticsName: 'Drug',
-			apiEndpoint:'/api/drugdictionary/v1/',
+			apiEndpoint: '/api/drugdictionary/v1/',
 			appId: '@@/DEFAULT_SWS_APP_ID',
 			baseHost: 'http://localhost:3000',
 			basePath: '/',
@@ -17,7 +17,7 @@ beforeEach(() => {
 			rootId: 'NCI-app-root',
 			siteName: 'National Cancer Institute',
 			title: 'NCI Drug Dictionary',
-			contentGroup: "NCI Drug Dictionary",
+			contentGroup: 'NCI Drug Dictionary',
 		};
 		console.log(win.INT_TEST_APP_PARAMS);
 	});

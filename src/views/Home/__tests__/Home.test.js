@@ -51,10 +51,8 @@ describe('Home component(English)', () => {
 						},
 					],
 					definition: {
-						html:
-							'A proprietary topical formulation consisting of a high-concentration of hydrogen peroxide (H2O2), with potential keratolytic activity. Upon administration of the A-101 topical solution to an affected area of skin, the hydrogen peroxide penetrates into the cells, increases oxygen content, produces reactive oxygen species (ROS), causes oxidative stress and induces apoptosis through oxidative damage. This may clear the affected skin cells and remove common warts (verruca vulgaris) or seborrheic keratosis (SK).',
-						text:
-							'A proprietary topical formulation consisting of a high-concentration of hydrogen peroxide (H2O2), with potential keratolytic activity. Upon administration of the A-101 topical solution to an affected area of skin, the hydrogen peroxide penetrates into the cells, increases oxygen content, produces reactive oxygen species (ROS), causes oxidative stress and induces apoptosis through oxidative damage. This may clear the affected skin cells and remove common warts (verruca vulgaris) or seborrheic keratosis (SK).',
+						html: 'A proprietary topical formulation consisting of a high-concentration of hydrogen peroxide (H2O2), with potential keratolytic activity. Upon administration of the A-101 topical solution to an affected area of skin, the hydrogen peroxide penetrates into the cells, increases oxygen content, produces reactive oxygen species (ROS), causes oxidative stress and induces apoptosis through oxidative damage. This may clear the affected skin cells and remove common warts (verruca vulgaris) or seborrheic keratosis (SK).',
+						text: 'A proprietary topical formulation consisting of a high-concentration of hydrogen peroxide (H2O2), with potential keratolytic activity. Upon administration of the A-101 topical solution to an affected area of skin, the hydrogen peroxide penetrates into the cells, increases oxygen content, produces reactive oxygen species (ROS), causes oxidative stress and induces apoptosis through oxidative damage. This may clear the affected skin cells and remove common warts (verruca vulgaris) or seborrheic keratosis (SK).',
 					},
 					drugInfoSummaryLink: null,
 					nciConceptId: 'C150374',
@@ -82,10 +80,8 @@ describe('Home component(English)', () => {
 						},
 					],
 					definition: {
-						html:
-							'An orally bioavailable immune checkpoint inhibitor and antagonist of the adenosine A2A receptor (A2AR; ADORA2A), with potential immunomodulating and antineoplastic activities. Upon administration, A2AR antagonist EOS100850 selectively binds to and inhibits A2AR expressed on T-lymphocytes. This prevents tumor-released adenosine from interacting with the A2A receptors, thereby blocking the adenosine/A2AR-mediated inhibition of T-lymphocytes. This results in the proliferation and activation of T-lymphocytes, and stimulates a T-cell-mediated immune response against tumor cells. A2AR, a G protein-coupled receptor, is highly expressed on the cell surfaces of T-cells and, upon activation by adenosine, inhibits their proliferation and activation. Adenosine is often overproduced by cancer cells and plays a key role in immunosuppression.',
-						text:
-							'An orally bioavailable immune checkpoint inhibitor and antagonist of the adenosine A2A receptor (A2AR; ADORA2A), with potential immunomodulating and antineoplastic activities. Upon administration, A2AR antagonist EOS100850 selectively binds to and inhibits A2AR expressed on T-lymphocytes. This prevents tumor-released adenosine from interacting with the A2A receptors, thereby blocking the adenosine/A2AR-mediated inhibition of T-lymphocytes. This results in the proliferation and activation of T-lymphocytes, and stimulates a T-cell-mediated immune response against tumor cells. A2AR, a G protein-coupled receptor, is highly expressed on the cell surfaces of T-cells and, upon activation by adenosine, inhibits their proliferation and activation. Adenosine is often overproduced by cancer cells and plays a key role in immunosuppression.',
+						html: 'An orally bioavailable immune checkpoint inhibitor and antagonist of the adenosine A2A receptor (A2AR; ADORA2A), with potential immunomodulating and antineoplastic activities. Upon administration, A2AR antagonist EOS100850 selectively binds to and inhibits A2AR expressed on T-lymphocytes. This prevents tumor-released adenosine from interacting with the A2A receptors, thereby blocking the adenosine/A2AR-mediated inhibition of T-lymphocytes. This results in the proliferation and activation of T-lymphocytes, and stimulates a T-cell-mediated immune response against tumor cells. A2AR, a G protein-coupled receptor, is highly expressed on the cell surfaces of T-cells and, upon activation by adenosine, inhibits their proliferation and activation. Adenosine is often overproduced by cancer cells and plays a key role in immunosuppression.',
+						text: 'An orally bioavailable immune checkpoint inhibitor and antagonist of the adenosine A2A receptor (A2AR; ADORA2A), with potential immunomodulating and antineoplastic activities. Upon administration, A2AR antagonist EOS100850 selectively binds to and inhibits A2AR expressed on T-lymphocytes. This prevents tumor-released adenosine from interacting with the A2A receptors, thereby blocking the adenosine/A2AR-mediated inhibition of T-lymphocytes. This results in the proliferation and activation of T-lymphocytes, and stimulates a T-cell-mediated immune response against tumor cells. A2AR, a G protein-coupled receptor, is highly expressed on the cell surfaces of T-cells and, upon activation by adenosine, inhibits their proliferation and activation. Adenosine is often overproduced by cancer cells and plays a key role in immunosuppression.',
 					},
 					drugInfoSummaryLink: null,
 					nciConceptId: null,
@@ -113,10 +109,8 @@ describe('Home component(English)', () => {
 						},
 					],
 					definition: {
-						html:
-							'A sulfate salt form of abacavir, a nucleoside reverse transcriptase inhibitor analog of guanosine. This agent decreases HIV viral loads, retards or prevents the damage to the immune system, and reduces the risk of developing AIDS.',
-						text:
-							'A sulfate salt form of abacavir, a nucleoside reverse transcriptase inhibitor analog of guanosine. This agent decreases HIV viral loads, retards or prevents the damage to the immune system, and reduces the risk of developing AIDS.',
+						html: 'A sulfate salt form of abacavir, a nucleoside reverse transcriptase inhibitor analog of guanosine. This agent decreases HIV viral loads, retards or prevents the damage to the immune system, and reduces the risk of developing AIDS.',
+						text: 'A sulfate salt form of abacavir, a nucleoside reverse transcriptase inhibitor analog of guanosine. This agent decreases HIV viral loads, retards or prevents the damage to the immune system, and reduces the risk of developing AIDS.',
 					},
 					drugInfoSummaryLink: null,
 					nciConceptId: 'C28804',

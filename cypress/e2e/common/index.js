@@ -1,6 +1,5 @@
 /// <reference types="Cypress" />
 import { And, Given, Then, When } from 'cypress-cucumber-preprocessor/steps';
-import { i18n } from '../../../src/utils';
 
 const baseURL = Cypress.config('baseUrl');
 
@@ -13,7 +12,7 @@ Then('the page title is {string}', (title) => {
 });
 
 Then('page title on error page is {string}', (title) => {
-	Cypress.on('uncaught:exception', (err, runnable) => {
+	Cypress.on('uncaught:exception', () => {
 		// returning false here to Cypress from
 		// failing the test
 		return false;
@@ -95,7 +94,7 @@ And('the URL does not include {string}', (parameter) => {
     ----------------------------------------
 */
 Then('the user gets an error page that reads {string}', (errorMessage) => {
-	Cypress.on('uncaught:exception', (err, runnable) => {
+	Cypress.on('uncaught:exception', () => {
 		// returning false here to Cypress from
 		// failing the test
 		return false;
@@ -172,7 +171,7 @@ Then(
 	}
 );
 
-And('{string} radio is selected by default', (startWith) => {
+And('{string} radio is selected by default', () => {
 	cy.get(`input[value="Begins"]`).should('be.checked');
 });
 
@@ -268,7 +267,9 @@ Then('autosuggest appears with correct options', (dataTable) => {
 
 And('selects the {string} entry', (autoSuggestOption) => {
 	cy.get(".menu-wrapper div[class*='--terms']").should('be.visible');
-	cy.get(".menu-wrapper div[class*='--terms']").contains(autoSuggestOption).click();
+	cy.get(".menu-wrapper div[class*='--terms']")
+		.contains(autoSuggestOption)
+		.click();
 });
 
 /*
@@ -380,7 +381,7 @@ And('page displays {int} results found for {string}', (number, drug) => {
     ------------------
 */
 When('the user navigates to non-existent definition {string}', (def) => {
-	Cypress.on('uncaught:exception', (err, runnable) => {
+	Cypress.on('uncaught:exception', () => {
 		// returning false here to Cypress from
 		// failing the test
 		return false;
@@ -389,7 +390,7 @@ When('the user navigates to non-existent definition {string}', (def) => {
 });
 
 Then('page title on error page is {string}', (title) => {
-	Cypress.on('uncaught:exception', (err, runnable) => {
+	Cypress.on('uncaught:exception', () => {
 		// returning false here to Cypress from
 		// failing the test
 		return false;
@@ -460,7 +461,7 @@ Then('the system returns search results page for the search term', () => {
 });
 
 Given('the user navigates to bad search url {string}', (path) => {
-	Cypress.on('uncaught:exception', (err, runnable) => {
+	Cypress.on('uncaught:exception', () => {
 		// returning false here to Cypress from
 		// failing the test
 		return false;
@@ -482,16 +483,15 @@ Then('the search bar on the page does not maintain the user’s term', () => {
 	cy.get('#keywords').should('have.attr', 'value', '');
 });
 
-Then('the message {string} appears',(text)=>{
-cy.get('.ncids-input__help-text').should('have.text',text);
+Then('the message {string} appears', (text) => {
+	cy.get('.ncids-input__help-text').should('have.text', text);
 });
 
-Then('search box truncates the keyword to {string}',(value)=>{
+Then('search box truncates the keyword to {string}', (value) => {
 	cy.get('#keywords').should('have.attr', 'maxlength', 30);
 	cy.get('#keywords').should('have.attr', 'value', value);
-
 });
 
-Then('user tries to add {string} in the search box',(longKeyword)=>{
-	cy.get('#keywords').type(longKeyword)
+Then('user tries to add {string} in the search box', (longKeyword) => {
+	cy.get('#keywords').type(longKeyword);
 });

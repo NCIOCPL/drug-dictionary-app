@@ -7,9 +7,8 @@ import { useAppPaths } from '../../hooks';
 import { searchMatchType } from '../../constants';
 
 const PageNotFound = () => {
-	const [
-		{ canonicalHost, language, analyticsName, dictionaryTitle },
-	] = useStateValue();
+	const [{ canonicalHost, language, analyticsName, dictionaryTitle }] =
+		useStateValue();
 	const tracking = useTracking();
 	const { SearchPath } = useAppPaths();
 	const [searchText, setSearchText] = useState('');

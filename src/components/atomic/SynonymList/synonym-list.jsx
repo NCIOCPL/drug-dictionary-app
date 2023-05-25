@@ -11,12 +11,12 @@ const SynonymList = ({ aliases, term }) => {
 		const amount = aliasArray?.length || 0;
 		for (let i = 0; i < amount; i++) {
 			const item = aliasArray[i];
+			const itemName = item.name.toLowerCase();
+			// If it contains or starts with the term
 			if (
-				searchMode === 'Contains' &&
-				item.name.toLowerCase().includes(term.toLowerCase())
+				(searchMode === 'Contains' && itemName.includes(term.toLowerCase())) ||
+				itemName.startsWith(term.toLowerCase())
 			) {
-				aliasList.push(<li key={`synonym-${i}-${item.name}`}>{item.name}</li>);
-			} else if (item.name.toLowerCase().startsWith(term.toLowerCase())) {
 				aliasList.push(<li key={`synonym-${i}-${item.name}`}>{item.name}</li>);
 			}
 		}
