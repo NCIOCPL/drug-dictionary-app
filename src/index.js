@@ -76,19 +76,11 @@ const initialize = ({
 	// their own custom handler.
 	const AnalyticsHoC = ({ children }) =>
 		analyticsHandler === 'EddlAnalyticsHandler' ? (
-			<EddlAnalyticsProvider
-				pageLanguage={language === 'es' ? 'spanish' : 'english'}
-				pageChannel={analyticsChannel}
-				pageContentGroup={analyticsContentGroup}
-				pageName={analyticsName}
-				publishedDate={analyticsPublishedDate}
-				analyticsName={analyticsName}>
+			<EddlAnalyticsProvider pageLanguage={language === 'es' ? 'spanish' : 'english'} pageChannel={analyticsChannel} pageContentGroup={analyticsContentGroup} pageName={analyticsName} publishedDate={analyticsPublishedDate} analyticsName={analyticsName}>
 				{children}
 			</EddlAnalyticsProvider>
 		) : (
-			<AnalyticsProvider analyticsHandler={analyticsHandler}>
-				{children}
-			</AnalyticsProvider>
+			<AnalyticsProvider analyticsHandler={analyticsHandler}>{children}</AnalyticsProvider>
 		);
 
 	AnalyticsHoC.propTypes = {

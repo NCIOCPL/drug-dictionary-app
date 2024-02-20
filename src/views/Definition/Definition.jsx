@@ -18,9 +18,7 @@ const Definition = () => {
 	const [drugDefinitionLoaded, setDrugDefinitionLoaded] = useState(false);
 
 	// Get items passed into index.js and stored in the context.
-	const [
-		{ analyticsName, baseHost, canonicalHost, dictionaryTitle, siteName },
-	] = useStateValue();
+	const [{ analyticsName, baseHost, canonicalHost, dictionaryTitle, siteName }] = useStateValue();
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -42,9 +40,7 @@ const Definition = () => {
 				name:
 					canonicalHost.replace('https://', '') +
 					DefinitionPath({
-						idOrName: drugDefinition.payload.prettyUrlName
-							? drugDefinition.payload.prettyUrlName
-							: drugDefinition.payload.termId,
+						idOrName: drugDefinition.payload.prettyUrlName ? drugDefinition.payload.prettyUrlName : drugDefinition.payload.termId,
 					}),
 				title: dictionaryTitle,
 				metaTitle: `Definition of ${drugDefinition.payload.name} - ${dictionaryTitle} - ${siteName}`,
@@ -61,10 +57,7 @@ const Definition = () => {
 			setDrugDefinition(queryResponse);
 			setDrugDefinitionLoaded(true);
 			//redirect to PrettyUrlName when ID is provided in the url
-			if (
-				queryResponse.payload.prettyUrlName &&
-				idOrName.match(/^[0-9]+$/) != null
-			) {
+			if (queryResponse.payload.prettyUrlName && idOrName.match(/^[0-9]+$/) != null) {
 				const path = `${queryResponse.payload.prettyUrlName}?redirect=true`;
 				navigate(DefinitionPath({ idOrName: path }));
 				return;
@@ -87,9 +80,7 @@ const Definition = () => {
 					content={
 						baseHost +
 						DefinitionPath({
-							idOrName: drugDefinition.payload.prettyUrlName
-								? drugDefinition.payload.prettyUrlName
-								: drugDefinition.payload.termId,
+							idOrName: drugDefinition.payload.prettyUrlName ? drugDefinition.payload.prettyUrlName : drugDefinition.payload.termId,
 						})
 					}
 				/>
@@ -98,9 +89,7 @@ const Definition = () => {
 					href={
 						canonicalHost +
 						DefinitionPath({
-							idOrName: drugDefinition.payload.prettyUrlName
-								? drugDefinition.payload.prettyUrlName
-								: drugDefinition.payload.termId,
+							idOrName: drugDefinition.payload.prettyUrlName ? drugDefinition.payload.prettyUrlName : drugDefinition.payload.termId,
 						})
 					}
 				/>
@@ -112,14 +101,7 @@ const Definition = () => {
 			{drugDefinitionLoaded && drugDefinition && (
 				<>
 					{renderHelmet()}
-					<DefinitionItem
-						drugInfoSummaryLink={drugDefinition.payload?.drugInfoSummaryLink}
-						definitionText={drugDefinition.payload.definition?.html}
-						nciConceptId={drugDefinition.payload?.nciConceptId}
-						aliases={drugDefinition.payload?.aliases}
-						termId={drugDefinition.payload?.termId}
-						name={drugDefinition.payload?.name}
-					/>
+					<DefinitionItem drugInfoSummaryLink={drugDefinition.payload?.drugInfoSummaryLink} definitionText={drugDefinition.payload.definition?.html} nciConceptId={drugDefinition.payload?.nciConceptId} aliases={drugDefinition.payload?.aliases} termId={drugDefinition.payload?.termId} name={drugDefinition.payload?.name} />
 					<SearchBox showTitle />
 				</>
 			)}

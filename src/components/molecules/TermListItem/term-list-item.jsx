@@ -3,20 +3,9 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-const TermListItem = ({
-	itemIndex,
-	preferredName,
-	prettyUrlName,
-	term,
-	termDefinition,
-	termId,
-	termLinkPath,
-	termLinkTrackingHandler,
-}) => {
+const TermListItem = ({ itemIndex, preferredName, prettyUrlName, term, termDefinition, termId, termLinkPath, termLinkTrackingHandler }) => {
 	const idOrName = prettyUrlName ? prettyUrlName : termId;
-	const definitionText = termDefinition
-		? termDefinition
-		: `(Other name for: ${preferredName})`;
+	const definitionText = termDefinition ? termDefinition : `(Other name for: ${preferredName})`;
 
 	const termLinkClickHandler = () => {
 		if (termLinkTrackingHandler) {

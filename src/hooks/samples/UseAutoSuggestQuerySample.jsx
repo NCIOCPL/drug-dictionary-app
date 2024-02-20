@@ -3,12 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 import { useAutoSuggestResultsQuery } from '../autoSuggestQuery';
 
-const UseAutoSuggestQuerySample = ({
-	autoSuggestLimit = 10,
-	searchText,
-	shouldFetch,
-	selectedOption,
-}) => {
+const UseAutoSuggestQuerySample = ({ autoSuggestLimit = 10, searchText, shouldFetch, selectedOption }) => {
 	const [autoSuggestState, setAutoSuggestState] = useState([]);
 
 	const autoSuggest = useAutoSuggestResultsQuery({
@@ -34,9 +29,7 @@ const UseAutoSuggestQuerySample = ({
 				</ul>
 			)}
 
-			{!autoSuggest.loading & (autoSuggestState.length < 1) && (
-				<div>No Results</div>
-			)}
+			{!autoSuggest.loading & (autoSuggestState.length < 1) && <div>No Results</div>}
 
 			{autoSuggest.loading && <div>Loading results...</div>}
 		</>
