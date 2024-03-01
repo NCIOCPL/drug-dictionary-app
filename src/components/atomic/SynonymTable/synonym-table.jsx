@@ -76,12 +76,7 @@ const SynonymTable = (aliases) => {
 
 	return (
 		<figure className="table">
-			<table
-				className="synonym"
-				width="100%"
-				cellSpacing="0"
-				cellPadding="0"
-				border="0">
+			<table className="synonym" width="100%" cellSpacing="0" cellPadding="0" border="0">
 				<tbody>{aliasDOM}</tbody>
 			</table>
 		</figure>

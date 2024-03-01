@@ -66,9 +66,7 @@ describe('autoSuggestQuery hook', () => {
 		const resultsList = screen.getAllByRole('listitem');
 		expect(resultsList.length).toEqual(2);
 		expect(getByText(resultsList[0], 'bevacizumab')).toBeInTheDocument();
-		expect(
-			getByText(resultsList[1], 'bevacizumab-IRDye 800CW')
-		).toBeInTheDocument();
+		expect(getByText(resultsList[1], 'bevacizumab-IRDye 800CW')).toBeInTheDocument();
 	});
 
 	test('should return default 10 items that match payload when more than 10 items are provided', async () => {
@@ -157,36 +155,16 @@ describe('autoSuggestQuery hook', () => {
 
 		const resultsList = screen.getAllByRole('listitem');
 		expect(resultsList.length).toEqual(10);
-		expect(
-			getByText(resultsList[0], 'bevacizumab biosimilar BAT1706')
-		).toBeInTheDocument();
-		expect(
-			getByText(resultsList[1], 'bevacizumab biosimilar BEVZ92')
-		).toBeInTheDocument();
-		expect(
-			getByText(resultsList[2], 'bevacizumab biosimilar BI 695502')
-		).toBeInTheDocument();
-		expect(
-			getByText(resultsList[3], 'bevacizumab biosimilar CBT 124')
-		).toBeInTheDocument();
-		expect(
-			getByText(resultsList[4], 'bevacizumab biosimilar CT-P16')
-		).toBeInTheDocument();
-		expect(
-			getByText(resultsList[5], 'bevacizumab biosimilar FKB238')
-		).toBeInTheDocument();
-		expect(
-			getByText(resultsList[6], 'bevacizumab biosimilar GB-222')
-		).toBeInTheDocument();
-		expect(
-			getByText(resultsList[7], 'bevacizumab biosimilar HD204')
-		).toBeInTheDocument();
-		expect(
-			getByText(resultsList[8], 'bevacizumab biosimilar HLX04')
-		).toBeInTheDocument();
-		expect(
-			getByText(resultsList[9], 'bevacizumab biosimilar IBI305')
-		).toBeInTheDocument();
+		expect(getByText(resultsList[0], 'bevacizumab biosimilar BAT1706')).toBeInTheDocument();
+		expect(getByText(resultsList[1], 'bevacizumab biosimilar BEVZ92')).toBeInTheDocument();
+		expect(getByText(resultsList[2], 'bevacizumab biosimilar BI 695502')).toBeInTheDocument();
+		expect(getByText(resultsList[3], 'bevacizumab biosimilar CBT 124')).toBeInTheDocument();
+		expect(getByText(resultsList[4], 'bevacizumab biosimilar CT-P16')).toBeInTheDocument();
+		expect(getByText(resultsList[5], 'bevacizumab biosimilar FKB238')).toBeInTheDocument();
+		expect(getByText(resultsList[6], 'bevacizumab biosimilar GB-222')).toBeInTheDocument();
+		expect(getByText(resultsList[7], 'bevacizumab biosimilar HD204')).toBeInTheDocument();
+		expect(getByText(resultsList[8], 'bevacizumab biosimilar HLX04')).toBeInTheDocument();
+		expect(getByText(resultsList[9], 'bevacizumab biosimilar IBI305')).toBeInTheDocument();
 	});
 
 	test('should return 12 items given autoSuggestLimit of 12 that match payload', async () => {
@@ -237,13 +215,11 @@ describe('autoSuggestQuery hook', () => {
 					},
 					{
 						termId: 561774,
-						termName:
-							'diphtheria toxoid/tetanus toxoid/acellular pertussis adsorbed, recombinant hepatitis B/inactivated poliovirus vaccine combined',
+						termName: 'diphtheria toxoid/tetanus toxoid/acellular pertussis adsorbed, recombinant hepatitis B/inactivated poliovirus vaccine combined',
 					},
 					{
 						termId: 561776,
-						termName:
-							'diphtheria toxoid/tetanus toxoid/acellular pertussis vaccine adsorbed',
+						termName: 'diphtheria toxoid/tetanus toxoid/acellular pertussis vaccine adsorbed',
 					},
 				],
 			}),
@@ -266,43 +242,17 @@ describe('autoSuggestQuery hook', () => {
 
 		const resultsList = screen.getAllByRole('listitem');
 		expect(resultsList.length).toEqual(12);
-		expect(
-			getByText(resultsList[0], 'abiraterone acetate')
-		).toBeInTheDocument();
-		expect(
-			getByText(resultsList[1], 'Annonaceous acetogenins')
-		).toBeInTheDocument();
-		expect(
-			getByText(resultsList[2], 'carbon C 13 acetate')
-		).toBeInTheDocument();
-		expect(
-			getByText(resultsList[3], 'carbon C 14 eribulin acetate')
-		).toBeInTheDocument();
+		expect(getByText(resultsList[0], 'abiraterone acetate')).toBeInTheDocument();
+		expect(getByText(resultsList[1], 'Annonaceous acetogenins')).toBeInTheDocument();
+		expect(getByText(resultsList[2], 'carbon C 13 acetate')).toBeInTheDocument();
+		expect(getByText(resultsList[3], 'carbon C 14 eribulin acetate')).toBeInTheDocument();
 		expect(getByText(resultsList[4], 'carbon-11 acetate')).toBeInTheDocument();
-		expect(
-			getByText(resultsList[5], 'caspofungin acetate')
-		).toBeInTheDocument();
-		expect(
-			getByText(resultsList[6], 'corticorelin acetate')
-		).toBeInTheDocument();
-		expect(
-			getByText(resultsList[7], 'cyproterone acetate')
-		).toBeInTheDocument();
+		expect(getByText(resultsList[5], 'caspofungin acetate')).toBeInTheDocument();
+		expect(getByText(resultsList[6], 'corticorelin acetate')).toBeInTheDocument();
+		expect(getByText(resultsList[7], 'cyproterone acetate')).toBeInTheDocument();
 		expect(getByText(resultsList[8], 'deslorelin acetate')).toBeInTheDocument();
-		expect(
-			getByText(resultsList[9], 'desmopressin acetate')
-		).toBeInTheDocument();
-		expect(
-			getByText(
-				resultsList[10],
-				'diphtheria toxoid/tetanus toxoid/acellular pertussis adsorbed, recombinant hepatitis B/inactivated poliovirus vaccine combined'
-			)
-		).toBeInTheDocument();
-		expect(
-			getByText(
-				resultsList[11],
-				'diphtheria toxoid/tetanus toxoid/acellular pertussis vaccine adsorbed'
-			)
-		).toBeInTheDocument();
+		expect(getByText(resultsList[9], 'desmopressin acetate')).toBeInTheDocument();
+		expect(getByText(resultsList[10], 'diphtheria toxoid/tetanus toxoid/acellular pertussis adsorbed, recombinant hepatitis B/inactivated poliovirus vaccine combined')).toBeInTheDocument();
+		expect(getByText(resultsList[11], 'diphtheria toxoid/tetanus toxoid/acellular pertussis vaccine adsorbed')).toBeInTheDocument();
 	});
 });

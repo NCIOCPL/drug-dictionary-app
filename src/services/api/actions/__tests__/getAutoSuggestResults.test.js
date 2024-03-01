@@ -10,9 +10,7 @@ describe('getAutoSuggestResults action', () => {
 			method: 'GET',
 			endpoint: `/Autosuggest?searchText=${searchText}&matchType=Begins&includeResourceTypes=DrugTerm&size=10`,
 		};
-		expect(
-			getAutoSuggestResults({ searchText, matchType: beginsWith })
-		).toEqual(retAction);
+		expect(getAutoSuggestResults({ searchText, matchType: beginsWith })).toEqual(retAction);
 	});
 
 	test(`should match getAutoSuggestResults action with Contains for searchText "ace"`, () => {
@@ -21,8 +19,6 @@ describe('getAutoSuggestResults action', () => {
 			method: 'GET',
 			endpoint: `/Autosuggest?searchText=${searchText}&matchType=Contains&includeResourceTypes=DrugTerm&size=10`,
 		};
-		expect(getAutoSuggestResults({ searchText, matchType: contains })).toEqual(
-			retAction
-		);
+		expect(getAutoSuggestResults({ searchText, matchType: contains })).toEqual(retAction);
 	});
 });

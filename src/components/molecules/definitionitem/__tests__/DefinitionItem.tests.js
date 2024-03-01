@@ -176,48 +176,28 @@ describe('Definition Item component', () => {
 	const wrapper = render(
 		<MockAnalyticsProvider>
 			<MemoryRouter initialEntries={['/bevacizumab']}>
-				<DefinitionItem
-					drugInfoSummaryLink={payload.drugInfoSummaryLink}
-					definitionText={payload.definition.html}
-					nciConceptId={payload.nciConceptId}
-					aliases={payload.aliases}
-					termId={payload.termId}
-					name={payload.name}
-				/>
+				<DefinitionItem drugInfoSummaryLink={payload.drugInfoSummaryLink} definitionText={payload.definition.html} nciConceptId={payload.nciConceptId} aliases={payload.aliases} termId={payload.termId} name={payload.name} />
 			</MemoryRouter>
 		</MockAnalyticsProvider>
 	);
 	const { container } = wrapper;
 
 	test('Renders term title and definition container', () => {
-		const { getByText } = within(
-			container.querySelector('.dictionary-definiton__term-title')
-		);
+		const { getByText } = within(container.querySelector('.dictionary-definiton__term-title'));
 		expect(getByText(payload.name)).toBeInTheDocument();
-		expect(
-			container.querySelector('.dictionary-definiton__definition')
-		).toBeInTheDocument();
+		expect(container.querySelector('.dictionary-definiton__definition')).toBeInTheDocument();
 	});
 
 	test('Info button click analytics event', () => {
 		const wrapper = render(
 			<MockAnalyticsProvider analyticsHandler={analyticsHandler}>
 				<MemoryRouter initialEntries={['/bevacizumab']}>
-					<DefinitionItem
-						drugInfoSummaryLink={payload.drugInfoSummaryLink}
-						definitionText={payload.definition.html}
-						nciConceptId={payload.nciConceptId}
-						aliases={payload.aliases}
-						termId={payload.termId}
-						name={payload.name}
-					/>
+					<DefinitionItem drugInfoSummaryLink={payload.drugInfoSummaryLink} definitionText={payload.definition.html} nciConceptId={payload.nciConceptId} aliases={payload.aliases} termId={payload.termId} name={payload.name} />
 				</MemoryRouter>
 			</MockAnalyticsProvider>
 		);
 		const { container } = wrapper;
-		const ptInfoButton = container.querySelector(
-			'a.dictionary-definiton__patient-information-button'
-		);
+		const ptInfoButton = container.querySelector('a.dictionary-definiton__patient-information-button');
 		fireEvent.click(ptInfoButton);
 		expect(analyticsHandler).toHaveBeenCalledTimes(1);
 	});

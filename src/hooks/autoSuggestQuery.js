@@ -4,12 +4,7 @@ import { resourceType, searchMatchType } from '../constants';
 import { useCustomQuery } from './index';
 import { getAutoSuggestResults } from '../services/api/actions';
 
-export const useAutoSuggestResultsQuery = ({
-	query,
-	resultLimit,
-	selectedOption,
-	shouldFetch,
-}) => {
+export const useAutoSuggestResultsQuery = ({ query, resultLimit, selectedOption, shouldFetch }) => {
 	const { drugAlias, drugTerm } = resourceType;
 	const { beginsWith, contains } = searchMatchType;
 	const [autoSuggestStateResults, setAutoSuggestStateResults] = useState([]);
@@ -69,14 +64,7 @@ export const useAutoSuggestResultsQuery = ({
 	}, [query, selectedOption]);
 
 	useEffect(() => {
-		if (
-			!beginsWithAlias.loading &&
-			beginsWithAlias.payload &&
-			!beginsWithDrugTerm.loading &&
-			beginsWithDrugTerm.payload &&
-			!beginsContainsWithAlias.loading &&
-			beginsContainsWithAlias.payload
-		) {
+		if (!beginsWithAlias.loading && beginsWithAlias.payload && !beginsWithDrugTerm.loading && beginsWithDrugTerm.payload && !beginsContainsWithAlias.loading && beginsContainsWithAlias.payload) {
 			let retResponse = beginsWithDrugTerm.payload;
 
 			// Set state result and early exit if response result count >= resultLimit
@@ -90,70 +78,35 @@ export const useAutoSuggestResultsQuery = ({
 			// if sum of results from earlier response and term alias is >= resultLimit
 			// Early exit
 			if (retResponse.length + beginsWithAlias.payload.length >= resultLimit) {
-				setAutoSuggestStateResults(
-					returnUniqueArrayItems(
-						retResponse.concat(beginsWithAlias.payload)
-					).slice(0, resultLimit)
-				);
+				setAutoSuggestStateResults(returnUniqueArrayItems(retResponse.concat(beginsWithAlias.payload)).slice(0, resultLimit));
 				setIsStateResponseSet(true);
 				return;
 			}
 
 			// Finally append results from previous responses to result from contains request for term alias
 			// Set to state results with trimmed result length based on resultLimit
-			setAutoSuggestStateResults(
-				returnUniqueArrayItems(
-					retResponse
-						.concat(beginsWithAlias.payload)
-						.concat(beginsContainsWithAlias.payload)
-				).slice(0, resultLimit)
-			);
+			setAutoSuggestStateResults(returnUniqueArrayItems(retResponse.concat(beginsWithAlias.payload).concat(beginsContainsWithAlias.payload)).slice(0, resultLimit));
 			setIsStateResponseSet(true);
 		}
-	}, [
-		beginsWithAlias.loading,
-		beginsWithAlias.payload,
-		beginsWithDrugTerm.loading,
-		beginsWithDrugTerm.payload,
-		beginsContainsWithAlias.loading,
-		beginsContainsWithAlias.payload,
-	]);
+	}, [beginsWithAlias.loading, beginsWithAlias.payload, beginsWithDrugTerm.loading, beginsWithDrugTerm.payload, beginsContainsWithAlias.loading, beginsContainsWithAlias.payload]);
 
 	useEffect(() => {
-		if (
-			!containsQueryWithAlias.loading &&
-			containsQueryWithAlias.payload &&
-			!containsQueryWithDrugTerm.loading &&
-			containsQueryWithDrugTerm.payload
-		) {
+		if (!containsQueryWithAlias.loading && containsQueryWithAlias.payload && !containsQueryWithDrugTerm.loading && containsQueryWithDrugTerm.payload) {
 			let retResponse = containsQueryWithDrugTerm.payload;
 
 			// Set state result and early exit if response result count >= resultLimit
 			if (retResponse >= resultLimit) {
-				setAutoSuggestStateResults(
-					returnUniqueArrayItems(retResponse).slice(0, resultLimit)
-				);
+				setAutoSuggestStateResults(returnUniqueArrayItems(retResponse).slice(0, resultLimit));
 				setIsStateResponseSet(true);
 				return;
 			}
 
 			// Finally append results from previous responses to result from contains request for term alias
 			// Set to state results with trimmed result length based on resultLimit
-			setAutoSuggestStateResults(
-				returnUniqueArrayItems(
-					retResponse
-						.concat(containsQueryWithDrugTerm.payload)
-						.concat(containsQueryWithAlias.payload)
-				).slice(0, resultLimit)
-			);
+			setAutoSuggestStateResults(returnUniqueArrayItems(retResponse.concat(containsQueryWithDrugTerm.payload).concat(containsQueryWithAlias.payload)).slice(0, resultLimit));
 			setIsStateResponseSet(true);
 		}
-	}, [
-		containsQueryWithAlias.loading,
-		containsQueryWithAlias.payload,
-		containsQueryWithDrugTerm.loading,
-		containsQueryWithDrugTerm.payload,
-	]);
+	}, [containsQueryWithAlias.loading, containsQueryWithAlias.payload, containsQueryWithDrugTerm.loading, containsQueryWithDrugTerm.payload]);
 
 	const resetAutosuggestQueryParams = () => {
 		setAutoSuggestStateResults([]);
@@ -186,7 +139,5 @@ export const useAutoSuggestResultsQuery = ({
 		return retArray;
 	};
 
-	return isStateResponseSet
-		? { loading: false, payload: autoSuggestStateResults }
-		: { loading: true };
+	return isStateResponseSet ? { loading: false, payload: autoSuggestStateResults } : { loading: true };
 };
