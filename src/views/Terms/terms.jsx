@@ -16,9 +16,7 @@ const Terms = () => {
 	const [doneFetchingTermResults, setDoneFetchingTermResults] = useState(false);
 	const [stateExpandCharResults, setStateExpandCharResults] = useState();
 	// Get items passed into index.js and stored in the context.
-	const [
-		{ analyticsName, baseHost, canonicalHost, dictionaryTitle, siteName },
-	] = useStateValue();
+	const [{ analyticsName, baseHost, canonicalHost, dictionaryTitle, siteName }] = useStateValue();
 	// Get a reference to the tracking function for
 	// analytics.
 	const tracking = useTracking();
@@ -45,8 +43,7 @@ const Terms = () => {
 				event: 'DrugDictionaryApp:Load:ExpandResults',
 				analyticsName,
 				dictionaryTitle,
-				name:
-					canonicalHost.replace('https://', '') + ExpandPath({ expandChar }),
+				name: canonicalHost.replace('https://', '') + ExpandPath({ expandChar }),
 				title: dictionaryTitle,
 				metaTitle: `${dictionaryTitle} - ${siteName}`,
 				letter: expandChar,
@@ -72,14 +69,8 @@ const Terms = () => {
 			<Helmet>
 				<title>{`${dictionaryTitle} - ${siteName}`}</title>
 				<meta property="og:title" content={`${dictionaryTitle}`} />
-				<meta
-					property="og:url"
-					content={baseHost + ExpandPath({ expandChar })}
-				/>
-				<link
-					rel="canonical"
-					href={canonicalHost + ExpandPath({ expandChar })}
-				/>
+				<meta property="og:url" content={baseHost + ExpandPath({ expandChar })} />
+				<link rel="canonical" href={canonicalHost + ExpandPath({ expandChar })} />
 				<meta name="robots" content="noindex" />
 			</Helmet>
 		);
@@ -108,15 +99,7 @@ const Terms = () => {
 			<SearchBox />
 			{doneFetchingTermResults ? (
 				<div className="results">
-					{stateExpandCharResults.results.length > 0 && (
-						<TermList
-							searchTerm={expandChar}
-							termLinkPath={DefinitionPath}
-							termLinkTrackingHandler={termLinkEventTrackingHandler}
-							terms={stateExpandCharResults.results}
-							totalTermCount={stateExpandCharResults.meta.totalResults}
-						/>
-					)}
+					{stateExpandCharResults.results.length > 0 && <TermList searchTerm={expandChar} termLinkPath={DefinitionPath} termLinkTrackingHandler={termLinkEventTrackingHandler} terms={stateExpandCharResults.results} totalTermCount={stateExpandCharResults.meta.totalResults} />}
 					{stateExpandCharResults.results.length < 1 && <NoMatchingResults />}
 				</div>
 			) : (

@@ -142,9 +142,7 @@ describe('<Terms />', () => {
 			);
 		});
 		expect(screen.getByText('NCI Drug Dictionary')).toBeInTheDocument();
-		expect(
-			screen.getByPlaceholderText('Enter keywords or phrases')
-		).toBeInTheDocument();
+		expect(screen.getByPlaceholderText('Enter keywords or phrases')).toBeInTheDocument();
 		expect(screen.getByText('3 results found for: A')).toBeInTheDocument();
 		//test the scroll position
 		expect(window.scrollTo).toHaveBeenCalledTimes(1);
@@ -195,10 +193,6 @@ describe('<Terms />', () => {
 				</MockAnalyticsProvider>
 			);
 		});
-		expect(
-			screen.getByText(
-				'No matches were found for the word or phrase you entered. Please check your spelling, and try searching again. You can also type the first few letters of your word or phrase, or click a letter in the alphabet and browse through the list of terms that begin with that letter.'
-			)
-		).toBeInTheDocument();
+		expect(screen.getByText('No matches were found for the word or phrase you entered. Please check your spelling, and try searching again. You can also type the first few letters of your word or phrase, or click a letter in the alphabet and browse through the list of terms that begin with that letter.')).toBeInTheDocument();
 	});
 });

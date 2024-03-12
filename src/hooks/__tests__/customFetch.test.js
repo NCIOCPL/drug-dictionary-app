@@ -53,9 +53,7 @@ describe('', () => {
 				</MockAnalyticsProvider>
 			);
 		});
-		expect(
-			screen.getByText('An error occurred. Please try again later.')
-		).toBeInTheDocument();
+		expect(screen.getByText('An error occurred. Please try again later.')).toBeInTheDocument();
 	});
 
 	test('should throw an error using a non existent endpoint - Spanish message', async () => {
@@ -91,11 +89,7 @@ describe('', () => {
 				</MockAnalyticsProvider>
 			);
 		});
-		expect(
-			screen.getByText(
-				'Se produjo un error. Por favor, vuelva a intentar más tarde.'
-			)
-		).toBeInTheDocument();
+		expect(screen.getByText('Se produjo un error. Por favor, vuelva a intentar más tarde.')).toBeInTheDocument();
 	});
 
 	// test('useCustomQuery example should throw error - Spanish message', async () => {

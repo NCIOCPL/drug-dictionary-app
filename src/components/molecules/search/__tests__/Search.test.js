@@ -1,10 +1,4 @@
-import {
-	act,
-	cleanup,
-	fireEvent,
-	render,
-	screen,
-} from '@testing-library/react';
+import { act, cleanup, fireEvent, render, screen } from '@testing-library/react';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ClientContextProvider } from 'react-fetching-library';
@@ -231,10 +225,7 @@ describe('<Search /> English', () => {
 			await act(async () => {
 				fireEvent.change(document.activeElement, { target: { value: 'ap' } });
 			});
-			expect(
-				container.querySelector(`div[data-testid='tid-auto-suggest-options']`)
-					.textContent
-			).toBe('Please enter 3 or more characters');
+			expect(container.querySelector(`div[data-testid='tid-auto-suggest-options']`).textContent).toBe('Please enter 3 or more characters');
 			await act(async () => {
 				fireEvent.change(document.activeElement, {
 					target: { value: searchText },

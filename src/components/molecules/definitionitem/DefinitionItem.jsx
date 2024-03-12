@@ -5,22 +5,8 @@ import { useTracking } from 'react-tracking';
 import { SynonymTable } from '../../atomic';
 import { useStateValue } from '../../../store/store.js';
 
-const DefinitionItem = ({
-	drugInfoSummaryLink,
-	definitionText,
-	nciConceptId,
-	termId,
-	aliases,
-	name,
-}) => {
-	const [
-		{
-			analyticsName,
-			dictionaryTitle,
-			nciThesaurusConceptLink,
-			ctsDynamicListingPageBase,
-		},
-	] = useStateValue();
+const DefinitionItem = ({ drugInfoSummaryLink, definitionText, nciConceptId, termId, aliases, name }) => {
+	const [{ analyticsName, dictionaryTitle, nciThesaurusConceptLink, ctsDynamicListingPageBase }] = useStateValue();
 
 	const tracking = useTracking();
 
@@ -38,14 +24,10 @@ const DefinitionItem = ({
 	const renderSupplementalLinks = () => {
 		return (
 			<div className="dictionary-definiton__supplemental-links">
-				<a
-					className="dictionary-definiton__active-trials-link"
-					href={`${ctsDynamicListingPageBase}/${nciConceptId}`}>
+				<a className="dictionary-definiton__active-trials-link" href={`${ctsDynamicListingPageBase}/${nciConceptId}`}>
 					Check for active clinical trials using this agent
 				</a>
-				<a
-					className="dictionary-definiton__nci-thesaurus-link"
-					href={`${nciThesaurusConceptLink}&code=${nciConceptId}`}>
+				<a className="dictionary-definiton__nci-thesaurus-link" href={`${nciThesaurusConceptLink}&code=${nciConceptId}`}>
 					View this agent in the NCI Thesaurus
 				</a>
 			</div>
@@ -58,10 +40,7 @@ const DefinitionItem = ({
 				{name}
 			</h1>
 			{drugInfoSummaryLink && (
-				<a
-					className="dictionary-definiton__patient-information-button"
-					href={drugInfoSummaryLink.uri}
-					onClick={handlePatientInfoButtonClick}>
+				<a className="dictionary-definiton__patient-information-button" href={drugInfoSummaryLink.uri} onClick={handlePatientInfoButtonClick}>
 					View Patient Information
 				</a>
 			)}

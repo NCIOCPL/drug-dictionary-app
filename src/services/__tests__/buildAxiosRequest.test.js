@@ -14,9 +14,10 @@ describe('buildAxiosRequest', () => {
 			onabort: jest.fn(),
 		},
 	};
-	axios.defaults.adapter = require('axios/lib/adapters/http');
+
 	const axiosInstance = axios.create({
 		timeout: 10000,
+		adapter: 'http',
 	});
 
 	beforeAll(() => {

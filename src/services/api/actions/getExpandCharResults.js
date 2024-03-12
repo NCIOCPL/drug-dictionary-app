@@ -6,8 +6,6 @@ export const getExpandCharResults = (chr) => {
 
 	return {
 		method: 'GET',
-		endpoint: `${endpoint}/${encodeURIComponent(
-			chr
-		)}?includeNameTypes=USBrandName&includeNameTypes=PreferredName&size=${DEFAULT_RESULT_SIZE}`,
+		endpoint: `${endpoint}/${encodeURIComponent(chr)}?includeNameTypes=USBrandName&includeNameTypes=PreferredName&size=${DEFAULT_RESULT_SIZE}`,
 	};
 };

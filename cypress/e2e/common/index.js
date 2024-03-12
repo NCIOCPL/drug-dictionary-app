@@ -52,12 +52,9 @@ Given('user is viewing the no results found page on any site', () => {
 	cy.visit('/?swKeyword=achoo');
 });
 
-Given(
-	'the user is viewing a results page based on clicking a letter like {string} in the dictionary',
-	(letter) => {
-		cy.visit(`/expand/${letter}`);
-	}
-);
+Given('the user is viewing a results page based on clicking a letter like {string} in the dictionary', (letter) => {
+	cy.visit(`/expand/${letter}`);
+});
 
 When('the user clicks on the result for {string}', (link) => {
 	cy.get(`dfn a`).contains(link).trigger('click', { followRedirect: false });
@@ -77,12 +74,9 @@ And('the system appends {string} to the URL', (queryParam) => {
 	cy.location('search').should('eq', queryParam);
 });
 
-Then(
-	'the system returns user to the search results page for the search term {string} URL has {string}',
-	(term, destURL) => {
-		cy.location('href').should('eq', `${baseURL}${destURL}/${term}`);
-	}
-);
+Then('the system returns user to the search results page for the search term {string} URL has {string}', (term, destURL) => {
+	cy.location('href').should('eq', `${baseURL}${destURL}/${term}`);
+});
 
 And('the URL does not include {string}', (parameter) => {
 	cy.url().should('not.contain', parameter);
@@ -147,10 +141,7 @@ And('the system returns the no results found page', () => {
     -------------------------------
 */
 And('the system returns the no matching results page', () => {
-	cy.get('p').should(
-		'contain',
-		'No matches were found for the word or phrase you entered. Please check your spelling, and try searching again. You can also type the first few letters of your word or phrase, or click a letter in the alphabet and browse through the list of terms that begin with that letter.'
-	);
+	cy.get('p').should('contain', 'No matches were found for the word or phrase you entered. Please check your spelling, and try searching again. You can also type the first few letters of your word or phrase, or click a letter in the alphabet and browse through the list of terms that begin with that letter.');
 });
 //the system returns the no matching results page
 
@@ -163,13 +154,10 @@ And('the system returns the no matching results page', () => {
 Then('heading {string} appears', (searchBoxTitle) => {
 	cy.get('h6').should('have.text', searchBoxTitle);
 });
-Then(
-	'search options for {string} and {string} appears',
-	(startWith, contain) => {
-		cy.get('div.radio-selection label').first().should('have.text', startWith);
-		cy.get('div.radio-selection label').last().should('have.text', contain);
-	}
-);
+Then('search options for {string} and {string} appears', (startWith, contain) => {
+	cy.get('div.radio-selection label').first().should('have.text', startWith);
+	cy.get('div.radio-selection label').last().should('have.text', contain);
+});
 
 And('{string} radio is selected by default', () => {
 	cy.get(`input[value="Begins"]`).should('be.checked');
@@ -218,32 +206,23 @@ When('user selects {string} option', (searchType) => {
 	cy.get(`.ncids-radio__label[for="${selectedOption}"]`).click();
 });
 
-Then(
-	'autosuggest appears with highlighting of the text {string}',
-	(keyword) => {
-		cy.get(".menu-wrapper div[class*='--terms']").should('be.visible');
-		const regex = new RegExp(
-			keyword.replace(/[-[\]{}()*+!<=:?.\\^$|#\s,]/g, '\\$&'),
-			'i'
-		);
-		cy.get(".menu-wrapper div[class*='--terms'] span strong").each(($el) => {
-			cy.wrap($el).invoke('text').should('match', regex);
-		});
-	}
-);
+Then('autosuggest appears with highlighting of the text {string}', (keyword) => {
+	cy.get(".menu-wrapper div[class*='--terms']").should('be.visible');
+	const regex = new RegExp(keyword.replace(/[-[\]{}()*+!<=:?.\\^$|#\s,]/g, '\\$&'), 'i');
+	cy.get(".menu-wrapper div[class*='--terms'] span strong").each(($el) => {
+		cy.wrap($el).invoke('text').should('match', regex);
+	});
+});
 
 When('user selects letter {string} from A-Z list', (letter) => {
 	cy.get(`nav[data-testid='tid-az-list'] > ul > li a`).contains(letter).click();
 });
 
-Then(
-	'search results page displays results title {string}',
-	(searchResultsTitle) => {
-		// Strip # char from searchResultsTitle string
-		const titleWithoutResultsCount = searchResultsTitle.substring(1);
-		cy.get('h4').contains(titleWithoutResultsCount);
-	}
-);
+Then('search results page displays results title {string}', (searchResultsTitle) => {
+	// Strip # char from searchResultsTitle string
+	const titleWithoutResultsCount = searchResultsTitle.substring(1);
+	cy.get('h4').contains(titleWithoutResultsCount);
+});
 
 And('the user clicks the search button', () => {
 	cy.get('input#btnSearch').click({ force: true });
@@ -267,9 +246,7 @@ Then('autosuggest appears with correct options', (dataTable) => {
 
 And('selects the {string} entry', (autoSuggestOption) => {
 	cy.get(".menu-wrapper div[class*='--terms']").should('be.visible');
-	cy.get(".menu-wrapper div[class*='--terms']")
-		.contains(autoSuggestOption)
-		.click();
+	cy.get(".menu-wrapper div[class*='--terms']").contains(autoSuggestOption).click();
 });
 
 /*
@@ -281,24 +258,12 @@ And('selects the {string} entry', (autoSuggestOption) => {
 And('the {string} link does not appear on the page', (string) => {
 	cy.get(string).should('not.exist');
 });
-And(
-	'the {string} link to {string} appears on the page',
-	(title, patientInfoLink) => {
-		cy.get('a.dictionary-definiton__patient-information-button').should(
-			'have.attr',
-			'href',
-			patientInfoLink
-		);
-		cy.get('a.dictionary-definiton__patient-information-button').should(
-			'contain',
-			title
-		);
-	}
-);
+And('the {string} link to {string} appears on the page', (title, patientInfoLink) => {
+	cy.get('a.dictionary-definiton__patient-information-button').should('have.attr', 'href', patientInfoLink);
+	cy.get('a.dictionary-definiton__patient-information-button').should('contain', title);
+});
 And('the link to Patient Information does not appear on the page', () => {
-	cy.get('a.dictionary-definiton__patient-information-button').should(
-		'not.exist'
-	);
+	cy.get('a.dictionary-definiton__patient-information-button').should('not.exist');
 });
 And('the definition text {string} appears on the page', (defText) => {
 	cy.get('div.dictionary-definiton__definition').should('contain', defText);
@@ -323,17 +288,12 @@ And('a table of other names includes the following', (dataTable) => {
 	});
 });
 
-Then(
-	"there should be a {string} attribute on the definition's title element",
-	(cdrId) => {
-		cy.get('h1').should('have.attr', cdrId);
-	}
-);
+Then("there should be a {string} attribute on the definition's title element", (cdrId) => {
+	cy.get('h1').should('have.attr', cdrId);
+});
 
 When('user clicks on {string} button', (PtInfoButton) => {
-	cy.get('a')
-		.contains(PtInfoButton)
-		.trigger('click', { followRedirect: false });
+	cy.get('a').contains(PtInfoButton).trigger('click', { followRedirect: false });
 });
 
 /*
@@ -342,29 +302,18 @@ When('user clicks on {string} button', (PtInfoButton) => {
     ------------------
 */
 
-And(
-	"each result in the results listing appears as a link to the term's page",
-	() => {
-		cy.get('dt:first > dfn > a')
-			.should('have.attr', 'href')
-			.and('to.contain', '/def');
-	}
-);
+And("each result in the results listing appears as a link to the term's page", () => {
+	cy.get('dt:first > dfn > a').should('have.attr', 'href').and('to.contain', '/def');
+});
 
-And(
-	'each result displays its full definition below the link for the term',
-	() => {
-		expect(cy.get('dl > dd')).to.not.be.empty;
-	}
-);
+And('each result displays its full definition below the link for the term', () => {
+	expect(cy.get('dl > dd')).to.not.be.empty;
+});
 
-And(
-	'each other name result is displayed with {string}',
-	(alternateDisplayText) => {
-		const alternateDisplayTextOther = alternateDisplayText.substring(0, 15);
-		cy.get('dl > dd').should('to.contain', alternateDisplayTextOther);
-	}
-);
+And('each other name result is displayed with {string}', (alternateDisplayText) => {
+	const alternateDisplayTextOther = alternateDisplayText.substring(0, 15);
+	cy.get('dl > dd').should('to.contain', alternateDisplayTextOther);
+});
 /*
     ------------------
         Results List
@@ -402,12 +351,9 @@ And('the text {string} appears on the page', (text) => {
 	cy.get('div.error-container').should('contain', text);
 });
 
-And(
-	'the link {string} to {string} appears on the page',
-	(linkText, linkHref) => {
-		cy.get(`a[href="${linkHref}"]`).should('have.text', linkText);
-	}
-);
+And('the link {string} to {string} appears on the page', (linkText, linkHref) => {
+	cy.get(`a[href="${linkHref}"]`).should('have.text', linkText);
+});
 
 And('the search bar appear below', () => {
 	cy.get('input#keywords').should('be.visible');
@@ -427,27 +373,20 @@ And('user clicks search button', () => {
 	cy.get('#btnSearch').click({ force: true });
 });
 
-And(
-	"each result in the results listing displays the folowing preferred names as a link to the term's page",
-	(dataTable) => {
-		cy.document().then((document) => {
-			const titleLinks = document.querySelectorAll('.results dfn a');
-			let i = 0;
-			for (const { preferredName } of dataTable.hashes()) {
-				expect(titleLinks[i]).has.attr('href');
-				expect(titleLinks[i]).to.have.text(preferredName);
-				i++;
-			}
-		});
-	}
-);
+And("each result in the results listing displays the folowing preferred names as a link to the term's page", (dataTable) => {
+	cy.document().then((document) => {
+		const titleLinks = document.querySelectorAll('.results dfn a');
+		let i = 0;
+		for (const { preferredName } of dataTable.hashes()) {
+			expect(titleLinks[i]).has.attr('href');
+			expect(titleLinks[i]).to.have.text(preferredName);
+			i++;
+		}
+	});
+});
 
 And('the preferred name is followed by the alternate names', (dataTable) => {
-	for (const {
-		resultIndex,
-		altNameIndex,
-		alternateName,
-	} of dataTable.hashes()) {
+	for (const { resultIndex, altNameIndex, alternateName } of dataTable.hashes()) {
 		cy.get('.results dfn')
 			.eq(resultIndex - 1)
 			.find('ul li')
@@ -470,9 +409,7 @@ Given('the user navigates to bad search url {string}', (path) => {
 });
 
 When('the user clicks on the result for {string}', (result) => {
-	cy.get('.results dfn a')
-		.contains(result)
-		.trigger('click', { followRedirect: false });
+	cy.get('.results dfn a').contains(result).trigger('click', { followRedirect: false });
 });
 
 Then('user is redirected to {string}', (path) => {

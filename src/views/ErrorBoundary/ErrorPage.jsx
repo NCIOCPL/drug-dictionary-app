@@ -13,9 +13,7 @@ const ErrorPage = () => {
 		tracking.trackEvent({
 			event: 'DrugDictionaryApp:Load:Error',
 			metaTitle: pageTitle,
-			name: `${canonicalHost.replace('https://', '')}${
-				window.location.pathname
-			}`,
+			name: `${canonicalHost.replace('https://', '')}${window.location.pathname}`,
 			title: pageTitle,
 			type: 'PageLoad',
 		});

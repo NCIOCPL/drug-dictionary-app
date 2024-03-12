@@ -17,24 +17,15 @@ const SearchResults = () => {
 	const [searchResultsLoaded, setSearchResultsLoaded] = useState(false);
 	const [searchResults, setSearchResults] = useState();
 	// Get items passed into index.js and stored in the context.
-	const [
-		{ analyticsName, baseHost, canonicalHost, dictionaryTitle, siteName },
-	] = useStateValue();
+	const [{ analyticsName, baseHost, canonicalHost, dictionaryTitle, siteName }] = useStateValue();
 	// Get a reference to the tracking function for
 	// analytics.
 	const tracking = useTracking();
 	const navigate = useNavigate();
 	const urlQuery = useURLQuery();
 	const searchMode = urlQuery.get('searchMode') || 'Begins';
-	const textToSearch =
-		searchMode === 'Begins'
-			? searchText
-			: searchText.length > 30
-			? searchText.substr(0, 30)
-			: searchText;
-	const queryResponse = useCustomQuery(
-		getDrugSearchResults({ drug: textToSearch, matchType: searchMode })
-	);
+	const textToSearch = searchMode === 'Begins' ? searchText : searchText.length > 30 ? searchText.substr(0, 30) : searchText;
+	const queryResponse = useCustomQuery(getDrugSearchResults({ drug: textToSearch, matchType: searchMode }));
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -49,9 +40,7 @@ const SearchResults = () => {
 	useEffect(() => {
 		if (!queryResponse.loading && queryResponse.payload) {
 			if (queryResponse.payload.meta?.totalResults === 1) {
-				const idOrName = queryResponse.payload.results[0].prettyUrlName
-					? queryResponse.payload.results[0].prettyUrlName
-					: queryResponse.payload.results[0].termId;
+				const idOrName = queryResponse.payload.results[0].prettyUrlName ? queryResponse.payload.results[0].prettyUrlName : queryResponse.payload.results[0].termId;
 
 				navigate(DefinitionPath({ idOrName }), { replace: true });
 			}
@@ -71,8 +60,7 @@ const SearchResults = () => {
 				event: 'DrugDictionaryApp:Load:SearchResults',
 				analyticsName,
 				dictionaryTitle,
-				name:
-					canonicalHost.replace('https://', '') + SearchPath({ searchText }),
+				name: canonicalHost.replace('https://', '') + SearchPath({ searchText }),
 				title: dictionaryTitle,
 				metaTitle: `${dictionaryTitle} - ${siteName}`,
 				numberResults: searchResults.payload.meta?.totalResults,
@@ -92,14 +80,8 @@ const SearchResults = () => {
 			<Helmet>
 				<title>{`${dictionaryTitle} - ${siteName}`}</title>
 				<meta property="og:title" content={dictionaryTitle} />
-				<meta
-					property="og:url"
-					content={baseHost + SearchPath({ searchText })}
-				/>
-				<link
-					rel="canonical"
-					href={canonicalHost + SearchPath({ searchText })}
-				/>
+				<meta property="og:url" content={baseHost + SearchPath({ searchText })} />
+				<link rel="canonical" href={canonicalHost + SearchPath({ searchText })} />
 				<meta name="robots" content="noindex" />
 			</Helmet>
 		);
@@ -128,15 +110,7 @@ const SearchResults = () => {
 			{renderHelmet()}
 			{searchResultsLoaded && searchResults ? (
 				<div className="results">
-					{searchResults.payload.results.length > 1 && (
-						<SearchTermList
-							searchTerm={textToSearch}
-							termLinkPath={SearchPath}
-							termLinkTrackingHandler={termLinkEventTrackingHandler}
-							terms={searchResults.payload.results}
-							totalTermCount={searchResults.payload.meta.totalResults}
-						/>
-					)}
+					{searchResults.payload.results.length > 1 && <SearchTermList searchTerm={textToSearch} termLinkPath={SearchPath} termLinkTrackingHandler={termLinkEventTrackingHandler} terms={searchResults.payload.results} totalTermCount={searchResults.payload.meta.totalResults} />}
 					{searchResults.payload.results.length < 1 && <NoMatchingResults />}
 				</div>
 			) : (

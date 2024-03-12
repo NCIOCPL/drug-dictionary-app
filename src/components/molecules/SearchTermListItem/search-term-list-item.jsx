@@ -5,22 +5,9 @@ import SynonymList from '../../atomic/SynonymList';
 
 import { Link } from 'react-router-dom';
 
-const SearchTermListItem = ({
-	aliases,
-	itemIndex,
-	preferredName,
-	prettyUrlName,
-	searchTerm,
-	term,
-	termDefinition,
-	termId,
-	termLinkPath,
-	termLinkTrackingHandler,
-}) => {
+const SearchTermListItem = ({ aliases, itemIndex, preferredName, prettyUrlName, searchTerm, term, termDefinition, termId, termLinkPath, termLinkTrackingHandler }) => {
 	const idOrName = prettyUrlName ? prettyUrlName : termId;
-	const definitionText = termDefinition
-		? termDefinition
-		: `(Other name for: ${preferredName})`;
+	const definitionText = termDefinition ? termDefinition : `(Other name for: ${preferredName})`;
 
 	const termLinkClickHandler = () => {
 		if (termLinkTrackingHandler) {

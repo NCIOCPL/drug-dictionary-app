@@ -100,8 +100,7 @@ describe('<SearchResults />', () => {
 			await render(
 				<MockAnalyticsProvider>
 					<ClientContextProvider client={client}>
-						<MemoryRouter
-							initialEntries={[`/search/${searchText}/?searchMode=Begins`]}>
+						<MemoryRouter initialEntries={[`/search/${searchText}/?searchMode=Begins`]}>
 							<ComponentWithLocation RenderComponent={SearchResults} />
 						</MemoryRouter>
 					</ClientContextProvider>
@@ -189,8 +188,7 @@ describe('<SearchResults />', () => {
 			await render(
 				<MockAnalyticsProvider>
 					<ClientContextProvider client={client}>
-						<MemoryRouter
-							initialEntries={[`/search/${searchText}/?searchMode=Begins`]}>
+						<MemoryRouter initialEntries={[`/search/${searchText}/?searchMode=Begins`]}>
 							<ComponentWithLocation RenderComponent={SearchResults} />
 						</MemoryRouter>
 					</ClientContextProvider>
