@@ -72,12 +72,30 @@ const Definition = () => {
 		}
 	}, [queryResponse, setDrugDefinition]);
 
+	const preRenderHandler = () => {
+		const preRenderObj = {};
+
+		if (location.search === '?redirect=true') {
+			preRenderObj.statusCode = (
+				<meta name="prerender-status-code" content="301" />
+			);
+			preRenderObj.headerLocation = (
+				<meta
+					name="prerender-header"
+					content={'Location: ' + baseHost + window.location.pathname}
+				/>
+			);
+		}
+
+		return preRenderObj;
+	};
+
 	/**
 	 * Helper function to render metadata.
 	 */
 	const renderHelmet = () => {
 		// Home is indexable, expand and search are not.
-
+		const preRender = preRenderHandler();
 		return (
 			<Helmet>
 				<title>{`Definition of ${drugDefinition.payload.name} - ${dictionaryTitle} - ${siteName}`}</title>
@@ -104,9 +122,12 @@ const Definition = () => {
 						})
 					}
 				/>
+				{preRender.statusCode}
+				{preRender.headerLocation}
 			</Helmet>
 		);
 	};
+
 	return (
 		<>
 			{drugDefinitionLoaded && drugDefinition && (
