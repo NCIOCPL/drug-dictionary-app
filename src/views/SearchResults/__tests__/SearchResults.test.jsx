@@ -1,4 +1,4 @@
-import { act, render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import React from 'react';
 import { ClientContextProvider } from 'react-fetching-library';
 import { useLocation, useParams } from 'react-router-dom';
@@ -11,7 +11,7 @@ jest.mock('../../../store/store');
 jest.mock('react-router-dom');
 
 describe('<SearchResults />', () => {
-	test('should display dictionary title, <SearchBox />, and <TermList /> components', async () => {
+	it('should display dictionary title, <SearchBox />, and <TermList /> components', async () => {
 		jest.spyOn(window, 'scrollTo');
 		const searchText = 'Bez';
 		useParams.mockReturnValue({
@@ -135,26 +135,35 @@ describe('<SearchResults />', () => {
 				payload,
 			}),
 		};
-		await act(async () => {
-			render(
-				<MockAnalyticsProvider>
-					<ClientContextProvider client={client}>
-						<SearchResults />
-					</ClientContextProvider>
-				</MockAnalyticsProvider>
-			);
+
+		render(
+			<MockAnalyticsProvider>
+				<ClientContextProvider client={client}>
+					<SearchResults />
+				</ClientContextProvider>
+			</MockAnalyticsProvider>
+		);
+		// Wait for and check dictionary title
+		await waitFor(() => {
+			expect(screen.getByText('NCI Drug Dictionary')).toBeInTheDocument();
 		});
-		expect(screen.getByText('NCI Drug Dictionary')).toBeInTheDocument();
-		expect(
-			screen.getByPlaceholderText('Enter keywords or phrases')
-		).toBeInTheDocument();
-		expect(screen.getByText('3 results found for: Bez')).toBeInTheDocument();
-		//test the scroll position
+
+		// Wait for and check search box
+		await waitFor(() => {
+			expect(screen.getByPlaceholderText('Enter keywords or phrases')).toBeInTheDocument();
+		});
+
+		// Wait for and check results text
+		await waitFor(() => {
+			expect(screen.getByText('3 results found for: Bez')).toBeInTheDocument();
+		});
+
+		// Check scroll position (synchronous assertion)
 		expect(window.scrollTo).toHaveBeenCalledTimes(1);
 		expect(window.scrollTo).toHaveBeenLastCalledWith(0, 0);
 	});
 
-	test('should display no matching results when no results are returned', async () => {
+	it('should display no matching results when no results are returned', async () => {
 		const searchText = 'w w.';
 		useParams.mockReturnValue({
 			searchText,
@@ -186,19 +195,17 @@ describe('<SearchResults />', () => {
 				payload,
 			}),
 		};
-		await act(async () => {
-			render(
-				<MockAnalyticsProvider>
-					<ClientContextProvider client={client}>
-						<SearchResults />
-					</ClientContextProvider>
-				</MockAnalyticsProvider>
-			);
+
+		render(
+			<MockAnalyticsProvider>
+				<ClientContextProvider client={client}>
+					<SearchResults />
+				</ClientContextProvider>
+			</MockAnalyticsProvider>
+		);
+
+		await waitFor(() => {
+			expect(screen.getByText('No matches were found for the word or phrase you entered. Please check your spelling, and try searching again. You can also type the first few letters of your word or phrase, or click a letter in the alphabet and browse through the list of terms that begin with that letter.')).toBeInTheDocument();
 		});
-		expect(
-			screen.getByText(
-				'No matches were found for the word or phrase you entered. Please check your spelling, and try searching again. You can also type the first few letters of your word or phrase, or click a letter in the alphabet and browse through the list of terms that begin with that letter.'
-			)
-		).toBeInTheDocument();
 	});
 });

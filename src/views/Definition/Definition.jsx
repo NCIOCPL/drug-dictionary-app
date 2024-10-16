@@ -6,7 +6,7 @@ import { useTracking } from 'react-tracking';
 import { DefinitionItem, SearchBox } from '../../components';
 import { useAppPaths, useCustomQuery } from '../../hooks';
 import { getDrugDefinition } from '../../services/api/actions';
-import { useStateValue } from '../../store/store.js';
+import { useStateValue } from '../../store/store.jsx';
 
 const Definition = () => {
 	// Pull in the paths we are going to need on this view.
@@ -18,9 +18,7 @@ const Definition = () => {
 	const [drugDefinitionLoaded, setDrugDefinitionLoaded] = useState(false);
 
 	// Get items passed into index.js and stored in the context.
-	const [
-		{ analyticsName, baseHost, canonicalHost, dictionaryTitle, siteName },
-	] = useStateValue();
+	const [{ analyticsName, baseHost, canonicalHost, dictionaryTitle, siteName }] = useStateValue();
 
 	useEffect(() => {
 		window.scrollTo(0, 0);
@@ -42,9 +40,7 @@ const Definition = () => {
 				name:
 					canonicalHost.replace('https://', '') +
 					DefinitionPath({
-						idOrName: drugDefinition.payload.prettyUrlName
-							? drugDefinition.payload.prettyUrlName
-							: drugDefinition.payload.termId,
+						idOrName: drugDefinition.payload.prettyUrlName ? drugDefinition.payload.prettyUrlName : drugDefinition.payload.termId,
 					}),
 				title: dictionaryTitle,
 				metaTitle: `Definition of ${drugDefinition.payload.name} - ${dictionaryTitle} - ${siteName}`,
@@ -61,30 +57,19 @@ const Definition = () => {
 			setDrugDefinition(queryResponse);
 			setDrugDefinitionLoaded(true);
 			//redirect to PrettyUrlName when ID is provided in the url
-			if (
-				queryResponse.payload.prettyUrlName &&
-				idOrName.match(/^[0-9]+$/) != null
-			) {
+			if (queryResponse.payload.prettyUrlName && idOrName.match(/^[0-9]+$/) != null) {
 				const path = `${queryResponse.payload.prettyUrlName}?redirect=true`;
 				navigate(DefinitionPath({ idOrName: path }));
 				return;
 			}
 		}
 	}, [queryResponse, setDrugDefinition]);
-
 	const preRenderHandler = () => {
 		const preRenderObj = {};
 
 		if (location.search === '?redirect=true') {
-			preRenderObj.statusCode = (
-				<meta name="prerender-status-code" content="301" />
-			);
-			preRenderObj.headerLocation = (
-				<meta
-					name="prerender-header"
-					content={'Location: ' + baseHost + window.location.pathname}
-				/>
-			);
+			preRenderObj.statusCode = <meta name="prerender-status-code" content="301" />;
+			preRenderObj.headerLocation = <meta name="prerender-header" content={'Location: ' + baseHost + window.location.pathname} />;
 		}
 
 		return preRenderObj;
@@ -95,6 +80,7 @@ const Definition = () => {
 	 */
 	const renderHelmet = () => {
 		// Home is indexable, expand and search are not.
+		// eslint-disable-next-line testing-library/render-result-naming-convention
 		const preRender = preRenderHandler();
 		return (
 			<Helmet>
@@ -105,9 +91,7 @@ const Definition = () => {
 					content={
 						baseHost +
 						DefinitionPath({
-							idOrName: drugDefinition.payload.prettyUrlName
-								? drugDefinition.payload.prettyUrlName
-								: drugDefinition.payload.termId,
+							idOrName: drugDefinition.payload.prettyUrlName ? drugDefinition.payload.prettyUrlName : drugDefinition.payload.termId,
 						})
 					}
 				/>
@@ -116,9 +100,7 @@ const Definition = () => {
 					href={
 						canonicalHost +
 						DefinitionPath({
-							idOrName: drugDefinition.payload.prettyUrlName
-								? drugDefinition.payload.prettyUrlName
-								: drugDefinition.payload.termId,
+							idOrName: drugDefinition.payload.prettyUrlName ? drugDefinition.payload.prettyUrlName : drugDefinition.payload.termId,
 						})
 					}
 				/>
@@ -133,14 +115,7 @@ const Definition = () => {
 			{drugDefinitionLoaded && drugDefinition && (
 				<>
 					{renderHelmet()}
-					<DefinitionItem
-						drugInfoSummaryLink={drugDefinition.payload?.drugInfoSummaryLink}
-						definitionText={drugDefinition.payload.definition?.html}
-						nciConceptId={drugDefinition.payload?.nciConceptId}
-						aliases={drugDefinition.payload?.aliases}
-						termId={drugDefinition.payload?.termId}
-						name={drugDefinition.payload?.name}
-					/>
+					<DefinitionItem drugInfoSummaryLink={drugDefinition.payload?.drugInfoSummaryLink} definitionText={drugDefinition.payload.definition?.html} nciConceptId={drugDefinition.payload?.nciConceptId} aliases={drugDefinition.payload?.aliases} termId={drugDefinition.payload?.termId} name={drugDefinition.payload?.name} />
 					<SearchBox showTitle />
 				</>
 			)}

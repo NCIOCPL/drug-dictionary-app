@@ -4,15 +4,7 @@ import React from 'react';
 const Radio = ({ id, label, className, disabled, value, ...otherProps }) => {
 	return (
 		<div className={`ncids-radio ${className}`}>
-			<input
-				className="ncids-radio__input"
-				type="radio"
-				disabled={disabled}
-				aria-disabled={disabled}
-				id={id}
-				value={value ? value : id}
-				{...otherProps}
-			/>
+			<input className="ncids-radio__input" type="radio" disabled={disabled} aria-disabled={disabled} id={id} value={value ? value : id} {...otherProps} />
 			<label className="ncids-radio__label" htmlFor={id}>
 				{label}
 			</label>

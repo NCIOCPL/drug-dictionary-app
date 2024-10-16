@@ -1,4 +1,4 @@
-import { render, within, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter } from 'react-router';
 import { MockAnalyticsProvider } from '../../../../tracking';
@@ -6,7 +6,7 @@ import { MockAnalyticsProvider } from '../../../../tracking';
 import { DefinitionItem } from '../../../index';
 import { useStateValue } from '../../../../store/store';
 
-jest.mock('../../../../store/store.js');
+jest.mock('../../../../store/store.jsx');
 const analyticsHandler = jest.fn(() => {});
 const payload = {
 	aliases: [
@@ -172,52 +172,38 @@ useStateValue.mockReturnValue([
 		language: 'en',
 	},
 ]);
+
 describe('Definition Item component', () => {
-	const wrapper = render(
-		<MockAnalyticsProvider>
-			<MemoryRouter initialEntries={['/bevacizumab']}>
-				<DefinitionItem
-					drugInfoSummaryLink={payload.drugInfoSummaryLink}
-					definitionText={payload.definition.html}
-					nciConceptId={payload.nciConceptId}
-					aliases={payload.aliases}
-					termId={payload.termId}
-					name={payload.name}
-				/>
-			</MemoryRouter>
-		</MockAnalyticsProvider>
-	);
-	const { container } = wrapper;
-
-	test('Renders term title and definition container', () => {
-		const { getByText } = within(
-			container.querySelector('.dictionary-definiton__term-title')
-		);
-		expect(getByText(payload.name)).toBeInTheDocument();
-		expect(
-			container.querySelector('.dictionary-definiton__definition')
-		).toBeInTheDocument();
-	});
-
-	test('Info button click analytics event', () => {
-		const wrapper = render(
-			<MockAnalyticsProvider analyticsHandler={analyticsHandler}>
+	it('Renders term title and definition container', () => {
+		render(
+			<MockAnalyticsProvider>
 				<MemoryRouter initialEntries={['/bevacizumab']}>
-					<DefinitionItem
-						drugInfoSummaryLink={payload.drugInfoSummaryLink}
-						definitionText={payload.definition.html}
-						nciConceptId={payload.nciConceptId}
-						aliases={payload.aliases}
-						termId={payload.termId}
-						name={payload.name}
-					/>
+					<DefinitionItem drugInfoSummaryLink={payload.drugInfoSummaryLink} definitionText={payload.definition.html} nciConceptId={payload.nciConceptId} aliases={payload.aliases} termId={payload.termId} name={payload.name} />
 				</MemoryRouter>
 			</MockAnalyticsProvider>
 		);
-		const { container } = wrapper;
-		const ptInfoButton = container.querySelector(
-			'a.dictionary-definiton__patient-information-button'
+
+		// Find term title using the heading text
+		expect(screen.getByText(payload.name)).toBeInTheDocument();
+
+		// Find definition by its content
+		expect(
+			screen.getByText((content, element) => {
+				return element.className === 'dictionary-definiton__definition';
+			})
+		).toBeInTheDocument();
+	});
+
+	it('Info button click analytics event', () => {
+		render(
+			<MockAnalyticsProvider analyticsHandler={analyticsHandler}>
+				<MemoryRouter initialEntries={['/bevacizumab']}>
+					<DefinitionItem drugInfoSummaryLink={payload.drugInfoSummaryLink} definitionText={payload.definition.html} nciConceptId={payload.nciConceptId} aliases={payload.aliases} termId={payload.termId} name={payload.name} />
+				</MemoryRouter>
+			</MockAnalyticsProvider>
 		);
+
+		const ptInfoButton = screen.getByRole('link', { name: /view patient information/i });
 		fireEvent.click(ptInfoButton);
 		expect(analyticsHandler).toHaveBeenCalledTimes(1);
 	});

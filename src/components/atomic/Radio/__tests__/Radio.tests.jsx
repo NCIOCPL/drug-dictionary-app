@@ -16,13 +16,13 @@ describe('Check Radio Button', function () {
 		</>
 	);
 
-	test('Radio renders', function () {
+	it('Radio renders', function () {
 		expect(screen.getByLabelText(label1)).toBeInTheDocument();
 		const radio = screen.getByLabelText(label1);
 		expect(radio).not.toBeChecked();
 		fireEvent.click(radio);
 		expect(radio.value).toBe('1');
 		expect(radio).toBeChecked();
-		expect(radio.disabled).toBe(false);
+		expect(radio).toBeEnabled();
 	});
 });

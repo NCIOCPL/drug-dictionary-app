@@ -8,13 +8,7 @@ import { Definition, Home, PageNotFound, Terms, SearchResults } from './views';
 
 const App = () => {
 	// this should be a DUMB component that just displays our display(group) components
-	const {
-		DefinitionPath,
-		ExpandPath,
-		HomePath,
-		SearchPath,
-		SearchNoParamPath,
-	} = useAppPaths();
+	const { DefinitionPath, ExpandPath, HomePath, SearchPath, SearchNoParamPath } = useAppPaths();
 
 	return (
 		<Router>
