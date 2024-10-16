@@ -13,19 +13,14 @@ const SynonymList = ({ aliases, term }) => {
 			const item = aliasArray[i];
 			const itemName = item.name.toLowerCase();
 			// If it contains or starts with the term
-			if (
-				(searchMode === 'Contains' && itemName.includes(term.toLowerCase())) ||
-				itemName.startsWith(term.toLowerCase())
-			) {
+			if ((searchMode === 'Contains' && itemName.includes(term.toLowerCase())) || itemName.startsWith(term.toLowerCase())) {
 				aliasList.push(<li key={`synonym-${i}-${item.name}`}>{item.name}</li>);
 			}
 		}
 		//bail out if after sorting list is empty
 		if (aliasList.length < 1) return;
 		return (
-			<ul
-				aria-label={`synonym table for ${term}`}
-				className="search-results-alias-list">
+			<ul aria-label={`synonym table for ${term}`} className="search-results-alias-list">
 				<li>Matching synonym</li>
 				{aliasList}
 			</ul>

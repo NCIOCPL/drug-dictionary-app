@@ -4,8 +4,9 @@ let consoleError;
 let consoleLogger;
 describe('EDDLAnalyticsHandler', () => {
 	beforeEach(() => {
-		consoleError = jest.spyOn(console, 'error');
-		consoleLogger = jest.spyOn(console, 'log');
+		// Mock the console output with an empty function so we don't clutter the jest output
+		consoleError = jest.spyOn(console, 'error').mockImplementation(() => {});
+		consoleLogger = jest.spyOn(console, 'log').mockImplementation(() => {});
 	});
 	afterEach(() => {
 		console.error.mockRestore();

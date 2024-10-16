@@ -6,8 +6,6 @@ export const getDrugSearchResults = ({ drug, matchType = beginsWith }) => {
 	const endpoint = getEndpoint('drugSearch');
 	return {
 		method: 'GET',
-		endpoint: `${endpoint}?query=${encodeURIComponent(
-			drug
-		)}&matchType=${matchType}&size=${DEFAULT_RESULT_SIZE}`,
+		endpoint: `${endpoint}?query=${encodeURIComponent(drug)}&matchType=${matchType}&size=${DEFAULT_RESULT_SIZE}`,
 	};
 };

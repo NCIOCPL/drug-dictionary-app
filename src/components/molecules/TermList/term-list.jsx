@@ -4,12 +4,7 @@ import React from 'react';
 import TermListItem from '../TermListItem';
 import { useAppPaths } from '../../../hooks';
 
-const TermList = ({
-	searchTerm,
-	termLinkTrackingHandler,
-	terms,
-	totalTermCount,
-}) => {
+const TermList = ({ searchTerm, termLinkTrackingHandler, terms, totalTermCount }) => {
 	const { DefinitionPath } = useAppPaths();
 
 	return (
@@ -17,22 +12,8 @@ const TermList = ({
 			<h4> {`${totalTermCount} results found for: ${searchTerm}`} </h4>
 			<dl>
 				{terms.map((term, index) => {
-					const idOrName = term.prettyUrlName
-						? term.prettyUrlName
-						: term.termId;
-					return (
-						<TermListItem
-							itemIndex={index + 1}
-							key={index}
-							preferredName={term.preferredName}
-							prettyUrlName={term.prettyUrlName}
-							term={term.name}
-							termDefinition={term?.definition?.html}
-							termId={term.termId}
-							termLinkTrackingHandler={termLinkTrackingHandler}
-							termLinkPath={DefinitionPath({ idOrName })}
-						/>
-					);
+					const idOrName = term.prettyUrlName ? term.prettyUrlName : term.termId;
+					return <TermListItem itemIndex={index + 1} key={index} preferredName={term.preferredName} prettyUrlName={term.prettyUrlName} term={term.name} termDefinition={term?.definition?.html} termId={term.termId} termLinkTrackingHandler={termLinkTrackingHandler} termLinkPath={DefinitionPath({ idOrName })} />;
 				})}
 			</dl>
 		</>

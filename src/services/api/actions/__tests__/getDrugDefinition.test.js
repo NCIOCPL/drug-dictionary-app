@@ -1,7 +1,7 @@
 import { getDrugDefinition } from '../index';
 
 describe('getDrugDefinition action', () => {
-	test(`should match getDrugDefinition action for drug "bevacizumab"`, () => {
+	it(`should match getDrugDefinition action for drug "bevacizumab"`, () => {
 		const idOrName = 'bevacizumab';
 		const retAction = {
 			method: 'GET',

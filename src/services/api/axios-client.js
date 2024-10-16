@@ -11,10 +11,7 @@ const axiosInstance = axios.create({
 export const getAxiosClient = (initialize) => {
 	const { apiEndpoint } = initialize;
 
-	const HOST =
-		apiEndpoint && apiEndpoint.length > 1
-			? apiEndpoint.replace(/\/$/, '')
-			: '/api';
+	const HOST = apiEndpoint && apiEndpoint.length > 1 ? apiEndpoint.replace(/\/$/, '') : '/api';
 
 	return createClient({
 		requestInterceptors: [requestHostInterceptor(HOST)],

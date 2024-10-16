@@ -1,4 +1,4 @@
-import { act, render } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { ClientContextProvider } from 'react-fetching-library';
@@ -21,7 +21,7 @@ ComponentWithLocation.propTypes = {
 };
 
 describe('<SearchResults />', () => {
-	test('should redirect to a definition page when single result is returned from search ', async () => {
+	it('should redirect to a definition page when single result is returned from search', async () => {
 		const searchText = 'abaloparatide';
 		useStateValue.mockReturnValue([
 			{
@@ -96,22 +96,22 @@ describe('<SearchResults />', () => {
 			key: expect.any(String),
 		};
 
-		await act(async () => {
-			await render(
-				<MockAnalyticsProvider>
-					<ClientContextProvider client={client}>
-						<MemoryRouter
-							initialEntries={[`/search/${searchText}/?searchMode=Begins`]}>
-							<ComponentWithLocation RenderComponent={SearchResults} />
-						</MemoryRouter>
-					</ClientContextProvider>
-				</MockAnalyticsProvider>
-			);
+		render(
+			<MockAnalyticsProvider>
+				<ClientContextProvider client={client}>
+					<MemoryRouter initialEntries={[`/search/${searchText}/?searchMode=Begins`]}>
+						<ComponentWithLocation RenderComponent={SearchResults} />
+					</MemoryRouter>
+				</ClientContextProvider>
+			</MockAnalyticsProvider>
+		);
+
+		await waitFor(() => {
+			expect(location).toMatchObject(expectedLocationObject);
 		});
-		expect(location).toMatchObject(expectedLocationObject);
 	});
 
-	test('should redirect with term id to a definition page when single result is returned from search ', async () => {
+	it('should redirect with term id to a definition page when single result is returned from search', async () => {
 		const searchText = 'abaloparatide';
 		useStateValue.mockReturnValue([
 			{
@@ -185,18 +185,18 @@ describe('<SearchResults />', () => {
 			key: expect.any(String),
 		};
 
-		await act(async () => {
-			await render(
-				<MockAnalyticsProvider>
-					<ClientContextProvider client={client}>
-						<MemoryRouter
-							initialEntries={[`/search/${searchText}/?searchMode=Begins`]}>
-							<ComponentWithLocation RenderComponent={SearchResults} />
-						</MemoryRouter>
-					</ClientContextProvider>
-				</MockAnalyticsProvider>
-			);
+		render(
+			<MockAnalyticsProvider>
+				<ClientContextProvider client={client}>
+					<MemoryRouter initialEntries={[`/search/${searchText}/?searchMode=Begins`]}>
+						<ComponentWithLocation RenderComponent={SearchResults} />
+					</MemoryRouter>
+				</ClientContextProvider>
+			</MockAnalyticsProvider>
+		);
+
+		await waitFor(() => {
+			expect(location).toMatchObject(expectedLocationObject);
 		});
-		expect(location).toMatchObject(expectedLocationObject);
 	});
 });

@@ -33,9 +33,7 @@ const AZList = ({ azListLabel = 'Browse' }) => {
 					const label = item.toUpperCase();
 					return (
 						<li key={i} value={i + 1}>
-							<Link
-								to={ExpandPath({ expandChar })}
-								onClick={() => handleAZLinkClick(expandChar)}>
+							<Link to={ExpandPath({ expandChar })} onClick={() => handleAZLinkClick(expandChar)}>
 								{label}
 							</Link>
 						</li>
