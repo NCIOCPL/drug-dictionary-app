@@ -87,10 +87,14 @@ checkBrowsers(paths.appPath, isInteractive)
 			paths.publicUrlOrPath.slice(0, -1)
 		);
 		const devSocket = {
-			warnings: (warnings) =>
-				devServer.sockWrite(devServer.sockets, 'warnings', warnings),
-			errors: (errors) =>
-				devServer.sockWrite(devServer.sockets, 'errors', errors),
+			warnings: (warnings) => {
+				// In webpack-dev-server v4+, socket handling is different
+				// This will be handled by the dev server internally
+			},
+			errors: (errors) => {
+				// In webpack-dev-server v4+, socket handling is different
+				// This will be handled by the dev server internally
+			},
 		};
 		// Create a webpack compiler that is configured with custom messages.
 		const compiler = createCompiler({
@@ -115,12 +119,11 @@ checkBrowsers(paths.appPath, isInteractive)
 			proxyConfig,
 			urls.lanUrlForConfig
 		);
+		// Add port to server config
+		serverConfig.port = port;
 		const devServer = new WebpackDevServer(serverConfig, compiler);
 		// Launch WebpackDevServer.
-		devServer.listen(port, HOST, (err) => {
-			if (err) {
-				return console.log(err);
-			}
+		devServer.startCallback(() => {
 			if (isInteractive) {
 				clearConsole();
 			}
@@ -143,16 +146,22 @@ checkBrowsers(paths.appPath, isInteractive)
 
 		['SIGINT', 'SIGTERM'].forEach(function (sig) {
 			process.on(sig, function () {
-				devServer.close();
-				process.exit();
+				console.log(`\nReceived ${sig}, shutting down gracefully...`);
+				devServer.stop(() => {
+					console.log('Dev server stopped.');
+					process.exit();
+				});
 			});
 		});
 
 		if (isInteractive || process.env.CI !== 'true') {
 			// Gracefully exit when stdin ends
 			process.stdin.on('end', function () {
-				devServer.close();
-				process.exit();
+				console.log('\nStdin ended, shutting down gracefully...');
+				devServer.stop(() => {
+					console.log('Dev server stopped.');
+					process.exit();
+				});
 			});
 			process.stdin.resume();
 		}
