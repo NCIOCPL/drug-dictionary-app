@@ -1,4 +1,4 @@
-import { render, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter } from 'react-router';
 import { MockAnalyticsProvider } from '../../../../tracking';
@@ -6,7 +6,7 @@ import { MockAnalyticsProvider } from '../../../../tracking';
 import AZList from '../AZList';
 import { useStateValue } from '../../../../store/store';
 
-jest.mock('../../../../store/store.js');
+jest.mock('../../../../store/store.jsx');
 
 const dictionaryName = 'Cancer.gov';
 const dictionaryTitle = 'NCI Dictionary of Cancer Terms';
@@ -23,8 +23,8 @@ useStateValue.mockReturnValue([
 const analyticsHandler = jest.fn(() => {});
 
 describe('AZList component', () => {
-	test('AZList renders and contains 27 items', () => {
-		const wrapper = render(
+	it('AZList renders and contains 27 items', () => {
+		render(
 			<MockAnalyticsProvider analyticsHandler={analyticsHandler}>
 				<MemoryRouter initialEntries={['/']}>
 					<AZList />
@@ -32,26 +32,23 @@ describe('AZList component', () => {
 			</MockAnalyticsProvider>
 		);
 
-		const { container, getByTestId } = wrapper;
-		const listContainer = container.querySelector('ul');
+		const listItems = screen.getAllByRole('listitem');
 		// Validate that list contains 27 items
-		expect(listContainer.children.length).toBe(27);
-		expect(getByTestId('tid-az-list'));
+		expect(listItems).toHaveLength(27);
+		expect(screen.getByTestId('tid-az-list')).toBeInTheDocument();
 	});
 
-	test('AZList expand analytics event', () => {
-		const wrapper = render(
+	it('AZList expand analytics event', () => {
+		render(
 			<MockAnalyticsProvider analyticsHandler={analyticsHandler}>
 				<MemoryRouter initialEntries={['/']}>
 					<AZList />
 				</MemoryRouter>
 			</MockAnalyticsProvider>
 		);
-		const { container } = wrapper;
-		const listContainer = container.querySelector('ul');
-		// Get the first link, click it and see what it gets.
-		const link = listContainer.firstChild.firstChild;
-		fireEvent.click(link);
+
+		const firstLink = screen.getAllByRole('link')[0];
+		fireEvent.click(firstLink);
 		expect(analyticsHandler).toHaveBeenCalledTimes(1);
 	});
 });

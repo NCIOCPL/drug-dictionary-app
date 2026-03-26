@@ -5,7 +5,7 @@ import { useTracking } from 'react-tracking';
 import { SearchBox, Spinner, TermList } from '../../components';
 import { useAppPaths, useCustomQuery } from '../../hooks';
 import { getExpandCharResults } from '../../services/api/actions';
-import { useStateValue } from '../../store/store.js';
+import { useStateValue } from '../../store/store.jsx';
 import NoMatchingResults from '../Terms/no-matching-results';
 
 const Home = () => {
@@ -16,16 +16,7 @@ const Home = () => {
 	const [stateExpandCharResults, setStateExpandCharResults] = useState();
 
 	// Get items passed into index.js and stored in the context.
-	const [
-		{
-			analyticsName,
-			baseHost,
-			canonicalHost,
-			dictionaryIntroText,
-			dictionaryTitle,
-			siteName,
-		},
-	] = useStateValue();
+	const [{ analyticsName, baseHost, canonicalHost, dictionaryIntroText, dictionaryTitle, siteName }] = useStateValue();
 
 	// Get a reference to the tracking function for
 	// analytics.
@@ -102,15 +93,7 @@ const Home = () => {
 			<SearchBox />
 			{doneFetchingTermResults ? (
 				<div className="results">
-					{stateExpandCharResults.results.length > 0 && (
-						<TermList
-							searchTerm={expandChar}
-							termLinkPath={DefinitionPath}
-							termLinkTrackingHandler={termLinkEventTrackingHandler}
-							terms={stateExpandCharResults.results}
-							totalTermCount={stateExpandCharResults.meta.totalResults}
-						/>
-					)}
+					{stateExpandCharResults.results.length > 0 && <TermList searchTerm={expandChar} termLinkPath={DefinitionPath} termLinkTrackingHandler={termLinkEventTrackingHandler} terms={stateExpandCharResults.results} totalTermCount={stateExpandCharResults.meta.totalResults} />}
 					{stateExpandCharResults.results.length < 1 && <NoMatchingResults />}
 				</div>
 			) : (

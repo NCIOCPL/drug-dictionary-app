@@ -4,20 +4,11 @@ import { getEndpoint } from '../endpoints';
 const { drugTerm } = resourceType;
 const { beginsWith } = searchMatchType;
 
-export const getAutoSuggestResults = ({
-	autoSuggestLimit = 10,
-	searchText,
-	matchType = beginsWith,
-	resourceTypes = drugTerm,
-}) => {
+export const getAutoSuggestResults = ({ autoSuggestLimit = 10, searchText, matchType = beginsWith, resourceTypes = drugTerm }) => {
 	const endpoint = getEndpoint('autoSuggest');
-	const resourceTypeQuery = resourceTypes
-		? `&includeResourceTypes=${resourceTypes}`
-		: '';
+	const resourceTypeQuery = resourceTypes ? `&includeResourceTypes=${resourceTypes}` : '';
 	return {
 		method: 'GET',
-		endpoint: `${endpoint}?searchText=${encodeURIComponent(
-			searchText
-		)}&matchType=${matchType}${resourceTypeQuery}&size=${autoSuggestLimit}`,
+		endpoint: `${endpoint}?searchText=${encodeURIComponent(searchText)}&matchType=${matchType}${resourceTypeQuery}&size=${autoSuggestLimit}`,
 	};
 };

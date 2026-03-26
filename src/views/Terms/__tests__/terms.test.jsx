@@ -1,17 +1,19 @@
-import { act, render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import React from 'react';
-import { useLocation, useParams } from 'react-router-dom';
 import { ClientContextProvider } from 'react-fetching-library';
+import { useLocation, useParams } from 'react-router-dom';
 
-import Home from '../Home';
-import { useStateValue } from '../../../store/store.js';
-import { MockAnalyticsProvider } from '../../../tracking';
+import { useStateValue } from '../../../store/store';
+import Terms from '../terms';
+import MockAnalyticsProvider from '../../../tracking/mock-analytics-provider';
 
-jest.mock('../../../store/store.js');
+jest.mock('../../../store/store');
 jest.mock('react-router-dom');
 
-describe('Home component(English)', () => {
-	test('should display dictionary title, intro text, <SearchBox />, and <TermList /> components', async () => {
+describe('<Terms />', () => {
+	it('should display dictionary title, <SearchBox />, and <TermList /> components', async () => {
+		jest.spyOn(window, 'scrollTo');
+
 		const expandChar = 'A';
 		useParams.mockReturnValue({
 			expandChar,
@@ -26,8 +28,6 @@ describe('Home component(English)', () => {
 				baseHost: 'http://localhost:3000',
 				canonicalHost: 'https://example.org',
 				basePath: '/',
-				dictionaryIntroText:
-					"The NCI Drug Dictionary contains technical definitions and synonyms for drugs/agents used to treat patients with cancer or conditions related to cancer. Each drug entry includes links to check for clinical trials listed in NCI's List of Cancer Clinical Trials.",
 				dictionaryTitle: 'NCI Drug Dictionary',
 				language: 'en',
 				siteName: 'National Cancer Institute',
@@ -132,28 +132,26 @@ describe('Home component(English)', () => {
 				payload,
 			}),
 		};
-		await act(async () => {
-			render(
-				<MockAnalyticsProvider>
-					<ClientContextProvider client={client}>
-						<Home />
-					</ClientContextProvider>
-				</MockAnalyticsProvider>
-			);
+
+		render(
+			<MockAnalyticsProvider>
+				<ClientContextProvider client={client}>
+					<Terms />
+				</ClientContextProvider>
+			</MockAnalyticsProvider>
+		);
+
+		await waitFor(() => {
+			expect(screen.getByText('NCI Drug Dictionary')).toBeInTheDocument();
 		});
-		expect(screen.getByText('NCI Drug Dictionary')).toBeInTheDocument();
-		expect(
-			screen.getByText(
-				"The NCI Drug Dictionary contains technical definitions and synonyms for drugs/agents used to treat patients with cancer or conditions related to cancer. Each drug entry includes links to check for clinical trials listed in NCI's List of Cancer Clinical Trials."
-			)
-		).toBeInTheDocument();
-		expect(
-			screen.getByPlaceholderText('Enter keywords or phrases')
-		).toBeInTheDocument();
+		expect(screen.getByPlaceholderText('Enter keywords or phrases')).toBeInTheDocument();
 		expect(screen.getByText('3 results found for: A')).toBeInTheDocument();
+		//test the scroll position
+		expect(window.scrollTo).toHaveBeenCalledTimes(1);
+		expect(window.scrollTo).toHaveBeenLastCalledWith(0, 0);
 	});
 
-	test('should display no matching results when no results are returned', async () => {
+	it('should display no matching results when no results are returned', async () => {
 		const expandChar = ']';
 		useParams.mockReturnValue({
 			expandChar,
@@ -188,19 +186,15 @@ describe('Home component(English)', () => {
 				payload,
 			}),
 		};
-		await act(async () => {
-			render(
-				<MockAnalyticsProvider>
-					<ClientContextProvider client={client}>
-						<Home />
-					</ClientContextProvider>
-				</MockAnalyticsProvider>
-			);
+		render(
+			<MockAnalyticsProvider>
+				<ClientContextProvider client={client}>
+					<Terms />
+				</ClientContextProvider>
+			</MockAnalyticsProvider>
+		);
+		await waitFor(() => {
+			expect(screen.getByText('No matches were found for the word or phrase you entered. Please check your spelling, and try searching again. You can also type the first few letters of your word or phrase, or click a letter in the alphabet and browse through the list of terms that begin with that letter.')).toBeInTheDocument();
 		});
-		expect(
-			screen.getByText(
-				'No matches were found for the word or phrase you entered. Please check your spelling, and try searching again. You can also type the first few letters of your word or phrase, or click a letter in the alphabet and browse through the list of terms that begin with that letter.'
-			)
-		).toBeInTheDocument();
 	});
 });

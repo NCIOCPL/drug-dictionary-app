@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import React from 'react';
 
 import SynonymTable from '../synonym-table';
@@ -39,18 +39,18 @@ const aliases = [
 ];
 
 describe('Synonym component', () => {
-	test('Display groupd synonyms based on data', () => {
-		const wrapper = render(<SynonymTable aliases={aliases} />);
+	it('Display grouped synonyms based on data', () => {
+		render(<SynonymTable aliases={aliases} />);
 		// Check for Map (user friendly name)
-		expect(wrapper.getByText('US brand name:')).toBeInTheDocument();
+		expect(screen.getByText('US brand name:')).toBeInTheDocument();
 		// validate data output
-		expect(wrapper.getByText('Flovacil')).toBeInTheDocument();
-		expect(wrapper.getByText('Apo-Diflunisal')).toBeInTheDocument();
-		expect(wrapper.getByText('Novo-Diflunisal')).toBeInTheDocument();
+		expect(screen.getByText('Flovacil')).toBeInTheDocument();
+		expect(screen.getByText('Apo-Diflunisal')).toBeInTheDocument();
+		expect(screen.getByText('Novo-Diflunisal')).toBeInTheDocument();
 		// Check for Map (user friendly name)
-		expect(wrapper.getByText('Chemical structure:')).toBeInTheDocument();
+		expect(screen.getByText('Chemical structure:')).toBeInTheDocument();
 		//make sure filter removes bad items
-		expect(wrapper.queryByText('ExcludedNameTest')).not.toBeInTheDocument();
-		expect(wrapper.queryByText('22494-42-4')).not.toBeInTheDocument();
+		expect(screen.queryByText('ExcludedNameTest')).not.toBeInTheDocument();
+		expect(screen.queryByText('22494-42-4')).not.toBeInTheDocument();
 	});
 });

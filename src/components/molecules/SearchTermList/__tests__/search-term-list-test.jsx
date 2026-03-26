@@ -2,10 +2,10 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter } from 'react-router';
 
-import TermList from '../term-list';
+import SearchTermList from '../search-term-list';
 import { useStateValue } from '../../../../store/store';
 
-jest.mock('../../../../store/store.js');
+jest.mock('../../../../store/store.jsx');
 
 useStateValue.mockReturnValue([
 	{
@@ -104,10 +104,10 @@ describe('<TermList />', () => {
 		],
 		totalTermCount: 3,
 	};
-	test.only('should show term list page title with result count', () => {
+	it('should show term list page title with result count', () => {
 		render(
 			<MemoryRouter initialEntries={['/']}>
-				<TermList {...props} />
+				<SearchTermList {...props} />
 			</MemoryRouter>
 		);
 
