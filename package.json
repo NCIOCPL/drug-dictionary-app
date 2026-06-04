@@ -26,6 +26,7 @@
 		"es6-promise": "^4.2.8",
 		"fs-extra": "^8.1.0",
 		"history": "^5.0.0",
+		"npm": "^11.12.1",
 		"prop-types": "^15.7.2",
 		"react": "^16.13.1",
 		"react-app-polyfill": "^1.0.6",
